@@ -18,6 +18,7 @@
 
                 <div class="image">
                     <img src="{{ asset('storage/'. $user->image) }}" alt="">
+                    <h1>add description</h1>
                 </div>
             </div>
         </div>
