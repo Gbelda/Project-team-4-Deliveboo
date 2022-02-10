@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use Illuminate\Support\Str;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -51,6 +52,10 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'restaurant_name' => ['required', 'string', 'max:255'],
+            'address' => ['required', 'string', 'max:255'],
+            'image' => ['nullable', 'image', 'max:100'],
+            'vat' => ['required', 'numeric', 'digits:11'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -64,9 +69,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        //ddd($data['image']);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'restaurant_name' => $data['restaurant_name'],
+            'address' => $data['address'],
+            'slug'=>Str::slug($data['restaurant_name']),
+            'image' => $data['image']===null ? 'placeholder/no_image.png' : $data['image'],
+            'vat' => $data['vat'],
             'password' => Hash::make($data['password']),
         ]);
     }

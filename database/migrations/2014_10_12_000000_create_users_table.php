@@ -17,6 +17,11 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('restaurant_name');
+            $table->string('slug');
+            $table->string('address');
+            $table->string('image')->default('placeholder/no_image.png' );
+            $table->string('vat');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
