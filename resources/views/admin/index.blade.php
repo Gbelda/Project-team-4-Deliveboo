@@ -15,9 +15,9 @@
                     @endif
                     {{ __('You are logged in!') }}
                 </div>
-                <div class="image">
-                    <img height="100" src="{{asset('storage/'. $user_r->image)}}" alt="">
 
+                <div class="image">
+                    <img src="{{ asset('storage/'. $user->image) }}" alt="">
                 </div>
             </div>
         </div>

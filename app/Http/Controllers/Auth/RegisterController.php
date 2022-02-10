@@ -71,7 +71,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $image_path = Storage::put('userimg', $data['image']);
+        
+        $image_path = Storage::put('user_image', $data['image']);
         //ddd($data['image']);
         return User::create([
             'name' => $data['name'],
@@ -79,7 +80,7 @@ class RegisterController extends Controller
             'restaurant_name' => $data['restaurant_name'],
             'address' => $data['address'],
             'slug'=>Str::slug($data['restaurant_name']),
-            'image' => $data['image']===null ? 'placeholder/no_image.png' : $image_path,
+            'image' => $data['image'] === null ? 'placeholder/no_image.png' : $image_path,
             'vat' => $data['vat'],
             'password' => Hash::make($data['password']),
         ]);
