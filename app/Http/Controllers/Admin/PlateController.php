@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Plate;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
 class PlateController extends Controller
@@ -41,38 +40,41 @@ class PlateController extends Controller
      */
     public function store(Request $request)
     {
-        $validated=$request->validate([
-            'name'=> ['required', 'unique:plates','max:200'],
-            'ingredients'=> ['nullable'],
-            'price'=> ['nullable'],
-            'image'=>['nullable', 'image', 'max:1000'],
-            'description'=>['nullable'],
+        $validated = $request->validate([
+            'name' => ['required', 'unique:plates', 'max:200'],
+            'ingredients' => ['nullable'],
+            'price' => ['nullable'],
+            'image' => ['nullable', 'image', 'max:1000'],
+            'description' => ['nullable'],
+            'available' => ['required'],
             // 'category_id' => ['nullable', 'exists:categories,id'],
-         
-            ]);
 
-            if($request->file('image')){
-                $image_path = Storage::put('plate_images', $request->file('image'));
-                //$image_path= $request->file('image')->store('plate_images');
-                $validated['image'] = $image_path;
+        ]);
 
-            }
+        if ($request->file('image')) {
+            $image_path = Storage::put('plate_images', $request->file('image'));
+            //$image_path= $request->file('image')->store('plate_images');
+            $validated['image'] = $image_path;
 
-            // $validated['slug'] = Str::slug($validated['title']);
+        }
 
-            $validated['user_id'] = Auth::id();
+        //ddd($validated);
 
-            $plate = Plate::create($validated);
+        // $validated['slug'] = Str::slug($validated['title']);
 
-            // if($request->has('tags')){
-            //     $request->validate([
-            //     'tags' => ['nullable', 'exists:tags,id']
-            // ]);
-            // $plate->tags()->attach($request->tags);
-            // }
+        $validated['user_id'] = Auth::id();
 
-            return redirect()->route('admin.plates.index');
-            
+        $plate = Plate::create($validated);
+
+        // if($request->has('tags')){
+        //     $request->validate([
+        //     'tags' => ['nullable', 'exists:tags,id']
+        // ]);
+        // $plate->tags()->attach($request->tags);
+        // }
+
+        return redirect()->route('admin.plates.index');
+
     }
 
     /**
@@ -95,11 +97,11 @@ class PlateController extends Controller
     public function edit(Plate $plate)
     {
         // if(Auth::id() === $plate->user_id) {
-            return view('admin.plates.edit', compact('plate'));
+        return view('admin.plates.edit', compact('plate'));
         // } else{
         //     abort(403);
         // }
-        
+
     }
 
     /**
@@ -112,33 +114,34 @@ class PlateController extends Controller
     public function update(Request $request, Plate $plate)
     {
         // if(Auth::id() === $plate->user_id) {
-            $validated=$request->validate([
-                'name'=> ['required', Rule::unique('plates')->ignore($plate->id),'max:200'],
-                'ingredients'=> ['nullable'],
-                'price'=> ['nullable'],
-                'image'=>['nullable','image', 'max:1000'],
-                'description'=>['nullable'],
-                // 'category_id' => ['nullable', 'exists:categories,id'],
-                
-                ]);
-                
-                // $validated['slug'] = Str::slug($validated(['title']));
-    
-                if($request->file('image')){    
-                    Storage::delete($plate->image);
-    
-                    $image_path= $request->file('image')->store('images');
-                    $validated['image'] = $image_path;
-    
-                }
-                // if($request->has('tags')){
-                //     $request->validate(['tags' => ['nullable','exists:tags,id']
-                // ]);
-                // $plate->tags()->sync($request->tags);
-            // };
-            $plate->update($validated);
-                return redirect()->route('admin.plates.index');
-                
+        $validated = $request->validate([
+            'name' => ['required', Rule::unique('plates')->ignore($plate->id), 'max:200'],
+            'ingredients' => ['nullable'],
+            'price' => ['nullable'],
+            'image' => ['nullable', 'image', 'max:1000'],
+            'description' => ['nullable'],
+            'available' => ['required'],
+            // 'category_id' => ['nullable', 'exists:categories,id'],
+
+        ]);
+
+        // $validated['slug'] = Str::slug($validated(['title']));
+
+        if ($request->file('image')) {
+            Storage::delete($plate->image);
+
+            $image_path = $request->file('image')->store('images');
+            $validated['image'] = $image_path;
+
+        }
+        // if($request->has('tags')){
+        //     $request->validate(['tags' => ['nullable','exists:tags,id']
+        // ]);
+        // $plate->tags()->sync($request->tags);
+        // };
+        $plate->update($validated);
+        return redirect()->route('admin.plates.index');
+
         // } else {
         //     abort(403);
         // }
