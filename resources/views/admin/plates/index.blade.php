@@ -2,8 +2,6 @@
 
 @section('content')
 
-    @include('partials.admin.dashboard')
-
     <div class="container">
 
         <h1>I tuoi Piatti</h1>
