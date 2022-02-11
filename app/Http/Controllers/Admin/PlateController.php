@@ -161,5 +161,9 @@ class PlateController extends Controller
     public function destroy(Plate $plate)
     {
         //
+        $plate->delete();
+
+        return redirect()->route('admin.plates.index')->with('message', 'Il tuo piatto ' . $plate->name . ' è stato eliminato correttamente');
+
     }
 }
