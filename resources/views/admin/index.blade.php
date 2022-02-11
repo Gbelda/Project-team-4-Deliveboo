@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
 
-    @include('admin.dashboard')
+    @include('partials.admin.dashboard')
 
 @endsection
