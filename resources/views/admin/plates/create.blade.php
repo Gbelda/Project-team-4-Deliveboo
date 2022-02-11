@@ -53,17 +53,20 @@
                 @error('price')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
+
             </div>
+
             {{-- <div class="mb-3">
-        <label for="category_id" class="form-label">Categories</label>
-        <select class="form-control @error('category_id') is_invalid @enderror" name="category_id" id="category_id">
-            <option value="" selected>Select a category</option>
-            @foreach ($categories as $category)
-            <option value="{{$category->id}}">{{$category->name}}</option> 
-            @endforeach
-        </select>
-    </div>
-    <div class="mb-3">
+                <label for="category" class="form-label">Categories</label>
+                <select class="form-control @error('category') is_invalid @enderror" name="category" id="category">
+                    <option value="" selected>Select a category</option>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->slug }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
+            </div> --}}
+
+            {{-- <div class="mb-3">
       <label for="tags" class="form-label">Tags</label>
       <select multiple class="form-select" name="tags" id="tags">
         <option disabled>Select all tags</option>

@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Providers\RouteServiceProvider;
 use App\User;
-use Illuminate\Support\Str;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -23,7 +24,7 @@ class RegisterController extends Controller
     | validation and creation. By default this controller uses a trait to
     | provide this functionality without requiring any additional code.
     |
-    */
+     */
 
     use RegistersUsers;
 
@@ -44,6 +45,13 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function showRegistrationForm()
+    {
+
+        $categories = Category::all();
+        return view('auth.register', compact('categories'));
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -53,7 +61,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
 
-         return Validator::make($data, [
+        return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'restaurant_name' => ['required', 'string', 'max:255'],
             'address' => ['required', 'string', 'max:1000'],
@@ -61,10 +69,8 @@ class RegisterController extends Controller
             'vat' => ['required', 'numeric', 'digits:11'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'category_id' => ['required', 'exists:categories,id'],
         ]);
-
-
-
 
     }
 
@@ -93,12 +99,13 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'restaurant_name' => $data['restaurant_name'],
             'address' => $data['address'],
-            'slug'=>Str::slug($data['restaurant_name']),
+            'slug' => Str::slug($data['restaurant_name']),
             'vat' => $data['vat'],
             'password' => Hash::make($data['password']),
+            'category_id' => $data['category_id'],
         ];
 
-        if(array_key_exists('image', $data)){
+        if (array_key_exists('image', $data)) {
             $image_path = Storage::put('user_image', $data['image']);
             $validated['image'] = $image_path;
         }

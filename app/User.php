@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','restaurant_name','address','image','slug','vat'
+        'name', 'email', 'password', 'restaurant_name', 'address', 'image', 'slug', 'vat', 'category_id',
     ];
 
     /**
@@ -36,4 +36,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function categories()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
