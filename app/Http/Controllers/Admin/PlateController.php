@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Plate;
 use Illuminate\Http\Request;
@@ -14,7 +14,7 @@ class PlateController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.plate.index');
     }
 
     /**
