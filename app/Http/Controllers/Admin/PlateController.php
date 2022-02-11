@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Plate;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PlateController extends Controller
 {
@@ -14,7 +15,7 @@ class PlateController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.plate.index');
     }
 
     /**
@@ -41,10 +42,10 @@ class PlateController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Plate  $plate
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Plate $plate)
     {
         //
     }
@@ -52,10 +53,10 @@ class PlateController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Plate  $plate
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Plate $plate)
     {
         //
     }
@@ -64,10 +65,10 @@ class PlateController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Plate  $plate
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Plate $plate)
     {
         //
     }
@@ -75,10 +76,10 @@ class PlateController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Plate  $plate
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Plate $plate)
     {
         //
     }
