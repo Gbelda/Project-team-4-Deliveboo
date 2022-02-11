@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->group(function(){
-    
+Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+
     Route::get('/', 'HomeController@index')->name('index');
 });
