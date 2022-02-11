@@ -23,7 +23,7 @@
                             @csrf
 
                             <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
@@ -39,7 +39,7 @@
 
                             <div class="form-group row">
                                 <label for="restaurant_name"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Nome Ristorante') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Nome Ristorante*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="restaurant_name" type="text"
@@ -57,7 +57,7 @@
 
                             <div class="form-group row">
                                 <label for="address"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="address" type="text"
@@ -74,7 +74,7 @@
 
                             <div class="form-group row">
                                 <label for="image"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Immagine del Luogo') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Immagine del Ristorante') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="image" type="file" class="form-control @error('image') is-invalid @enderror"
@@ -90,11 +90,13 @@
 
                             <div class="form-group row">
                                 <label for="vat"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Partita IVA') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Partita IVA*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="vat" type="text" class="form-control @error('vat') is-invalid @enderror"
-                                        name="vat" value="{{ old('vat') }}" required autocomplete="vat" autofocus>
+                                        name="vat" value="{{ old('vat') }}" required autocomplete="vat" autofocus
+                                        pattern="[0-9]{11}" oninvalid="this.setCustomValidity('11 digit number required')"
+                                        oninput="this.setCustomValidity('')">
 
                                     @error('vat')
                                         <span class="invalid-feedback" role="alert">
@@ -106,7 +108,7 @@
 
                             <div class="form-group row">
                                 <label for="email"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
@@ -121,10 +123,10 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="category_id" class="col-md-4 col-form-label text-md-right">Categories</label>
+                                <label for="category_id" class="col-md-4 col-form-label text-md-right">Categoria*</label>
                                 <div class="col-md-6">
                                     <select class="form-control @error('category_id') is_invalid @enderror"
-                                        name="category_id" id="category_id">
+                                        name="category_id" id="category_id" required>
 
                                         <option value="" selected>Select a category</option>
                                         @foreach ($categories as $category)
@@ -136,7 +138,7 @@
 
                             <div class="form-group row">
                                 <label for="password"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Password*') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
