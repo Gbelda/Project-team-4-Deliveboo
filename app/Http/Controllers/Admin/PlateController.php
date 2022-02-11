@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Plate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,7 +30,9 @@ class PlateController extends Controller
      */
     public function create()
     {
-        return view('admin.plates.create');
+
+        $categories = Category::all();
+        return view('admin.plates.create', compact('categories'));
     }
 
     /**
@@ -97,7 +100,9 @@ class PlateController extends Controller
     public function edit(Plate $plate)
     {
         // if(Auth::id() === $plate->user_id) {
-        return view('admin.plates.edit', compact('plate'));
+        $categories = Category::all();
+        return view('admin.plates.edit', compact('categories', 'plate'));
+
         // } else{
         //     abort(403);
         // }
