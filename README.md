@@ -39,6 +39,6 @@ DashBoard MVC Laravel
 
 
 Autenticazione -> Giovanni 
-Admin -> Paolo
+Admin -> Paolo.
 Guest -> Giuseppe | Laurentiu, Front End -> Marco
  
