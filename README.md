@@ -17,7 +17,6 @@ Va bene o bisogna aggiungere altro ??
 
 5) 
 
-
 - Eventuali Bonus
 
 Mappa Ristoranti in HomePage
@@ -25,10 +24,6 @@ Mappa Ristoranti in HomePage
 Media prezzo ristorante
 Stelle recensioni 
 Quantità Piatti
-
-
-
-
 
 - Direzioni delle Pagine 
 
