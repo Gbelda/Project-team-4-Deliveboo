@@ -19,7 +19,7 @@ class PlateController extends Controller
      */
     public function index()
     {
-        $plates = Plate::all();
+        $plates = Auth::user()->plates()->orderByDesc('id')->get();
         return view('admin.plates.index', compact('plates'));
     }
 
@@ -50,6 +50,7 @@ class PlateController extends Controller
             'image' => ['nullable', 'image', 'max:1000'],
             'description' => ['nullable'],
             'available' => ['required'],
+            '',
             // 'category_id' => ['nullable', 'exists:categories,id'],
 
         ]);
