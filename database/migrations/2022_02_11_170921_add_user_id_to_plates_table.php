@@ -32,7 +32,7 @@ class AddUserIdToPlatesTable extends Migration
         Schema::table('plates', function (Blueprint $table) {
             //
 
-            $table->dropForeign(['user_id']);
+            $table->dropForeign(['plates_user_id_foreign']);
             $table->dropColumn('user_id');
 
         });

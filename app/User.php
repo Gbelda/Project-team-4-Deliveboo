@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'restaurant_name', 'address', 'image', 'slug', 'vat', 'category_id',
+        'name', 'email', 'password', 'restaurant_name', 'address', 'image', 'slug', 'vat',
     ];
 
     /**
@@ -38,9 +38,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function categories()
+    public function categories():BelongsToMany
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsToMany(Models\Category::class);
     }
 
     public function plates(): HasMany

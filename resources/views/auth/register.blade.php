@@ -123,12 +123,12 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="category_id" class="col-md-4 col-form-label text-md-right">Categoria*</label>
+                                <label for="categories" class="col-md-4 col-form-label text-md-right">Categoria*</label>
                                 <div class="col-md-6">
-                                    <select class="form-control @error('category_id') is_invalid @enderror"
-                                        name="category_id" id="category_id" required>
+                                    <select multiple class="form-control @error('categories') is_invalid @enderror"
+                                        name="categories[]" id="categories" required>
 
-                                        <option value="" selected>Select a category</option>
+                                        <option value="" disabled>Seleziona la categoria</option>
                                         @foreach ($categories as $category)
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endforeach

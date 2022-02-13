@@ -69,7 +69,7 @@ class RegisterController extends Controller
             'vat' => ['required', 'numeric', 'digits:11'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'category_id' => ['required', 'exists:categories,id'],
+            'categories' => ['required', 'exists:categories,id'],
         ]);
 
     }
@@ -102,7 +102,7 @@ class RegisterController extends Controller
             'slug' => Str::slug($data['restaurant_name']),
             'vat' => $data['vat'],
             'password' => Hash::make($data['password']),
-            'category_id' => $data['category_id'],
+            'categories' => $data['categories'],
         ];
 
         if (array_key_exists('image', $data)) {
@@ -110,7 +110,11 @@ class RegisterController extends Controller
             $validated['image'] = $image_path;
         }
 
-        return User::create($validated);
 
+        $new_user = User::create($validated);
+
+        $new_user->categories()->attach($validated['categories']);
+
+        return $new_user;
     }
 }
