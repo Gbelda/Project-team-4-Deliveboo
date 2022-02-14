@@ -96,7 +96,8 @@
                                 <div class="col-md-6">
                                     <input id="vat" type="text" class="form-control @error('vat') is-invalid @enderror"
                                         name="vat" value="{{ old('vat') }}" required autocomplete="vat" autofocus
-                                        pattern="[0-9]{11}" oninvalid="this.setCustomValidity('11 digit number required')"
+                                        pattern="[0-9]{11}"
+                                        oninvalid="this.setCustomValidity('Richiesto digitare 11 cifre numeriche.')"
                                         oninput="this.setCustomValidity('')">
 
                                     @error('vat')
@@ -131,7 +132,9 @@
 
                                         <option value="" disabled>Seleziona la categoria</option>
                                         @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                            <option value="{{ $category->id }}"
+                                                {{ old('categories') != null ? (in_array($category->id, old('categories')) ? 'selected' : '') : '' }}>
+                                                {{ $category->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>

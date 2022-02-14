@@ -89,7 +89,14 @@ class PlateController extends Controller
      */
     public function show(Plate $plate)
     {
-        return view('admin.plates.show', compact('plate'));
+        if (Auth::id() === $plate->user_id) {
+            $categories = Category::all();
+            return view('admin.plates.show', compact('plate'));
+
+        } else {
+            abort(403);
+        }
+
     }
 
     /**
@@ -100,13 +107,13 @@ class PlateController extends Controller
      */
     public function edit(Plate $plate)
     {
-        // if(Auth::id() === $plate->user_id) {
-        $categories = Category::all();
-        return view('admin.plates.edit', compact('categories', 'plate'));
+        if (Auth::id() === $plate->user_id) {
+            $categories = Category::all();
+            return view('admin.plates.edit', compact('categories', 'plate'));
 
-        // } else{
-        //     abort(403);
-        // }
+        } else {
+            abort(403);
+        }
 
     }
 
@@ -119,38 +126,38 @@ class PlateController extends Controller
      */
     public function update(Request $request, Plate $plate)
     {
-        // if(Auth::id() === $plate->user_id) {
-        $validated = $request->validate([
-            'name' => ['required', Rule::unique('plates')->ignore($plate->id), 'max:200'],
-            'ingredients' => ['nullable'],
-            'price' => ['nullable'],
-            'image' => ['nullable', 'image', 'max:1000'],
-            'description' => ['nullable'],
-            'available' => ['required'],
-            // 'category_id' => ['nullable', 'exists:categories,id'],
+        if (Auth::id() === $plate->user_id) {
+            $validated = $request->validate([
+                'name' => ['required', Rule::unique('plates')->ignore($plate->id), 'max:200'],
+                'ingredients' => ['nullable'],
+                'price' => ['nullable'],
+                'image' => ['nullable', 'image', 'max:1000'],
+                'description' => ['nullable'],
+                'available' => ['required'],
+                // 'category_id' => ['nullable', 'exists:categories,id'],
 
-        ]);
+            ]);
 
-        // $validated['slug'] = Str::slug($validated(['title']));
+            // $validated['slug'] = Str::slug($validated(['title']));
 
-        if ($request->file('image')) {
-            Storage::delete($plate->image);
+            if ($request->file('image')) {
+                Storage::delete($plate->image);
 
-            $image_path = $request->file('image')->store('images');
-            $validated['image'] = $image_path;
+                $image_path = $request->file('image')->store('images');
+                $validated['image'] = $image_path;
 
+            }
+            // if($request->has('tags')){
+            //     $request->validate(['tags' => ['nullable','exists:tags,id']
+            // ]);
+            // $plate->tags()->sync($request->tags);
+            // };
+            $plate->update($validated);
+            return redirect()->route('admin.plates.index');
+
+        } else {
+            abort(403);
         }
-        // if($request->has('tags')){
-        //     $request->validate(['tags' => ['nullable','exists:tags,id']
-        // ]);
-        // $plate->tags()->sync($request->tags);
-        // };
-        $plate->update($validated);
-        return redirect()->route('admin.plates.index');
-
-        // } else {
-        //     abort(403);
-        // }
     }
 
     /**
