@@ -57,17 +57,6 @@ const app = new Vue({
 });
 
 
-window.onload = function () {
-    var txtPassword = document.getElementById("password");
-    var txtConfirmPassword = document.getElementById("password-confirm");
-    txtPassword.onchange = ConfirmPassword;
-    txtConfirmPassword.onkeyup = ConfirmPassword;
-    function ConfirmPassword() {
-        txtConfirmPassword.setCustomValidity("");
-        if (txtPassword.value != txtConfirmPassword.value) {
-            txtConfirmPassword.setCustomValidity("Le password devono essere uguali.");
-        }
-    }
-}
+
 
 

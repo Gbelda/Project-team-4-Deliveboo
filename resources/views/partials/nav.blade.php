@@ -13,7 +13,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <router-link to="/" class="nav-link">Home</router-link>
-                        <router-link to="/restaurants" class="nav-link">Restaurants</router-link>
+                        {{-- <router-link to="/restaurants" class="nav-link">Ristoranti</router-link> --}}
                     </ul>
 
                     <!-- Right Side Of Navbar -->

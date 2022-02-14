@@ -16,9 +16,9 @@ use App\User;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
@@ -31,3 +31,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->
 Route::get('restaurants/{restaurant}', function (User $restaurant) {
     return new RestaurantResource(User::find($restaurant));
 });
+
+Route::get('/{any}', function () {
+    return view('welcome');
+})->where('any', '.*')->name('home');
