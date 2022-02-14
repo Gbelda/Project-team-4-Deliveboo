@@ -30,8 +30,8 @@
                                 Non disponibile
                             @endif
                         </p>
-                        <a href="{{ route('admin.plates.show', $plate->id) }}">View</a>
-                        <a href="{{ route('admin.plates.edit', $plate->id) }}">Modify</a>
+                        <a href="{{ route('admin.plates.show', $plate->id) }}"><i class="fas fa-eye"></i></a>
+                        <a href="{{ route('admin.plates.edit', $plate->id) }}"><i class="fas fa-pencil-alt"></i></a>
                         <form action="{{ route('admin.plates.destroy', $plate->id) }}" method="post">
 
                             <button type="button" class="btn btn-danger text-white" data-bs-toggle="modal"
