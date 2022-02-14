@@ -10,6 +10,6 @@ use App\Http\Resources\RestaurantResource;
 class RestaurantController extends Controller
 {
     public function index(){
-        return RestaurantResource::collection(User::with(['categories'])->get());
+        return RestaurantResource::collection(User::with(['categories'])->orderByDesc('id')->paginate(5));
     }
 }
