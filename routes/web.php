@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Resources\RestaurantResource;
+use App\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +26,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->
 
     Route::get('/', 'HomeController@index')->name('index');
     Route::resource('plates', PlateController::class);
+});
+
+Route::get('restaurants/{restaurant}', function (User $restaurant) {
+    return new RestaurantResource(User::find($restaurant));
 });

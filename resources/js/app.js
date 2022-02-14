@@ -8,6 +8,11 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import VueRouter from 'vue-router';
+Vue.use(VueRouter);
+
+const Home = Vue.component('Home', require('./pages/Home.vue').default);
+const Restaurants = Vue.component('Restaurants', require('./pages/Restaurants.vue').default);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -18,7 +23,7 @@ window.Vue = require('vue');
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
+Vue.component('App', require('./App.vue').default);
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 /**
@@ -27,8 +32,28 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+const routes = [
+    {
+        path: '/',
+        name: 'home',
+        component: Home,
+    },
+
+    {
+        path: '/restaurants',
+        name: 'restaurants',
+        component: Restaurants,
+    },
+];
+
+const router = new VueRouter({
+    mode: 'history',
+    routes
+});
+
 const app = new Vue({
     el: '#app',
+    router
 });
 
 
