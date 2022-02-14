@@ -24,7 +24,7 @@
             <div class="mb-3">
                 <label for="image " class="form-label">Immagine</label>
                 <input type="file" name="image" id="image" class="form-control @error('image') is_invalid @enderror"
-                     aria-describedby="imageHelper" accept=".jpg, .jpeg, .png">
+                    aria-describedby="imageHelper" accept=".jpg, .jpeg, .png">
                 <small id="imageHelper" class="text-muted">Caricare un immagine .jpg/.jpeg o .png. Massimo 1mb*</small>
                 @error('image')
                     <div class="alert alert-danger">{{ $message }}</div>
@@ -35,7 +35,8 @@
                 <label for="ingredients " class="form-label @error('ingredients') is_invalid @enderror">Ingredienti</label>
                 <input type="text" name="ingredients" id="ingredients" class="form-control" placeholder=""
                     aria-describedby="ingredientsHelper">
-                <small id="ingredientsHelper" class="text-muted" value="{{ old('ingredients') }}">Scrivi gli ingredienti</small>
+                <small id="ingredientsHelper" class="text-muted" value="{{ old('ingredients') }}">Scrivi gli
+                    ingredienti</small>
                 @error('ingredients')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -44,8 +45,10 @@
             <div class="mb-3">
                 <label for="price " class="form-label">Prezzo*</label>
                 <input type="number" name="price" id="price" class="form-control @error('price') is_invalid @enderror"
-                    placeholder="0.0" step="0.01" min="0" aria-describedby="priceHelper" onkeyup="if(this.value<0){this.value= this.value * -1}" required>
-                <small id="priceHelper" class="text-muted" value="{{ old('price') }}">Inserisci il prezzo del piatto</small>
+                    placeholder="0.0" step="0.01" min="0" aria-describedby="priceHelper"
+                    onkeyup="if(this.value<0){this.value= this.value * -1}" required>
+                <small id="priceHelper" class="text-muted" value="{{ old('price') }}">Inserisci il prezzo del
+                    piatto</small>
                 @error('price')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -91,7 +94,7 @@
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="available" id="available2" value="0">
+                    <input class="form-check-input" type="radio" name="available" id="available2" value="0" required>
                     <label class="form-check-label" for="available2">
                         Non Disponibile
                     </label>

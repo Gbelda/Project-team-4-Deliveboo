@@ -15,7 +15,7 @@
             <div class="mb-3">
                 <label for="name " class="form-label @error('name') is_invalid @enderror">Nome</label>
                 <input type="text" name="name" id="name" class="form-control" placeholder="Lenovo Laptop"
-                    aria-describedby="nameHelper" value="{{ $plate->name }}">
+                    aria-describedby="nameHelper" value="{{ $plate->name }}" required>
                 <small id="nameHelper" class="text-muted">Type a name for your
                     product</small>
                 @error('name')
@@ -55,7 +55,7 @@
             <div class="mb-3">
                 <label for="price " class="form-label @error('price') is_invalid @enderror">Prezzo</label>
                 <input type="text" name="price" id="price" class="form-control" placeholder="3.33"
-                    aria-describedby="priceHelper" value="{{ $plate->price }}">
+                    aria-describedby="priceHelper" value="{{ $plate->price }}" required>
                 <small id="priceHelper" class="text-muted">Type a price for your
                     product</small>
                 @error('price')
@@ -106,7 +106,7 @@
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="available" id="available2" value="0"
                         {{ $plate->available === 0 ? 'checked' : '' }}>
-                    <label class="form-check-label" for="available2">
+                    <label class="form-check-label" for="available2" required>
                         No
                     </label>
                 </div>

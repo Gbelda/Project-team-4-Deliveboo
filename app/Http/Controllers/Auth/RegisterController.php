@@ -60,6 +60,12 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $messages = [
+            'email.unique' => 'Questa :attribute è gia esistente.',
+            'password.confirmed' => 'Le :attribute inserite devono essere uguali.',
+        ];
+
+        //$validator = Validator::make($input, $rules, $messages);
 
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
@@ -70,7 +76,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'categories' => ['required', 'exists:categories,id'],
-        ]);
+        ], $messages);
 
     }
 
@@ -109,7 +115,6 @@ class RegisterController extends Controller
             $image_path = Storage::put('user_image', $data['image']);
             $validated['image'] = $image_path;
         }
-
 
         $new_user = User::create($validated);
 
