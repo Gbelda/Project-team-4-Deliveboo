@@ -13,6 +13,8 @@ Vue.use(VueRouter);
 
 const Home = Vue.component('Home', require('./pages/Home.vue').default);
 const Restaurants = Vue.component('Restaurants', require('./pages/Restaurants.vue').default);
+const Restaurant = Vue.component('Restaurant', require('./pages/MenuShow.vue').default);
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -44,6 +46,12 @@ const routes = [
         name: 'restaurants',
         component: Restaurants,
     },
+
+    {
+        path: '/restaurants/:id',
+        name: 'restaurant',
+        component: Restaurant,
+    }
 ];
 
 const router = new VueRouter({
