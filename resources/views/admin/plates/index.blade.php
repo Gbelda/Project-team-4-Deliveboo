@@ -15,8 +15,8 @@
         <a href="{{ route('admin.plates.create') }}" role="button" class="btn btn-dark">Aggiungi un nuovo Piatto</a>
         @foreach ($plates as $plate)
             <div class="card-group">
-                <div class="card col-2">
-                    <img class="card-img-top w-25" src="{{ asset('/storage/' . $plate->image) }}" alt="">
+                <div class="card col-6">
+                    <img class="card-img-top " src="{{ asset('/storage/' . $plate->image) }}" alt="">
                     <div class="card-body">
                         <h4 class="card-title">{{ $plate->name }}</h4>
                         <p class="card-text">{{ $plate->description }}</p>
