@@ -11,8 +11,9 @@
     <title>{{ config('app.name', 'Deliveboo') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
     @yield('page_js')
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -86,6 +87,7 @@
             @yield('content')
         </main>
     </div>
+
 </body>
 
 </html>
