@@ -13,7 +13,7 @@ class PlateController extends Controller
 {
     public function index()
     {
-        // return PlateResource::collection(Plate::where($user === plate['user_id']));
+        return PlateResource::collection(Plate::all());
     }
         
 

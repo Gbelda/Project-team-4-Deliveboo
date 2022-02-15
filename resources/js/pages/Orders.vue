@@ -1,7 +1,7 @@
 <template>
 <div class="container">
   <h1>
-      Orders
+      Carrello
   </h1>
 </div>
 </template>

@@ -1963,12 +1963,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       restaurant: {},
       meta: {},
-      links: {}
+      links: {},
+      plates: [],
+      cart: []
     };
   },
   methods: {
@@ -1976,13 +1997,25 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get("/api/restaurants/" + this.$route.params.id).then(function (resp) {
-        console.log(resp.data.data);
         _this.restaurant = resp.data.data;
       });
+    },
+    GetPlates: function GetPlates() {
+      var _this2 = this;
+
+      axios.get("/api/plates").then(function (resp) {
+        _this2.plates = resp.data.data;
+      });
+    },
+    AddToCart: function AddToCart(plate) {
+      this.cart.push(plate); // this.saveProduct();
+
+      console.log(this.cart);
     }
   },
   mounted: function mounted() {
     this.GetRestaurant();
+    this.GetPlates();
   }
 });
 
@@ -38513,11 +38546,54 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("img", { attrs: { src: "/storage/" + _vm.restaurant.image, alt: "" } }),
-    _vm._v(" "),
     _c("div", { staticClass: "card-body" }, [
       _c("h3", [_vm._v(_vm._s(_vm.restaurant.restaurant_name))]),
     ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row" },
+      _vm._l(_vm.plates, function (plate) {
+        return _c(
+          "div",
+          {
+            key: plate.id,
+            staticClass: "card",
+            staticStyle: { width: "18rem" },
+          },
+          [
+            _c("img", {
+              staticClass: "card-img-top",
+              attrs: { src: "/storage/" + plate.image, alt: "..." },
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c("h5", { staticClass: "card-title" }, [
+                _vm._v(_vm._s(plate.name)),
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v("\n        " + _vm._s(plate.price) + "\n      "),
+              ]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  on: {
+                    click: function ($event) {
+                      return _vm.AddToCart(plate)
+                    },
+                  },
+                },
+                [_vm._v("Agiungi al carrello")]
+              ),
+            ]),
+          ]
+        )
+      }),
+      0
+    ),
   ])
 }
 var staticRenderFns = []
@@ -38550,7 +38626,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
-      _c("h1", [_vm._v("\r\n      Orders\r\n  ")]),
+      _c("h1", [_vm._v("\r\n      Carrello\r\n  ")]),
     ])
   },
 ]
