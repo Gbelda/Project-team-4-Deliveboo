@@ -1,9 +1,17 @@
 <template>
   <div class="container">
-    <h1>Ristoranti</h1>
+    <div class="main_header">
+      <h1>Ristoranti</h1>
+    </div>
 
     <div class="main_content d-flex">
       <div class="row justify-content-evenly col">
+        <div class="empty d-flex align-items-center justify-content-center text-danger">
+          <h3 v-if="restaurants == ''">
+            Nessun ristorante disponibile
+          </h3>
+        </div>
+
         <div
           class="card col-4 mb-3"
           style="width: 18rem"
@@ -38,17 +46,29 @@
       </div>
       <nav class="col-2 d-none d-md-block bg-light sidebar">
         <div class="sidebar-sticky">
-                <h3 class="mt-2">Categories</h3>
-                <div class="form-check" v-for="(category, index) in categories" :key="category.id">
-                    <input class="form-check-input" type="checkbox" :value="category.id" :id="'category'+index" v-model="selected.categories">
+          <h3 class="mt-2">Categories</h3>
+          <div
+            class="form-check"
+            v-for="(category, index) in categories"
+            :key="category.id"
+          >
+            <!-- <input class="form-check-input" type="checkbox" :value="category.id" :id="'category'+index" v-model="selected.categories">
                     <label class="form-check-label" :for="'category' + index">
                         {{ category.name }} 
-                    </label>
-                </div>
+                    </label> -->
+            <button
+              type="button"
+              class="btn btn-link"
+              @click="SelectCategory(category.id)"
+              :id="'category' + index"
+            >
+              {{ category.name }}
+            </button>
+          </div>
         </div>
       </nav>
     </div>
-<!-- 
+    <!-- 
     <div class="links text-center mt-5">
       <span
         class="btn text-secondary"
@@ -78,20 +98,20 @@
 export default {
   data() {
     return {
-      categories:[],
+      categories: [],
       restaurants: [],
       meta: {},
       links: {},
-      selected:{
-        categories:[]
+      selected: {
+        categories: "",
       },
     };
   },
   methods: {
     GetRestaurants() {
       axios
-        .get('/api/restaurants', {
-          params: this.selected
+        .get("/api/restaurants", {
+          params: this.selected,
         })
         .then((response) => {
           // console.log(response);
@@ -118,15 +138,19 @@ export default {
     //   this.GetRestaurants("/api/restaurants?page=" + page);
     // },
 
-    GetCategories(){
-      axios.get('/api/categories', {
-        params: _.omit(this.selected, 'categories')
-      })
-      .then((resp) => {
-        
-        this.categories = resp.data.data
-      })
-      .catch((error) => error)
+    GetCategories() {
+      axios
+        .get("/api/categories", {
+          params: _.omit(this.selected, "categories"),
+        })
+        .then((resp) => {
+          this.categories = resp.data.data;
+        })
+        .catch((error) => error);
+    },
+
+    SelectCategory(category) {
+      this.selected.categories = category;
     },
   },
 
@@ -135,16 +159,14 @@ export default {
     this.GetCategories();
   },
 
-  watch:{
-    selected:{
-      handler:function(){
-            this.GetRestaurants();
+  watch: {
+    selected: {
+      handler: function () {
+        this.GetRestaurants();
       },
-      deep: true
-    }
-  }
-
-
+      deep: true,
+    },
+  },
 };
 </script>
 

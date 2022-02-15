@@ -16,6 +16,7 @@ class RestaurantController extends Controller
     {
         $restaurants = User::withFilters(
             request()->input('categories', []))->get();
+            
         return RestaurantResource::collection($restaurants);
 
     
@@ -29,9 +30,4 @@ class RestaurantController extends Controller
         return new RestaurantResource($thisRestaurant);
     }
 
-    public function filter(Category $category){
-
-        // return RestaurantResource::collection(User::with(['categories'])->orderByDesc('id')->paginate(10));
-
-    }
 }

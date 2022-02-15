@@ -55,7 +55,7 @@ class User extends Authenticatable
             $query->where('category_id', $categories);
         });
         // return $query->when(count($categories), function ($query) use ($categories) {
-        //     $query->where('category_id', $categories);
+        //     $query->whereIn('category_id', $categories);
         // });
     }
 }

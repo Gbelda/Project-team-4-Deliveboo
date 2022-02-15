@@ -32,6 +32,7 @@ Route::get('restaurants/{restaurant}', function (User $restaurant) {
     return new RestaurantResource(User::find($restaurant));
 });
 
+
 Route::get('/{any}', function () {
     return view('welcome');
-})->where('any', '.*')->name('home');
+})->where('any', '.*');
