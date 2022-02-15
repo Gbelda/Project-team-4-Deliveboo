@@ -84,7 +84,7 @@ export default {
     },
 
     GetPlates() {
-      axios.get("/api/plates").then((resp) => {
+      axios.get("/api/plates/" + this.$route.params.id).then((resp) => {
         this.plates = resp.data.data;
       });
     },

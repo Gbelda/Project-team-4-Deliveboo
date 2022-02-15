@@ -11,9 +11,11 @@ use Illuminate\Support\Facades\Auth;
 
 class PlateController extends Controller
 {
-    public function index()
+    public function index(User $restaurant)
     {
-        return PlateResource::collection(Plate::all());
+        $plates = Plate::where('user_id', $restaurant->id)->get();
+
+        return new PlateResource($plates);
     }
         
 

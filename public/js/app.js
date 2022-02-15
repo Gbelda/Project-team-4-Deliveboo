@@ -5232,7 +5232,7 @@ __webpack_require__.r(__webpack_exports__);
     GetPlates: function GetPlates() {
       var _this2 = this;
 
-      axios.get("/api/plates").then(function (resp) {
+      axios.get("/api/plates/" + this.$route.params.id).then(function (resp) {
         _this2.plates = resp.data.data;
       });
     },
