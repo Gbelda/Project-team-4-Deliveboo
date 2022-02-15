@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import Vue from 'vue';
 export default {
   data() {
     return {
@@ -35,8 +36,19 @@ export default {
       links: {},
       plates: [],
       cart: [],
+
     };
   },
+
+  watch:{
+    cart:{
+      handler(product) {
+      localStorage.cart = JSON.stringify(product);
+    },
+    deep:true
+    }
+  },
+
   methods: {
     GetRestaurant() {
       axios.get("/api/restaurants/" + this.$route.params.id).then((resp) => {
@@ -53,7 +65,7 @@ export default {
     AddToCart(plate){
       this.cart.push(plate)
       // this.saveProduct();
-      console.log(this.cart);
+      // console.log(this.cart);
     },
 
   },
@@ -62,6 +74,18 @@ export default {
     this.GetRestaurant();
 
     this.GetPlates();
+
+    // if(localStorage.cart != undefined){
+    //   this.cart = JSON.parse(localStorage.cart)
+    // }
+
+    if (localStorage.getItem('cart')) {
+      try {
+        this.cart = JSON.parse(localStorage.cart);
+      } catch(e) {
+        localStorage.removeItem('cart');
+      }
+    }
   },
 };
 </script>
