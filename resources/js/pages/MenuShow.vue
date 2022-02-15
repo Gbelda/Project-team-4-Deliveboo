@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <img :src="'/storage/' + restaurant.image" alt />
     <div class="card-body">
       <h3>{{ restaurant.restaurant_name }}</h3>
