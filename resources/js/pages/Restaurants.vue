@@ -42,7 +42,7 @@
                 <div class="form-check" v-for="(category, index) in categories" :key="category.id">
                     <input class="form-check-input" type="checkbox" :value="category.id" :id="'category'+index" v-model="selected.categories">
                     <label class="form-check-label" :for="'category' + index">
-                        {{ category.name }} ({{ category.products_count }})
+                        {{ category.name }} 
                     </label>
                 </div>
         </div>
