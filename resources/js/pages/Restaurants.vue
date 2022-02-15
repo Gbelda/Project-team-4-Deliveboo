@@ -48,7 +48,7 @@
         </div>
       </nav>
     </div>
-
+<!-- 
     <div class="links text-center mt-5">
       <span
         class="btn text-secondary"
@@ -70,7 +70,7 @@
         @click="NextPage()"
         >Next</span
       >
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -88,9 +88,9 @@ export default {
     };
   },
   methods: {
-    GetRestaurants(url) {
+    GetRestaurants() {
       axios
-        .get(url, {
+        .get('/api/restaurants', {
           params: this.selected
         })
         .then((response) => {
@@ -102,27 +102,28 @@ export default {
         .catch((error) => error);
     },
 
-    NextPage() {
-      if (this.meta.current_page !== this.meta.last_page) {
-        this.GetRestaurants(this.links.next);
-      }
-    },
+    // NextPage() {
+    //   if (this.meta.current_page !== this.meta.last_page) {
+    //     this.GetRestaurants(this.links.next);
+    //   }
+    // },
 
-    PrevPage() {
-      if (this.meta.current_page !== 1) {
-        this.GetRestaurants(this.links.prev);
-      }
-    },
+    // PrevPage() {
+    //   if (this.meta.current_page !== 1) {
+    //     this.GetRestaurants(this.links.prev);
+    //   }
+    // },
 
-    ToPage(page) {
-      this.GetRestaurants("/api/restaurants?page=" + page);
-    },
+    // ToPage(page) {
+    //   this.GetRestaurants("/api/restaurants?page=" + page);
+    // },
 
     GetCategories(){
       axios.get('/api/categories', {
         params: _.omit(this.selected, 'categories')
       })
       .then((resp) => {
+        
         this.categories = resp.data.data
       })
       .catch((error) => error)
@@ -130,9 +131,18 @@ export default {
   },
 
   mounted() {
-    this.GetRestaurants("/api/restaurants");
+    this.GetRestaurants();
     this.GetCategories();
   },
+
+  watch:{
+    selected:{
+      handler:function(){
+            this.GetRestaurants();
+      },
+      deep: true
+    }
+  }
 
 
 };

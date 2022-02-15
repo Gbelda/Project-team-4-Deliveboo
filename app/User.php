@@ -47,4 +47,15 @@ class User extends Authenticatable
     {
         return $this->hasMany(Models\Plate::class);
     }
+
+    public function scopeWithFilters($query, $categories)
+    {
+
+         return User::whereHas('categories', function($query) use ($categories){
+            $query->where('category_id', $categories);
+        });
+        // return $query->when(count($categories), function ($query) use ($categories) {
+        //     $query->where('category_id', $categories);
+        // });
+    }
 }

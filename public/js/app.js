@@ -5350,10 +5350,10 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    GetRestaurants: function GetRestaurants(url) {
+    GetRestaurants: function GetRestaurants() {
       var _this = this;
 
-      axios.get(url, {
+      axios.get('/api/restaurants', {
         params: this.selected
       }).then(function (response) {
         // console.log(response);
@@ -5364,19 +5364,19 @@ __webpack_require__.r(__webpack_exports__);
         return error;
       });
     },
-    NextPage: function NextPage() {
-      if (this.meta.current_page !== this.meta.last_page) {
-        this.GetRestaurants(this.links.next);
-      }
-    },
-    PrevPage: function PrevPage() {
-      if (this.meta.current_page !== 1) {
-        this.GetRestaurants(this.links.prev);
-      }
-    },
-    ToPage: function ToPage(page) {
-      this.GetRestaurants("/api/restaurants?page=" + page);
-    },
+    // NextPage() {
+    //   if (this.meta.current_page !== this.meta.last_page) {
+    //     this.GetRestaurants(this.links.next);
+    //   }
+    // },
+    // PrevPage() {
+    //   if (this.meta.current_page !== 1) {
+    //     this.GetRestaurants(this.links.prev);
+    //   }
+    // },
+    // ToPage(page) {
+    //   this.GetRestaurants("/api/restaurants?page=" + page);
+    // },
     GetCategories: function GetCategories() {
       var _this2 = this;
 
@@ -5390,8 +5390,16 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    this.GetRestaurants("/api/restaurants");
+    this.GetRestaurants();
     this.GetCategories();
+  },
+  watch: {
+    selected: {
+      handler: function handler() {
+        this.GetRestaurants();
+      },
+      deep: true
+    }
   }
 });
 
@@ -42553,22 +42561,22 @@ var render = function () {
                   _vm._v(" "),
                   _c("p", { staticClass: "card-text" }, [
                     _vm._v(
-                      "\n            " +
+                      "\n              " +
                         _vm._s(restaurant.address) +
-                        "\n          "
+                        "\n            "
                     ),
                   ]),
                   _vm._v(" "),
                   _vm._l(restaurant.categories, function (category, index) {
                     return _c("small", { key: restaurant.slug + category.id }, [
                       _vm._v(
-                        "\n            " +
+                        "\n              " +
                           _vm._s(category.name) +
-                          "\n            " +
+                          "\n              " +
                           _vm._s(
                             index != restaurant.categories.length - 1 ? "|" : ""
                           ) +
-                          "\n          "
+                          "\n            "
                       ),
                     ])
                   }),
@@ -42659,9 +42667,9 @@ var render = function () {
                     },
                     [
                       _vm._v(
-                        "\n                      " +
+                        "\n                        " +
                           _vm._s(category.name) +
-                          " \n                  "
+                          " \n                    "
                       ),
                     ]
                   ),
@@ -42673,60 +42681,6 @@ var render = function () {
         ),
       ]),
     ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "links text-center mt-5" },
-      [
-        _c(
-          "span",
-          {
-            staticClass: "btn text-secondary",
-            class: _vm.meta.current_page === 1 ? "disabled" : "",
-            on: {
-              click: function ($event) {
-                return _vm.PrevPage()
-              },
-            },
-          },
-          [_vm._v("Prev")]
-        ),
-        _vm._v(" "),
-        _vm._l(_vm.meta.last_page, function (page) {
-          return _c(
-            "span",
-            {
-              key: page,
-              staticClass: "btn",
-              class:
-                _vm.meta.current_page === page ? "btn-primary" : "btn-light",
-              on: {
-                click: function ($event) {
-                  return _vm.ToPage(page)
-                },
-              },
-            },
-            [_vm._v(_vm._s(page))]
-          )
-        }),
-        _vm._v(" "),
-        _c(
-          "span",
-          {
-            staticClass: "btn text-secondary",
-            class:
-              _vm.meta.current_page === _vm.meta.last_page ? "disabled" : "",
-            on: {
-              click: function ($event) {
-                return _vm.NextPage()
-              },
-            },
-          },
-          [_vm._v("Next")]
-        ),
-      ],
-      2
-    ),
   ])
 }
 var staticRenderFns = []
@@ -58639,9 +58593,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\pj4\Project-team-4-Deliveboo\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\MAMP\htdocs\pj4\Project-team-4-Deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\pj4\Project-team-4-Deliveboo\resources\sass\admin.scss */"./resources/sass/admin.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\admin.scss */"./resources/sass/admin.scss");
 
 
 /***/ })

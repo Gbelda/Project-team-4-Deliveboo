@@ -14,8 +14,9 @@ class RestaurantController extends Controller
 {
     public function index()
     {
-
-        return RestaurantResource::collection(User::with(['categories'])->orderByDesc('id')->paginate(10));
+        $restaurants = User::withFilters(
+            request()->input('categories', []))->get();
+        return RestaurantResource::collection($restaurants);
 
     
     }
