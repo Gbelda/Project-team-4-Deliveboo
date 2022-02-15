@@ -63,13 +63,6 @@ Vue.use(VueRouter);
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-import VueLocalStorage from 'vue-localstorage'
-Vue.use(VueLocalStorage)
-
-Vue.use(VueLocalStorage, {
-    name: 'ls',
-    bind: true //created computed members from your variable declarations
-})
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
