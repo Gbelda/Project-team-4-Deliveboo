@@ -2,6 +2,7 @@
 
 use App\Models\Category;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class CategorySeeder extends Seeder
 {
@@ -22,6 +23,5 @@ class CategorySeeder extends Seeder
             $_category->slug = Str::slug($_category->name);
             $_category->save();
         }
-
     }
 }

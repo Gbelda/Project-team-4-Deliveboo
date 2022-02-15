@@ -12,7 +12,8 @@ use App\Models\Category;
 
 class RestaurantController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
         return RestaurantResource::collection(User::with(['categories'])->orderByDesc('id')->paginate(10));
 
@@ -22,11 +23,9 @@ class RestaurantController extends Controller
     public function show(User $restaurant)
     {
 
-
         $thisRestaurant = User::where('id', $restaurant->id)->first();
 
         return new RestaurantResource($thisRestaurant);
-
     }
 
     public function filter(Category $category){
@@ -35,4 +34,3 @@ class RestaurantController extends Controller
 
     }
 }
-
