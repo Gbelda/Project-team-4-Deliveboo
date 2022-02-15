@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('restaurant_name');
             $table->string('slug');
             $table->string('address');
-            $table->string('image')->default('placeholder/no_image.png');
+            $table->string('image')->default('placeholders/no_image.png');
             $table->string('vat');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

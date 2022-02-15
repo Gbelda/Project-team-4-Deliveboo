@@ -27,7 +27,7 @@
 <body>
     <div id="app">
 
-        @include('partials.nav')
+        @include('partials.admin.nav')
 
         <div class="container-fluid pt-5">
             <div class="row d-flex">
@@ -41,13 +41,13 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">
-                                    Orders
+                                    Ordini
                                 </a>
                             </li>
 
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.plates.index') }}">
-                                    Plates
+                                    Piatti
                                 </a>
                             </li>
                         </ul>

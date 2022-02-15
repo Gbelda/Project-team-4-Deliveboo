@@ -13,6 +13,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -27,7 +28,7 @@
 
 <body>
     <div id="app">
-        @include('partials.nav')
+        @include('partials.guest.nav')
         @yield('app')
 
         {{-- <main class="py-4">

@@ -1,4 +1,4 @@
-
+window.onload = function () {
 var txtPassword = document.getElementById("password");
 var txtConfirmPassword = document.getElementById("password-confirm");
 var btnSubmit = document.getElementById('submit_form')
@@ -9,4 +9,5 @@ function ConfirmPassword() {
     if (txtPassword.value != txtConfirmPassword.value) {
         txtConfirmPassword.setCustomValidity("Le password devono essere uguali.");
     }
+}
 }
