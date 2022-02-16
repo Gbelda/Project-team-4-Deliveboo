@@ -42542,7 +42542,15 @@ var render = function () {
               ]),
               _vm._v(" "),
               _c("p", { staticClass: "card-text" }, [
-                _vm._v("\n          € " + _vm._s(plate.price) + "\n        "),
+                _vm._v(
+                  "\n          € " +
+                    _vm._s(
+                      Math.round(
+                        (parseFloat(plate.price) + Number.EPSILON) * 100
+                      ) / 100
+                    ) +
+                    "\n        "
+                ),
               ]),
               _vm._v(" "),
               _c(

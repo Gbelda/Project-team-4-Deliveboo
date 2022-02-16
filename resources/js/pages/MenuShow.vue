@@ -43,7 +43,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ plate.name }}</h5>
           <p class="card-text">
-            &euro; {{ plate.price }}
+            &euro; {{ Math.round((parseFloat(plate.price) + Number.EPSILON) * 100) / 100 }}
           </p>
           <button class="btn btn-primary" @click="AddToCart(plate)">
             Agiungi al carrello

@@ -46,8 +46,10 @@ Stelle recensioni
 Quantità Piatti
 
 
-$restaurant = User::find(1);
-
-$plates = Plate::where('id', '<=', 60)->get();
-
+$restaurant = User::find(1)
+$plates = Plate::where('id', '<=', 60)->get()
 $restaurant->plates()->saveMany($plates);
+
+$cat = Category::find(10)
+$user = User::find(10)
+$user->categories()->save($cat);
