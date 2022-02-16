@@ -5146,6 +5146,17 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5210,7 +5221,9 @@ __webpack_require__.r(__webpack_exports__);
       meta: {},
       links: {},
       plates: [],
-      cart: []
+      cart: [],
+      counts: {},
+      sampleArray: ["a", "a", "b", "c"]
     };
   },
   watch: {
@@ -5236,9 +5249,16 @@ __webpack_require__.r(__webpack_exports__);
         _this2.plates = resp.data.data;
       });
     },
+    CountQuantity: function CountQuantity() {
+      this.counts = this.cart.reduce(function (acc, value) {
+        return _objectSpread(_objectSpread({}, acc), {}, _defineProperty({}, value.name, (acc[value.name] || 0) + 1));
+      }, {});
+    },
     AddToCart: function AddToCart(plate) {
       this.cart.push(plate); // this.saveProduct();
       // console.log(this.cart);
+
+      this.CountQuantity();
     }
   },
   mounted: function mounted() {
@@ -42496,7 +42516,7 @@ var render = function () {
                 "aria-expanded": "false",
               },
             },
-            [_vm._v("\n        Carrello\n      ")]
+            [_vm._v("\n          Carrello\n        ")]
           ),
           _vm._v(" "),
           _c(
@@ -42508,12 +42528,18 @@ var render = function () {
             [
               _c(
                 "ul",
-                { staticClass: "dropdown-item list-unstyled " },
-                _vm._l(_vm.cart, function (item) {
+                { staticClass: "dropdown-item list-unstyled" },
+                _vm._l(_vm.counts, function (item, value) {
                   return _c("li", [
-                    _vm._v(
-                      "\n            " + _vm._s(item.name) + "\n          "
-                    ),
+                    _c("div", { staticClass: "row justify-content-between" }, [
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(value) +
+                          " :\n                " +
+                          _vm._s(item) +
+                          "\n              "
+                      ),
+                    ]),
                   ])
                 }),
                 0
@@ -42548,7 +42574,7 @@ var render = function () {
               _vm._v(" "),
               _c("p", { staticClass: "card-text" }, [
                 _vm._v(
-                  "\n          € " +
+                  "\n          €\n          " +
                     _vm._s(
                       Math.round(
                         (parseFloat(plate.price) + Number.EPSILON) * 100

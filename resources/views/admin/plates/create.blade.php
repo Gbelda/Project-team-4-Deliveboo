@@ -47,7 +47,7 @@
                 <input type="number" name="price" id="price" class="form-control @error('price') is_invalid @enderror"
                     placeholder="0.0" step="0.01" min="0" aria-describedby="priceHelper"
                     onkeyup="if(this.value<0){this.value= this.value * -1}" required>
-                <small id="priceHelper" class="text-muted" value="{{ old('price') }}">Inserisci il prezzo del
+                <small id="priceHelper" class="text-muted" value="{{ old('price') }}">Inserire il prezzo del
                     piatto</small>
                 @error('price')
                     <div class="alert alert-danger">{{ $message }}</div>

@@ -38,7 +38,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function categories():BelongsToMany
+    public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Models\Category::class);
     }
@@ -51,7 +51,7 @@ class User extends Authenticatable
     public function scopeWithFilters($query, $categories)
     {
 
-         return User::whereHas('categories', function($query) use ($categories){
+        return User::whereHas('categories', function ($query) use ($categories) {
             $query->where('category_id', $categories);
         });
         // return $query->when(count($categories), function ($query) use ($categories) {

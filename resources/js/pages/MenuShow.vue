@@ -4,32 +4,34 @@
       <h3>{{ restaurant.restaurant_name }}</h3>
 
       <ul class="list-unstyled">
-      <li class="nav-item dropdown">
-        <a
-          id="navbarDropdown1"
-          class="nav-link dropdown-toggle"
-          href="#"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          Carrello
-        </a>
+        <li class="nav-item dropdown">
+          <a
+            id="navbarDropdown1"
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Carrello
+          </a>
 
-        <div
-          class="dropdown-menu dropdown-menu-right"
-          aria-labelledby="navbarDropdown"
-        >
-          <ul class="dropdown-item list-unstyled ">
-            <li v-for="item in cart">
-              {{ item.name }}
-            </li>
-          </ul>
-        </div>
-      </li>
+          <div
+            class="dropdown-menu dropdown-menu-right"
+            aria-labelledby="navbarDropdown"
+          >
+            <ul class="dropdown-item list-unstyled">
+              <li v-for="(item, value) in counts">
+                <div class="row justify-content-between">
+                  {{ value }} :
+                  {{ item }}
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
       </ul>
-
     </div>
 
     <div class="row justify-content-center">
@@ -43,7 +45,10 @@
         <div class="card-body">
           <h5 class="card-title">{{ plate.name }}</h5>
           <p class="card-text">
-            &euro; {{ Math.round((parseFloat(plate.price) + Number.EPSILON) * 100) / 100 }}
+            &euro;
+            {{
+              Math.round((parseFloat(plate.price) + Number.EPSILON) * 100) / 100
+            }}
           </p>
           <button class="btn btn-primary" @click="AddToCart(plate)">
             Agiungi al carrello
@@ -64,6 +69,8 @@ export default {
       links: {},
       plates: [],
       cart: [],
+      counts: {},
+      sampleArray: ["a", "a", "b", "c"],
     };
   },
 
@@ -89,10 +96,21 @@ export default {
       });
     },
 
+    CountQuantity() {
+      this.counts = this.cart.reduce(
+        (acc, value) => ({
+          ...acc,
+          [value.name]: (acc[value.name] || 0) + 1,
+        }),
+        {}
+      );
+    },
+
     AddToCart(plate) {
       this.cart.push(plate);
       // this.saveProduct();
       // console.log(this.cart);
+      this.CountQuantity();
     },
   },
 
