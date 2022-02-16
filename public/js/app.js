@@ -5206,6 +5206,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -5253,12 +5258,26 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       this.CountQuantity();
     },
-    getId: function getId(input) {
+    addQuantity: function addQuantity(input) {
       var result = this.cart.find(function (_ref) {
         var name = _ref.name;
         return name === input;
       });
       this.cart.push(result);
+      this.CountQuantity();
+    },
+    removeToCart: function removeToCart(input) {
+      var result = this.cart.find(function (_ref2) {
+        var name = _ref2.name;
+        return name === input;
+      });
+      var index = this.cart.indexOf(result);
+      console.log(result);
+
+      if (index > -1) {
+        this.cart.splice(index, 1); // 2nd parameter means remove one item only
+      }
+
       this.CountQuantity();
     }
   },
@@ -42520,43 +42539,47 @@ var render = function () {
         ),
         _vm._v(" "),
         _c(
-          "div",
-          {
-            staticClass: "dropdown-menu",
-            attrs: { "aria-labelledby": "dropdownMenuButton" },
-          },
-          [
-            _c(
-              "ul",
-              { staticClass: "list-unstyled" },
-              _vm._l(_vm.counts, function (item, value) {
-                return _c("li", [
-                  _vm._v(
-                    "\n            " +
-                      _vm._s(value) +
-                      " : " +
-                      _vm._s(item) +
-                      "\n\n            "
-                  ),
-                  _c("br"),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-primary",
-                      on: {
-                        click: function ($event) {
-                          return _vm.getId(value)
-                        },
-                      },
+          "ul",
+          { staticClass: "list-unstyled" },
+          _vm._l(_vm.counts, function (item, value) {
+            return _c("li", [
+              _vm._v(
+                "\n            " +
+                  _vm._s(value) +
+                  " : " +
+                  _vm._s(item) +
+                  "\n\n            "
+              ),
+              _c("br"),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  on: {
+                    click: function ($event) {
+                      return _vm.addQuantity(value)
                     },
-                    [_vm._v(" aggiungi ")]
-                  ),
-                ])
-              }),
-              0
-            ),
-          ]
+                  },
+                },
+                [_vm._v("\n              aggiungi\n            ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-danger",
+                  on: {
+                    click: function ($event) {
+                      return _vm.removeToCart(value)
+                    },
+                  },
+                },
+                [_vm._v("\n              elimina\n            ")]
+              ),
+            ])
+          }),
+          0
         ),
       ]),
     ]),

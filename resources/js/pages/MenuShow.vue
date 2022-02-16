@@ -14,16 +14,21 @@
         >
           Dropdown button
         </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
           <ul class="list-unstyled">
             <li v-for="(item, value) in counts">
               {{ value }} : {{ item }}
 
-              <br>
-              <button class="btn btn-primary" @click="getId(value)"> aggiungi </button>
+              <br />
+              <button class="btn btn-primary" @click="addQuantity(value)">
+                aggiungi
+              </button>
+              <button class="btn btn-danger" @click="removeToCart(value)">
+                elimina
+              </button>
             </li>
           </ul>
-        </div>
+
       </div>
     </div>
 
@@ -106,11 +111,22 @@ export default {
       this.CountQuantity();
     },
 
-    getId(input){
-      var result = this.cart.find( ({ name }) => name === input );
-      this.cart.push(result)
+    addQuantity(input) {
+      var result = this.cart.find(({ name }) => name === input);
+      this.cart.push(result);
       this.CountQuantity();
-    }
+    },
+
+    removeToCart(input) {
+      var result = this.cart.find(({ name }) => name === input);
+      const index = this.cart.indexOf(result);
+      console.log(result);
+      if (index > -1) {
+        this.cart.splice(index, 1); // 2nd parameter means remove one item only
+
+      }
+      this.CountQuantity();
+    },
   },
 
   mounted() {
