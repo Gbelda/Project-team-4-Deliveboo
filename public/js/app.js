@@ -5201,6 +5201,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -5273,9 +5278,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   mounted: function mounted() {
     this.GetRestaurant();
     this.GetPlates();
-    setTimeout(this.CountQuantity, 500); // if(localStorage.cart != undefined){
+
+    if (this.cart != []) {
+      setTimeout(this.CountQuantity, 500);
+    } // if(localStorage.cart != undefined){
     //   this.cart = JSON.parse(localStorage.cart)
     // }
+
 
     if (localStorage.getItem("cart")) {
       try {
@@ -42510,106 +42519,112 @@ var render = function () {
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "main_header d-flex justify-content-between" }, [
       _c("h3", [_vm._v(_vm._s(_vm.restaurant.restaurant_name))]),
-      _vm._v(" "),
-      _c("div", { staticClass: "dropdown" }, [
-        _c(
-          "ul",
-          { staticClass: "list-unstyled" },
-          _vm._l(_vm.counts, function (item, value) {
-            return _c("li", { key: value }, [
-              _vm._v(
-                "\n            " +
-                  _vm._s(value) +
-                  " : " +
-                  _vm._s(item) +
-                  "\n\n            "
-              ),
-              _c("br"),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary",
-                  on: {
-                    click: function ($event) {
-                      return _vm.addQuantity(value)
-                    },
-                  },
-                },
-                [_vm._v("\n              aggiungi\n            ")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-danger",
-                  on: {
-                    click: function ($event) {
-                      return _vm.removeToCart(value)
-                    },
-                  },
-                },
-                [_vm._v("\n              elimina\n            ")]
-              ),
-            ])
-          }),
-          0
-        ),
-      ]),
     ]),
     _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "row justify-content-center" },
-      _vm._l(_vm.plates, function (plate) {
-        return _c(
-          "div",
-          {
-            key: plate.id,
-            staticClass: "card col-4 me-5 mb-5",
-            staticStyle: { width: "18rem" },
-          },
-          [
-            _c("img", {
-              staticClass: "card-img-top",
-              attrs: { src: "/storage/" + plate.image, alt: "..." },
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _c("h5", { staticClass: "card-title" }, [
-                _vm._v(_vm._s(plate.name)),
-              ]),
+    _c("div", { staticClass: "main_content d-flex justify-content-center" }, [
+      _c(
+        "div",
+        { staticClass: "row justify-content-center" },
+        _vm._l(_vm.plates, function (plate) {
+          return _c(
+            "div",
+            {
+              key: plate.id,
+              staticClass: "card col-4 me-5 mb-5",
+              staticStyle: { width: "18rem" },
+            },
+            [
+              _c("img", {
+                staticClass: "card-img-top",
+                attrs: { src: "/storage/" + plate.image, alt: "..." },
+              }),
               _vm._v(" "),
-              _c("p", { staticClass: "card-text" }, [
-                _vm._v(
-                  "\n          €\n          " +
-                    _vm._s(
-                      Math.round(
-                        (parseFloat(plate.price) + Number.EPSILON) * 100
-                      ) / 100
-                    ) +
-                    "\n        "
-                ),
-              ]),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary",
-                  on: {
-                    click: function ($event) {
-                      return _vm.AddToCart(plate)
+              _c("div", { staticClass: "card-body" }, [
+                _c("h5", { staticClass: "card-title" }, [
+                  _vm._v(_vm._s(plate.name)),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "card-text" }, [
+                  _vm._v(
+                    "\n          €\n          " +
+                      _vm._s(
+                        Math.round(
+                          (parseFloat(plate.price) + Number.EPSILON) * 100
+                        ) / 100
+                      ) +
+                      "\n        "
+                  ),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary",
+                    on: {
+                      click: function ($event) {
+                        return _vm.AddToCart(plate)
+                      },
                     },
                   },
-                },
-                [_vm._v("\n          Agiungi al carrello\n        ")]
-              ),
-            ]),
-          ]
-        )
-      }),
-      0
-    ),
+                  [_vm._v("\n          Agiungi al carrello\n        ")]
+                ),
+              ]),
+            ]
+          )
+        }),
+        0
+      ),
+      _vm._v(" "),
+      _c("nav", { staticClass: "col-2 d-none d-md-block bg-light sidebar" }, [
+        _c("div", { staticClass: "sidebar-sticky" }, [
+          _c("h3", { staticClass: "mt-2" }, [_vm._v("Carrello")]),
+          _vm._v(" "),
+          _c(
+            "ul",
+            { staticClass: "list-unstyled" },
+            _vm._l(_vm.counts, function (item, value) {
+              return _c("li", { key: value }, [
+                _vm._v(
+                  "\n            " +
+                    _vm._s(value) +
+                    " : " +
+                    _vm._s(item) +
+                    "\n\n            "
+                ),
+                _c("br"),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary",
+                    on: {
+                      click: function ($event) {
+                        return _vm.addQuantity(value)
+                      },
+                    },
+                  },
+                  [_vm._v("\n              aggiungi\n            ")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-danger",
+                    on: {
+                      click: function ($event) {
+                        return _vm.removeToCart(value)
+                      },
+                    },
+                  },
+                  [_vm._v("\n              elimina\n            ")]
+                ),
+              ])
+            }),
+            0
+          ),
+        ]),
+      ]),
+    ]),
   ])
 }
 var staticRenderFns = []
