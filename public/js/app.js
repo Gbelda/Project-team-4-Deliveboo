@@ -5206,13 +5206,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -5222,7 +5215,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       links: {},
       plates: [],
       cart: [],
-      counts: {},
+      counts: [],
       sampleArray: ["a", "a", "b", "c"]
     };
   },
@@ -5259,11 +5252,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       // console.log(this.cart);
 
       this.CountQuantity();
+    },
+    getId: function getId(input) {
+      var result = this.cart.find(function (_ref) {
+        var name = _ref.name;
+        return name === input;
+      });
+      this.cart.push(result);
+      this.CountQuantity();
     }
   },
   mounted: function mounted() {
     this.GetRestaurant();
-    this.GetPlates(); // if(localStorage.cart != undefined){
+    this.GetPlates();
+    setTimeout(this.CountQuantity, 500); // if(localStorage.cart != undefined){
     //   this.cart = JSON.parse(localStorage.cart)
     // }
 
@@ -42501,52 +42503,61 @@ var render = function () {
     _c("div", { staticClass: "main_header d-flex justify-content-between" }, [
       _c("h3", [_vm._v(_vm._s(_vm.restaurant.restaurant_name))]),
       _vm._v(" "),
-      _c("ul", { staticClass: "list-unstyled" }, [
-        _c("li", { staticClass: "nav-item dropdown" }, [
-          _c(
-            "a",
-            {
-              staticClass: "nav-link dropdown-toggle",
-              attrs: {
-                id: "navbarDropdown1",
-                href: "#",
-                role: "button",
-                "data-bs-toggle": "dropdown",
-                "aria-haspopup": "true",
-                "aria-expanded": "false",
-              },
+      _c("div", { staticClass: "dropdown" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-secondary dropdown-toggle",
+            attrs: {
+              type: "button",
+              id: "dropdownMenuButton",
+              "data-bs-toggle": "dropdown",
+              "aria-haspopup": "true",
+              "aria-expanded": "false",
             },
-            [_vm._v("\n          Carrello\n        ")]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "dropdown-menu dropdown-menu-right",
-              attrs: { "aria-labelledby": "navbarDropdown" },
-            },
-            [
-              _c(
-                "ul",
-                { staticClass: "dropdown-item list-unstyled" },
-                _vm._l(_vm.counts, function (item, value) {
-                  return _c("li", [
-                    _c("div", { staticClass: "row justify-content-between" }, [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(value) +
-                          " :\n                " +
-                          _vm._s(item) +
-                          "\n              "
-                      ),
-                    ]),
-                  ])
-                }),
-                0
-              ),
-            ]
-          ),
-        ]),
+          },
+          [_vm._v("\n        Dropdown button\n      ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "dropdown-menu",
+            attrs: { "aria-labelledby": "dropdownMenuButton" },
+          },
+          [
+            _c(
+              "ul",
+              { staticClass: "list-unstyled" },
+              _vm._l(_vm.counts, function (item, value) {
+                return _c("li", [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(value) +
+                      " : " +
+                      _vm._s(item) +
+                      "\n\n            "
+                  ),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary",
+                      on: {
+                        click: function ($event) {
+                          return _vm.getId(value)
+                        },
+                      },
+                    },
+                    [_vm._v(" aggiungi ")]
+                  ),
+                ])
+              }),
+              0
+            ),
+          ]
+        ),
       ]),
     ]),
     _vm._v(" "),

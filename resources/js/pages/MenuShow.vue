@@ -3,35 +3,28 @@
     <div class="main_header d-flex justify-content-between">
       <h3>{{ restaurant.restaurant_name }}</h3>
 
-      <ul class="list-unstyled">
-        <li class="nav-item dropdown">
-          <a
-            id="navbarDropdown1"
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Carrello
-          </a>
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-bs-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <ul class="list-unstyled">
+            <li v-for="(item, value) in counts">
+              {{ value }} : {{ item }}
 
-          <div
-            class="dropdown-menu dropdown-menu-right"
-            aria-labelledby="navbarDropdown"
-          >
-            <ul class="dropdown-item list-unstyled">
-              <li v-for="(item, value) in counts">
-                <div class="row justify-content-between">
-                  {{ value }} :
-                  {{ item }}
-                </div>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
+              <br>
+              <button class="btn btn-primary" @click="getId(value)"> aggiungi </button>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <div class="row justify-content-center">
@@ -69,7 +62,7 @@ export default {
       links: {},
       plates: [],
       cart: [],
-      counts: {},
+      counts: [],
       sampleArray: ["a", "a", "b", "c"],
     };
   },
@@ -112,12 +105,19 @@ export default {
       // console.log(this.cart);
       this.CountQuantity();
     },
+
+    getId(input){
+      var result = this.cart.find( ({ name }) => name === input );
+      this.cart.push(result)
+      this.CountQuantity();
+    }
   },
 
   mounted() {
     this.GetRestaurant();
 
     this.GetPlates();
+    setTimeout(this.CountQuantity, 500);
 
     // if(localStorage.cart != undefined){
     //   this.cart = JSON.parse(localStorage.cart)
