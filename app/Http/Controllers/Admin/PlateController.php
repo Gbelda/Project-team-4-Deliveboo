@@ -43,6 +43,10 @@ class PlateController extends Controller
      */
     public function store(Request $request)
     {
+        $messages = [
+            'image.image' => 'Il file non e accettato',
+        ];
+
         $validated = $request->validate([
             'name' => ['required', 'unique:plates', 'max:200'],
             'ingredients' => ['nullable'],

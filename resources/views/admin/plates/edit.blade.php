@@ -14,10 +14,9 @@
             @method('PUT')
             <div class="mb-3">
                 <label for="name " class="form-label @error('name') is_invalid @enderror">Nome</label>
-                <input type="text" name="name" id="name" class="form-control" placeholder="Lenovo Laptop"
+                <input type="text" name="name" id="name" class="form-control"
                     aria-describedby="nameHelper" value="{{ $plate->name }}" required>
-                <small id="nameHelper" class="text-muted">Type a name for your
-                    product</small>
+                <small id="nameHelper" class="text-muted">Inserire il nome del piatto</small>
                 @error('name')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -33,8 +32,8 @@
                 </div>
                 <label for="image " class="form-label @error('image') is_invalid @enderror">Immagine Piatto</label>
                 <input type="file" name="image" id="image" class="form-control" aria-describedby="imageHelper"
-                    accept="images/*">
-                <small id="imageHelper" class="text-muted">Type a image for your product, only jpg and png</small>
+                    accept=".jpg, .jpeg, .png">
+                <small id="imageHelper" class="text-muted">Caricare un immagine .jpg/.jpeg o .png. Massimo 1mb*</small>
                 @error('image')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -44,9 +43,7 @@
                 <label for="ingredients " class="form-label @error('ingredients') is_invalid @enderror">Ingredienti</label>
                 <input type="text" name="ingredients" id="ingredients" class="form-control" placeholder=""
                     aria-describedby="ingredientsHelper" value="{{ $plate->ingredients }}">
-                <small id="ingredientsHelper" class="text-muted">Type a ingredients
-                    for
-                    your product</small>
+                <small id="ingredientsHelper" class="text-muted">Scrivi gli ingredienti</small>
                 @error('ingredients')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -56,8 +53,7 @@
                 <label for="price " class="form-label @error('price') is_invalid @enderror">Prezzo</label>
                 <input type="text" name="price" id="price" class="form-control" placeholder="3.33"
                     aria-describedby="priceHelper" value="{{ $plate->price }}" required>
-                <small id="priceHelper" class="text-muted">Type a price for your
-                    product</small>
+                <small id="priceHelper" class="text-muted">Inserire il prezzo del piatto</small>
                 @error('price')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
