@@ -5201,16 +5201,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -5272,10 +5262,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return name === input;
       });
       var index = this.cart.indexOf(result);
-      console.log(result);
 
       if (index > -1) {
-        this.cart.splice(index, 1); // 2nd parameter means remove one item only
+        this.cart.splice(index, 1);
       }
 
       this.CountQuantity();
@@ -42524,25 +42513,10 @@ var render = function () {
       _vm._v(" "),
       _c("div", { staticClass: "dropdown" }, [
         _c(
-          "button",
-          {
-            staticClass: "btn btn-secondary dropdown-toggle",
-            attrs: {
-              type: "button",
-              id: "dropdownMenuButton",
-              "data-bs-toggle": "dropdown",
-              "aria-haspopup": "true",
-              "aria-expanded": "false",
-            },
-          },
-          [_vm._v("\n        Dropdown button\n      ")]
-        ),
-        _vm._v(" "),
-        _c(
           "ul",
           { staticClass: "list-unstyled" },
           _vm._l(_vm.counts, function (item, value) {
-            return _c("li", [
+            return _c("li", { key: value }, [
               _vm._v(
                 "\n            " +
                   _vm._s(value) +

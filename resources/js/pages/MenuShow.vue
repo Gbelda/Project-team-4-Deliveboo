@@ -4,19 +4,9 @@
       <h3>{{ restaurant.restaurant_name }}</h3>
 
       <div class="dropdown">
-        <button
-          class="btn btn-secondary dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton"
-          data-bs-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          Dropdown button
-        </button>
 
           <ul class="list-unstyled">
-            <li v-for="(item, value) in counts">
+            <li v-for="(item, value) in counts" :key="value">
               {{ value }} : {{ item }}
 
               <br />
@@ -120,10 +110,8 @@ export default {
     removeToCart(input) {
       var result = this.cart.find(({ name }) => name === input);
       const index = this.cart.indexOf(result);
-      console.log(result);
       if (index > -1) {
-        this.cart.splice(index, 1); // 2nd parameter means remove one item only
-
+        this.cart.splice(index, 1)
       }
       this.CountQuantity();
     },
