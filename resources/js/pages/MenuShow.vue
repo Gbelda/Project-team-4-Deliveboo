@@ -32,9 +32,9 @@
 
     </div>
 
-    <div class="row justify-content-evenly">
+    <div class="row justify-content-center">
       <div
-        class="card"
+        class="card col-4 me-5 mb-5"
         style="width: 18rem"
         v-for="plate in plates"
         :key="plate.id"

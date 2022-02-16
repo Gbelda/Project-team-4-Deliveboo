@@ -20,7 +20,7 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <router-link to="/orders" class="nav-link">Ordini</router-link>
+                            {{-- <router-link to="/orders" class="nav-link">Ordini</router-link> --}}
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Accedi') }}</a>
                             </li>

@@ -4,12 +4,18 @@
       <h1>Ristoranti</h1>
     </div>
 
-    <div class="main_content d-flex">
+    <div class="main_content d-flex justify-content-center">
       <div class="row justify-content-evenly col">
-        <div class="empty d-flex align-items-center justify-content-center text-danger">
-          <h3 v-if="restaurants == ''">
-            Nessun ristorante disponibile
-          </h3>
+        <div
+          class="
+            empty
+            d-flex
+            align-items-center
+            justify-content-center
+            text-danger
+          "
+        >
+          <h3 v-if="restaurants == ''">Nessun ristorante disponibile</h3>
         </div>
 
         <div
@@ -43,10 +49,32 @@
             >
           </div>
         </div>
+        <div class="links text-center mt-5" v-if="meta.last_page > 1">
+          <span
+            class="btn text-secondary"
+            :class="meta.current_page === 1 ? 'disabled' : ''"
+            @click="PrevPage()"
+            >Prev</span
+          >
+          <span
+            class="btn"
+            :class="meta.current_page === page ? 'btn-primary' : 'btn-light'"
+            v-for="page in meta.last_page"
+            :key="page"
+            @click="ToPage(page)"
+            >{{ page }}</span
+          >
+          <span
+            class="btn text-secondary"
+            :class="meta.current_page === meta.last_page ? 'disabled' : ''"
+            @click="NextPage()"
+            >Next</span
+          >
+        </div>
       </div>
       <nav class="col-2 d-none d-md-block bg-light sidebar">
         <div class="sidebar-sticky">
-          <h3 class="mt-2">Categories</h3>
+          <h3 class="mt-2">Scegli la Categoria</h3>
           <div
             class="form-check"
             v-for="(category, index) in categories"
@@ -68,29 +96,6 @@
         </div>
       </nav>
     </div>
-
-    <div class="links text-center mt-5">
-      <span
-        class="btn text-secondary"
-        :class="meta.current_page === 1 ? 'disabled' : ''"
-        @click="PrevPage()"
-        >Prev</span
-      >
-      <span
-        class="btn"
-        :class="meta.current_page === page ? 'btn-primary' : 'btn-light'"
-        v-for="page in meta.last_page"
-        :key="page"
-        @click="ToPage(page)"
-        >{{ page }}</span
-      >
-      <span
-        class="btn text-secondary"
-        :class="meta.current_page === meta.last_page ? 'disabled' : ''"
-        @click="NextPage()"
-        >Next</span
-      >
-    </div> 
   </div>
 </template>
 

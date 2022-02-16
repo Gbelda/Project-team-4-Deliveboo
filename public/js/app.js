@@ -5385,6 +5385,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -42521,13 +42526,13 @@ var render = function () {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "row justify-content-evenly" },
+      { staticClass: "row justify-content-center" },
       _vm._l(_vm.plates, function (plate) {
         return _c(
           "div",
           {
             key: plate.id,
-            staticClass: "card",
+            staticClass: "card col-4 me-5 mb-5",
             staticStyle: { width: "18rem" },
           },
           [
@@ -42631,7 +42636,7 @@ var render = function () {
   return _c("div", { staticClass: "container" }, [
     _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "main_content d-flex" }, [
+    _c("div", { staticClass: "main_content d-flex justify-content-center" }, [
       _c(
         "div",
         { staticClass: "row justify-content-evenly col" },
@@ -42640,15 +42645,11 @@ var render = function () {
             "div",
             {
               staticClass:
-                "empty d-flex align-items-center justify-content-center text-danger",
+                "\n          empty\n          d-flex\n          align-items-center\n          justify-content-center\n          text-danger\n        ",
             },
             [
               _vm.restaurants == ""
-                ? _c("h3", [
-                    _vm._v(
-                      "\n          Nessun ristorante disponibile\n        "
-                    ),
-                  ])
+                ? _c("h3", [_vm._v("Nessun ristorante disponibile")])
                 : _vm._e(),
             ]
           ),
@@ -42722,6 +42723,66 @@ var render = function () {
               ]
             )
           }),
+          _vm._v(" "),
+          _vm.meta.last_page > 1
+            ? _c(
+                "div",
+                { staticClass: "links text-center mt-5" },
+                [
+                  _c(
+                    "span",
+                    {
+                      staticClass: "btn text-secondary",
+                      class: _vm.meta.current_page === 1 ? "disabled" : "",
+                      on: {
+                        click: function ($event) {
+                          return _vm.PrevPage()
+                        },
+                      },
+                    },
+                    [_vm._v("Prev")]
+                  ),
+                  _vm._v(" "),
+                  _vm._l(_vm.meta.last_page, function (page) {
+                    return _c(
+                      "span",
+                      {
+                        key: page,
+                        staticClass: "btn",
+                        class:
+                          _vm.meta.current_page === page
+                            ? "btn-primary"
+                            : "btn-light",
+                        on: {
+                          click: function ($event) {
+                            return _vm.ToPage(page)
+                          },
+                        },
+                      },
+                      [_vm._v(_vm._s(page))]
+                    )
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    {
+                      staticClass: "btn text-secondary",
+                      class:
+                        _vm.meta.current_page === _vm.meta.last_page
+                          ? "disabled"
+                          : "",
+                      on: {
+                        click: function ($event) {
+                          return _vm.NextPage()
+                        },
+                      },
+                    },
+                    [_vm._v("Next")]
+                  ),
+                ],
+                2
+              )
+            : _vm._e(),
         ],
         2
       ),
@@ -42731,7 +42792,7 @@ var render = function () {
           "div",
           { staticClass: "sidebar-sticky" },
           [
-            _c("h3", { staticClass: "mt-2" }, [_vm._v("Categories")]),
+            _c("h3", { staticClass: "mt-2" }, [_vm._v("Scegli la Categoria")]),
             _vm._v(" "),
             _vm._l(_vm.categories, function (category, index) {
               return _c(
@@ -42765,60 +42826,6 @@ var render = function () {
         ),
       ]),
     ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "links text-center mt-5" },
-      [
-        _c(
-          "span",
-          {
-            staticClass: "btn text-secondary",
-            class: _vm.meta.current_page === 1 ? "disabled" : "",
-            on: {
-              click: function ($event) {
-                return _vm.PrevPage()
-              },
-            },
-          },
-          [_vm._v("Prev")]
-        ),
-        _vm._v(" "),
-        _vm._l(_vm.meta.last_page, function (page) {
-          return _c(
-            "span",
-            {
-              key: page,
-              staticClass: "btn",
-              class:
-                _vm.meta.current_page === page ? "btn-primary" : "btn-light",
-              on: {
-                click: function ($event) {
-                  return _vm.ToPage(page)
-                },
-              },
-            },
-            [_vm._v(_vm._s(page))]
-          )
-        }),
-        _vm._v(" "),
-        _c(
-          "span",
-          {
-            staticClass: "btn text-secondary",
-            class:
-              _vm.meta.current_page === _vm.meta.last_page ? "disabled" : "",
-            on: {
-              click: function ($event) {
-                return _vm.NextPage()
-              },
-            },
-          },
-          [_vm._v("Next")]
-        ),
-      ],
-      2
-    ),
   ])
 }
 var staticRenderFns = [
