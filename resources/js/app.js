@@ -11,7 +11,7 @@ window.Vue = require('vue');
 
 
 Vue.component('App', require('./App.vue').default);
-const Home = Vue.component('Home', require('./pages/Home.vue').default);
+//const Home = Vue.component('Home', require('./pages/Home.vue').default);
 const Restaurants = Vue.component('Restaurants', require('./pages/Restaurants.vue').default);
 const Restaurant = Vue.component('Restaurant', require('./pages/MenuShow.vue').default);
 const Orders = Vue.component('Orders', require('./pages/Orders.vue').default);
@@ -19,16 +19,9 @@ const Orders = Vue.component('Orders', require('./pages/Orders.vue').default);
 const routes = [
     {
         path: '/',
-        name: 'home',
-        component: Home,
-    },
-
-    {
-        path: '/restaurants',
         name: 'restaurants',
         component: Restaurants,
     },
-
     {
         path: '/restaurants/:id',
         name: 'restaurant',

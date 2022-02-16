@@ -1,8 +1,76 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+/* utility */
+#nav_guest {
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    .nav_guest {
+        background-color: $black;
+        border-radius: 20px;
+        color: $brand-color;
+
+        .col-2 img {
+            width: 6rem;
+        }
+    }
+}
+.text-brand {
+    color: $brand-color;
+}
+/* /utility */
+
+main {
+    header {
+        background-image: url("../img/jumbo/jumbo-onda.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 7rem;
+        .content-left {
+            h1 {
+                font-size: 6rem;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .section_best {
+        .paragraph_title {
+            color: $black;
+            h2 {
+                font-weight: bold;
+                font-size: 4rem;
+            }
+            #horizontal_rule {
+                height: 1rem;
+                padding: 0.25rem;
+                border-radius: 10px;
+                background-color: $black;
+            }
+        }
+
+        .background_brand {
+            background-color: $secondary_color;
+            .card_restaurant {
+                height: 5rem;
+                border: 1px solid $black;
+                border-radius: 5px;
+            }
+            .card_plate {
+                height: 5rem;
+                border: 1px solid $black;
+                border-radius: 5px;
+            }
+
+            //background-image: linear-gradient(to right, $secondary_color, $brand-color);
+        }
+    }
+}
