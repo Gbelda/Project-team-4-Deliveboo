@@ -68,7 +68,7 @@
         </div>
       </nav>
     </div>
-    <!-- 
+
     <div class="links text-center mt-5">
       <span
         class="btn text-secondary"
@@ -90,7 +90,7 @@
         @click="NextPage()"
         >Next</span
       >
-    </div> -->
+    </div> 
   </div>
 </template>
 

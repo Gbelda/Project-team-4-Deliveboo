@@ -18,7 +18,7 @@ class CreatePlatesTable extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->text('ingredients')->nullable();
-            $table->string('image')->default('placeholders/no_image.png');
+            $table->string('image')->default('placeholders/no_plate_image.png');
             $table->string('price');
             $table->boolean('available');
             $table->timestamps();

@@ -44,3 +44,10 @@ Mappa Ristoranti in HomePage
 Media prezzo ristorante
 Stelle recensioni 
 Quantità Piatti
+
+
+$restaurant = User::find(1);
+
+$plates = Plate::where('id', '<=', 60)->get();
+
+$restaurant->plates()->saveMany($plates);

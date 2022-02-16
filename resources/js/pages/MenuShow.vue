@@ -32,7 +32,7 @@
 
     </div>
 
-    <div class="row">
+    <div class="row justify-content-evenly">
       <div
         class="card"
         style="width: 18rem"
@@ -43,7 +43,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ plate.name }}</h5>
           <p class="card-text">
-            {{ plate.price }}
+            &euro; {{ plate.price }}
           </p>
           <button class="btn btn-primary" @click="AddToCart(plate)">
             Agiungi al carrello

@@ -42521,7 +42521,7 @@ var render = function () {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "row" },
+      { staticClass: "row justify-content-evenly" },
       _vm._l(_vm.plates, function (plate) {
         return _c(
           "div",
@@ -42542,7 +42542,7 @@ var render = function () {
               ]),
               _vm._v(" "),
               _c("p", { staticClass: "card-text" }, [
-                _vm._v("\n          " + _vm._s(plate.price) + "\n        "),
+                _vm._v("\n          € " + _vm._s(plate.price) + "\n        "),
               ]),
               _vm._v(" "),
               _c(
@@ -42757,6 +42757,60 @@ var render = function () {
         ),
       ]),
     ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "links text-center mt-5" },
+      [
+        _c(
+          "span",
+          {
+            staticClass: "btn text-secondary",
+            class: _vm.meta.current_page === 1 ? "disabled" : "",
+            on: {
+              click: function ($event) {
+                return _vm.PrevPage()
+              },
+            },
+          },
+          [_vm._v("Prev")]
+        ),
+        _vm._v(" "),
+        _vm._l(_vm.meta.last_page, function (page) {
+          return _c(
+            "span",
+            {
+              key: page,
+              staticClass: "btn",
+              class:
+                _vm.meta.current_page === page ? "btn-primary" : "btn-light",
+              on: {
+                click: function ($event) {
+                  return _vm.ToPage(page)
+                },
+              },
+            },
+            [_vm._v(_vm._s(page))]
+          )
+        }),
+        _vm._v(" "),
+        _c(
+          "span",
+          {
+            staticClass: "btn text-secondary",
+            class:
+              _vm.meta.current_page === _vm.meta.last_page ? "disabled" : "",
+            on: {
+              click: function ($event) {
+                return _vm.NextPage()
+              },
+            },
+          },
+          [_vm._v("Next")]
+        ),
+      ],
+      2
+    ),
   ])
 }
 var staticRenderFns = [
