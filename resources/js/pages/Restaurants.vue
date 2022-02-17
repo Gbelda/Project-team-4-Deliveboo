@@ -18,7 +18,7 @@
         </div>
       </div>
     </header>
-    <home-layout></home-layout>
+    <!-- <home-layout></home-layout> -->
     <div class="carousel container my-5">
       <!-- .best_restaurants_section -->
       <section class="best_restaurants_section">
