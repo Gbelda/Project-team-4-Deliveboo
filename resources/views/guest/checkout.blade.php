@@ -1,9 +1,9 @@
 @extends('layouts.spa')
 
 @section('page_js')
-<script src="https://js.braintreegateway.com/web/3.85.2/js/client.min.js" defer></script>
-<script src="https://js.braintreegateway.com/web/3.85.2/js/hosted-fields.min.js" defer></script>
-<script src="{{ asset('js/checkout.js') }}" defer></script>
+    <script src="https://js.braintreegateway.com/web/3.85.2/js/client.min.js" defer></script>
+    <script src="https://js.braintreegateway.com/web/3.85.2/js/hosted-fields.min.js" defer></script>
+    <script src="{{ asset('js/checkout.js') }}" defer></script>
 @endsection
 
 @section('page_css')
@@ -56,24 +56,59 @@
 
 
             </div>
+
             <div class="col-md-8 order-md-1">
-                
                 <div class="form-container">
 
+                    <h4 class="mb-3">Indirizzo di Consegna</h4>
+                    <form class="needs-validation" action="#">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName">Nome</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="" value=""
+                                    required="">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName">Cognome</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Esempio@dominio.it">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="address">Indirizzo</label>
+                            <input type="text" class="form-control" id="address" placeholder="Via/Piazza" required="">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone_number">Numero di Tel.</label>
+                            <input type="number" class="form-control" id="phone_number" placeholder="+39" required="">
+                        </div>
+
+                        <hr class="mb-4">
+
+
+                    </form>
+
                     <header>
-                        <h1>Payment Method</h1>
+                        <h1>Carta di Credito</h1>
                     </header>
 
-                    <form id="my-sample-form" class="scale-down">
+                    <div id="my-sample-form" class="scale-down">
                         <div class="cardinfo-card-number">
-                            <label class="cardinfo-label" for="card-number">Card Number</label>
+                            <label class="cardinfo-label" for="card-number">Numero carta</label>
                             <div class='input-wrapper' id="card-number"></div>
                             <div id="card-image"></div>
                         </div>
 
                         <div class="cardinfo-wrapper">
                             <div class="cardinfo-exp-date">
-                                <label class="cardinfo-label" for="expiration-date">Valid Thru</label>
+                                <label class="cardinfo-label" for="expiration-date">Scadenza</label>
                                 <div class='input-wrapper' id="expiration-date"></div>
                             </div>
 
@@ -82,7 +117,9 @@
                                 <div class='input-wrapper' id="cvv"></div>
                             </div>
                         </div>
-                    </form>
+                    </div>
+
+
 
                     <input id="button-pay" type="submit" value="Continue" />
                 </div>

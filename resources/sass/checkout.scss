@@ -17,24 +17,24 @@ General
 --------------------*/
 
 // Position form at the center of the page
-html,
-body {
-  font-size: 100%;
-  height: 100%;
-  color: $darkBlue;
-  font-family: sans-serif;
-  padding: 0;
-  margin: 0;
-}
+// html,
+// body {
+//   font-size: 100%;
+//   height: 100%;
+//   color: $darkBlue;
+//   font-family: sans-serif;
+//   padding: 0;
+//   margin: 0;
+// }
 
-header {
-  z-index: 2;
-  transform: translate(0, 5.5em);
-  transition: all .5s ease;
-  &.header-slide {
-    transform: translate(0, 0);
-  }
-}
+// header {
+//   z-index: 2;
+//   // transform: translate(0, 5.5em);
+//   // transition: all .5s ease;
+//   // &.header-slide {
+//   //   transform: translate(0, 0);
+//   // }
+// }
 
 h1 {
   font-weight: 100;
@@ -44,12 +44,12 @@ h1 {
 
 .form-container {
   display: flex;
-  background-color: #EEE;
+  // background-color: #EEE;
   justify-content: center;
   align-items: center;
   height: 100%;
   flex-direction: column;
-  border: 1em solid #fff;
+  // border: 1em solid #fff;
   box-sizing: border-box;
   position: relative;
   
@@ -86,8 +86,8 @@ h1 {
 #my-sample-form {
   background-color: #FFF;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
-  padding: 8em 3em 2em;
-  width: 20em;
+  padding: 2em 2em 1em;
+  width: 30em;
   margin-bottom: 2em;
   transition: all 600ms $bouncy;
   animation: cardIntro 500ms $bouncy;
