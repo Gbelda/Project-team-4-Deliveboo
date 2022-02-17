@@ -1,70 +1,4 @@
 <template>
-<<<<<<< HEAD
-    <div class="container-fluid jumbo p-0">
-        <header class="d-flex justify-content-center">
-            <div class="row container content justify-content-center flex-wrap">
-                <div class="content-left col-12 col-md-6">
-                    <h1>
-                        Il cibo che ami
-                        <span class="text-brand">quando</span> e
-                        <span class="text-brand">dove</span> vuoi tu!
-                    </h1>
-                </div>
-                <div class="content-right col-12 col-sm-6">
-                    <img
-                        class="img-fluid"
-                        src="../../img/jumbo/ciclista-arancione.png"
-                        alt="immagine artistica di un rider"
-                    />
-                </div>
-            </div>
-        </header>
-
-        <!-- .larger_container -->
-        <div class="larger_container container-fluid d-flex">
-            <!-- .sidebar -->
-            <aside class="sidebar d-flex col-2">
-                <nav class="d-none d-md-block bg-light">
-                    <div class="sidebar-sticky">
-                        <h3 class="mt-2">Scegli la Categoria</h3>
-                        <ul
-                            class="form-check"
-                            v-for="(category, index) in categories"
-                            :key="category.id"
-                        >
-                            <!-- <input class="form-check-input" type="checkbox" :value="category.id" :id="'category'+index" v-model="selected.categories">
-                    <label class="form-check-label" :for="'category' + index">
-                        {{ category.name }} 
-                    </label> -->
-                            <li
-                                type="button"
-                                class="btn btn-link"
-                                @click="SelectCategory(category.id)"
-                                :id="'category' + index"
-                            >
-                                {{ category.name }}
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </aside>
-            <!-- /.sidebar -->
-
-            <!-- .right_container -->
-            <div class="right_container col-10">
-                <!-- .best_restaurants_section -->
-                <section class="best_restaurants_section">
-                    <div class="paragraph_title">
-                        <div class="row">
-                            <div class="col-6">
-                                <h2>
-                                    I migliori ristoranti del mese di Milano
-                                </h2>
-                                <div class="horizontal_rule"></div>
-                            </div>
-                        </div>
-                    </div>
-=======
   <div class="container-fluid jumbo p-0">
     <header class="d-flex justify-content-center">
       <div class="row container content justify-content-center flex-wrap">
@@ -84,6 +18,10 @@
         </div>
       </div>
     </header>
+
+    <div class="carousel">
+      
+    </div>
 
     <div class="container-fluid d-flex">
       <!-- .sidebar -->
@@ -132,7 +70,6 @@
               </div>
             </div>
           </div>
->>>>>>> d4a7f5e1ef8fcec4f1063672b67c4845db542fad
 
           <!-- #best_restaurants_carousel -->
           <div
@@ -339,37 +276,6 @@
         </section>
         <!-- /.main_content -->
 
-<<<<<<< HEAD
-                <!-- .best_plate_section -->
-                <section class="best_plate_section rounded">
-                    <div class="paragraph_plate_day">
-                        <div class="row">
-                            <div class="col-3">
-                                <h2>Piatto del giorno</h2>
-                                <div class="horizontal_rule"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="plate_of_day">
-                        <img src="../../img/main/plate_of_day.png" alt="" />
-                        <div class="plate_of_day_body">
-                            <h4>Squisito hamburger menu, provalo subito!</h4>
-                            <h6 id="title_h6">A soli 5,99 €</h6>
-                            <button
-                                class="btn btn-primary"
-                                @click="AddToCart(plate)"
-                            >
-                                Aggiungi al carrello
-                            </button>
-                        </div>
-                    </div>
-                </section>
-                <!-- .best_plate_section -->
-            </div>
-            <!-- /.right_container -->
-        </div>
-        <!-- /.larger_container -->
-=======
         <!-- .best_plate_section -->
         <section class="best_plate_section rounded">
           <div class="paragraph_plate_day">
@@ -394,7 +300,6 @@
         <!-- .best_plate_section -->
       </div>
       <!-- /.right_container -->
->>>>>>> d4a7f5e1ef8fcec4f1063672b67c4845db542fad
     </div>
   </div>
 </template>
