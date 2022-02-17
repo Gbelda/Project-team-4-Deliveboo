@@ -15,11 +15,11 @@ class RestaurantController extends Controller
     public function index()
     {
         if(!request()->input('categories', []) || request()->input('categories', [])[0] == null){
-            $restaurants = User::with(['categories'])->paginate(10);
+            $restaurants = User::with(['categories'])->paginate(8);
 
         }else{
             $restaurants = User::withFilters(
-                request()->input('categories', []))->with(['categories'])->paginate(10);
+                request()->input('categories', []))->with(['categories'])->paginate(8);
 
         }
             
