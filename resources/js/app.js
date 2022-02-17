@@ -18,7 +18,7 @@ const Restaurant = Vue.component(
     "Restaurant",
     require("./pages/MenuShow.vue").default
 );
-const Orders = Vue.component("Orders", require("./pages/Orders.vue").default);
+
 
 const routes = [
     {
@@ -30,12 +30,7 @@ const routes = [
         path: "/restaurants/:id",
         name: "restaurant",
         component: Restaurant,
-    },
-    {
-        path: "/orders",
-        name: "orders",
-        component: Orders,
-    },
+    },,
 ];
 
 const router = new VueRouter({
