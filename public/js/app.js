@@ -5606,49 +5606,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5657,7 +5614,7 @@ __webpack_require__.r(__webpack_exports__);
       meta: {},
       links: {},
       selected: {
-        categories: ""
+        categories: []
       }
     };
   },
@@ -42815,25 +42772,67 @@ var render = function () {
               _vm._v(" "),
               _vm._l(_vm.categories, function (category, index) {
                 return _c(
-                  "ul",
+                  "div",
                   { key: category.id, staticClass: "form-check" },
                   [
-                    _c(
-                      "li",
-                      {
-                        staticClass: "btn btn-link",
-                        attrs: { type: "button", id: "category" + index },
-                        on: {
-                          click: function ($event) {
-                            return _vm.SelectCategory(category.id)
-                          },
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.selected.categories,
+                          expression: "selected.categories",
                         },
+                      ],
+                      staticClass: "form-check-input",
+                      attrs: { type: "checkbox", id: "category" + index },
+                      domProps: {
+                        value: category.id,
+                        checked: Array.isArray(_vm.selected.categories)
+                          ? _vm._i(_vm.selected.categories, category.id) > -1
+                          : _vm.selected.categories,
+                      },
+                      on: {
+                        change: function ($event) {
+                          var $$a = _vm.selected.categories,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = category.id,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 &&
+                                _vm.$set(
+                                  _vm.selected,
+                                  "categories",
+                                  $$a.concat([$$v])
+                                )
+                            } else {
+                              $$i > -1 &&
+                                _vm.$set(
+                                  _vm.selected,
+                                  "categories",
+                                  $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                )
+                            }
+                          } else {
+                            _vm.$set(_vm.selected, "categories", $$c)
+                          }
+                        },
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "label",
+                      {
+                        staticClass: "form-check-label",
+                        attrs: { for: "category" + index },
                       },
                       [
                         _vm._v(
-                          "\n                            " +
+                          "\n              " +
                             _vm._s(category.name) +
-                            "\n                        "
+                            "\n            "
                         ),
                       ]
                     ),
@@ -42959,15 +42958,11 @@ var render = function () {
                   "div",
                   {
                     staticClass:
-                      "empty d-flex align-items-center justify-content-center text-danger",
+                      "\n              empty\n              d-flex\n              align-items-center\n              justify-content-center\n              text-danger\n            ",
                   },
                   [
                     _vm.restaurants == ""
-                      ? _c("h3", [
-                          _vm._v(
-                            "\n                            Nessun ristorante disponibile\n                        "
-                          ),
-                        ])
+                      ? _c("h3", [_vm._v("Nessun ristorante disponibile")])
                       : _vm._e(),
                   ]
                 ),
@@ -42995,17 +42990,17 @@ var render = function () {
                         [
                           _c("h5", { staticClass: "card-title" }, [
                             _vm._v(
-                              "\n                                " +
+                              "\n                " +
                                 _vm._s(restaurant.restaurant_name) +
-                                "\n                            "
+                                "\n              "
                             ),
                           ]),
                           _vm._v(" "),
                           _c("p", { staticClass: "card-text" }, [
                             _vm._v(
-                              "\n                                " +
+                              "\n                " +
                                 _vm._s(restaurant.address) +
-                                "\n                            "
+                                "\n              "
                             ),
                           ]),
                           _vm._v(" "),
@@ -43017,16 +43012,16 @@ var render = function () {
                                 { key: restaurant.slug + category.id },
                                 [
                                   _vm._v(
-                                    "\n                                " +
+                                    "\n                " +
                                       _vm._s(category.name) +
-                                      "\n                                " +
+                                      "\n                " +
                                       _vm._s(
                                         index !=
                                           restaurant.categories.length - 1
                                           ? "|"
                                           : ""
                                       ) +
-                                      "\n                            "
+                                      "\n              "
                                   ),
                                 ]
                               )
@@ -43121,6 +43116,7 @@ var render = function () {
           _vm._v(" "),
           _c("div", { staticClass: "plate_of_day" }, [
             _c("img", {
+              staticClass: "w-25",
               attrs: {
                 src: __webpack_require__(/*! ../../img/main/plate_of_day.png */ "./resources/img/main/plate_of_day.png"),
                 alt: "",
@@ -43142,11 +43138,7 @@ var render = function () {
                     },
                   },
                 },
-                [
-                  _vm._v(
-                    "\n                            Aggiungi al carrello\n                        "
-                  ),
-                ]
+                [_vm._v("\n              Aggiungi al carrello\n            ")]
               ),
             ]),
           ]),
@@ -43169,13 +43161,11 @@ var staticRenderFns = [
         [
           _c("div", { staticClass: "content-left col-12 col-md-6" }, [
             _c("h1", [
-              _vm._v(
-                "\n                        Il cibo che ami\n                        "
-              ),
+              _vm._v("\n          Il cibo che ami\n          "),
               _c("span", { staticClass: "text-brand" }, [_vm._v("quando")]),
-              _vm._v(" e\n                        "),
+              _vm._v(" e\n          "),
               _c("span", { staticClass: "text-brand" }, [_vm._v("dove")]),
-              _vm._v(" vuoi tu!\n                    "),
+              _vm._v(" vuoi tu!\n        "),
             ]),
           ]),
           _vm._v(" "),
@@ -43249,20 +43239,12 @@ var staticRenderFns = [
       _c("div", { staticClass: "carousel-caption text-start" }, [
         _c("h3", [_vm._v("da Marco")]),
         _vm._v(" "),
-        _c("h6", [
-          _vm._v(
-            "\n                                        La migliore pizza d'Italia... altro\n                                        che Napoli\n                                    "
-          ),
-        ]),
+        _c("h6", [_vm._v("La migliore pizza d'Italia... altro che Napoli")]),
         _vm._v(" "),
         _c(
           "a",
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
-          [
-            _vm._v(
-              "\n                                        Provala subito\n                                    "
-            ),
-          ]
+          [_vm._v("\n                    Provala subito\n                  ")]
         ),
       ]),
     ])
@@ -43276,19 +43258,13 @@ var staticRenderFns = [
         _c("h3", [_vm._v("Da Giovanni")]),
         _vm._v(" "),
         _c("h6", [
-          _vm._v(
-            "\n                                        Il miglior sushi di Milano l'ho\n                                        facciamo solo noi!\n                                    "
-          ),
+          _vm._v("Il miglior sushi di Milano l'ho facciamo solo noi!"),
         ]),
         _vm._v(" "),
         _c(
           "button",
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
-          [
-            _vm._v(
-              "\n                                        Provalo subito\n                                    "
-            ),
-          ]
+          [_vm._v("\n                    Provalo subito\n                  ")]
         ),
       ]),
     ])
@@ -43301,20 +43277,12 @@ var staticRenderFns = [
       _c("div", { staticClass: "carousel-caption text-end" }, [
         _c("h3", [_vm._v("Da Paolo")]),
         _vm._v(" "),
-        _c("h6", [
-          _vm._v(
-            "\n                                        I migliori panini di Milano, buoni e\n                                        poco costosi\n                                    "
-          ),
-        ]),
+        _c("h6", [_vm._v("I migliori panini di Milano, buoni e poco costosi")]),
         _vm._v(" "),
         _c(
           "button",
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
-          [
-            _vm._v(
-              "\n                                        Provali subito\n                                    "
-            ),
-          ]
+          [_vm._v("\n                    Provali subito\n                  ")]
         ),
       ]),
     ])
