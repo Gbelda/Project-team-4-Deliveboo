@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "@popperjs/core": "^2.11.2",
+        "express": "^4.17.3",
         "vue-localstorage": "^0.6.2",
         "vue-router": "^3.5.3"
     }
