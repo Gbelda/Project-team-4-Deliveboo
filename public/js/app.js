@@ -42801,7 +42801,7 @@ var render = function () {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "container-fluid d-flex mt-5 pt-5 larger_container" },
+      { staticClass: "larger_container container-fluid d-flex mt-5 pt-5" },
       [
         _c("aside", { staticClass: "sidebar d-flex col-2" }, [
           _c("nav", { staticClass: "d-none d-md-block bg-light" }, [
@@ -43058,48 +43058,38 @@ var render = function () {
             ]
           ),
           _vm._v(" "),
-          _c(
-            "section",
-            { staticClass: "best_plate_section rounded text-center" },
-            [
-              _vm._m(8),
+          _c("section", { staticClass: "best_plate_section rounded" }, [
+            _vm._m(8),
+            _vm._v(" "),
+            _c("div", { staticClass: "plate_of_day" }, [
+              _c("img", {
+                staticClass: "w-25",
+                attrs: {
+                  src: __webpack_require__(/*! ../../img/main/plate_of_day.png */ "./resources/img/main/plate_of_day.png"),
+                  alt: "",
+                },
+              }),
               _vm._v(" "),
-              _c("div", { staticClass: "plate_of_day" }, [
-                _c("img", {
-                  staticClass: "w-25",
-                  attrs: {
-                    src: __webpack_require__(/*! ../../img/main/plate_of_day.png */ "./resources/img/main/plate_of_day.png"),
-                    alt: "",
-                  },
-                }),
+              _c("div", { staticClass: "plate_of_day_body" }, [
+                _c("h4", [_vm._v("Squisito hamburger menu, provalo subito!")]),
                 _vm._v(" "),
-                _c("div", { staticClass: "plate_of_day_body" }, [
-                  _c("h4", [
-                    _vm._v("Squisito hamburger menu, provalo subito!"),
-                  ]),
-                  _vm._v(" "),
-                  _c("h6", [_vm._v("A soli 5,99 €")]),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-primary",
-                      on: {
-                        click: function ($event) {
-                          return _vm.AddToCart(_vm.plate)
-                        },
+                _c("h6", [_vm._v("A soli 5,99 €")]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary",
+                    on: {
+                      click: function ($event) {
+                        return _vm.AddToCart(_vm.plate)
                       },
                     },
-                    [
-                      _vm._v(
-                        "\n              Aggiungi al carrello\n            "
-                      ),
-                    ]
-                  ),
-                ]),
+                  },
+                  [_vm._v("\n              Aggiungi al carrello\n            ")]
+                ),
               ]),
-            ]
-          ),
+            ]),
+          ]),
         ]),
       ]
     ),

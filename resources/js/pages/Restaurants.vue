@@ -154,7 +154,7 @@
       <!-- /.best_restaurants_section -->
     </div>
 
-    <div class="container-fluid d-flex mt-5 pt-5 larger_container">
+    <div class="larger_container container-fluid d-flex mt-5 pt-5">
       <!-- .sidebar -->
       <aside class="sidebar d-flex col-2">
         <nav class="d-none d-md-block bg-light">
@@ -268,7 +268,7 @@
         <!-- /.main_content -->
 
         <!-- .best_plate_section -->
-        <section class="best_plate_section rounded text-center">
+        <section class="best_plate_section rounded">
           <div class="paragraph_plate_day">
             <div class="row">
               <div class="col">
@@ -287,7 +287,7 @@
               </button>
             </div>
           </div>
-        </section>
+        </section> 
         <!-- .best_plate_section -->
       </div>
       <!-- /.right_container -->
