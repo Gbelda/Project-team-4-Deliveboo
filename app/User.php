@@ -52,10 +52,10 @@ class User extends Authenticatable
     {
 
         return User::whereHas('categories', function ($query) use ($categories) {
-            $query->where('category_id', $categories);
+            $query->whereIn('category_id', $categories);
         });
         // return $query->when(count($categories), function ($query) use ($categories) {
-        //     $query->whereIn('category_id', $categories);
+        //     $query->where('category_id', $categories);
         // });
     }
 }
