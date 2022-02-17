@@ -9,6 +9,7 @@ require("./bootstrap");
 window.Vue = require("vue");
 
 Vue.component("App", require("./App.vue").default);
+Vue.component('home-layout', require('./components/home-layout.vue').default);
 //const Home = Vue.component('Home', require('./pages/Home.vue').default);
 const Restaurants = Vue.component(
     "Restaurants",
