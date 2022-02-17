@@ -15,7 +15,7 @@ class RestaurantController extends Controller
     public function index()
     {
         $restaurants = User::withFilters(
-            request()->input('categories', []))->with(['categories'])->paginate(6);
+            request()->input('categories', []))->with(['categories'])->paginate(10);
             
         return RestaurantResource::collection($restaurants);
 
