@@ -42799,263 +42799,300 @@ var render = function () {
       ]),
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "container-fluid d-flex mt-5 pt-5" }, [
-      _c("aside", { staticClass: "sidebar d-flex col-2" }, [
-        _c("nav", { staticClass: "d-none d-md-block bg-light" }, [
-          _c(
-            "div",
-            { staticClass: "sidebar-sticky" },
-            [
-              _c("h3", { staticClass: "mt-2" }, [
-                _vm._v("Scegli la Categoria"),
-              ]),
-              _vm._v(" "),
-              _vm._l(_vm.categories, function (category, index) {
-                return _c(
-                  "div",
-                  { key: category.id, staticClass: "form-check" },
-                  [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.selected.categories,
-                          expression: "selected.categories",
-                        },
-                      ],
-                      staticClass: "form-check-input",
-                      attrs: { type: "checkbox", id: "category" + index },
-                      domProps: {
-                        value: category.id,
-                        checked: Array.isArray(_vm.selected.categories)
-                          ? _vm._i(_vm.selected.categories, category.id) > -1
-                          : _vm.selected.categories,
-                      },
-                      on: {
-                        change: function ($event) {
-                          var $$a = _vm.selected.categories,
-                            $$el = $event.target,
-                            $$c = $$el.checked ? true : false
-                          if (Array.isArray($$a)) {
-                            var $$v = category.id,
-                              $$i = _vm._i($$a, $$v)
-                            if ($$el.checked) {
-                              $$i < 0 &&
-                                _vm.$set(
-                                  _vm.selected,
-                                  "categories",
-                                  $$a.concat([$$v])
-                                )
-                            } else {
-                              $$i > -1 &&
-                                _vm.$set(
-                                  _vm.selected,
-                                  "categories",
-                                  $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                                )
-                            }
-                          } else {
-                            _vm.$set(_vm.selected, "categories", $$c)
-                          }
-                        },
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "label",
-                      {
-                        staticClass: "form-check-label",
-                        attrs: { for: "category" + index },
-                      },
-                      [
-                        _vm._v(
-                          "\n              " +
-                            _vm._s(category.name) +
-                            "\n            "
-                        ),
-                      ]
-                    ),
-                  ]
-                )
-              }),
-            ],
-            2
-          ),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "right_container col-10" }, [
-        _c(
-          "section",
-          { staticClass: "main_content d-flex justify-content-center " },
-          [
+    _c(
+      "div",
+      { staticClass: "larger_container container-fluid d-flex mt-5 pt-5" },
+      [
+        _c("aside", { staticClass: "sidebar d-flex col-2" }, [
+          _c("nav", { staticClass: "d-none d-md-block bg-light" }, [
             _c(
               "div",
-              { staticClass: "row justify-content-evenly col" },
+              { staticClass: "sidebar-sticky" },
               [
-                _c("h2", { staticClass: "text-center" }, [
-                  _vm._v("Ristoranti filtrati"),
+                _c("h3", { staticClass: "mt-2" }, [
+                  _vm._v("Scegli la Categoria"),
                 ]),
                 _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "\n              empty\n              d-flex\n              align-items-center\n              justify-content-center\n              text-danger\n            ",
-                  },
-                  [
-                    _vm.restaurants == ""
-                      ? _c("h3", [_vm._v("Nessun ristorante disponibile")])
-                      : _vm._e(),
-                  ]
-                ),
-                _vm._v(" "),
-                _vm._l(_vm.restaurants, function (restaurant) {
+                _vm._l(_vm.categories, function (category, index) {
                   return _c(
                     "div",
-                    {
-                      key: restaurant.id,
-                      staticClass: "card col-4 mb-3",
-                      staticStyle: { width: "18rem" },
-                    },
+                    { key: category.id, staticClass: "form-check" },
                     [
-                      _c("img", {
-                        staticClass: "card-img-top",
-                        attrs: {
-                          src: "storage/" + restaurant.image,
-                          alt: "Card image cap",
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.selected.categories,
+                            expression: "selected.categories",
+                          },
+                        ],
+                        staticClass: "form-check-input",
+                        attrs: { type: "checkbox", id: "category" + index },
+                        domProps: {
+                          value: category.id,
+                          checked: Array.isArray(_vm.selected.categories)
+                            ? _vm._i(_vm.selected.categories, category.id) > -1
+                            : _vm.selected.categories,
+                        },
+                        on: {
+                          change: function ($event) {
+                            var $$a = _vm.selected.categories,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = category.id,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(
+                                    _vm.selected,
+                                    "categories",
+                                    $$a.concat([$$v])
+                                  )
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.selected,
+                                    "categories",
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.selected, "categories", $$c)
+                            }
+                          },
                         },
                       }),
                       _vm._v(" "),
                       _c(
-                        "div",
-                        { staticClass: "card-body" },
+                        "label",
+                        {
+                          staticClass: "form-check-label",
+                          attrs: { for: "category" + index },
+                        },
                         [
-                          _c("h5", { staticClass: "card-title" }, [
-                            _vm._v(
-                              "\n                " +
-                                _vm._s(restaurant.restaurant_name) +
-                                "\n              "
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "card-text" }, [
-                            _vm._v(
-                              "\n                " +
-                                _vm._s(restaurant.address) +
-                                "\n              "
-                            ),
-                          ]),
-                          _vm._v(" "),
-                          _vm._l(
-                            restaurant.categories,
-                            function (category, index) {
-                              return _c(
-                                "small",
-                                { key: restaurant.slug + category.id },
-                                [
-                                  _vm._v(
-                                    "\n                " +
-                                      _vm._s(category.name) +
-                                      "\n                " +
-                                      _vm._s(
-                                        index !=
-                                          restaurant.categories.length - 1
-                                          ? "|"
-                                          : ""
-                                      ) +
-                                      "\n              "
-                                  ),
-                                ]
-                              )
-                            }
+                          _vm._v(
+                            "\n              " +
+                              _vm._s(category.name) +
+                              "\n            "
                           ),
-                          _vm._v(" "),
-                          _c("br"),
-                          _vm._v(" "),
-                          _c(
-                            "router-link",
-                            {
-                              staticClass: "btn btn-primary",
-                              attrs: { to: "/restaurants/" + restaurant.id },
-                            },
-                            [_vm._v("Vedi ristorante")]
-                          ),
-                        ],
-                        2
+                        ]
                       ),
                     ]
                   )
                 }),
-                _vm._v(" "),
-                _vm.meta.last_page > 1
-                  ? _c(
-                      "div",
-                      { staticClass: "links text-center mt-5" },
-                      [
-                        _c(
-                          "span",
-                          {
-                            staticClass: "btn text-secondary",
-                            class:
-                              _vm.meta.current_page === 1 ? "disabled" : "",
-                            on: {
-                              click: function ($event) {
-                                return _vm.PrevPage()
-                              },
-                            },
-                          },
-                          [_vm._v("Prev")]
-                        ),
-                        _vm._v(" "),
-                        _vm._l(_vm.meta.last_page, function (page) {
-                          return _c(
-                            "span",
-                            {
-                              key: page,
-                              staticClass: "btn",
-                              class:
-                                _vm.meta.current_page === page
-                                  ? "btn-primary"
-                                  : "btn-light",
-                              on: {
-                                click: function ($event) {
-                                  return _vm.ToPage(page)
-                                },
-                              },
-                            },
-                            [_vm._v(_vm._s(page))]
-                          )
-                        }),
-                        _vm._v(" "),
-                        _c(
-                          "span",
-                          {
-                            staticClass: "btn text-secondary",
-                            class:
-                              _vm.meta.current_page === _vm.meta.last_page
-                                ? "disabled"
-                                : "",
-                            on: {
-                              click: function ($event) {
-                                return _vm.NextPage()
-                              },
-                            },
-                          },
-                          [_vm._v("Next")]
-                        ),
-                      ],
-                      2
-                    )
-                  : _vm._e(),
               ],
               2
             ),
-          ]
-        ),
-      ]),
-    ]),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "right_container col-10" }, [
+          _c(
+            "section",
+            { staticClass: "main_content d-flex justify-content-center " },
+            [
+              _c(
+                "div",
+                { staticClass: "row justify-content-evenly col" },
+                [
+                  _c("h2", { staticClass: "text-center" }, [
+                    _vm._v("Ristoranti filtrati"),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "\n              empty\n              d-flex\n              align-items-center\n              justify-content-center\n              text-danger\n            ",
+                    },
+                    [
+                      _vm.restaurants == ""
+                        ? _c("h3", [_vm._v("Nessun ristorante disponibile")])
+                        : _vm._e(),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _vm._l(_vm.restaurants, function (restaurant) {
+                    return _c(
+                      "div",
+                      {
+                        key: restaurant.id,
+                        staticClass: "card col-4 mb-3",
+                        staticStyle: { width: "18rem" },
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "card-img-top",
+                          attrs: {
+                            src: "storage/" + restaurant.image,
+                            alt: "Card image cap",
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "card-body" },
+                          [
+                            _c("h5", { staticClass: "card-title" }, [
+                              _vm._v(
+                                "\n                " +
+                                  _vm._s(restaurant.restaurant_name) +
+                                  "\n              "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "card-text" }, [
+                              _vm._v(
+                                "\n                " +
+                                  _vm._s(restaurant.address) +
+                                  "\n              "
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _vm._l(
+                              restaurant.categories,
+                              function (category, index) {
+                                return _c(
+                                  "small",
+                                  { key: restaurant.slug + category.id },
+                                  [
+                                    _vm._v(
+                                      "\n                " +
+                                        _vm._s(category.name) +
+                                        "\n                " +
+                                        _vm._s(
+                                          index !=
+                                            restaurant.categories.length - 1
+                                            ? "|"
+                                            : ""
+                                        ) +
+                                        "\n              "
+                                    ),
+                                  ]
+                                )
+                              }
+                            ),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c(
+                              "router-link",
+                              {
+                                staticClass: "btn btn-primary",
+                                attrs: { to: "/restaurants/" + restaurant.id },
+                              },
+                              [_vm._v("Vedi ristorante")]
+                            ),
+                          ],
+                          2
+                        ),
+                      ]
+                    )
+                  }),
+                  _vm._v(" "),
+                  _vm.meta.last_page > 1
+                    ? _c(
+                        "div",
+                        { staticClass: "links text-center mt-5" },
+                        [
+                          _c(
+                            "span",
+                            {
+                              staticClass: "btn text-secondary",
+                              class:
+                                _vm.meta.current_page === 1 ? "disabled" : "",
+                              on: {
+                                click: function ($event) {
+                                  return _vm.PrevPage()
+                                },
+                              },
+                            },
+                            [_vm._v("Prev")]
+                          ),
+                          _vm._v(" "),
+                          _vm._l(_vm.meta.last_page, function (page) {
+                            return _c(
+                              "span",
+                              {
+                                key: page,
+                                staticClass: "btn",
+                                class:
+                                  _vm.meta.current_page === page
+                                    ? "btn-primary"
+                                    : "btn-light",
+                                on: {
+                                  click: function ($event) {
+                                    return _vm.ToPage(page)
+                                  },
+                                },
+                              },
+                              [_vm._v(_vm._s(page))]
+                            )
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "span",
+                            {
+                              staticClass: "btn text-secondary",
+                              class:
+                                _vm.meta.current_page === _vm.meta.last_page
+                                  ? "disabled"
+                                  : "",
+                              on: {
+                                click: function ($event) {
+                                  return _vm.NextPage()
+                                },
+                              },
+                            },
+                            [_vm._v("Next")]
+                          ),
+                        ],
+                        2
+                      )
+                    : _vm._e(),
+                ],
+                2
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c("section", { staticClass: "best_plate_section rounded" }, [
+            _vm._m(8),
+            _vm._v(" "),
+            _c("div", { staticClass: "plate_of_day" }, [
+              _c("img", {
+                staticClass: "w-25",
+                attrs: {
+                  src: __webpack_require__(/*! ../../img/main/plate_of_day.png */ "./resources/img/main/plate_of_day.png"),
+                  alt: "",
+                },
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "plate_of_day_body" }, [
+                _c("h4", [_vm._v("Squisito hamburger menu, provalo subito!")]),
+                _vm._v(" "),
+                _c("h6", [_vm._v("A soli 5,99 €")]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary",
+                    on: {
+                      click: function ($event) {
+                        return _vm.AddToCart(_vm.plate)
+                      },
+                    },
+                  },
+                  [_vm._v("\n              Aggiungi al carrello\n            ")]
+                ),
+              ]),
+            ]),
+          ]),
+        ]),
+      ]
+    ),
   ])
 }
 var staticRenderFns = [
@@ -43245,6 +43282,20 @@ var staticRenderFns = [
         _c("span", { staticClass: "visually-hidden" }, [_vm._v("Next")]),
       ]
     )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "paragraph_plate_day" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-3" }, [
+          _c("h2", [_vm._v("Piatto del giorno")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "horizontal_rule" }),
+        ]),
+      ]),
+    ])
   },
 ]
 render._withStripped = true
@@ -58640,6 +58691,17 @@ module.exports = "/images/ciclista-arancione.png?226b9d55ceb03354ec7894acc7a9d33
 
 /***/ }),
 
+/***/ "./resources/img/main/plate_of_day.png":
+/*!*********************************************!*\
+  !*** ./resources/img/main/plate_of_day.png ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/plate_of_day.png?6c6dd12da42ba90f2877b3f228fc28d8";
+
+/***/ }),
+
 /***/ "./resources/js/App.vue":
 /*!******************************!*\
   !*** ./resources/js/App.vue ***!
@@ -59002,9 +59064,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\admin.scss */"./resources/sass/admin.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\esercitazioni\esercitazione-finale\Project-team-4-Deliveboo\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\esercitazioni\esercitazione-finale\Project-team-4-Deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\esercitazioni\esercitazione-finale\Project-team-4-Deliveboo\resources\sass\admin.scss */"./resources/sass/admin.scss");
 
 
 /***/ })
