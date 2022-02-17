@@ -1,7 +1,9 @@
 @extends('layouts.spa')
 
 @section('page_js')
-    <script src="{{ asset('js/checkout.js') }}" defer></script>
+<script src="https://js.braintreegateway.com/web/3.85.2/js/client.min.js" defer></script>
+<script src="https://js.braintreegateway.com/web/3.85.2/js/hosted-fields.min.js" defer></script>
+<script src="{{ asset('js/checkout.js') }}" defer></script>
 @endsection
 
 @section('page_css')
