@@ -5585,6 +5585,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -42705,6 +42709,104 @@ var render = function () {
   return _c("div", { staticClass: "container-fluid jumbo p-0" }, [
     _vm._m(0),
     _vm._v(" "),
+    _c("div", { staticClass: "carousel container" }, [
+      _c("section", { staticClass: "best_restaurants_section" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "carousel slide",
+            attrs: {
+              id: "best_restaurants_carousel",
+              "data-bs-ride": "carousel",
+            },
+          },
+          [
+            _vm._m(2),
+            _vm._v(" "),
+            _c("div", { staticClass: "carousel-inner rounded" }, [
+              _c("div", { staticClass: "carousel-item active" }, [
+                _c(
+                  "svg",
+                  {
+                    staticClass: "bd-placeholder-img",
+                    attrs: {
+                      width: "100%",
+                      height: "100%",
+                      xmlns: "http://www.w3.org/2000/svg",
+                      "aria-hidden": "true",
+                      preserveAspectRatio: "xMidYMid slice",
+                      focusable: "false",
+                    },
+                  },
+                  [
+                    _c("rect", {
+                      attrs: { width: "100%", height: "100%", fill: "#777" },
+                    }),
+                  ]
+                ),
+                _vm._v(" "),
+                _vm._m(3),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "carousel-item" }, [
+                _c(
+                  "svg",
+                  {
+                    staticClass: "bd-placeholder-img",
+                    attrs: {
+                      width: "100%",
+                      height: "100%",
+                      xmlns: "http://www.w3.org/2000/svg",
+                      "aria-hidden": "true",
+                      preserveAspectRatio: "xMidYMid slice",
+                      focusable: "false",
+                    },
+                  },
+                  [
+                    _c("rect", {
+                      attrs: { width: "100%", height: "100%", fill: "#777" },
+                    }),
+                  ]
+                ),
+                _vm._v(" "),
+                _vm._m(4),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "carousel-item" }, [
+                _c(
+                  "svg",
+                  {
+                    staticClass: "bd-placeholder-img",
+                    attrs: {
+                      width: "100%",
+                      height: "100%",
+                      xmlns: "http://www.w3.org/2000/svg",
+                      "aria-hidden": "true",
+                      preserveAspectRatio: "xMidYMid slice",
+                      focusable: "false",
+                    },
+                  },
+                  [
+                    _c("rect", {
+                      attrs: { width: "100%", height: "100%", fill: "#777" },
+                    }),
+                  ]
+                ),
+                _vm._v(" "),
+                _vm._m(5),
+              ]),
+            ]),
+            _vm._v(" "),
+            _vm._m(6),
+            _vm._v(" "),
+            _vm._m(7),
+          ]
+        ),
+      ]),
+    ]),
+    _vm._v(" "),
     _c("div", { staticClass: "container-fluid d-flex" }, [
       _c("aside", { staticClass: "sidebar d-flex col-2" }, [
         _c("nav", { staticClass: "d-none d-md-block bg-light" }, [
@@ -42792,102 +42894,6 @@ var render = function () {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "right_container col-10" }, [
-        _c("section", { staticClass: "best_restaurants_section" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "carousel slide",
-              attrs: {
-                id: "best_restaurants_carousel",
-                "data-bs-ride": "carousel",
-              },
-            },
-            [
-              _vm._m(2),
-              _vm._v(" "),
-              _c("div", { staticClass: "carousel-inner rounded" }, [
-                _c("div", { staticClass: "carousel-item active" }, [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "bd-placeholder-img",
-                      attrs: {
-                        width: "100%",
-                        height: "100%",
-                        xmlns: "http://www.w3.org/2000/svg",
-                        "aria-hidden": "true",
-                        preserveAspectRatio: "xMidYMid slice",
-                        focusable: "false",
-                      },
-                    },
-                    [
-                      _c("rect", {
-                        attrs: { width: "100%", height: "100%", fill: "#777" },
-                      }),
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _vm._m(3),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "carousel-item" }, [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "bd-placeholder-img",
-                      attrs: {
-                        width: "100%",
-                        height: "100%",
-                        xmlns: "http://www.w3.org/2000/svg",
-                        "aria-hidden": "true",
-                        preserveAspectRatio: "xMidYMid slice",
-                        focusable: "false",
-                      },
-                    },
-                    [
-                      _c("rect", {
-                        attrs: { width: "100%", height: "100%", fill: "#777" },
-                      }),
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _vm._m(4),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "carousel-item" }, [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "bd-placeholder-img",
-                      attrs: {
-                        width: "100%",
-                        height: "100%",
-                        xmlns: "http://www.w3.org/2000/svg",
-                        "aria-hidden": "true",
-                        preserveAspectRatio: "xMidYMid slice",
-                        focusable: "false",
-                      },
-                    },
-                    [
-                      _c("rect", {
-                        attrs: { width: "100%", height: "100%", fill: "#777" },
-                      }),
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _vm._m(5),
-                ]),
-              ]),
-              _vm._v(" "),
-              _vm._m(6),
-              _vm._v(" "),
-              _vm._m(7),
-            ]
-          ),
-        ]),
-        _vm._v(" "),
         _c(
           "section",
           { staticClass: "main_content d-flex justify-content-center" },

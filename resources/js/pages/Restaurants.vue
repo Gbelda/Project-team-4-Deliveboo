@@ -19,47 +19,7 @@
       </div>
     </header>
 
-    <div class="carousel">
-      
-    </div>
-
-    <div class="container-fluid d-flex">
-      <!-- .sidebar -->
-      <aside class="sidebar d-flex col-2">
-        <nav class="d-none d-md-block bg-light">
-          <div class="sidebar-sticky">
-            <h3 class="mt-2">Scegli la Categoria</h3>
-            <div
-              class="form-check"
-              v-for="(category, index) in categories"
-              :key="category.id"
-            >
-              <input
-                class="form-check-input"
-                type="checkbox"
-                :value="category.id"
-                :id="'category' + index"
-                v-model="selected.categories"
-              />
-              <label class="form-check-label" :for="'category' + index">
-                {{ category.name }}
-              </label>
-              <!-- <li
-                type="button"
-                class="btn btn-link"
-                @click="SelectCategory(category.id)"
-                :id="'category' + index"
-              >
-                {{ category.name }}
-              </li> -->
-            </div>
-          </div>
-        </nav>
-      </aside>
-      <!-- /.sidebar -->
-
-      <!-- .right_container -->
-      <div class="right_container col-10">
+    <div class="carousel container">
         <!-- .best_restaurants_section -->
         <section class="best_restaurants_section">
           <div class="paragraph_title">
@@ -198,6 +158,46 @@
           <!-- /#best_restaurants_carousel -->
         </section>
         <!-- /.best_restaurants_section -->
+    </div>
+
+    <div class="container-fluid d-flex">
+      <!-- .sidebar -->
+      <aside class="sidebar d-flex col-2">
+        <nav class="d-none d-md-block bg-light">
+          <div class="sidebar-sticky">
+            <h3 class="mt-2">Scegli la Categoria</h3>
+            <div
+              class="form-check"
+              v-for="(category, index) in categories"
+              :key="category.id"
+            >
+              <input
+                class="form-check-input"
+                type="checkbox"
+                :value="category.id"
+                :id="'category' + index"
+                v-model="selected.categories"
+              />
+              <label class="form-check-label" :for="'category' + index">
+                {{ category.name }}
+              </label>
+              <!-- <li
+                type="button"
+                class="btn btn-link"
+                @click="SelectCategory(category.id)"
+                :id="'category' + index"
+              >
+                {{ category.name }}
+              </li> -->
+            </div>
+          </div>
+        </nav>
+      </aside>
+      <!-- /.sidebar -->
+
+      <!-- .right_container -->
+      <div class="right_container col-10">
+
 
         <!-- .main_content -->
         <section class="main_content d-flex justify-content-center">
