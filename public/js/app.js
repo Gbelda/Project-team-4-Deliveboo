@@ -5649,6 +5649,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -42802,7 +42804,7 @@ var render = function () {
   return _c("div", { staticClass: "container-fluid jumbo p-0" }, [
     _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "container-fluid d-flex" }, [
+    _c("div", { staticClass: "larger_container container-fluid d-flex" }, [
       _c("aside", { staticClass: "sidebar d-flex col-2" }, [
         _c("nav", { staticClass: "d-none d-md-block bg-light" }, [
           _c(
@@ -43130,7 +43132,9 @@ var render = function () {
             _c("div", { staticClass: "plate_of_day_body" }, [
               _c("h4", [_vm._v("Squisito hamburger menu, provalo subito!")]),
               _vm._v(" "),
-              _c("h6", [_vm._v("A soli 5,99 €")]),
+              _c("h6", { attrs: { id: "title_h6" } }, [
+                _vm._v("A soli 5,99 €"),
+              ]),
               _vm._v(" "),
               _c(
                 "button",
@@ -43170,12 +43174,12 @@ var staticRenderFns = [
           _c("div", { staticClass: "content-left col-12 col-md-6" }, [
             _c("h1", [
               _vm._v(
-                "\n                        Il cibo che ami\n                        "
+                "\n                    Il cibo che ami\n                    "
               ),
               _c("span", { staticClass: "text-brand" }, [_vm._v("quando")]),
-              _vm._v(" e\n                        "),
+              _vm._v(" e\n                    "),
               _c("span", { staticClass: "text-brand" }, [_vm._v("dove")]),
-              _vm._v(" vuoi tu!\n                    "),
+              _vm._v(" vuoi tu!\n                "),
             ]),
           ]),
           _vm._v(" "),
@@ -43199,7 +43203,11 @@ var staticRenderFns = [
     return _c("div", { staticClass: "paragraph_title" }, [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-6" }, [
-          _c("h2", [_vm._v("I migliori ristoranti del mese di Milano")]),
+          _c("h2", [
+            _vm._v(
+              "\n                                I migliori ristoranti del mese di Milano\n                            "
+            ),
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "horizontal_rule" }),
         ]),
@@ -59222,9 +59230,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\admin.scss */"./resources/sass/admin.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\esercitazioni\esercitazione-finale\Project-team-4-Deliveboo\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\esercitazioni\esercitazione-finale\Project-team-4-Deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\esercitazioni\esercitazione-finale\Project-team-4-Deliveboo\resources\sass\admin.scss */"./resources/sass/admin.scss");
 
 
 /***/ })

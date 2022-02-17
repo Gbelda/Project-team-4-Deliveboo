@@ -1,26 +1,26 @@
 <template>
     <div class="container-fluid jumbo p-0">
-            <header class="d-flex justify-content-center">
-                <div class="row container content justify-content-center flex-wrap">
-                    <div class="content-left col-12 col-md-6">
-                        <h1>
-                            Il cibo che ami
-                            <span class="text-brand">quando</span> e
-                            <span class="text-brand">dove</span> vuoi tu!
-                        </h1>
-                    </div>
-                    <div class="content-right col-12 col-sm-6">
-                        <img
-                            class="img-fluid"
-                            src="../../img/jumbo/ciclista-arancione.png"
-                            alt="immagine artistica di un rider"
-                        />
-                    </div>
+        <header class="d-flex justify-content-center">
+            <div class="row container content justify-content-center flex-wrap">
+                <div class="content-left col-12 col-md-6">
+                    <h1>
+                        Il cibo che ami
+                        <span class="text-brand">quando</span> e
+                        <span class="text-brand">dove</span> vuoi tu!
+                    </h1>
                 </div>
-            </header>
+                <div class="content-right col-12 col-sm-6">
+                    <img
+                        class="img-fluid"
+                        src="../../img/jumbo/ciclista-arancione.png"
+                        alt="immagine artistica di un rider"
+                    />
+                </div>
+            </div>
+        </header>
 
-
-        <div class="container-fluid d-flex">
+        <!-- .larger_container -->
+        <div class="larger_container container-fluid d-flex">
             <!-- .sidebar -->
             <aside class="sidebar d-flex col-2">
                 <nav class="d-none d-md-block bg-light">
@@ -51,13 +51,14 @@
 
             <!-- .right_container -->
             <div class="right_container col-10">
-
                 <!-- .best_restaurants_section -->
                 <section class="best_restaurants_section">
                     <div class="paragraph_title">
                         <div class="row">
                             <div class="col-6">
-                                <h2>I migliori ristoranti del mese di Milano</h2>
+                                <h2>
+                                    I migliori ristoranti del mese di Milano
+                                </h2>
                                 <div class="horizontal_rule"></div>
                             </div>
                         </div>
@@ -326,7 +327,7 @@
                         <img src="../../img/main/plate_of_day.png" alt="" />
                         <div class="plate_of_day_body">
                             <h4>Squisito hamburger menu, provalo subito!</h4>
-                            <h6>A soli 5,99 €</h6>
+                            <h6 id="title_h6">A soli 5,99 €</h6>
                             <button
                                 class="btn btn-primary"
                                 @click="AddToCart(plate)"
@@ -340,6 +341,7 @@
             </div>
             <!-- /.right_container -->
         </div>
+        <!-- /.larger_container -->
     </div>
 </template>
 

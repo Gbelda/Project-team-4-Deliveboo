@@ -134,20 +134,19 @@ main {
             .main_content {
                 margin: 2rem 0;
             }
-
             /* .best_plate_section */
             .best_plate_section {
                 background-image: linear-gradient(
                     to right,
                     $secondary_color,
                     $brand-color
-                );
+                ) !important;
                 padding: 1rem;
                 margin: 1rem 0;
                 .paragraph_plate_day {
                     color: $black;
                     margin-bottom: 1rem;
-                    .col-3:first-child {
+                    .row .col-3:first-child {
                         display: flex;
                         flex-direction: column;
                         align-items: center;
@@ -179,7 +178,7 @@ main {
                         margin-top: 2rem;
                         h4,
                         h6 {
-                            font-weight: bold;
+                            font-weight: bold !important;
                         }
                     }
                 }

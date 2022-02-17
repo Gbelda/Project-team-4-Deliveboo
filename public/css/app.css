@@ -11381,7 +11381,7 @@ main .larger_container .right_container .main_content {
   margin: 2rem 0;
 }
 main .larger_container .right_container .best_plate_section {
-  background-image: linear-gradient(to right, #ffc100, #ff8200);
+  background-image: linear-gradient(to right, #ffc100, #ff8200) !important;
   padding: 1rem;
   margin: 1rem 0;
 }
@@ -11389,16 +11389,16 @@ main .larger_container .right_container .best_plate_section .paragraph_plate_day
   color: #0a0903;
   margin-bottom: 1rem;
 }
-main .larger_container .right_container .best_plate_section .paragraph_plate_day .col-3:first-child {
+main .larger_container .right_container .best_plate_section .paragraph_plate_day .row .col-3:first-child {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-main .larger_container .right_container .best_plate_section .paragraph_plate_day .col-3:first-child h2, main .larger_container .right_container .best_plate_section .paragraph_plate_day .col-3:first-child .h2 {
+main .larger_container .right_container .best_plate_section .paragraph_plate_day .row .col-3:first-child h2, main .larger_container .right_container .best_plate_section .paragraph_plate_day .row .col-3:first-child .h2 {
   font-weight: bold;
   font-size: 2rem;
 }
-main .larger_container .right_container .best_plate_section .paragraph_plate_day .col-3:first-child .horizontal_rule {
+main .larger_container .right_container .best_plate_section .paragraph_plate_day .row .col-3:first-child .horizontal_rule {
   width: 75%;
   padding: 0.2rem;
   border-radius: 10px;
@@ -11423,7 +11423,7 @@ main .larger_container .right_container .best_plate_section .plate_of_day .plate
 main .larger_container .right_container .best_plate_section .plate_of_day .plate_of_day_body h4, main .larger_container .right_container .best_plate_section .plate_of_day .plate_of_day_body .h4,
 main .larger_container .right_container .best_plate_section .plate_of_day .plate_of_day_body h6,
 main .larger_container .right_container .best_plate_section .plate_of_day .plate_of_day_body .h6 {
-  font-weight: bold;
+  font-weight: bold !important;
 }
 
 /**********
