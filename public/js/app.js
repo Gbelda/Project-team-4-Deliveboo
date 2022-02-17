@@ -5602,10 +5602,10 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    GetRestaurants: function GetRestaurants() {
+    GetRestaurants: function GetRestaurants(url) {
       var _this = this;
 
-      axios.get("/api/restaurants", {
+      axios.get(url, {
         params: this.selected
       }).then(function (response) {
         // console.log(response);
@@ -5616,19 +5616,20 @@ __webpack_require__.r(__webpack_exports__);
         return error;
       });
     },
-    // NextPage() {
-    //   if (this.meta.current_page !== this.meta.last_page) {
-    //     this.GetRestaurants(this.links.next);
-    //   }
-    // },
-    // PrevPage() {
-    //   if (this.meta.current_page !== 1) {
-    //     this.GetRestaurants(this.links.prev);
-    //   }
-    // },
-    // ToPage(page) {
-    //   this.GetRestaurants("/api/restaurants?page=" + page);
-    // },
+    NextPage: function NextPage() {
+      if (this.meta.current_page !== this.meta.last_page) {
+        this.GetRestaurants(this.links.next);
+        console.log('cliccato');
+      }
+    },
+    PrevPage: function PrevPage() {
+      if (this.meta.current_page !== 1) {
+        this.GetRestaurants(this.links.prev);
+      }
+    },
+    ToPage: function ToPage(page) {
+      this.GetRestaurants("/api/restaurants?page=" + page);
+    },
     GetCategories: function GetCategories() {
       var _this2 = this;
 
@@ -5645,13 +5646,13 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    this.GetRestaurants();
+    this.GetRestaurants("/api/restaurants");
     this.GetCategories();
   },
   watch: {
     selected: {
       handler: function handler() {
-        this.GetRestaurants();
+        this.GetRestaurants("/api/restaurants");
       },
       deep: true
     }

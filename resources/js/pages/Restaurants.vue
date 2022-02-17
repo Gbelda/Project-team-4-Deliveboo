@@ -318,9 +318,9 @@ export default {
     };
   },
   methods: {
-    GetRestaurants() {
+    GetRestaurants(url) {
       axios
-        .get("/api/restaurants", {
+        .get(url, {
           params: this.selected
         })
         .then((response) => {
@@ -332,21 +332,22 @@ export default {
         .catch((error) => error);
     },
 
-    // NextPage() {
-    //   if (this.meta.current_page !== this.meta.last_page) {
-    //     this.GetRestaurants(this.links.next);
-    //   }
-    // },
+    NextPage() {
+      if (this.meta.current_page !== this.meta.last_page) {
+        this.GetRestaurants(this.links.next);
+        console.log('cliccato');
+      }
+    },
 
-    // PrevPage() {
-    //   if (this.meta.current_page !== 1) {
-    //     this.GetRestaurants(this.links.prev);
-    //   }
-    // },
+    PrevPage() {
+      if (this.meta.current_page !== 1) {
+        this.GetRestaurants(this.links.prev);
+      }
+    },
 
-    // ToPage(page) {
-    //   this.GetRestaurants("/api/restaurants?page=" + page);
-    // },
+    ToPage(page) {
+      this.GetRestaurants("/api/restaurants?page=" + page);
+    },
 
     GetCategories() {
       axios
@@ -365,14 +366,14 @@ export default {
   },
 
   mounted() {
-    this.GetRestaurants();
+    this.GetRestaurants("/api/restaurants");
     this.GetCategories();
   },
 
   watch: {
     selected: {
       handler: function () {
-        this.GetRestaurants();
+        this.GetRestaurants("/api/restaurants");
       },
       deep: true,
     },
