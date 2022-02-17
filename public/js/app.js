@@ -5571,157 +5571,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -42928,14 +42777,12 @@ var render = function () {
                     }),
                   ]
                 ),
-                _vm._v(" "),
-                _vm._m(5),
               ]),
             ]),
             _vm._v(" "),
-            _vm._m(6),
+            _vm._m(5),
             _vm._v(" "),
-            _vm._m(7),
+            _vm._m(6),
           ]
         ),
       ]),
@@ -43015,9 +42862,9 @@ var render = function () {
                         },
                         [
                           _vm._v(
-                            "\n                " +
+                            "\n              " +
                               _vm._s(category.name) +
-                              "\n              "
+                              "\n            "
                           ),
                         ]
                       ),
@@ -43031,118 +42878,6 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "right_container col-8" }, [
-          _vm._v("\n<<<<<<< HEAD\n        "),
-          _vm._v(" "),
-          _c("section", { staticClass: "best_restaurants_section" }, [
-            _vm._m(8),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "carousel slide",
-                attrs: {
-                  id: "best_restaurants_carousel",
-                  "data-bs-ride": "carousel",
-                },
-              },
-              [
-                _vm._m(9),
-                _vm._v(" "),
-                _c("div", { staticClass: "carousel-inner rounded" }, [
-                  _c("div", { staticClass: "carousel-item active" }, [
-                    _c(
-                      "svg",
-                      {
-                        staticClass: "bd-placeholder-img",
-                        attrs: {
-                          width: "100%",
-                          height: "100%",
-                          xmlns: "http://www.w3.org/2000/svg",
-                          "aria-hidden": "true",
-                          preserveAspectRatio: "xMidYMid slice",
-                          focusable: "false",
-                        },
-                      },
-                      [
-                        _c("rect", {
-                          attrs: {
-                            width: "100%",
-                            height: "100%",
-                            fill: "#777",
-                          },
-                        }),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _vm._m(10),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "carousel-item" }, [
-                    _c(
-                      "svg",
-                      {
-                        staticClass: "bd-placeholder-img",
-                        attrs: {
-                          width: "100%",
-                          height: "100%",
-                          xmlns: "http://www.w3.org/2000/svg",
-                          "aria-hidden": "true",
-                          preserveAspectRatio: "xMidYMid slice",
-                          focusable: "false",
-                        },
-                      },
-                      [
-                        _c("rect", {
-                          attrs: {
-                            width: "100%",
-                            height: "100%",
-                            fill: "#777",
-                          },
-                        }),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _vm._m(11),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "carousel-item" }, [
-                    _c(
-                      "svg",
-                      {
-                        staticClass: "bd-placeholder-img",
-                        attrs: {
-                          width: "100%",
-                          height: "100%",
-                          xmlns: "http://www.w3.org/2000/svg",
-                          "aria-hidden": "true",
-                          preserveAspectRatio: "xMidYMid slice",
-                          focusable: "false",
-                        },
-                      },
-                      [
-                        _c("rect", {
-                          attrs: {
-                            width: "100%",
-                            height: "100%",
-                            fill: "#777",
-                          },
-                        }),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _vm._m(12),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _vm._m(13),
-                _vm._v(" "),
-                _vm._m(14),
-              ]
-            ),
-          ]),
-          _vm._v(" "),
-          _vm._v("\n\n=======\n>>>>>>> Frontend-dev\n        "),
-          _vm._v(" "),
           _c(
             "section",
             { staticClass: "main_content d-flex justify-content-center " },
@@ -43159,7 +42894,7 @@ var render = function () {
                     "div",
                     {
                       staticClass:
-                        "\n                empty\n                d-flex\n                align-items-center\n                justify-content-center\n                text-danger\n              ",
+                        "\n              empty\n              d-flex\n              align-items-center\n              justify-content-center\n              text-danger\n            ",
                     },
                     [
                       _vm.restaurants == ""
@@ -43191,17 +42926,17 @@ var render = function () {
                           [
                             _c("h5", { staticClass: "card-title" }, [
                               _vm._v(
-                                "\n                  " +
+                                "\n                " +
                                   _vm._s(restaurant.restaurant_name) +
-                                  "\n                "
+                                  "\n              "
                               ),
                             ]),
                             _vm._v(" "),
                             _c("p", { staticClass: "card-text" }, [
                               _vm._v(
-                                "\n                  " +
+                                "\n                " +
                                   _vm._s(restaurant.address) +
-                                  "\n                "
+                                  "\n              "
                               ),
                             ]),
                             _vm._v(" "),
@@ -43213,16 +42948,16 @@ var render = function () {
                                   { key: restaurant.slug + category.id },
                                   [
                                     _vm._v(
-                                      "\n                  " +
+                                      "\n                " +
                                         _vm._s(category.name) +
-                                        "\n                  " +
+                                        "\n                " +
                                         _vm._s(
                                           index !=
                                             restaurant.categories.length - 1
                                             ? "|"
                                             : ""
                                         ) +
-                                        "\n                "
+                                        "\n              "
                                     ),
                                   ]
                                 )
@@ -43313,7 +43048,7 @@ var render = function () {
           ),
           _vm._v(" "),
           _c("section", { staticClass: "best_plate_section rounded" }, [
-            _vm._m(15),
+            _vm._m(7),
             _vm._v(" "),
             _c("div", { staticClass: "plate_of_day" }, [
               _c("img", {
@@ -43339,11 +43074,7 @@ var render = function () {
                       },
                     },
                   },
-                  [
-                    _vm._v(
-                      "\n                Aggiungi al carrello\n              "
-                    ),
-                  ]
+                  [_vm._v("\n              Aggiungi al carrello\n            ")]
                 ),
               ]),
             ]),
@@ -43367,11 +43098,11 @@ var staticRenderFns = [
         [
           _c("div", { staticClass: "content-left col-12 col-md-6" }, [
             _c("h1", [
-              _vm._v("\n            Il cibo che ami\n            "),
+              _vm._v("\n          Il cibo che ami\n          "),
               _c("span", { staticClass: "text-brand" }, [_vm._v("quando")]),
-              _vm._v(" e\n            "),
+              _vm._v(" e\n          "),
               _c("span", { staticClass: "text-brand" }, [_vm._v("dove")]),
-              _vm._v(" vuoi tu!\n          "),
+              _vm._v(" vuoi tu!\n        "),
             ]),
           ]),
           _vm._v(" "),
@@ -43450,7 +43181,7 @@ var staticRenderFns = [
         _c(
           "a",
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
-          [_vm._v("\n                    Provala subito\n                  ")]
+          [_vm._v("\n                  Provala subito\n                ")]
         ),
       ]),
     ])
@@ -43470,190 +43201,7 @@ var staticRenderFns = [
         _c(
           "button",
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
-          [_vm._v("\n                    Provalo subito\n                  ")]
-        ),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "carousel-caption text-center" }, [
-        _c("h3", [_vm._v("Da Paolo")]),
-        _vm._v(" "),
-        _c("h6", [_vm._v("I migliori panini di Milano, buoni e poco costosi")]),
-        _vm._v(" "),
-        _c(
-          "button",
-          { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
-          [_vm._v("\n                    Provali subito\n                  ")]
-        ),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "carousel-control-prev",
-        attrs: {
-          type: "button",
-          "data-bs-target": "#best_restaurants_carousel",
-          "data-bs-slide": "prev",
-        },
-      },
-      [
-        _c("span", {
-          staticClass: "carousel-control-prev-icon",
-          attrs: { "aria-hidden": "true" },
-        }),
-        _vm._v(" "),
-        _c("span", { staticClass: "visually-hidden" }, [_vm._v("Previous")]),
-      ]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "carousel-control-next",
-        attrs: {
-          type: "button",
-          "data-bs-target": "#best_restaurants_carousel",
-          "data-bs-slide": "next",
-        },
-      },
-      [
-        _c("span", {
-          staticClass: "carousel-control-next-icon",
-          attrs: { "aria-hidden": "true" },
-        }),
-        _vm._v(" "),
-        _c("span", { staticClass: "visually-hidden" }, [_vm._v("Next")]),
-      ]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "paragraph_title" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-6" }, [
-          _c("h2", [_vm._v("I migliori ristoranti del mese di Milano")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "horizontal_rule" }),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "carousel-indicators" }, [
-      _c("button", {
-        staticClass: "active",
-        attrs: {
-          type: "button",
-          "data-bs-target": "#best_restaurants_carousel",
-          "data-bs-slide-to": "0",
-          "aria-current": "true",
-          "aria-label": "Slide 1",
-        },
-      }),
-      _vm._v(" "),
-      _c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-target": "#best_restaurants_carousel",
-          "data-bs-slide-to": "1",
-          "aria-label": "Slide 2",
-        },
-      }),
-      _vm._v(" "),
-      _c("button", {
-        attrs: {
-          type: "button",
-          "data-bs-target": "#best_restaurants_carousel",
-          "data-bs-slide-to": "2",
-          "aria-label": "Slide 3",
-        },
-      }),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "carousel-caption text-start" }, [
-        _c("h3", [_vm._v("da Marco")]),
-        _vm._v(" "),
-        _c("h6", [_vm._v("La migliore pizza d'Italia... altro che Napoli")]),
-        _vm._v(" "),
-        _c(
-          "a",
-          { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
-          [
-            _vm._v(
-              "\n                      Provala subito\n                    "
-            ),
-          ]
-        ),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "carousel-caption" }, [
-        _c("h3", [_vm._v("Da Giovanni")]),
-        _vm._v(" "),
-        _c("h6", [
-          _vm._v("Il miglior sushi di Milano l'ho facciamo solo noi!"),
-        ]),
-        _vm._v(" "),
-        _c(
-          "button",
-          { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
-          [
-            _vm._v(
-              "\n                      Provalo subito\n                    "
-            ),
-          ]
-        ),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "carousel-caption text-end" }, [
-        _c("h3", [_vm._v("Da Paolo")]),
-        _vm._v(" "),
-        _c("h6", [_vm._v("I migliori panini di Milano, buoni e poco costosi")]),
-        _vm._v(" "),
-        _c(
-          "button",
-          { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
-          [
-            _vm._v(
-              "\n                      Provali subito\n                    "
-            ),
-          ]
+          [_vm._v("\n                  Provalo subito\n                ")]
         ),
       ]),
     ])

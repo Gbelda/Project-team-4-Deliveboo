@@ -119,15 +119,6 @@
                 <rect width="100%" height="100%" fill="#777" />
               </svg>
 
-              <div class="container">
-                <div class="carousel-caption text-center">
-                  <h3>Da Paolo</h3>
-                  <h6>I migliori panini di Milano, buoni e poco costosi</h6>
-                  <button class="btn btn-lg btn-primary" href="#">
-                    Provali subito
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
           <button
