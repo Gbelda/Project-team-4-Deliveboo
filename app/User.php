@@ -50,10 +50,14 @@ class User extends Authenticatable
 
     public function scopeWithFilters($query, $categories)
     {
-
-        return User::whereHas('categories', function ($query) use ($categories) {
-            $query->whereIn('category_id', $categories);
-        });
+        if ($query == '') {
+            
+        }else {
+            # code...
+            return User::whereHas('categories', function ($query) use ($categories) {
+                $query->whereIn('category_id', $categories);
+            });
+        }
         // return $query->when(count($categories), function ($query) use ($categories) {
         //     $query->where('category_id', $categories);
         // });
