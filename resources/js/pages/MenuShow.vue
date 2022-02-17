@@ -27,7 +27,7 @@
               }}
             </p>
             <button class="btn btn-primary" @click="AddToCart(plate)">
-              Agiungi al carrello
+              Aggiungi al carrello
             </button>
           </div>
         </div>

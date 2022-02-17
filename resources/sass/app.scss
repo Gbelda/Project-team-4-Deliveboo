@@ -7,10 +7,14 @@
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
+// Common
+@import "common";
+
 /* utility */
 #nav_guest {
     padding: 1rem 0;
     position: fixed;
+    z-index: 100;
     top: 0;
     left: 0;
     .nav_guest {
@@ -28,7 +32,11 @@
 }
 /* /utility */
 
+/**********
+MAIN
+**********/
 main {
+    /* header */
     header {
         background-image: url("../img/jumbo/jumbo-onda.png");
         background-repeat: no-repeat;
@@ -41,36 +49,147 @@ main {
             }
         }
     }
+    /* /header */
 
-    .section_best {
-        .paragraph_title {
-            color: $black;
-            h2 {
-                font-weight: bold;
-                font-size: 4rem;
-            }
-            #horizontal_rule {
-                height: 1rem;
-                padding: 0.25rem;
-                border-radius: 10px;
-                background-color: $black;
-            }
+    /* .larger_container */
+    .larger_container {
+        /* .sidebar */
+        .sidebar {
+            padding: 0 2rem;
+            overflow: auto;
         }
+        /* /.sidebar */
 
-        .background_brand {
-            background-color: $secondary_color;
-            .card_restaurant {
-                height: 5rem;
-                border: 1px solid $black;
-                border-radius: 5px;
+        /* .right_container */
+        .right_container {
+            .best_restaurants_section {
+                .paragraph_title {
+                    color: $black;
+                    margin-bottom: 1rem;
+                    .col-6:first-child {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        h2 {
+                            font-weight: bold;
+                            font-size: 2rem;
+                        }
+                        .horizontal_rule {
+                            width: 90%;
+                            padding: 0.2rem;
+                            border-radius: 10px;
+                            background-color: $black;
+                        }
+                    }
+                }
+
+                .background_brand {
+                    background-color: $secondary_color;
+                    margin: 1rem;
+                    padding: 1rem;
+
+                    .card_restaurant {
+                        height: 10rem;
+                        border: 1px solid $black;
+                        border-radius: 5px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: center;
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                    .card_plate {
+                        height: 5rem;
+                        border: 1px solid $black;
+                        border-radius: 5px;
+                    }
+                }
+                #best_restaurants_carousel {
+                    .carousel-item {
+                        .bd-placeholder-img {
+                            font-size: 1.125rem;
+                            text-anchor: middle;
+                            -webkit-user-select: none;
+                            -moz-user-select: none;
+                            user-select: none;
+                        }
+                        /* #rect_background_color {
+                                background-image: linear-gradient(
+                                    to right,
+                                    $secondary_color,
+                                    $brand-color
+                                ) !important;
+                            } */
+
+                        @media (min-width: 768px) {
+                            .bd-placeholder-img-lg {
+                                font-size: 3.5rem;
+                            }
+                        }
+                    }
+                }
             }
-            .card_plate {
-                height: 5rem;
-                border: 1px solid $black;
-                border-radius: 5px;
+            .main_content {
+                margin: 2rem 0;
             }
 
-            //background-image: linear-gradient(to right, $secondary_color, $brand-color);
+            /* .best_plate_section */
+            .best_plate_section {
+                background-image: linear-gradient(
+                    to right,
+                    $secondary_color,
+                    $brand-color
+                );
+                padding: 1rem;
+                margin: 1rem 0;
+                .paragraph_plate_day {
+                    color: $black;
+                    margin-bottom: 1rem;
+                    .col-3:first-child {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        h2 {
+                            font-weight: bold;
+                            font-size: 2rem;
+                        }
+                        .horizontal_rule {
+                            width: 75%;
+                            padding: 0.2rem;
+                            border-radius: 10px;
+                            background-color: $black;
+                        }
+                    }
+                }
+                .plate_of_day {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    img {
+                        width: 40%;
+                    }
+                    .plate_of_day_body {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-top: 2rem;
+                        h4,
+                        h6 {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+            /* /.best_plate_section */
         }
+        /* /.right_container */
     }
+    /* /.larger_container */
 }
+/**********
+/MAIN
+**********/
