@@ -5580,15 +5580,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5619,7 +5610,7 @@ __webpack_require__.r(__webpack_exports__);
     NextPage: function NextPage() {
       if (this.meta.current_page !== this.meta.last_page) {
         this.GetRestaurants(this.links.next);
-        console.log('cliccato');
+        console.log("cliccato");
       }
     },
     PrevPage: function PrevPage() {
@@ -42710,7 +42701,7 @@ var render = function () {
   return _c("div", { staticClass: "container-fluid jumbo p-0" }, [
     _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "carousel container" }, [
+    _c("div", { staticClass: "carousel container my-5" }, [
       _c("section", { staticClass: "best_restaurants_section" }, [
         _vm._m(1),
         _vm._v(" "),
@@ -42808,7 +42799,7 @@ var render = function () {
       ]),
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "container-fluid d-flex" }, [
+    _c("div", { staticClass: "container-fluid d-flex mt-5 pt-5" }, [
       _c("aside", { staticClass: "sidebar d-flex col-2" }, [
         _c("nav", { staticClass: "d-none d-md-block bg-light" }, [
           _c(
@@ -42897,7 +42888,7 @@ var render = function () {
       _c("div", { staticClass: "right_container col-10" }, [
         _c(
           "section",
-          { staticClass: "main_content d-flex justify-content-center" },
+          { staticClass: "main_content d-flex justify-content-center " },
           [
             _c(
               "div",
@@ -43063,39 +43054,6 @@ var render = function () {
             ),
           ]
         ),
-        _vm._v(" "),
-        _c("section", { staticClass: "best_plate_section rounded" }, [
-          _vm._m(8),
-          _vm._v(" "),
-          _c("div", { staticClass: "plate_of_day" }, [
-            _c("img", {
-              staticClass: "w-25",
-              attrs: {
-                src: __webpack_require__(/*! ../../img/main/plate_of_day.png */ "./resources/img/main/plate_of_day.png"),
-                alt: "",
-              },
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "plate_of_day_body" }, [
-              _c("h4", [_vm._v("Squisito hamburger menu, provalo subito!")]),
-              _vm._v(" "),
-              _c("h6", [_vm._v("A soli 5,99 €")]),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-primary",
-                  on: {
-                    click: function ($event) {
-                      return _vm.AddToCart(_vm.plate)
-                    },
-                  },
-                },
-                [_vm._v("\n              Aggiungi al carrello\n            ")]
-              ),
-            ]),
-          ]),
-        ]),
       ]),
     ]),
   ])
@@ -43197,7 +43155,7 @@ var staticRenderFns = [
         _c(
           "a",
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
-          [_vm._v("\n                    Provala subito\n                  ")]
+          [_vm._v("\n                  Provala subito\n                ")]
         ),
       ]),
     ])
@@ -43217,7 +43175,7 @@ var staticRenderFns = [
         _c(
           "button",
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
-          [_vm._v("\n                    Provalo subito\n                  ")]
+          [_vm._v("\n                  Provalo subito\n                ")]
         ),
       ]),
     ])
@@ -43235,7 +43193,7 @@ var staticRenderFns = [
         _c(
           "button",
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
-          [_vm._v("\n                    Provali subito\n                  ")]
+          [_vm._v("\n                  Provali subito\n                ")]
         ),
       ]),
     ])
@@ -43287,20 +43245,6 @@ var staticRenderFns = [
         _c("span", { staticClass: "visually-hidden" }, [_vm._v("Next")]),
       ]
     )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "paragraph_plate_day" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-3" }, [
-          _c("h2", [_vm._v("Piatto del giorno")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "horizontal_rule" }),
-        ]),
-      ]),
-    ])
   },
 ]
 render._withStripped = true
@@ -58693,17 +58637,6 @@ module.exports = function(module) {
 /***/ (function(module, exports) {
 
 module.exports = "/images/ciclista-arancione.png?226b9d55ceb03354ec7894acc7a9d33a";
-
-/***/ }),
-
-/***/ "./resources/img/main/plate_of_day.png":
-/*!*********************************************!*\
-  !*** ./resources/img/main/plate_of_day.png ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/plate_of_day.png?6c6dd12da42ba90f2877b3f228fc28d8";
 
 /***/ }),
 
