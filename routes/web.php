@@ -20,6 +20,8 @@ use App\User;
 //     return view('welcome');
 // });
 
+
+
 Auth::routes();
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->group(function () {
@@ -28,7 +30,10 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->
     Route::resource('plates', PlateController::class);
 });
 
+Route::get('/checkout', 'CheckoutController@index');
 
 Route::get('/{any}', function () {
+
     return view('welcome');
 })->where('any', '.*');
+
