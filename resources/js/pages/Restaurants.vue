@@ -74,7 +74,7 @@
               </svg>
 
               <div class="container">
-                <div class="carousel-caption text-start">
+                <div class="carousel-caption text-center">
                   <h3>da Marco</h3>
                   <h6>La migliore pizza d'Italia... altro che Napoli</h6>
                   <a class="btn btn-lg btn-primary" href="#">
@@ -120,7 +120,7 @@
               </svg>
 
               <div class="container">
-                <div class="carousel-caption text-end">
+                <div class="carousel-caption text-center">
                   <h3>Da Paolo</h3>
                   <h6>I migliori panini di Milano, buoni e poco costosi</h6>
                   <button class="btn btn-lg btn-primary" href="#">
@@ -154,7 +154,11 @@
       <!-- /.best_restaurants_section -->
     </div>
 
+<<<<<<< HEAD
     <div class="larger_container container-fluid d-flex mt-5 pt-5">
+=======
+    <div class="container-fluid d-flex mt-5 pt-5 larger_container">
+>>>>>>> 2d36458e74ae9bd572254209de383873e0784c4b
       <!-- .sidebar -->
       <aside class="sidebar d-flex col-2">
         <nav class="d-none d-md-block bg-light">
@@ -189,7 +193,7 @@
       </aside>
       <!-- /.sidebar -->
       <!-- .right_container -->
-      <div class="right_container col-10">
+      <div class="right_container col-8">
         <!-- .main_content -->
         <section class="main_content d-flex justify-content-center ">
           <div class="row justify-content-evenly col">
@@ -268,10 +272,14 @@
         <!-- /.main_content -->
 
         <!-- .best_plate_section -->
+<<<<<<< HEAD
         <section class="best_plate_section rounded">
+=======
+        <section class="best_plate_section rounded text-center">
+>>>>>>> 2d36458e74ae9bd572254209de383873e0784c4b
           <div class="paragraph_plate_day">
             <div class="row">
-              <div class="col-3">
+              <div class="col">
                 <h2>Piatto del giorno</h2>
                 <div class="horizontal_rule"></div>
               </div>
@@ -287,7 +295,11 @@
               </button>
             </div>
           </div>
+<<<<<<< HEAD
         </section> 
+=======
+        </section>
+>>>>>>> 2d36458e74ae9bd572254209de383873e0784c4b
         <!-- .best_plate_section -->
       </div>
       <!-- /.right_container -->
