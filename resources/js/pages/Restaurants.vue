@@ -1,8 +1,7 @@
 <template>
     <div class="container-fluid jumbo p-0">
-        <div class="">
-            <header class="">
-                <div class="row container content flex-wrap">
+            <header class="d-flex justify-content-center">
+                <div class="row container content justify-content-center flex-wrap">
                     <div class="content-left col-12 col-md-6">
                         <h1>
                             Il cibo che ami
@@ -19,9 +18,9 @@
                     </div>
                 </div>
             </header>
-        </div>
 
-        <div class="larger_container d-flex">
+
+        <div class="container-fluid d-flex">
             <!-- .sidebar -->
             <aside class="sidebar d-flex col-2">
                 <nav class="d-none d-md-block bg-light">

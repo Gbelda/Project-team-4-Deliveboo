@@ -5649,7 +5649,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -42803,7 +42802,7 @@ var render = function () {
   return _c("div", { staticClass: "container-fluid jumbo p-0" }, [
     _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "larger_container d-flex" }, [
+    _c("div", { staticClass: "container-fluid d-flex" }, [
       _c("aside", { staticClass: "sidebar d-flex col-2" }, [
         _c("nav", { staticClass: "d-none d-md-block bg-light" }, [
           _c(
@@ -43161,9 +43160,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", {}, [
-      _c("header", {}, [
-        _c("div", { staticClass: "row container content flex-wrap" }, [
+    return _c("header", { staticClass: "d-flex justify-content-center" }, [
+      _c(
+        "div",
+        {
+          staticClass: "row container content justify-content-center flex-wrap",
+        },
+        [
           _c("div", { staticClass: "content-left col-12 col-md-6" }, [
             _c("h1", [
               _vm._v(
@@ -43185,8 +43188,8 @@ var staticRenderFns = [
               },
             }),
           ]),
-        ]),
-      ]),
+        ]
+      ),
     ])
   },
   function () {
@@ -59219,9 +59222,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\esercitazioni\esercitazione-finale\Project-team-4-Deliveboo\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\esercitazioni\esercitazione-finale\Project-team-4-Deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\esercitazioni\esercitazione-finale\Project-team-4-Deliveboo\resources\sass\admin.scss */"./resources/sass/admin.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\admin.scss */"./resources/sass/admin.scss");
 
 
 /***/ })
