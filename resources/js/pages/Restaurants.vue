@@ -239,6 +239,8 @@
                 >
               </div>
             </div>
+
+            <!-- /Page Link -->
             <div class="links text-center mt-5" v-if="meta.last_page > 1">
               <span
                 class="btn text-secondary"
@@ -263,6 +265,7 @@
                 >Next</span
               >
             </div>
+            <!-- ./Page Link -->
           </div>
         </section>
         <!-- /.main_content -->
