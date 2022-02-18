@@ -13,6 +13,22 @@
 @section('app')
     <div class="container checkout_container">
 
+        @if (session()->has('success_message'))
+            <div class="alert alert-success">
+                {{ session()->get('success_message') }}
+            </div>
+        @endif
+
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <div class="row">
             <div class="col-md-4 order-md-2 mb-4">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
@@ -58,71 +74,77 @@
             </div>
 
             <div class="col-md-8 order-md-1">
-                <div class="form-container">
 
+                <div class="form-container">
                     <h4 class="mb-3">Indirizzo di Consegna</h4>
-                    <form class="needs-validation" action="#">
+                    <form class="needs-validation" action="{{ route('checkout.store') }}" id="user_info" method="POST">
                         @csrf
                         <div class="row">
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-6 mb-3 form-group">
                                 <label for="firstName">Nome</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="" value=""
-                                    required="">
+                                <input type="text" class="form-control" id="firstName" placeholder="" required
+                                    name="name">
                             </div>
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-6 mb-3 form-group">
                                 <label for="lastName">Cognome</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                                <input type="text" class="form-control" id="lastName" placeholder="" value="" required
+                                    name="last_name">
                             </div>
                         </div>
 
-                        <div class="mb-3">
+                        <div class="mb-3 form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Esempio@dominio.it">
+                            <input type="email" class="form-control" id="email" placeholder="Esempio@dominio.it"
+                                name="email">
                         </div>
 
-                        <div class="mb-3">
+                        <div class="mb-3 form-group">
                             <label for="address">Indirizzo</label>
-                            <input type="text" class="form-control" id="address" placeholder="Via/Piazza" required="">
+                            <input type="text" class="form-control" id="address" placeholder="Via/Piazza" required
+                                name="address">
                         </div>
 
-                        <div class="mb-3">
+                        <div class="mb-3 form-group">
                             <label for="phone_number">Numero di Tel.</label>
-                            <input type="number" class="form-control" id="phone_number" placeholder="+39" required="">
+                            <input type="number" class="form-control" id="phone_number" placeholder="+39" required
+                                name="phone_number">
                         </div>
 
                         <hr class="mb-4">
 
 
+
+
+                        <header>
+                            <h1>Carta di Credito</h1>
+                        </header>
+
+                        <div id="my-sample-form" class="scale-down">
+                            @csrf
+                            <div class="cardinfo-card-number">
+                                <label class="cardinfo-label" for="card-number">Numero carta</label>
+                                <div class='input-wrapper' id="card-number"></div>
+                                <div id="card-image"></div>
+                            </div>
+
+                            <div class="cardinfo-wrapper">
+                                <div class="cardinfo-exp-date">
+                                    <label class="cardinfo-label" for="expiration-date">Scadenza</label>
+                                    <div class='input-wrapper' id="expiration-date"></div>
+                                </div>
+
+                                <div class="cardinfo-cvv">
+                                    <label class="cardinfo-label" for="cvv">CVV</label>
+                                    <div class='input-wrapper' id="cvv"></div>
+                                </div>
+                            </div>
+                            <input name="payment_method_nonce" id="nonce" type="hidden">
+                        </div>
                     </form>
-
-                    <header>
-                        <h1>Carta di Credito</h1>
-                    </header>
-
-                    <div id="my-sample-form" class="scale-down">
-                        <div class="cardinfo-card-number">
-                            <label class="cardinfo-label" for="card-number">Numero carta</label>
-                            <div class='input-wrapper' id="card-number"></div>
-                            <div id="card-image"></div>
-                        </div>
-
-                        <div class="cardinfo-wrapper">
-                            <div class="cardinfo-exp-date">
-                                <label class="cardinfo-label" for="expiration-date">Scadenza</label>
-                                <div class='input-wrapper' id="expiration-date"></div>
-                            </div>
-
-                            <div class="cardinfo-cvv">
-                                <label class="cardinfo-label" for="cvv">CVV</label>
-                                <div class='input-wrapper' id="cvv"></div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <input id="button-pay" type="submit" value="Continue" />
+                    
+                    <input id="button-pay" type="submit" value="Paga" />
                 </div>
+
             </div>
         </div>
     </div>

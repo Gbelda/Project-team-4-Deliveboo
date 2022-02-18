@@ -109,6 +109,7 @@ braintree.client.create({
 
         submit.addEventListener('click', function (event) {
             event.preventDefault();
+            document.getElementById("user_info").submit();
 
             hostedFieldsInstance.tokenize(function (err, payload) {
                 if (err) {
@@ -117,7 +118,11 @@ braintree.client.create({
                 }
 
                 // This is where you would submit payload.nonce to your server
-                alert('Submit your nonce to your server here!');
+                // alert('Submit your nonce to your server here!');
+                console.log(payload.nonce);
+                document.querySelector('#nonce').value = payload.nonce;
+                document.getElementById("user_info").submit();
+                form.submit();
             });
         }, false);
     });

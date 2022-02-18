@@ -91,7 +91,7 @@ h1 {
   margin-bottom: 2em;
   transition: all 600ms $bouncy;
   animation: cardIntro 500ms $bouncy;
-  z-index: 1;
+  z-index: 99;
  
   &:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
@@ -163,7 +163,7 @@ h1 {
   color: #fff;
   background: #282c37;
   border-radius: $radius;
-  z-index: 0;
+  z-index: -1;
   transform: translateY(-100px);
   transition: all 500ms $bouncy;
   opacity: 0;
@@ -178,6 +178,7 @@ h1 {
   &.show-button {
     transform: translateY(0);
     opacity: 1;
+    z-index: 0;
   }
 }
 

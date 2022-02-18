@@ -25,12 +25,15 @@ use App\User;
 Auth::routes();
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->group(function () {
-
     Route::get('/', 'HomeController@index')->name('index');
     Route::resource('plates', PlateController::class);
 });
 
+
+
 Route::get('/checkout', 'CheckoutController@index');
+Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
+
 
 Route::get('/{any}', function () {
 
