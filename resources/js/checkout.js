@@ -2,6 +2,26 @@ var form = document.querySelector('#my-sample-form');
 var submit = document.querySelector('input[type="submit"]');
 
 
+function count() {
+    var cart = JSON.parse(localStorage.getItem("cart"));
+
+    var counts = cart.reduce(
+        (acc, value) => ({
+            ...acc,
+            [value.name]: (acc[value.name] || 0) + 1,
+        }),
+        {}
+    );
+
+    console.log(counts);
+
+
+}
+
+count();
+
+
+
 braintree.client.create({
     authorization: 'sandbox_38b6pcrv_9xyqb7hxsmjp4hsm'
 }, function (err, clientInstance) {
@@ -143,7 +163,7 @@ braintree.client.create({
                 // }
                 // return false
 
-                
+
             });
         }, false);
     });
