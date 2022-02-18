@@ -49,7 +49,8 @@
               </button>
             </li>
           </ul>
-        </div>
+          <button class="btn btn-success" type="submit" @click="getUrl()"> Procedi all'ordine</button>
+        </div>    
       </nav>
     </div>
   </div>
@@ -123,6 +124,11 @@ export default {
       }
       this.CountQuantity();
     },
+            getUrl(){
+              console.log(window.location.href);
+                window.location.href = "/checkout";
+            
+        },
   },
 
   mounted() {

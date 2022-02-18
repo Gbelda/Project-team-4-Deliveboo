@@ -18,7 +18,6 @@
         </div>
       </div>
     </header>
-
     <div class="carousel container my-5">
       <!-- .best_restaurants_section -->
       <section class="best_restaurants_section">
