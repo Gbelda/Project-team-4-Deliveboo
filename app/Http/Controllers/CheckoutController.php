@@ -53,12 +53,12 @@ class CheckoutController extends Controller
             'privateKey' => config('services.braintree.privateKey')
         ]);
 
-        ddd($request);
-        // $amount = $request->amount;
+        //ddd($request);
+         $amount = $request->amount;
         $nonce = $request->payment_method_nonce;
 
         $result = $gateway->transaction()->sale([
-            // 'amount' => $amount,
+             'amount' => $amount,
             'paymentMethodNonce' => $nonce,
             'options' => [
                 'submitForSettlement' => true
@@ -70,7 +70,7 @@ class CheckoutController extends Controller
             $transaction = $result->transaction;
             // header("Location: transaction.php?id=" . $transaction->id);
 
-            return back()->with('success_message', 'Transaction successful. The ID is:' . $transaction->id);
+            return redirect()->intended('/')->with('success_message', 'Il pagamento è avvenuto con successo');
         } else {
             $errorString = "";
 
@@ -80,7 +80,7 @@ class CheckoutController extends Controller
 
             // $_SESSION["errors"] = $errorString;
             // header("Location: index.php");
-            return back()->withErrors('An error occurred with the message: ' . $result->message);
+            return redirect()->intended('/')->withErrors('ERRORRE: ' . $result->message);
         }
     
     }
