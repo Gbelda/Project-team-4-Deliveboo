@@ -1,56 +1,84 @@
 <template>
-  <div class="container">
-    <div class="main_header d-flex justify-content-between">
-      <h3>{{ restaurant.restaurant_name }}</h3>
-    </div>
-
-    <div class="main_content d-flex justify-content-center">
-      <div class="row justify-content-center">
-        <div
-          class="card col-4 me-5 mb-5"
-          style="width: 18rem"
-          v-for="plate in plates"
-          :key="plate.id"
-        >
-          <img
-            :src="'/storage/' + plate.image"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">{{ plate.name }}</h5>
-            <p class="card-text">
-              &euro;
-              {{
-                Math.round((parseFloat(plate.price) + Number.EPSILON) * 100) /
-                100
-              }}
-            </p>
-            <button class="btn btn-primary" @click="AddToCart(plate)">
-              Aggiungi al carrello
-            </button>
+  <div class="container" id="menu">
+    <section class="plates row">
+      <!-- colonna piatti -->
+      <div class="col-10">
+        <!-- nome ristorante -->
+        <div class="title_parag">
+          <h2 class="title">
+            <strong>{{ restaurant.restaurant_name }}</strong>
+          </h2>
+          <div class="line"></div>
+        </div>
+        <!-- contenuto piatti -->
+        <div class="row justify-content-center contenitore_bordi">
+          <div
+            class="col-md-6 col-lg-4 col-sm-12 card-container d-flex"
+            v-for="plate in plates"
+            :key="plate.id"
+          >
+            <div class="food-card">
+              <div class="food-card-image">
+                <img :src="'/storage/' + plate.image" />
+              </div>
+              <div class="food-card-content">
+                <div class="food-card-food-name">
+                  <h1>
+                    <strong>{{ plate.name }}</strong>
+                  </h1>
+                </div>
+                <div class="food-card-artist-name">
+                  &euro;
+                  {{
+                    Math.round(
+                      (parseFloat(plate.price) + Number.EPSILON) * 100
+                    ) / 100
+                  }}
+                </div>
+                <div class="food-card-about">
+                  {{ plate.description }}
+                  <div class="about-shadow"></div>
+                </div>
+                <div
+                  class="food-card-food-properties"
+                  @click="AddToCart(plate)"
+                >
+                  <!-- routerlink -->
+                  Aggiungi al carrello
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      <nav class="col-2 d-none d-md-block bg-light sidebar">
-        <div class="sidebar-sticky">
-          <h3 class="mt-2">Carrello</h3>
-          <ul class="list-unstyled">
-            <li v-for="(item, value) in counts" :key="value">
-              {{ value }} : {{ item }}
-
-              <br />
-              <button class="btn btn-primary" @click="addQuantity(value)">
+      <!-- carrello -->
+      <div class="col-2">
+        <div class="sidebar-sticky carrello">
+          <h3>Carrello</h3>
+          <ul class="list-unstyled contenitore_piatti_carrello">
+            <li class="name_food" v-for="(item, value) in counts" :key="value">
+              <div class="name_qty d-flex justify-content-between">
+                <div>
+                  {{ value }}:
+                </div>
+                <div class="qty_plate">
+                  {{ item }}
+                </div>
+              </div>
+              <button class="btn add_btn" @click="addQuantity(value)">
                 aggiungi
               </button>
-              <button class="btn btn-danger" @click="removeToCart(value)">
+              <button class="btn remove_btn" @click="removeToCart(value)">
                 elimina
               </button>
             </li>
           </ul>
         </div>
-      </nav>
+      </div>
+    </section>
+
+    <div class="main_content d-flex justify-content-center">
+      <nav class="col-2 d-none d-md-block bg-light sidebar"></nav>
     </div>
   </div>
 </template>
@@ -148,5 +176,189 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+// VARIABILI
+$brand-color: #ff8200;
+$secondary_color: #ffc100;
+$black: #0a0903;
+#menu {
+  padding-top: 4rem;
+  .qty_plate{
+            height: 1.5rem;
+            width: 1.5rem;
+            border-radius: 50%;
+            background: $brand-color;
+            vertical-align: middle;
+            text-align: center;
+            line-height: 1.5rem;
+            color: $black;
+      }
+  .carrello {
+    padding: 2rem 0;
+    h3{
+      text-align: center;
+      font-weight: bolder;
+    }
+    .contenitore_piatti_carrello{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .name_qty{
+        padding: .5rem 0;
+      }
+      .name_food{
+        font-size: bold;
+      }
+      .add_btn{
+        background-color: $brand-color;
+        color: $black;
+      }
+      .remove_btn{
+        background-color: $black;
+        color: $brand-color;
+      }
+    }
+  }
+}
+// card
+  #router_ristoranti {
+    text-decoration: none;
+    color: $black;
+  }
+  .food-card:hover {
+    transform: scale(105%);
+    transition: all 0.3s ease-in-out;
+  }
+  .food-card-food-properties:hover {
+    box-shadow: 1px 3px 3px 0px $black;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  .prev {
+    color: $black !important;
+  }
+  .current {
+    background-color: $brand-color;
+  }
+  .next {
+    color: $brand-color;
+    font-weight: bold;
+  }
+  .current-off {
+    background-color: transparent;
+  }
+  // mpostazioni card
+  .food-card {
+    position: relative;
+    width: 400px;
+    height: 350px;
+    background: transparent;
+    font-family: "Montserrat", sans-serif;
+  }
+  .food-card-image {
+    position: relative;
+    top: 20%;
+    left: 5%;
+    width: 40%;
+    height: 40%;
+    border-radius: 5px;
+    z-index: 5;
+  }
+  .food-card-image > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: auto;
+  }
+  .food-card-content {
+    position: absolute;
+    bottom: 20%;
+    right: 0;
+    width: 80%;
+    height: 70%;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px 2px #00000045;
+    background: $secondary_color;
+  }
+  .food-card-food-name,
+  .food-card-artist-name {
+    position: relative;
+    left: 30%;
+    color: $black;
+    padding-left: 5px;
+    font-size: 100%;
+  }
+  .food-card-artist-name {
+    letter-spacing: 2px;
+  }
+  .food-card-food-name > * {
+    margin-top: 32px;
+    text-overflow: ellipsis;
+    font-size: 1.5rem;
+    width: 176px;
+  }
+  .food-card-about {
+    width: 87%;
+    height: 2.5rem;
+    position: absolute;
+    font-size: 12px;
+    font-family: "Montserrat", sans-serif;
+    opacity: 0.56;
+    overflow: auto;
+    top: 73%;
+  }
+  .about-shadow {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 35px;
+    z-index: 2;
+  }
+  .food-card-food-properties {
+    position: absolute;
+    left: 65%;
+    bottom: -25%;
+    transform: translate(-50%, -105%);
+    z-index: 7;
+    border-radius: 15px;
+    padding: 10px 15px;
+    color: $black;
+    text-align: center;
+    background: $brand-color;
+    width: fit-content;
+    box-shadow: 2px 4px 12px 0px #00000045;
+  }
+  .food-card-food-properties > div {
+    border-right: 1px solid var(--card-properties-text-color);
+    width: fit-content;
+    padding: 0 10px;
+    display: inline-block;
+  }
+  .food-card-food-properties > div:last-child {
+    border-right: none;
+  }
+  .food-card-food-properties > div > i {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  .food-card-food-properties > div > p {
+    font-size: 10px;
+    margin: 0;
+  }
+// utility
+.title_parag {
+  text-align: center;
+  padding: 2rem 0;
+  .line {
+    height: 3px;
+    background-color: $black;
+    width: 20%;
+    margin: auto;
+  }
+}
 </style>
