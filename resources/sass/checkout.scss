@@ -163,7 +163,7 @@ h1 {
   color: #fff;
   background: #282c37;
   border-radius: $radius;
-  z-index: -1;
+  z-index:-1;
   transform: translateY(-100px);
   transition: all 500ms $bouncy;
   opacity: 0;
@@ -256,6 +256,10 @@ Inputs
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
+}
+
+#user_info{
+  width: 100%;
 }
 
 

@@ -198,20 +198,33 @@ braintree.client.create({
       }
     });
     submit.addEventListener('click', function (event) {
-      event.preventDefault();
-      document.getElementById("user_info").submit();
+      // event.preventDefault();
+      var forms = document.querySelectorAll('.needs-validation'); // Loop over them and prevent submission
+
+      Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+
+          form.classList.add('was-validated');
+        }, false);
+      });
       hostedFieldsInstance.tokenize(function (err, payload) {
         if (err) {
           console.error(err);
           return;
         } // This is where you would submit payload.nonce to your server
         // alert('Submit your nonce to your server here!');
+        // if ($form.checkValidity()) {
+        //     console.log(payload.nonce);
+        //     document.querySelector('#nonce').value = payload.nonce;
+        //     document.getElementById("user_info").submit();
+        //     form.submit();
+        // }
+        // return false
 
-
-        console.log(payload.nonce);
-        document.querySelector('#nonce').value = payload.nonce;
-        document.getElementById("user_info").submit();
-        form.submit();
       });
     }, false);
   });

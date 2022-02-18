@@ -1,6 +1,7 @@
 var form = document.querySelector('#my-sample-form');
 var submit = document.querySelector('input[type="submit"]');
 
+
 braintree.client.create({
     authorization: 'sandbox_38b6pcrv_9xyqb7hxsmjp4hsm'
 }, function (err, clientInstance) {
@@ -108,8 +109,22 @@ braintree.client.create({
         });
 
         submit.addEventListener('click', function (event) {
-            event.preventDefault();
-            document.getElementById("user_info").submit();
+            // event.preventDefault();
+
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
 
             hostedFieldsInstance.tokenize(function (err, payload) {
                 if (err) {
@@ -119,10 +134,16 @@ braintree.client.create({
 
                 // This is where you would submit payload.nonce to your server
                 // alert('Submit your nonce to your server here!');
-                console.log(payload.nonce);
-                document.querySelector('#nonce').value = payload.nonce;
-                document.getElementById("user_info").submit();
-                form.submit();
+
+                // if ($form.checkValidity()) {
+                //     console.log(payload.nonce);
+                //     document.querySelector('#nonce').value = payload.nonce;
+                //     document.getElementById("user_info").submit();
+                //     form.submit();
+                // }
+                // return false
+
+                
             });
         }, false);
     });

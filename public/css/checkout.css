@@ -216,6 +216,10 @@ Inputs
   perspective: 1000px;
 }
 
+#user_info {
+  width: 100%;
+}
+
 /*--------------------
 Animations
 --------------------*/
