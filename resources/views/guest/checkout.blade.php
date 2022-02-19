@@ -95,7 +95,7 @@
 
                         <div class="mb-3 form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Esempio@dominio.it"
+                            <input type="email" class="form-control" id="email" placeholder="Esempio@dominio.it" required
                                 name="email">
                         </div>
 

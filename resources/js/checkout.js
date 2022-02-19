@@ -1,24 +1,9 @@
 var form = document.querySelector('#my-sample-form');
 var submit = document.querySelector('input[type="submit"]');
 
-
-function count() {
-    var cart = JSON.parse(localStorage.getItem("cart"));
-
-    var counts = cart.reduce(
-        (acc, value) => ({
-            ...acc,
-            [value.name]: (acc[value.name] || 0) + 1,
-        }),
-        {}
-    );
-
-    console.log(counts);
+var cart = JSON.parse(localStorage.getItem("cart"));
 
 
-}
-
-count();
 
 
 
@@ -155,13 +140,13 @@ braintree.client.create({
                 // This is where you would submit payload.nonce to your server
                 // alert('Submit your nonce to your server here!');
 
-                // if ($form.checkValidity()) {
-                //     console.log(payload.nonce);
-                //     document.querySelector('#nonce').value = payload.nonce;
-                //     document.getElementById("user_info").submit();
-                //     form.submit();
-                // }
-                // return false
+                if ($form.checkValidity()) {
+                    console.log(payload.nonce);
+                    document.querySelector('#nonce').value = payload.nonce;
+                    document.getElementById("user_info").submit();
+                    form.submit();
+                 }
+                 return false
 
 
             });

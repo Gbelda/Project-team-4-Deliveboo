@@ -93,24 +93,9 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var form = document.querySelector('#my-sample-form');
 var submit = document.querySelector('input[type="submit"]');
-
-function count() {
-  var cart = JSON.parse(localStorage.getItem("cart"));
-  var counts = cart.reduce(function (acc, value) {
-    return _objectSpread(_objectSpread({}, acc), {}, _defineProperty({}, value.name, (acc[value.name] || 0) + 1));
-  }, {});
-  console.log(counts);
-}
-
-count();
+var cart = JSON.parse(localStorage.getItem("cart"));
 braintree.client.create({
   authorization: 'sandbox_38b6pcrv_9xyqb7hxsmjp4hsm'
 }, function (err, clientInstance) {
@@ -233,14 +218,16 @@ braintree.client.create({
           return;
         } // This is where you would submit payload.nonce to your server
         // alert('Submit your nonce to your server here!');
-        // if ($form.checkValidity()) {
-        //     console.log(payload.nonce);
-        //     document.querySelector('#nonce').value = payload.nonce;
-        //     document.getElementById("user_info").submit();
-        //     form.submit();
-        // }
-        // return false
 
+
+        if ($form.checkValidity()) {
+          console.log(payload.nonce);
+          document.querySelector('#nonce').value = payload.nonce;
+          document.getElementById("user_info").submit();
+          form.submit();
+        }
+
+        return false;
       });
     }, false);
   });
