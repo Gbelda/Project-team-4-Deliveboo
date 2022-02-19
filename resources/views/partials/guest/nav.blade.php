@@ -5,9 +5,4 @@
             <img src="{{ asset('./img/jumbo/logo.png') }}" alt="">
         </a>
     </div>
-    <div class="hamburgen">
-        <button class="btn btn-link text-brand">Sei un ristorante?</button>
-        {{-- <i class="fa-solid fa-bars"></i> --}}
-    </div>
-</div>
 </nav>

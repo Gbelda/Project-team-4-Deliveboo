@@ -21,7 +21,23 @@
         background-color: $black;
         border-radius: 20px;
         color: $brand-color;
-
+        .button_navbar{
+            color: $brand-color;
+            text-decoration: none;
+            &:focus{
+                box-shadow: none;
+            }
+        }
+        .tendina{
+            background-color: $black;
+            border-radius: 0px 10px 20px 20px;
+            .nav_link{
+                text-align: center;
+                a{
+                    color: $brand-color;
+                }
+            }
+        }
         .col-2 img {
             width: 6rem;
         }

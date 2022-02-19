@@ -11272,6 +11272,23 @@ body {
   border-radius: 20px;
   color: #ff8200;
 }
+#nav_guest .nav_guest .button_navbar {
+  color: #ff8200;
+  text-decoration: none;
+}
+#nav_guest .nav_guest .button_navbar:focus {
+  box-shadow: none;
+}
+#nav_guest .nav_guest .tendina {
+  background-color: #0a0903;
+  border-radius: 0px 10px 20px 20px;
+}
+#nav_guest .nav_guest .tendina .nav_link {
+  text-align: center;
+}
+#nav_guest .nav_guest .tendina .nav_link a {
+  color: #ff8200;
+}
 #nav_guest .nav_guest .col-2 img {
   width: 6rem;
 }
