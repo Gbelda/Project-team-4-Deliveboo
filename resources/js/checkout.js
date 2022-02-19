@@ -1,6 +1,16 @@
 var form = document.querySelector('#my-sample-form');
 var submit = document.querySelector('input[type="submit"]');
+var cart_list = getElementById('cart_list');
+var cart_element = 
+`<li class="list-group-item d-flex justify-content-between lh-condensed">
+    <div>
+        <h6 class="my-0"></h6>
+        <small class="text-muted">Brief description</small>
+    </div>
+    <span class="text-muted">$12</span>
+</li>`
 
+console.log(cart_list);
 // GET CART LIST
 var cart = JSON.parse(localStorage.getItem("cart"));
 console.log(cart);
