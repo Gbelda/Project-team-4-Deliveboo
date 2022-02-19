@@ -18,130 +18,7 @@
         </div>
       </div>
     </header>
-    <!-- ristoranti -->
-    <section id="home">
-      <div class="container">
-        <!-- titolo paragrafo categorie -->
-        <div class="title_parag">
-          <h2 class="title">
-            <strong> SCEGLI COSA VUOI MANGIARE </strong>
-          </h2>
-          <div class="line"></div>
-        </div>
-        <!-- contenuto categorie !ATTENZIONE!DA FARE RESPONSIVE -->
-        <div class="background_cat categorie">
-          <!--ciclo categorie -->
-          <div
-            class="form-check orange_band"
-            v-for="(category, index) in categories"
-            :key="category.id"
-          >
-            <input
-              class="form-check-input check_square"
-              type="checkbox"
-              :value="category.id"
-              :id="'category' + index"
-              v-model="selected.categories"
-            />
-            <div class="d-flex flex-column colonna">
-              <label class="cat_image" :for="'category' + index">
-                <img
-                  class="icon_cat"
-                  :src="'../../img/icon/' + category.image"
-                  alt=""
-                />
-              </label>
-              <label class="form-check-label fw-bold" :for="'category' + index">
-                {{ category.name }}
-              </label>
-            </div>
-          </div>
-        </div>
-        <!-- ristoranti -->
-        <section class="ristoranti_container">
-          <div class="content">
-            <!-- titolo -->
-            <h2 class="text-center pb-2">I Nostri Ristoranti</h2>
-            <!-- in caso di nessun risultato -->
-            <div
-              class="
-                empty
-                d-flex
-                align-items-center
-                justify-content-center
-                text-danger
-              "
-            >
-              <h3 v-if="restaurants == ''">Nessun ristorante disponibile</h3>
-            </div>
-            <div class="row justify-content-center contenitore_bordi">
-              <div
-                class="col-md-6 col-lg-4 col-sm-12 card-container d-flex"
-                v-for="restaurant in restaurants"
-                :key="restaurant.id"
-              >
-                <div class="food-card">
-                  <div class="food-card-image">
-                    <img :src="'storage/' + restaurant.image" />
-                  </div>
-                  <div class="food-card-content">
-                    <div class="food-card-food-name">
-                      <h1>
-                        <strong>{{ restaurant.restaurant_name }}</strong>
-                      </h1>
-                    </div>
-                    <div
-                      class="food-card-artist-name"
-                      v-for="(category, index) in restaurant.categories"
-                      :key="restaurant.slug + category.id"
-                    >
-                      {{ category.name }}
-                      {{ index != restaurant.categories.length - 1 ? "|" : "" }}
-                    </div>
-                    <div class="food-card-about">
-                      {{ restaurant.address }}
-                      <div class="about-shadow"></div>
-                    </div>
-                    <div class="food-card-food-properties">
-                      <!-- routerlink -->
-                      <router-link
-                        :to="'/restaurants/' + restaurant.id"
-                        id="router_ristoranti"
-                        ><strong>VEDI RISTORANTE</strong></router-link
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- gestione pagine -->
-            <div class="links text-center mt-5" v-if="meta.last_page > 1">
-              <span
-                class="btn prev"
-                :class="meta.current_page === 1 ? 'disabled' : ''"
-                @click="PrevPage()"
-                >Prev</span
-              >
-              <span
-                class="btn current"
-                :class="meta.current_page === page ? 'current' : 'current-off'"
-                v-for="page in meta.last_page"
-                :key="page"
-                @click="ToPage(page)"
-                >{{ page }}</span
-              >
-              <span
-                class="btn next"
-                :class="meta.current_page === meta.last_page ? 'disabled' : ''"
-                @click="NextPage()"
-                >Next</span
-              >
-            </div>
-          </div>
-        </section>
-      </div>
-    </section>
-    <!-- ristoranti -->
+
     <div class="carousel container my-5">
       <!-- .best_restaurants_section -->
       <section class="best_restaurants_section">
@@ -276,6 +153,131 @@
       </section>
       <!-- /.best_restaurants_section -->
     </div>
+
+        <!-- ristoranti -->
+    <section id="home">
+      <div class="container">
+        <!-- titolo paragrafo categorie -->
+        <div class="title_parag">
+          <h2 class="title">
+            <strong> SCEGLI COSA VUOI MANGIARE </strong>
+          </h2>
+          <div class="line"></div>
+        </div>
+        <!-- contenuto categorie !ATTENZIONE!DA FARE RESPONSIVE -->
+        <div class="background_cat categorie">
+          <!--ciclo categorie -->
+          <div
+            class="form-check orange_band"
+            v-for="(category, index) in categories"
+            :key="category.id"
+          >
+            <input
+              class="form-check-input check_square"
+              type="checkbox"
+              :value="category.id"
+              :id="'category' + index"
+              v-model="selected.categories"
+            />
+            <div class="d-flex flex-column colonna">
+              <label class="cat_image" :for="'category' + index">
+                <img
+                  class="icon_cat"
+                  :src="'../../img/icon/' + category.image"
+                  alt=""
+                />
+              </label>
+              <label class="form-check-label fw-bold" :for="'category' + index">
+                {{ category.name }}
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- ristoranti -->
+        <section class="ristoranti_container">
+          <div class="content">
+            <!-- titolo -->
+            <h2 class="text-center pb-2">I Nostri Ristoranti</h2>
+            <!-- in caso di nessun risultato -->
+            <div
+              class="
+                empty
+                d-flex
+                align-items-center
+                justify-content-center
+                text-danger
+              "
+            >
+              <h3 v-if="restaurants == ''">Nessun ristorante disponibile</h3>
+            </div>
+            <div class="row justify-content-center contenitore_bordi">
+              <div
+                class="col-md-6 col-lg-4 col-sm-12 card-container d-flex"
+                v-for="restaurant in restaurants"
+                :key="restaurant.id"
+              >
+                <div class="food-card">
+                  <div class="food-card-image">
+                    <img :src="'storage/' + restaurant.image" />
+                  </div>
+                  <div class="food-card-content">
+                    <div class="food-card-food-name">
+                      <h1>
+                        <strong>{{ restaurant.restaurant_name }}</strong>
+                      </h1>
+                    </div>
+                    <div
+                      class="food-card-artist-name"
+                      v-for="(category, index) in restaurant.categories"
+                      :key="restaurant.slug + category.id"
+                    >
+                      {{ category.name }}
+                      {{ index != restaurant.categories.length - 1 ? "|" : "" }}
+                    </div>
+                    <div class="food-card-about">
+                      {{ restaurant.address }}
+                      <div class="about-shadow"></div>
+                    </div>
+                    <div class="food-card-food-properties">
+                      <!-- routerlink -->
+                      <router-link
+                        :to="'/restaurants/' + restaurant.id"
+                        id="router_ristoranti"
+                        ><strong>VEDI RISTORANTE</strong></router-link
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- gestione pagine -->
+            <div class="links text-center mt-5" v-if="meta.last_page > 1">
+              <span
+                class="btn prev"
+                :class="meta.current_page === 1 ? 'disabled' : ''"
+                @click="PrevPage()"
+                >Prev</span
+              >
+              <span
+                class="btn current"
+                :class="meta.current_page === page ? 'current' : 'current-off'"
+                v-for="page in meta.last_page"
+                :key="page"
+                @click="ToPage(page)"
+                >{{ page }}</span
+              >
+              <span
+                class="btn next"
+                :class="meta.current_page === meta.last_page ? 'disabled' : ''"
+                @click="NextPage()"
+                >Next</span
+              >
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <!-- ristoranti -->
 
     <div class="larger_container container-fluid d-flex mt-5 pt-5">
       <div class="right_container col-8">

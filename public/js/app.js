@@ -5627,6 +5627,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -42875,9 +42877,107 @@ var render = function () {
   return _c("div", { staticClass: "container-fluid jumbo p-0" }, [
     _vm._m(0),
     _vm._v(" "),
+    _c("div", { staticClass: "carousel container my-5" }, [
+      _c("section", { staticClass: "best_restaurants_section" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "carousel slide",
+            attrs: {
+              id: "best_restaurants_carousel",
+              "data-bs-ride": "carousel",
+            },
+          },
+          [
+            _vm._m(2),
+            _vm._v(" "),
+            _c("div", { staticClass: "carousel-inner rounded" }, [
+              _c("div", { staticClass: "carousel-item active" }, [
+                _c(
+                  "svg",
+                  {
+                    staticClass: "bd-placeholder-img",
+                    attrs: {
+                      width: "100%",
+                      height: "100%",
+                      xmlns: "http://www.w3.org/2000/svg",
+                      "aria-hidden": "true",
+                      preserveAspectRatio: "xMidYMid slice",
+                      focusable: "false",
+                    },
+                  },
+                  [
+                    _c("rect", {
+                      attrs: { width: "100%", height: "100%", fill: "#777" },
+                    }),
+                  ]
+                ),
+                _vm._v(" "),
+                _vm._m(3),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "carousel-item" }, [
+                _c(
+                  "svg",
+                  {
+                    staticClass: "bd-placeholder-img",
+                    attrs: {
+                      width: "100%",
+                      height: "100%",
+                      xmlns: "http://www.w3.org/2000/svg",
+                      "aria-hidden": "true",
+                      preserveAspectRatio: "xMidYMid slice",
+                      focusable: "false",
+                    },
+                  },
+                  [
+                    _c("rect", {
+                      attrs: { width: "100%", height: "100%", fill: "#777" },
+                    }),
+                  ]
+                ),
+                _vm._v(" "),
+                _vm._m(4),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "carousel-item" }, [
+                _c(
+                  "svg",
+                  {
+                    staticClass: "bd-placeholder-img",
+                    attrs: {
+                      width: "100%",
+                      height: "100%",
+                      xmlns: "http://www.w3.org/2000/svg",
+                      "aria-hidden": "true",
+                      preserveAspectRatio: "xMidYMid slice",
+                      focusable: "false",
+                    },
+                  },
+                  [
+                    _c("rect", {
+                      attrs: { width: "100%", height: "100%", fill: "#777" },
+                    }),
+                  ]
+                ),
+                _vm._v(" "),
+                _vm._m(5),
+              ]),
+            ]),
+            _vm._v(" "),
+            _vm._m(6),
+            _vm._v(" "),
+            _vm._m(7),
+          ]
+        ),
+      ]),
+    ]),
+    _vm._v(" "),
     _c("section", { attrs: { id: "home" } }, [
       _c("div", { staticClass: "container" }, [
-        _vm._m(1),
+        _vm._m(8),
         _vm._v(" "),
         _c(
           "div",
@@ -43150,104 +43250,6 @@ var render = function () {
       ]),
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "carousel container my-5" }, [
-      _c("section", { staticClass: "best_restaurants_section" }, [
-        _vm._m(2),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "carousel slide",
-            attrs: {
-              id: "best_restaurants_carousel",
-              "data-bs-ride": "carousel",
-            },
-          },
-          [
-            _vm._m(3),
-            _vm._v(" "),
-            _c("div", { staticClass: "carousel-inner rounded" }, [
-              _c("div", { staticClass: "carousel-item active" }, [
-                _c(
-                  "svg",
-                  {
-                    staticClass: "bd-placeholder-img",
-                    attrs: {
-                      width: "100%",
-                      height: "100%",
-                      xmlns: "http://www.w3.org/2000/svg",
-                      "aria-hidden": "true",
-                      preserveAspectRatio: "xMidYMid slice",
-                      focusable: "false",
-                    },
-                  },
-                  [
-                    _c("rect", {
-                      attrs: { width: "100%", height: "100%", fill: "#777" },
-                    }),
-                  ]
-                ),
-                _vm._v(" "),
-                _vm._m(4),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "carousel-item" }, [
-                _c(
-                  "svg",
-                  {
-                    staticClass: "bd-placeholder-img",
-                    attrs: {
-                      width: "100%",
-                      height: "100%",
-                      xmlns: "http://www.w3.org/2000/svg",
-                      "aria-hidden": "true",
-                      preserveAspectRatio: "xMidYMid slice",
-                      focusable: "false",
-                    },
-                  },
-                  [
-                    _c("rect", {
-                      attrs: { width: "100%", height: "100%", fill: "#777" },
-                    }),
-                  ]
-                ),
-                _vm._v(" "),
-                _vm._m(5),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "carousel-item" }, [
-                _c(
-                  "svg",
-                  {
-                    staticClass: "bd-placeholder-img",
-                    attrs: {
-                      width: "100%",
-                      height: "100%",
-                      xmlns: "http://www.w3.org/2000/svg",
-                      "aria-hidden": "true",
-                      preserveAspectRatio: "xMidYMid slice",
-                      focusable: "false",
-                    },
-                  },
-                  [
-                    _c("rect", {
-                      attrs: { width: "100%", height: "100%", fill: "#777" },
-                    }),
-                  ]
-                ),
-                _vm._v(" "),
-                _vm._m(6),
-              ]),
-            ]),
-            _vm._v(" "),
-            _vm._m(7),
-            _vm._v(" "),
-            _vm._m(8),
-          ]
-        ),
-      ]),
-    ]),
-    _vm._v(" "),
     _c(
       "div",
       { staticClass: "larger_container container-fluid d-flex mt-5 pt-5" },
@@ -43323,18 +43325,6 @@ var staticRenderFns = [
           ]),
         ]
       ),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "title_parag" }, [
-      _c("h2", { staticClass: "title" }, [
-        _c("strong", [_vm._v(" SCEGLI COSA VUOI MANGIARE ")]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "line" }),
     ])
   },
   function () {
@@ -43489,6 +43479,18 @@ var staticRenderFns = [
         _c("span", { staticClass: "visually-hidden" }, [_vm._v("Next")]),
       ]
     )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "title_parag" }, [
+      _c("h2", { staticClass: "title" }, [
+        _c("strong", [_vm._v(" SCEGLI COSA VUOI MANGIARE ")]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "line" }),
+    ])
   },
   function () {
     var _vm = this
