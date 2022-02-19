@@ -81,44 +81,30 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/register.js":
+/***/ "./resources/js/checkout.js":
 /*!**********************************!*\
-  !*** ./resources/js/register.js ***!
+  !*** ./resources/js/checkout.js ***!
   \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-window.onload = function () {
-  var txtPassword = document.getElementById("password");
-  var txtConfirmPassword = document.getElementById("password-confirm");
-  var btnSubmit = document.getElementById('submit_form');
-  btnSubmit.onsubmit = ConfirmPassword;
-  txtConfirmPassword.onkeyup = ConfirmPassword;
-
-  function ConfirmPassword() {
-    txtConfirmPassword.setCustomValidity("");
-
-    if (txtPassword.value != txtConfirmPassword.value) {
-      txtConfirmPassword.setCustomValidity("Le password devono essere uguali.");
-    }
-  }
-};
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'C:\\MAMP\\htdocs\\laravel\\Project-team-4-Deliveboo\\resources\\js\\checkout.js'");
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!****************************************!*\
-  !*** multi ./resources/js/register.js ***!
+  !*** multi ./resources/js/checkout.js ***!
   \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\js\register.js */"./resources/js/register.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\js\checkout.js */"./resources/js/checkout.js");
 
 
 /***/ })
