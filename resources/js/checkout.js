@@ -1,38 +1,65 @@
 var form = document.querySelector('#my-sample-form');
 var submit = document.querySelector('input[type="submit"]');
-var cart_list = getElementById('cart_list');
-var cart_element = 
-`<li class="list-group-item d-flex justify-content-between lh-condensed">
-    <div>
-        <h6 class="my-0"></h6>
-        <small class="text-muted">Brief description</small>
-    </div>
-    <span class="text-muted">$12</span>
-</li>`
 
-console.log(cart_list);
-// GET CART LIST
+// GET CART ARRAY
 var cart = JSON.parse(localStorage.getItem("cart"));
-console.log(cart);
+console.log(cart, 'log 1');
+
+// TARGET DOM CART LIST
+var cart_list = document.getElementById('cart_list');
+console.log(cart_list, 'log 2');
 
 // COUNT PLATE DUPLICATES TO SET COUNTER
-    var counts = cart.reduce(
-        (acc, value) => ({
-            ...acc,
-            [value.name]: (acc[value.name] || 0) + 1,
-        }),
-        {}
-    );
-    console.log(counts);
-    
-
+var countsObject = cart.reduce(
+    (acc, value) => ({
+        ...acc,
+        [value.name]: (acc[value.name] || 0) + 1,
+    }),
+    {}
+);
+console.log(countsObject, 'log 3');
+ 
 // GET PLATE NAMES
-var products = Object.keys(counts)
-console.log(products);
+var products = Object.keys(countsObject)
+console.log(products, 'log 4');
 
-//GET PLATE INFO THROUGH NAME FIND
-var product = cart.find(product => product.name == products[0]);
-console.log(product);
+//GET PLATE COUNTS
+var counts = Object.values(countsObject)
+console.log(counts , 'log counts');
+
+
+//Assign to DOM element
+if (products != '') {
+    
+    for (let i = 0; i < products.length; i++) {
+        //GET PLATE INFO THROUGH NAME FIND
+        var product = cart.find(product => product.name == products[i]);
+        console.log(product, 'log 5');
+        cart_list.insertAdjacentHTML('beforeend',
+            ` <li class= "list-group-item d-flex justify-content-between lh-condensed" >
+                <div>
+                    <h6 class="my-0">${ product.name }</h6>
+                    <small class="text-muted">Quantit&aacute;: ${counts[i]}</small>
+                </div>
+                <span class="text-muted">&euro;${Math.round(((product.price * counts[i]) + Number.EPSILON) * 100)/100}</span>
+                </li >`
+        )
+    }
+    var total = 0
+    for (let i = 0; i < cart.length; i++) {
+        total = total + parseFloat(cart[i].price)
+
+        
+
+    }
+    cart_list.insertAdjacentHTML('beforeend', 
+        `<li class= "list-group-item d-flex justify-content-between lh-condensed" ><h5>Totale:</h5><h5>&euro;${Math.round((total + Number.EPSILON) * 100) / 100}</h5></li>`
+    )
+} else {
+    cart_list.insertAdjacentHTML('beforeend', `<em class="text-danger">Il carrello e vuoto</em>`)
+}
+
+
 
 
 
@@ -175,8 +202,8 @@ braintree.client.create({
                     document.querySelector('#nonce').value = payload.nonce;
                     document.getElementById("user_info").submit();
                     form.submit();
-                 }
-                 return false
+                }
+                return false
 
 
             });

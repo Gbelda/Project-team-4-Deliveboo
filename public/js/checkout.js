@@ -100,26 +100,52 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var form = document.querySelector('#my-sample-form');
-var submit = document.querySelector('input[type="submit"]');
-var cart_list = getElementById('cart_list');
-var cart_element = "<li class=\"list-group-item d-flex justify-content-between lh-condensed\">\n    <div>\n        <h6 class=\"my-0\"></h6>\n        <small class=\"text-muted\">Brief description</small>\n    </div>\n    <span class=\"text-muted\">$12</span>\n</li>";
-console.log(cart_list); // GET CART LIST
+var submit = document.querySelector('input[type="submit"]'); // GET CART ARRAY
 
 var cart = JSON.parse(localStorage.getItem("cart"));
-console.log(cart); // COUNT PLATE DUPLICATES TO SET COUNTER
+console.log(cart, 'log 1'); // TARGET DOM CART LIST
 
-var counts = cart.reduce(function (acc, value) {
+var cart_list = document.getElementById('cart_list');
+console.log(cart_list, 'log 2'); // COUNT PLATE DUPLICATES TO SET COUNTER
+
+var countsObject = cart.reduce(function (acc, value) {
   return _objectSpread(_objectSpread({}, acc), {}, _defineProperty({}, value.name, (acc[value.name] || 0) + 1));
 }, {});
-console.log(counts); // GET PLATE NAMES
+console.log(countsObject, 'log 3'); // GET PLATE NAMES
 
-var products = Object.keys(counts);
-console.log(products); //GET PLATE INFO THROUGH NAME FIND
+var products = Object.keys(countsObject);
+console.log(products, 'log 4'); //GET PLATE COUNTS
 
-var product = cart.find(function (product) {
-  return product.name == products[0];
-});
-console.log(product);
+var counts = Object.values(countsObject);
+console.log(counts, 'log counts'); //Assign to DOM element
+
+if (products != '') {
+  var _loop = function _loop(i) {
+    //GET PLATE INFO THROUGH NAME FIND
+    product = cart.find(function (product) {
+      return product.name == products[i];
+    });
+    console.log(product, 'log 5');
+    cart_list.insertAdjacentHTML('beforeend', " <li class= \"list-group-item d-flex justify-content-between lh-condensed\" >\n                <div>\n                    <h6 class=\"my-0\">".concat(product.name, "</h6>\n                    <small class=\"text-muted\">Quantit&aacute;: ").concat(counts[i], "</small>\n                </div>\n                <span class=\"text-muted\">&euro;").concat(Math.round((product.price * counts[i] + Number.EPSILON) * 100) / 100, "</span>\n                </li >"));
+  };
+
+  for (var i = 0; i < products.length; i++) {
+    var product;
+
+    _loop(i);
+  }
+
+  var total = 0;
+
+  for (var _i = 0; _i < cart.length; _i++) {
+    total = total + parseFloat(cart[_i].price);
+  }
+
+  cart_list.insertAdjacentHTML('beforeend', "<li class= \"list-group-item d-flex justify-content-between lh-condensed\" ><h5>Totale:</h5><h5>&euro;".concat(Math.round((total + Number.EPSILON) * 100) / 100, "</h5></li>"));
+} else {
+  cart_list.insertAdjacentHTML('beforeend', "<em class=\"text-danger\">Il carrello e vuoto</em>");
+}
+
 braintree.client.create({
   authorization: 'sandbox_38b6pcrv_9xyqb7hxsmjp4hsm'
 }, function (err, clientInstance) {
