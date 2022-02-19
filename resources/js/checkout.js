@@ -1,8 +1,28 @@
 var form = document.querySelector('#my-sample-form');
 var submit = document.querySelector('input[type="submit"]');
 
+// GET CART LIST
 var cart = JSON.parse(localStorage.getItem("cart"));
+console.log(cart);
 
+// COUNT PLATE DUPLICATES TO SET COUNTER
+    var counts = cart.reduce(
+        (acc, value) => ({
+            ...acc,
+            [value.name]: (acc[value.name] || 0) + 1,
+        }),
+        {}
+    );
+    console.log(counts);
+    
+
+// GET PLATE NAMES
+var products = Object.keys(counts)
+console.log(products);
+
+//GET PLATE INFO THROUGH NAME FIND
+var product = cart.find(product => product.name == products[0]);
+console.log(product);
 
 
 
