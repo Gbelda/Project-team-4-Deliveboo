@@ -1,4 +1,6 @@
 <template>
+<div class="">
+  <div class="hero_img"></div>
   <div class="container" id="menu">
     <section class="plates row">
       <!-- colonna piatti -->
@@ -81,6 +83,7 @@
       <nav class="col-2 d-none d-md-block bg-light sidebar"></nav>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -151,6 +154,11 @@ export default {
       }
       this.CountQuantity();
     },
+            getUrl(){
+              console.log(window.location.href);
+                window.location.href = "/checkout";
+            
+        },
   },
 
   mounted() {
@@ -181,6 +189,13 @@ export default {
 $brand-color: #ff8200;
 $secondary_color: #ffc100;
 $black: #0a0903;
+  .hero_img{
+    background-image: url("../../img/jumbo/hero_img.jpg");
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
 #menu {
   padding-top: 4rem;
   .qty_plate{
@@ -193,6 +208,7 @@ $black: #0a0903;
             line-height: 1.5rem;
             color: $black;
       }
+
   .carrello {
     padding: 2rem 0;
     h3{
