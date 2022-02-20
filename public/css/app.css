@@ -11399,6 +11399,7 @@ main .larger_container .right_container .main_content {
 }
 main .larger_container .right_container .best_plate_section {
   background-image: linear-gradient(to right, #ffc100, #ff8200) !important;
+  border-radius: 0px 370px 0px 370px/0px 345px 0px 345px;
   padding: 1rem;
   margin: 1rem 0;
 }

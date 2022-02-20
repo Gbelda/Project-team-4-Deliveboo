@@ -278,10 +278,10 @@
     </section>
     <!-- ristoranti -->
 
-    <div class="larger_container container-fluid d-flex mt-5 pt-5">
+    <div class="larger_container container-fluid d-flex mt-5 pt-5 justify-content-center">
       <div class="right_container col-8">
         <!-- .best_plate_section -->
-        <section class="best_plate_section rounded">
+        <section class="best_plate_section">
           <div class="paragraph_plate_day">
             <div class="row">
               <div class="col">

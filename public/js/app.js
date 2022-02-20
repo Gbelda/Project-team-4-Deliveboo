@@ -5217,10 +5217,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -42779,7 +42775,7 @@ var render = function () {
           ),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-2" }, [
+        _c("div", { staticClass: "col-2 side-cart" }, [
           _c("div", { staticClass: "sidebar-sticky carrello" }, [
             _c("h3", [_vm._v("Carrello")]),
             _vm._v(" "),
@@ -42862,23 +42858,10 @@ var render = function () {
           ]),
         ]),
       ]),
-      _vm._v(" "),
-      _vm._m(0),
     ]),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "main_content d-flex justify-content-center" },
-      [_c("nav", { staticClass: "col-2 d-none d-md-block bg-light sidebar" })]
-    )
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -43278,10 +43261,13 @@ var render = function () {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "larger_container container-fluid d-flex mt-5 pt-5" },
+      {
+        staticClass:
+          "larger_container container-fluid d-flex mt-5 pt-5 justify-content-center",
+      },
       [
         _c("div", { staticClass: "right_container col-8" }, [
-          _c("section", { staticClass: "best_plate_section rounded" }, [
+          _c("section", { staticClass: "best_plate_section" }, [
             _vm._m(9),
             _vm._v(" "),
             _c("div", { staticClass: "plate_of_day" }, [

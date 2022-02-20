@@ -54,7 +54,7 @@
           </div>
         </div>
         <!-- carrello -->
-        <div class="col-2">
+        <div class="col-2 side-cart">
           <div class="sidebar-sticky carrello">
             <h3>Carrello</h3>
             <div class="isEmpty text-center" v-if="cart==''">
@@ -88,10 +88,6 @@
           </div>
         </div>
       </section>
-
-      <div class="main_content d-flex justify-content-center">
-        <nav class="col-2 d-none d-md-block bg-light sidebar"></nav>
-      </div>
     </div>
   </div>
 </template>
