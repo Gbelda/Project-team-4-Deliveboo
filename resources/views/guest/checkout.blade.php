@@ -53,17 +53,11 @@
                                 <label for="client_name">Nome</label>
                                 <input type="text" class="form-control" id="client_name" placeholder="" required
                                     name="client_name">
-                                <div class="invalid-feedback">
-                                    Nome &eacute; un campo obbligatorio.
-                                </div>
                             </div>
                             <div class="col-md-6 mb-3 form-group">
                                 <label for="client_lastname">Cognome</label>
                                 <input type="text" class="form-control" id="client_lastname" placeholder="" value="" required
                                     name="client_lastname">
-                                <div class="invalid-feedback">
-                                    Cognome &eacute; un campo obbligatorio.
-                                </div>
                             </div>
                         </div>
 
@@ -71,29 +65,20 @@
                             <label for="client_email">Email</label>
                             <input type="email" class="form-control" id="client_email" placeholder="Esempio@dominio.it" required
                                 name="client_email">
-                            <div class="invalid-feedback">
-                                Email &eacute; un campo obbligatorio e deve essere valido.
-                            </div>
                         </div>
 
                         <div class="mb-3 form-group">
                             <label for="client_address">Indirizzo</label>
                             <input type="text" class="form-control" id="client_address" placeholder="Via/Piazza" required
                                 name="client_address">
-                            <div class="invalid-feedback">
-                                Indirizzo &eacute; un campo obbligatorio.
-                            </div>
                         </div>
 
                         <div class="mb-3 form-group">
                             <label for="client_phone">Numero di Tel.</label>
                             <input type="number" class="form-control" id="client_phone" placeholder="Cellulare/Telefono fisso." required
                                 name="client_phone" pattern="[0-9]{10}"
-                                        oninvalid="this.setCustomValidity('Inserire un numero di telefono valido')"
+                                        oninvalid="this.setCustomValidity('Inserire un numero di telefono')"
                                         oninput="this.setCustomValidity('')">
-                            <div class="invalid-feedback">
-                                Numero di Tel. &eacute; un campo obbligatorio.
-                            </div>
                         </div>
 
                         <hr class="mb-4">
