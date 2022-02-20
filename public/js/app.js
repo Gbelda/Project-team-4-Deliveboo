@@ -5217,6 +5217,38 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5225,14 +5257,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       links: {},
       plates: [],
       cart: [],
-      counts: [],
-      sampleArray: ["a", "a", "b", "c"]
+      counts: []
     };
   },
   watch: {
     cart: {
       handler: function handler(product) {
         localStorage.cart = JSON.stringify(product);
+      },
+      deep: true
+    },
+    restaurant: {
+      handler: function handler(restaurant) {
+        localStorage.restaurant = JSON.stringify(restaurant);
       },
       deep: true
     }
@@ -5258,13 +5295,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }, {});
     },
     AddToCart: function AddToCart(plate) {
+      if (this.cart != "") {
+        if (this.cart[0]["user_id"] != plate["user_id"] && this.cart != 0) {
+          return $("#change_cart").modal("show");
+        }
+      }
+
       this.cart.push(plate);
       this.cart.sort(function (a, b) {
         return parseFloat(a.price) - parseFloat(b.price);
-      }); // this.saveProduct();
-      // console.log(this.cart);
-
+      });
       this.CountQuantity();
+    },
+    newOrder: function newOrder(plate) {
+      this.cart = []; // this.cart.push(plate);
+      // this.cart.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+      // this.CountQuantity();
+      // $("#change_cart").modal("hide");
     },
     addQuantity: function addQuantity(input) {
       var result = this.cart.find(function (_ref) {
@@ -5298,16 +5345,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
     if (this.cart != []) {
       setTimeout(this.CountQuantity, 500);
-    } // if(localStorage.cart != undefined){
-    //   this.cart = JSON.parse(localStorage.cart)
-    // }
-
+    }
 
     if (localStorage.getItem("cart")) {
       try {
         this.cart = JSON.parse(localStorage.cart);
       } catch (e) {
         localStorage.removeItem("cart");
+      }
+    }
+
+    if (localStorage.getItem("restaurant")) {
+      try {
+        this.restaurant = JSON.parse(localStorage.restaurant);
+      } catch (e) {
+        localStorage.removeItem("restaurant");
       }
     }
   }
@@ -42697,6 +42749,46 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", {}, [
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        attrs: {
+          id: "change_cart",
+          tabindex: "-1",
+          "aria-labelledby": "change_cart",
+          "aria-hidden": "true",
+        },
+      },
+      [
+        _c("div", { staticClass: "modal-dialog" }, [
+          _c("div", { staticClass: "modal-content" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _vm._v(
+                "\n          L'ordine include articoli di un altro ristorante . Crea un nuovo\n          ordine per aggiungere articoli da " +
+                  _vm._s(_vm.restaurant.restaurant_name) +
+                  ".\n        "
+              ),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-footer" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: { type: "button" },
+                  on: { click: _vm.newOrder },
+                },
+                [_vm._v("\n            Crea nuovo ordine\n          ")]
+              ),
+            ]),
+          ]),
+        ]),
+      ]
+    ),
+    _vm._v(" "),
     _c("div", { staticClass: "hero_img" }),
     _vm._v(" "),
     _c("div", { staticClass: "container", attrs: { id: "menu" } }, [
@@ -42864,7 +42956,27 @@ var render = function () {
     ]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c("h5", { staticClass: "modal-title", attrs: { id: "change_cart" } }, [
+        _vm._v("Creare un nuovo ordine"),
+      ]),
+      _vm._v(" "),
+      _c("button", {
+        staticClass: "btn-close",
+        attrs: {
+          type: "button",
+          "data-bs-dismiss": "modal",
+          "aria-label": "Close",
+        },
+      }),
+    ])
+  },
+]
 render._withStripped = true
 
 

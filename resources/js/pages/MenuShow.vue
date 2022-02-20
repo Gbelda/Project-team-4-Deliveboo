@@ -1,5 +1,37 @@
 <template>
   <div class="">
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="change_cart"
+      tabindex="-1"
+      aria-labelledby="change_cart"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="change_cart">Creare un nuovo ordine</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            L'ordine include articoli di un altro ristorante . Crea un nuovo
+            ordine per aggiungere articoli da {{ restaurant.restaurant_name }}.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" @click="newOrder">
+              Crea nuovo ordine
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="hero_img"></div>
     <div class="container" id="menu">
       <section class="plates row">
@@ -57,7 +89,7 @@
         <div class="col-2 side-cart">
           <div class="sidebar-sticky carrello">
             <h3>Carrello</h3>
-            <div class="isEmpty text-center" v-if="cart==''">
+            <div class="isEmpty text-center" v-if="cart == ''">
               <em class="text-danger">Il carrello e vuoto</em>
             </div>
             <ul class="list-unstyled contenitore_piatti_carrello">
@@ -102,7 +134,6 @@ export default {
       plates: [],
       cart: [],
       counts: [],
-      sampleArray: ["a", "a", "b", "c"],
     };
   },
 
@@ -110,6 +141,12 @@ export default {
     cart: {
       handler(product) {
         localStorage.cart = JSON.stringify(product);
+      },
+      deep: true,
+    },
+    restaurant: {
+      handler(restaurant) {
+        localStorage.restaurant = JSON.stringify(restaurant);
       },
       deep: true,
     },
@@ -139,11 +176,22 @@ export default {
     },
 
     AddToCart(plate) {
+      if (this.cart != "") {
+        if (this.cart[0]["user_id"] != plate["user_id"] && this.cart != 0) {
+           return $("#change_cart").modal("show");
+        }
+      }
       this.cart.push(plate);
-      this.cart.sort((a,b) => parseFloat(a.price) - parseFloat(b.price))
-      // this.saveProduct();
-      // console.log(this.cart);
+      this.cart.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
       this.CountQuantity();
+    },
+
+    newOrder(plate) {
+      this.cart = [];
+      // this.cart.push(plate);
+      // this.cart.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+      // this.CountQuantity();
+      // $("#change_cart").modal("hide");
     },
 
     addQuantity(input) {
@@ -175,15 +223,19 @@ export default {
       setTimeout(this.CountQuantity, 500);
     }
 
-    // if(localStorage.cart != undefined){
-    //   this.cart = JSON.parse(localStorage.cart)
-    // }
-
     if (localStorage.getItem("cart")) {
       try {
         this.cart = JSON.parse(localStorage.cart);
       } catch (e) {
         localStorage.removeItem("cart");
+      }
+    }
+
+    if (localStorage.getItem("restaurant")) {
+      try {
+        this.restaurant = JSON.parse(localStorage.restaurant);
+      } catch (e) {
+        localStorage.removeItem("restaurant");
       }
     }
   },
