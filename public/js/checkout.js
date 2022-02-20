@@ -141,7 +141,7 @@ if (products != '') {
     total = total + parseFloat(cart[_i].price);
   }
 
-  cart_list.insertAdjacentHTML('beforeend', "<li class= \"list-group-item d-flex justify-content-between lh-condensed\" ><h5>Totale:</h5><h5>&euro;".concat(Math.round((total + Number.EPSILON) * 100) / 100, "</h5></li>"));
+  cart_list.insertAdjacentHTML('beforeend', "<li class=\"list-group-item d-flex justify-content-between align-items-center lh-condensed\"><h5 class='m-0'>Totale:</h5>\n            <h5 class='d-flex align-items-center justify-content-end m-0'>\n                &euro;\n                <input type=\"text\" name=\"amount\" readonly class=\"w-25 form-control-plaintext p-0\" id=\"amount\" value=\"".concat(Math.round((total + Number.EPSILON) * 100) / 100, "\">\n            </h5>\n        </li>"));
 } else {
   cart_list.insertAdjacentHTML('beforeend', "<em class=\"text-danger\">Il carrello e vuoto</em>");
 }
