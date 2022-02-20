@@ -56,7 +56,7 @@ if (products != '') {
         `<li class="list-group-item d-flex justify-content-between align-items-center lh-condensed"><h5 class='m-0'>Totale:</h5>
             <h5 class='d-flex align-items-center justify-content-end m-0'>
                 &euro;
-                <input type="text" name="amount" readonly class="w-25 form-control-plaintext p-0" id="amount" value="${Math.round((total + Number.EPSILON) * 100) / 100}">
+                <input type="text" name="amount" readonly class=" form-control-plaintext p-0" id="amount" value="${Math.round((total + Number.EPSILON) * 100) / 100}">
             </h5>
         </li>`
     )

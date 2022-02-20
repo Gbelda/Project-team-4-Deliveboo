@@ -226,11 +226,13 @@ h1 {
 
 .form-control-plaintext{
   line-height: unset;
+  width: 30%;
   &:focus,
   &:focus-visible{
     outline: none;
   }
 }
+
 
 /*--------------------
 Inputs 
