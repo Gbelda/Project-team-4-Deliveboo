@@ -140,6 +140,7 @@ export default {
 
     AddToCart(plate) {
       this.cart.push(plate);
+      this.cart.sort((a,b) => parseFloat(a.price) - parseFloat(b.price))
       // this.saveProduct();
       // console.log(this.cart);
       this.CountQuantity();
@@ -159,6 +160,7 @@ export default {
       }
       this.CountQuantity();
     },
+
     getUrl() {
       console.log(window.location.href);
       window.location.href = "/checkout";

@@ -5258,7 +5258,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }, {});
     },
     AddToCart: function AddToCart(plate) {
-      this.cart.push(plate); // this.saveProduct();
+      this.cart.push(plate);
+      this.cart.sort(function (a, b) {
+        return parseFloat(a.price) - parseFloat(b.price);
+      }); // this.saveProduct();
       // console.log(this.cart);
 
       this.CountQuantity();
