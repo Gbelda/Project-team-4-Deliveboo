@@ -100,7 +100,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var form = document.querySelector('#my-sample-form');
-var submit = document.querySelector('input[type="submit"]'); // GET CART ARRAY
+var submit = document.querySelector('input[type="button"]'); // GET CART ARRAY
 
 var cart = JSON.parse(localStorage.getItem("cart"));
 console.log(cart, 'log 1'); // TARGET DOM CART LIST
@@ -126,7 +126,7 @@ if (products != '') {
       return product.name == products[i];
     });
     console.log(product, 'log 5');
-    cart_list.insertAdjacentHTML('beforeend', " <li class= \"list-group-item d-flex justify-content-between lh-condensed\" >\n                <div>\n                    <h6 class=\"my-0\">".concat(product.name, "</h6>\n                    <small class=\"text-muted\">Quantit&aacute;: ").concat(counts[i], "</small>\n                </div>\n                <span class=\"text-muted\">&euro;").concat(Math.round((product.price * counts[i] + Number.EPSILON) * 100) / 100, "</span>\n                </li >"));
+    cart_list.insertAdjacentHTML('beforeend', " <li class= \"list-group-item d-flex justify-content-between lh-condensed\" >\n                <div>\n                    <h6 class=\"my-0 fw-bold\">".concat(product.name, "</h6>\n                    <small class=\" d-flex align-items-center\">\n                        Quantit&aacute;: \n                        <input type=\"text\" name=\"plates[").concat(product.id, "]\" readonly class=\"form-control-plaintext ps-1\" id=\"count\" value=\"").concat(counts[i], "\" data-id='").concat(product.id, "'>\n                    </small>\n                </div>\n                <span class=\"text-muted\">&euro;").concat(Math.round((product.price * counts[i] + Number.EPSILON) * 100) / 100, "</span>\n                </li >"));
   };
 
   for (var i = 0; i < products.length; i++) {
@@ -248,38 +248,32 @@ braintree.client.create({
         });
       }
     });
+    var forms = document.querySelector('.needs-validation');
     submit.addEventListener('click', function (event) {
-      // event.preventDefault();
-      var forms = document.querySelectorAll('.needs-validation'); // Loop over them and prevent submission
+      forms.checkValidity();
 
-      Array.prototype.slice.call(forms).forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-
-          form.classList.add('was-validated');
-        }, false);
-      });
-      hostedFieldsInstance.tokenize(function (err, payload) {
-        if (err) {
-          console.error(err);
-          return;
-        } // This is where you would submit payload.nonce to your server
-        // alert('Submit your nonce to your server here!');
+      if (forms.checkValidity()) {
+        hostedFieldsInstance.tokenize(function (err, payload) {
+          if (err) {
+            console.error(err);
+            return;
+          } // This is where you would submit payload.nonce to your server
+          // alert('Submit your nonce to your server here!');
 
 
-        if ($form.checkValidity()) {
-          console.log(payload.nonce);
           document.querySelector('#nonce').value = payload.nonce;
           document.getElementById("user_info").submit();
-          form.submit();
-        }
-
-        return false;
-      });
-    }, false);
+        });
+      } else if (!forms.checkValidity()) {
+        // document.getElementById('client_phone').reportValidity();
+        // document.getElementById('client_address').reportValidity();
+        // document.getElementById('client_email').reportValidity();
+        // document.getElementById('client_lastname').reportValidity();
+        // document.getElementById('client_name').reportValidity();
+        forms.reportValidity();
+      }
+    }, false); // })
+    // }, false);
   });
 });
 

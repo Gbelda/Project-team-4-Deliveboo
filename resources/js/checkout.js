@@ -1,5 +1,5 @@
 var form = document.querySelector('#my-sample-form');
-var submit = document.querySelector('input[type="submit"]');
+var submit = document.querySelector('input[type="button"]');
 
 // GET CART ARRAY
 var cart = JSON.parse(localStorage.getItem("cart"));
@@ -38,8 +38,11 @@ if (products != '') {
         cart_list.insertAdjacentHTML('beforeend',
             ` <li class= "list-group-item d-flex justify-content-between lh-condensed" >
                 <div>
-                    <h6 class="my-0">${ product.name }</h6>
-                    <small class="text-muted">Quantit&aacute;: ${counts[i]}</small>
+                    <h6 class="my-0 fw-bold">${ product.name }</h6>
+                    <small class=" d-flex align-items-center">
+                        Quantit&aacute;: 
+                        <input type="text" name="plates[${product.id}]" readonly class="form-control-plaintext ps-1" id="count" value="${counts[i]}" data-id='${product.id}'>
+                    </small>
                 </div>
                 <span class="text-muted">&euro;${Math.round(((product.price * counts[i]) + Number.EPSILON) * 100)/100}</span>
                 </li >`
@@ -175,43 +178,46 @@ braintree.client.create({
             }
         });
 
-        submit.addEventListener('click', function (event) {
-            // event.preventDefault();
+            var forms = document.querySelector('.needs-validation')
 
-            var forms = document.querySelectorAll('.needs-validation')
+                    submit.addEventListener('click', function (event) {
+                        forms.checkValidity()
 
-            // Loop over them and prevent submission
-            Array.prototype.slice.call(forms)
-                .forEach(function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (!form.checkValidity()) {
-                            event.preventDefault()
-                            event.stopPropagation()
+                        if (forms.checkValidity()) {
+                            hostedFieldsInstance.tokenize(function (err, payload) {
+                                if (err) {
+                                    console.error(err);
+                                    return;
+                                }
+    
+                                // This is where you would submit payload.nonce to your server
+                                // alert('Submit your nonce to your server here!');
+    
+                                document.querySelector('#nonce').value = payload.nonce;
+                                document.getElementById("user_info").submit();
+    
+                            });
+                        
                         }
 
-                        form.classList.add('was-validated')
+                        else if (!forms.checkValidity()) {
+                            // document.getElementById('client_phone').reportValidity();
+                            // document.getElementById('client_address').reportValidity();
+                            // document.getElementById('client_email').reportValidity();
+                            // document.getElementById('client_lastname').reportValidity();
+                            // document.getElementById('client_name').reportValidity();
+                            forms.reportValidity();
+                        } 
+
+
+    
+                    
+
                     }, false)
-                })
-
-            hostedFieldsInstance.tokenize(function (err, payload) {
-                if (err) {
-                    console.error(err);
-                    return;
-                }
-
-                // This is where you would submit payload.nonce to your server
-                // alert('Submit your nonce to your server here!');
-
-                if ($form.checkValidity()) {
-                    console.log(payload.nonce);
-                    document.querySelector('#nonce').value = payload.nonce;
-                    document.getElementById("user_info").submit();
-                    form.submit();
-                }
-                return false
+                    
+                // })
 
 
-            });
-        }, false);
+        // }, false);
     });
 });

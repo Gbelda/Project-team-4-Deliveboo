@@ -5,6 +5,12 @@
 /*--------------------
 General
 --------------------*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 h1 {
   font-weight: 100;
   font-size: 1.4em;
