@@ -15,11 +15,9 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('restaurant_id');
-            $table->foreign('restaurant_id')->references('user_id')->on('users')->onDelete('cascade');
             $table->float('total',6,2,true);
             $table->string('client_name', 50);
-            $table->string('client_name', 50);
+            $table->string('client_lastname', 50);
             $table->string('client_address', 255);
             $table->string('client_phone');
             $table->string('client_email', 50);

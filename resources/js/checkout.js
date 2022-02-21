@@ -5,6 +5,9 @@ var submit = document.querySelector('input[type="button"]');
 var cart = JSON.parse(localStorage.getItem("cart"));
 console.log(cart, 'log 1');
 
+var restaurant = JSON.parse(localStorage.getItem('restaurant'))
+console.log(restaurant);
+
 // TARGET DOM CART LIST
 var cart_list = document.getElementById('cart_list');
 console.log(cart_list, 'log 2');
@@ -30,6 +33,15 @@ console.log(counts , 'log counts');
 
 //Assign to DOM element
 if (products != '') {
+
+    cart_list.insertAdjacentHTML('afterbegin',
+        `<li class="list-group-item d-flex justify-content-between align-items-center lh-condensed"><h5 class='m-0'>${restaurant.restaurant_name}</h5>
+            <h5 class='d-flex align-items-center justify-content-end m-0'>
+                <input type="hidden" name="restaurant_id" readonly class=" form-control-plaintext p-0" id="restaurant_id" value="${restaurant.id}">
+            </h5>
+        </li>`
+    )
+    
     
     for (let i = 0; i < products.length; i++) {
         //GET PLATE INFO THROUGH NAME FIND
@@ -59,7 +71,7 @@ if (products != '') {
         `<li class="list-group-item d-flex justify-content-between align-items-center lh-condensed"><h5 class='m-0'>Totale:</h5>
             <h5 class='d-flex align-items-center justify-content-end m-0'>
                 &euro;
-                <input type="text" name="amount" readonly class=" form-control-plaintext p-0" id="amount" value="${Math.round((total + Number.EPSILON) * 100) / 100}">
+                <input type="text" name="total" readonly class=" form-control-plaintext p-0" id="total" value="${Math.round((total + Number.EPSILON) * 100) / 100}">
             </h5>
         </li>`
     )

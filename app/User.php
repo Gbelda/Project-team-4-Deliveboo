@@ -48,6 +48,11 @@ class User extends Authenticatable
         return $this->hasMany(Models\Plate::class);
     }
 
+    public function orders(): HasMany
+    {
+        return $this->hasMany(Models\Order::class);
+    }
+
     public function scopeWithFilters($query, $categories)
     {
         if ($query == '') {
