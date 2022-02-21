@@ -180,31 +180,27 @@ header {
                     font-size: 3.5rem;
                 }
             }
-            #da_marco {
-                background-image: url("../img/main/ristorante_pizzeria.jpg");
+            .carousel-item {
                 background-repeat: no-repeat;
                 background-size: cover;
+                background-position: center;
+            }
+
+            #da_marco {
+                background-image: url("../img/main/ristorante_pizzeria.jpg");
             }
 
             #da_giovanni {
                 background-image: url("../img/main/ristorante_sushi.jpg");
-                background-repeat: no-repeat;
-                background-size: cover;
             }
             #da_paolo {
                 background-image: url("../img/main/ristorante_panini.jpg");
-                background-repeat: no-repeat;
-                background-size: cover;
             }
             #da_laurentiu {
                 background-image: url("../img/main/ristorante_cucina_orientale.jpg");
-                background-repeat: no-repeat;
-                background-size: cover;
             }
             #da_giuseppe {
                 background-image: url("../img/main/ristorante_cucina_messicana.webp");
-                background-repeat: no-repeat;
-                background-size: cover;
             }
         }
     }
