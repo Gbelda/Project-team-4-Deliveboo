@@ -18,230 +18,210 @@
                 </div>
             </div>
         </header>
-        <div class="carousel container my-5">
-            <!-- .best_restaurants_section -->
-            <section class="best_restaurants_section">
-                <div class="paragraph_title">
-                    <div class="row">
-                        <div class="col-6">
-                            <h2>I migliori ristoranti del mese di Milano</h2>
-                            <div class="horizontal_rule"></div>
+
+        <!-- .best_restaurants_section -->
+        <section class="best_restaurants_section container my-5">
+            <div class="paragraph_title">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2>
+                            I migliori ristoranti del mese di Milano selezionati
+                            da voi
+                        </h2>
+                        <div class="horizontal_rule"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- #best_restaurants_carousel -->
+            <div
+                id="best_restaurants_carousel"
+                class="carousel slide"
+                data-bs-ride="carousel"
+            >
+                <div class="carousel-indicators">
+                    <button
+                        type="button"
+                        data-bs-target="#best_restaurants_carousel"
+                        data-bs-slide-to="0"
+                        class="active"
+                        aria-current="true"
+                        aria-label="Slide 1"
+                    ></button>
+                    <button
+                        type="button"
+                        data-bs-target="#best_restaurants_carousel"
+                        data-bs-slide-to="1"
+                        aria-label="Slide 2"
+                    ></button>
+                    <button
+                        type="button"
+                        data-bs-target="#best_restaurants_carousel"
+                        data-bs-slide-to="2"
+                        aria-label="Slide 3"
+                    ></button>
+                    <button
+                        type="button"
+                        data-bs-target="#best_restaurants_carousel"
+                        data-bs-slide-to="3"
+                        aria-label="Slide 4"
+                    ></button>
+                    <button
+                        type="button"
+                        data-bs-target="#best_restaurants_carousel"
+                        data-bs-slide-to="4"
+                        aria-label="Slide 5"
+                    ></button>
+                </div>
+                <div class="carousel-inner rounded-pill">
+                    <div id="da_marco" class="carousel-item active">
+                        <svg
+                            class="bd-placeholder-img"
+                            width="100%"
+                            height="100%"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true"
+                            preserveAspectRatio="xMidYMid slice"
+                            focusable="false"
+                        ></svg>
+
+                        <div class="container">
+                            <div class="carousel-caption text-center">
+                                <h3>da Marco</h3>
+                                <h6>
+                                    La migliore pizza d'Italia... altro che
+                                    Napoli
+                                </h6>
+                                <a class="btn btn-lg btn-primary" href="#">
+                                    Provala subito
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="da_giovanni" class="carousel-item">
+                        <svg
+                            class="bd-placeholder-img"
+                            width="100%"
+                            height="100%"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true"
+                            preserveAspectRatio="xMidYMid slice"
+                            focusable="false"
+                        ></svg>
+
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h3>Da Giovanni</h3>
+                                <h6>
+                                    Il miglior sushi di Milano l'ho facciamo
+                                    solo noi!
+                                </h6>
+                                <button class="btn btn-lg btn-primary" href="#">
+                                    Provalo subito
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="da_paolo" class="carousel-item">
+                        <svg
+                            class="bd-placeholder-img"
+                            width="100%"
+                            height="100%"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true"
+                            preserveAspectRatio="xMidYMid slice"
+                            focusable="false"
+                        ></svg>
+
+                        <div class="container">
+                            <div class="carousel-caption text-center">
+                                <h3>Da Paolo</h3>
+                                <h6>
+                                    I migliori panini di Milano, buoni e poco
+                                    costosi
+                                </h6>
+                                <button class="btn btn-lg btn-primary" href="#">
+                                    Provali subito
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="da_laurentiu" class="carousel-item">
+                        <svg
+                            class="bd-placeholder-img"
+                            width="100%"
+                            height="100%"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true"
+                            preserveAspectRatio="xMidYMid slice"
+                            focusable="false"
+                        ></svg>
+
+                        <div class="container">
+                            <div class="carousel-caption text-center">
+                                <h3>Da Laurentiu</h3>
+                                <h6>
+                                    Tutta la cucina orientale che vuoi, e non
+                                    solo
+                                </h6>
+                                <button class="btn btn-lg btn-primary" href="#">
+                                    Provala subito
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="da_giuseppe" class="carousel-item">
+                        <svg
+                            class="bd-placeholder-img"
+                            width="100%"
+                            height="100%"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true"
+                            preserveAspectRatio="xMidYMid slice"
+                            focusable="false"
+                        ></svg>
+
+                        <div class="container">
+                            <div class="carousel-caption text-center">
+                                <h3>Da Giuseppe</h3>
+                                <h6>
+                                    La migliore cucina messicana in assoluto
+                                </h6>
+                                <button class="btn btn-lg btn-primary" href="#">
+                                    Provala subito
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- #best_restaurants_carousel -->
-                <div
-                    id="best_restaurants_carousel"
-                    class="carousel slide"
-                    data-bs-ride="carousel"
+                <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#best_restaurants_carousel"
+                    data-bs-slide="prev"
                 >
-                    <div class="carousel-indicators">
-                        <button
-                            type="button"
-                            data-bs-target="#best_restaurants_carousel"
-                            data-bs-slide-to="0"
-                            class="active"
-                            aria-current="true"
-                            aria-label="Slide 1"
-                        ></button>
-                        <button
-                            type="button"
-                            data-bs-target="#best_restaurants_carousel"
-                            data-bs-slide-to="1"
-                            aria-label="Slide 2"
-                        ></button>
-                        <button
-                            type="button"
-                            data-bs-target="#best_restaurants_carousel"
-                            data-bs-slide-to="2"
-                            aria-label="Slide 3"
-                        ></button>
-                        <button
-                            type="button"
-                            data-bs-target="#best_restaurants_carousel"
-                            data-bs-slide-to="3"
-                            aria-label="Slide 4"
-                        ></button>
-                        <button
-                            type="button"
-                            data-bs-target="#best_restaurants_carousel"
-                            data-bs-slide-to="4"
-                            aria-label="Slide 5"
-                        ></button>
-                    </div>
-                    <div class="carousel-inner rounded">
-                        <div id="first_item" class="carousel-item active">
-                            <svg
-                                class="bd-placeholder-img"
-                                width="100%"
-                                height="100%"
-                                xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true"
-                                preserveAspectRatio="xMidYMid slice"
-                                focusable="false"
-                            >
-                                <rect width="100%" height="100%" fill="#777" />
-                            </svg>
-
-                            <div class="container">
-                                <div class="carousel-caption text-center">
-                                    <h3>da Marco</h3>
-                                    <h6>
-                                        La migliore pizza d'Italia... altro che
-                                        Napoli
-                                    </h6>
-                                    <a class="btn btn-lg btn-primary" href="#">
-                                        Provala subito
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <svg
-                                class="bd-placeholder-img"
-                                width="100%"
-                                height="100%"
-                                xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true"
-                                preserveAspectRatio="xMidYMid slice"
-                                focusable="false"
-                            >
-                                <rect width="100%" height="100%" fill="#777" />
-                            </svg>
-
-                            <div class="container">
-                                <div class="carousel-caption">
-                                    <h3>Da Giovanni</h3>
-                                    <h6>
-                                        Il miglior sushi di Milano l'ho facciamo
-                                        solo noi!
-                                    </h6>
-                                    <button
-                                        class="btn btn-lg btn-primary"
-                                        href="#"
-                                    >
-                                        Provalo subito
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <svg
-                                class="bd-placeholder-img"
-                                width="100%"
-                                height="100%"
-                                xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true"
-                                preserveAspectRatio="xMidYMid slice"
-                                focusable="false"
-                            >
-                                <rect width="100%" height="100%" fill="#777" />
-                            </svg>
-
-                            <div class="container">
-                                <div class="carousel-caption text-center">
-                                    <h3>Da Paolo</h3>
-                                    <h6>
-                                        I migliori panini di Milano, buoni e
-                                        poco costosi
-                                    </h6>
-                                    <button
-                                        class="btn btn-lg btn-primary"
-                                        href="#"
-                                    >
-                                        Provali subito
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <svg
-                                class="bd-placeholder-img"
-                                width="100%"
-                                height="100%"
-                                xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true"
-                                preserveAspectRatio="xMidYMid slice"
-                                focusable="false"
-                            >
-                                <rect width="100%" height="100%" fill="#777" />
-                            </svg>
-
-                            <div class="container">
-                                <div class="carousel-caption text-center">
-                                    <h3>Da Laurentiu</h3>
-                                    <h6>
-                                        Tutta la cucina orientale che vuoi, e
-                                        non solo
-                                    </h6>
-                                    <button
-                                        class="btn btn-lg btn-primary"
-                                        href="#"
-                                    >
-                                        Provala subito
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <svg
-                                class="bd-placeholder-img"
-                                width="100%"
-                                height="100%"
-                                xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true"
-                                preserveAspectRatio="xMidYMid slice"
-                                focusable="false"
-                            >
-                                <rect width="100%" height="100%" fill="#777" />
-                            </svg>
-
-                            <div class="container">
-                                <div class="carousel-caption text-center">
-                                    <h3>Da Giuseppe</h3>
-                                    <h6>
-                                        La migliore cucina messicana in assoluto
-                                    </h6>
-                                    <button
-                                        class="btn btn-lg btn-primary"
-                                        href="#"
-                                    >
-                                        Provala subito
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button
-                        class="carousel-control-prev"
-                        type="button"
-                        data-bs-target="#best_restaurants_carousel"
-                        data-bs-slide="prev"
-                    >
-                        <span
-                            class="carousel-control-prev-icon"
-                            aria-hidden="true"
-                        ></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button
-                        class="carousel-control-next"
-                        type="button"
-                        data-bs-target="#best_restaurants_carousel"
-                        data-bs-slide="next"
-                    >
-                        <span
-                            class="carousel-control-next-icon"
-                            aria-hidden="true"
-                        ></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-                <!-- /#best_restaurants_carousel -->
-            </section>
-            <!-- /.best_restaurants_section -->
-        </div>
+                    <span
+                        class="carousel-control-prev-icon"
+                        aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#best_restaurants_carousel"
+                    data-bs-slide="next"
+                >
+                    <span
+                        class="carousel-control-next-icon"
+                        aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <!-- /#best_restaurants_carousel -->
+        </section>
+        <!-- /.best_restaurants_section -->
 
         <!-- ristoranti -->
         <section id="home">
@@ -398,10 +378,8 @@
         </section>
         <!-- ristoranti -->
 
-        <div
-            class="larger_container container-fluid d-flex mt-5 pt-5 justify-content-center"
-        >
-            <div class="right_container col-8">
+        <div class="container-fluid d-flex mt-5 pt-5 justify-content-center">
+            <div class="col-8">
                 <!-- .best_plate_section -->
                 <section class="best_plate_section">
                     <div class="paragraph_plate_day">

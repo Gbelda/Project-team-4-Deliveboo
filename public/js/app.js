@@ -5795,28 +5795,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -43134,153 +43112,131 @@ var render = function () {
   return _c("div", { staticClass: "container-fluid jumbo p-0" }, [
     _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "carousel container my-5" }, [
-      _c("section", { staticClass: "best_restaurants_section" }, [
-        _vm._m(1),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "carousel slide",
-            attrs: {
-              id: "best_restaurants_carousel",
-              "data-bs-ride": "carousel",
-            },
+    _c("section", { staticClass: "best_restaurants_section container my-5" }, [
+      _vm._m(1),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "carousel slide",
+          attrs: {
+            id: "best_restaurants_carousel",
+            "data-bs-ride": "carousel",
           },
-          [
-            _vm._m(2),
-            _vm._v(" "),
-            _c("div", { staticClass: "carousel-inner rounded" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "carousel-item active",
-                  attrs: { id: "first_item" },
-                },
-                [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "bd-placeholder-img",
-                      attrs: {
-                        width: "100%",
-                        height: "100%",
-                        xmlns: "http://www.w3.org/2000/svg",
-                        "aria-hidden": "true",
-                        preserveAspectRatio: "xMidYMid slice",
-                        focusable: "false",
-                      },
-                    },
-                    [_c("rect", { attrs: { width: "100%", height: "100%" } })]
-                  ),
-                  _vm._v(" "),
-                  _vm._m(3),
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "carousel-item" }, [
-                _c(
-                  "svg",
-                  {
-                    staticClass: "bd-placeholder-img",
-                    attrs: {
-                      width: "100%",
-                      height: "100%",
-                      xmlns: "http://www.w3.org/2000/svg",
-                      "aria-hidden": "true",
-                      preserveAspectRatio: "xMidYMid slice",
-                      focusable: "false",
-                    },
+        },
+        [
+          _vm._m(2),
+          _vm._v(" "),
+          _c("div", { staticClass: "carousel-inner rounded-pill" }, [
+            _c(
+              "div",
+              {
+                staticClass: "carousel-item active",
+                attrs: { id: "da_marco" },
+              },
+              [
+                _c("svg", {
+                  staticClass: "bd-placeholder-img",
+                  attrs: {
+                    width: "100%",
+                    height: "100%",
+                    xmlns: "http://www.w3.org/2000/svg",
+                    "aria-hidden": "true",
+                    preserveAspectRatio: "xMidYMid slice",
+                    focusable: "false",
                   },
-                  [
-                    _c("rect", {
-                      attrs: { width: "100%", height: "100%", fill: "#777" },
-                    }),
-                  ]
-                ),
+                }),
+                _vm._v(" "),
+                _vm._m(3),
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "carousel-item", attrs: { id: "da_giovanni" } },
+              [
+                _c("svg", {
+                  staticClass: "bd-placeholder-img",
+                  attrs: {
+                    width: "100%",
+                    height: "100%",
+                    xmlns: "http://www.w3.org/2000/svg",
+                    "aria-hidden": "true",
+                    preserveAspectRatio: "xMidYMid slice",
+                    focusable: "false",
+                  },
+                }),
                 _vm._v(" "),
                 _vm._m(4),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "carousel-item" }, [
-                _c(
-                  "svg",
-                  {
-                    staticClass: "bd-placeholder-img",
-                    attrs: {
-                      width: "100%",
-                      height: "100%",
-                      xmlns: "http://www.w3.org/2000/svg",
-                      "aria-hidden": "true",
-                      preserveAspectRatio: "xMidYMid slice",
-                      focusable: "false",
-                    },
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "carousel-item", attrs: { id: "da_paolo" } },
+              [
+                _c("svg", {
+                  staticClass: "bd-placeholder-img",
+                  attrs: {
+                    width: "100%",
+                    height: "100%",
+                    xmlns: "http://www.w3.org/2000/svg",
+                    "aria-hidden": "true",
+                    preserveAspectRatio: "xMidYMid slice",
+                    focusable: "false",
                   },
-                  [
-                    _c("rect", {
-                      attrs: { width: "100%", height: "100%", fill: "#777" },
-                    }),
-                  ]
-                ),
+                }),
                 _vm._v(" "),
                 _vm._m(5),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "carousel-item" }, [
-                _c(
-                  "svg",
-                  {
-                    staticClass: "bd-placeholder-img",
-                    attrs: {
-                      width: "100%",
-                      height: "100%",
-                      xmlns: "http://www.w3.org/2000/svg",
-                      "aria-hidden": "true",
-                      preserveAspectRatio: "xMidYMid slice",
-                      focusable: "false",
-                    },
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "carousel-item", attrs: { id: "da_laurentiu" } },
+              [
+                _c("svg", {
+                  staticClass: "bd-placeholder-img",
+                  attrs: {
+                    width: "100%",
+                    height: "100%",
+                    xmlns: "http://www.w3.org/2000/svg",
+                    "aria-hidden": "true",
+                    preserveAspectRatio: "xMidYMid slice",
+                    focusable: "false",
                   },
-                  [
-                    _c("rect", {
-                      attrs: { width: "100%", height: "100%", fill: "#777" },
-                    }),
-                  ]
-                ),
+                }),
                 _vm._v(" "),
                 _vm._m(6),
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "carousel-item" }, [
-                _c(
-                  "svg",
-                  {
-                    staticClass: "bd-placeholder-img",
-                    attrs: {
-                      width: "100%",
-                      height: "100%",
-                      xmlns: "http://www.w3.org/2000/svg",
-                      "aria-hidden": "true",
-                      preserveAspectRatio: "xMidYMid slice",
-                      focusable: "false",
-                    },
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "carousel-item", attrs: { id: "da_giuseppe" } },
+              [
+                _c("svg", {
+                  staticClass: "bd-placeholder-img",
+                  attrs: {
+                    width: "100%",
+                    height: "100%",
+                    xmlns: "http://www.w3.org/2000/svg",
+                    "aria-hidden": "true",
+                    preserveAspectRatio: "xMidYMid slice",
+                    focusable: "false",
                   },
-                  [
-                    _c("rect", {
-                      attrs: { width: "100%", height: "100%", fill: "#777" },
-                    }),
-                  ]
-                ),
+                }),
                 _vm._v(" "),
                 _vm._m(7),
-              ]),
-            ]),
-            _vm._v(" "),
-            _vm._m(8),
-            _vm._v(" "),
-            _vm._m(9),
-          ]
-        ),
-      ]),
+              ]
+            ),
+          ]),
+          _vm._v(" "),
+          _vm._m(8),
+          _vm._v(" "),
+          _vm._m(9),
+        ]
+      ),
     ]),
     _vm._v(" "),
     _c("section", { attrs: { id: "home" } }, [
@@ -43565,11 +43521,10 @@ var render = function () {
     _c(
       "div",
       {
-        staticClass:
-          "larger_container container-fluid d-flex mt-5 pt-5 justify-content-center",
+        staticClass: "container-fluid d-flex mt-5 pt-5 justify-content-center",
       },
       [
-        _c("div", { staticClass: "right_container col-8" }, [
+        _c("div", { staticClass: "col-8" }, [
           _c("section", { staticClass: "best_plate_section" }, [
             _vm._m(11),
             _vm._v(" "),
@@ -43654,8 +43609,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "paragraph_title" }, [
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-6" }, [
-          _c("h2", [_vm._v("I migliori ristoranti del mese di Milano")]),
+        _c("div", { staticClass: "col-12 text-center" }, [
+          _c("h2", [
+            _vm._v(
+              "\n                        I migliori ristoranti del mese di Milano selezionati\n                        da voi\n                    "
+            ),
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "horizontal_rule" }),
         ]),
@@ -43725,7 +43684,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("h6", [
           _vm._v(
-            "\n                                    La migliore pizza d'Italia... altro che\n                                    Napoli\n                                "
+            "\n                                La migliore pizza d'Italia... altro che\n                                Napoli\n                            "
           ),
         ]),
         _vm._v(" "),
@@ -43734,7 +43693,7 @@ var staticRenderFns = [
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
           [
             _vm._v(
-              "\n                                    Provala subito\n                                "
+              "\n                                Provala subito\n                            "
             ),
           ]
         ),
@@ -43751,7 +43710,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("h6", [
           _vm._v(
-            "\n                                    Il miglior sushi di Milano l'ho facciamo\n                                    solo noi!\n                                "
+            "\n                                Il miglior sushi di Milano l'ho facciamo\n                                solo noi!\n                            "
           ),
         ]),
         _vm._v(" "),
@@ -43760,7 +43719,7 @@ var staticRenderFns = [
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
           [
             _vm._v(
-              "\n                                    Provalo subito\n                                "
+              "\n                                Provalo subito\n                            "
             ),
           ]
         ),
@@ -43777,7 +43736,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("h6", [
           _vm._v(
-            "\n                                    I migliori panini di Milano, buoni e\n                                    poco costosi\n                                "
+            "\n                                I migliori panini di Milano, buoni e poco\n                                costosi\n                            "
           ),
         ]),
         _vm._v(" "),
@@ -43786,7 +43745,7 @@ var staticRenderFns = [
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
           [
             _vm._v(
-              "\n                                    Provali subito\n                                "
+              "\n                                Provali subito\n                            "
             ),
           ]
         ),
@@ -43803,7 +43762,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("h6", [
           _vm._v(
-            "\n                                    Tutta la cucina orientale che vuoi, e\n                                    non solo\n                                "
+            "\n                                Tutta la cucina orientale che vuoi, e non\n                                solo\n                            "
           ),
         ]),
         _vm._v(" "),
@@ -43812,7 +43771,7 @@ var staticRenderFns = [
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
           [
             _vm._v(
-              "\n                                    Provala subito\n                                "
+              "\n                                Provala subito\n                            "
             ),
           ]
         ),
@@ -43829,7 +43788,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("h6", [
           _vm._v(
-            "\n                                    La migliore cucina messicana in assoluto\n                                "
+            "\n                                La migliore cucina messicana in assoluto\n                            "
           ),
         ]),
         _vm._v(" "),
@@ -43838,7 +43797,7 @@ var staticRenderFns = [
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
           [
             _vm._v(
-              "\n                                    Provala subito\n                                "
+              "\n                                Provala subito\n                            "
             ),
           ]
         ),

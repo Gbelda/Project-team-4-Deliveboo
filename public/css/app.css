@@ -11298,64 +11298,100 @@ body {
 }
 
 /* /utility */
-/**********
-MAIN
-**********/
-main {
-  /* header */
-  /* /header */
-  /* .larger_container */
-  /* /.larger_container */
-}
-main header {
+/* header */
+header {
   background-image: url("../img/jumbo/jumbo-onda.png");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 7rem;
 }
-main header .content-left h1, main header .content-left .h1 {
+header .content-left h1, header .content-left .h1 {
   font-size: 6rem;
   font-weight: bold;
 }
-main .larger_container {
-  /* .sidebar */
-  /* /.sidebar */
-  /* .right_container */
-  /* /.right_container */
+
+/* /header */
+/* .larger_container */
+/* .right_container */
+.main_content {
+  margin: 2rem 0;
 }
-main .larger_container .sidebar {
-  padding: 0 2rem;
-  overflow: auto;
+
+/* .best_plate_section */
+.best_plate_section {
+  background-image: linear-gradient(to right, #ffc100, #ff8200) !important;
+  border-radius: 0px 370px 0px 370px/0px 345px 0px 345px;
+  padding: 1rem;
+  margin: 1rem 0;
 }
-main .larger_container .right_container {
-  /* .best_plate_section */
-  /* /.best_plate_section */
-}
-main .larger_container .right_container .best_restaurants_section .paragraph_title {
+.best_plate_section .paragraph_plate_day {
   color: #0a0903;
   margin-bottom: 1rem;
 }
-main .larger_container .right_container .best_restaurants_section .paragraph_title .col-6:first-child {
+.best_plate_section .paragraph_plate_day .row .col-3:first-child {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-main .larger_container .right_container .best_restaurants_section .paragraph_title .col-6:first-child h2, main .larger_container .right_container .best_restaurants_section .paragraph_title .col-6:first-child .h2 {
+.best_plate_section .paragraph_plate_day .row .col-3:first-child h2, .best_plate_section .paragraph_plate_day .row .col-3:first-child .h2 {
   font-weight: bold;
   font-size: 2rem;
 }
-main .larger_container .right_container .best_restaurants_section .paragraph_title .col-6:first-child .horizontal_rule {
-  width: 90%;
+.best_plate_section .paragraph_plate_day .row .col-3:first-child .horizontal_rule {
+  width: 75%;
   padding: 0.2rem;
   border-radius: 10px;
   background-color: #0a0903;
 }
-main .larger_container .right_container .best_restaurants_section .background_brand {
+.best_plate_section .plate_of_day {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.best_plate_section .plate_of_day img {
+  width: 40%;
+}
+.best_plate_section .plate_of_day .plate_of_day_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+.best_plate_section .plate_of_day .plate_of_day_body h4, .best_plate_section .plate_of_day .plate_of_day_body .h4,
+.best_plate_section .plate_of_day .plate_of_day_body h6,
+.best_plate_section .plate_of_day .plate_of_day_body .h6 {
+  font-weight: bold !important;
+}
+
+/* /.best_plate_section */
+/* .best_restaurants_section */
+.best_restaurants_section .paragraph_title {
+  color: #0a0903;
+  margin-bottom: 1rem;
+}
+.best_restaurants_section .paragraph_title .col-12:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.best_restaurants_section .paragraph_title .col-12:first-child h2, .best_restaurants_section .paragraph_title .col-12:first-child .h2 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+.best_restaurants_section .paragraph_title .col-12:first-child .horizontal_rule {
+  width: 90%;
+  padding: 0.2rem;
+  border-radius: 10px;
+  background-color: #ff8200;
+}
+.best_restaurants_section .background_brand {
   background-color: #ffc100;
   margin: 1rem;
   padding: 1rem;
 }
-main .larger_container .right_container .best_restaurants_section .background_brand .card_restaurant {
+.best_restaurants_section .background_brand .card_restaurant {
   height: 10rem;
   border: 1px solid #0a0903;
   border-radius: 5px;
@@ -11364,15 +11400,15 @@ main .larger_container .right_container .best_restaurants_section .background_br
   justify-content: space-between;
   align-items: center;
 }
-main .larger_container .right_container .best_restaurants_section .background_brand .card_restaurant:hover {
+.best_restaurants_section .background_brand .card_restaurant:hover {
   cursor: pointer;
 }
-main .larger_container .right_container .best_restaurants_section .background_brand .card_plate {
+.best_restaurants_section .background_brand .card_plate {
   height: 5rem;
   border: 1px solid #0a0903;
   border-radius: 5px;
 }
-main .larger_container .right_container .best_restaurants_section #best_restaurants_carousel .carousel-item .bd-placeholder-img {
+.best_restaurants_section .carousel .carousel-inner .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
   -webkit-user-select: none;
@@ -11381,60 +11417,34 @@ main .larger_container .right_container .best_restaurants_section #best_restaura
       user-select: none;
 }
 @media (min-width: 768px) {
-  main .larger_container .right_container .best_restaurants_section #best_restaurants_carousel .carousel-item .bd-placeholder-img-lg {
+  .best_restaurants_section .carousel .carousel-inner .bd-placeholder-img-lg {
     font-size: 3.5rem;
   }
 }
-main .larger_container .right_container .main_content {
-  margin: 2rem 0;
+.best_restaurants_section .carousel .carousel-inner #da_marco {
+  background-image: url("../img/main/ristorante_pizzeria.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-main .larger_container .right_container .best_plate_section {
-  background-image: linear-gradient(to right, #ffc100, #ff8200) !important;
-  border-radius: 0px 370px 0px 370px/0px 345px 0px 345px;
-  padding: 1rem;
-  margin: 1rem 0;
+.best_restaurants_section .carousel .carousel-inner #da_giovanni {
+  background-image: url("../img/main/ristorante_sushi.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-main .larger_container .right_container .best_plate_section .paragraph_plate_day {
-  color: #0a0903;
-  margin-bottom: 1rem;
+.best_restaurants_section .carousel .carousel-inner #da_paolo {
+  background-image: url("../img/main/ristorante_panini.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-main .larger_container .right_container .best_plate_section .paragraph_plate_day .row .col-3:first-child {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.best_restaurants_section .carousel .carousel-inner #da_laurentiu {
+  background-image: url("../img/main/ristorante_cucina_orientale.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-main .larger_container .right_container .best_plate_section .paragraph_plate_day .row .col-3:first-child h2, main .larger_container .right_container .best_plate_section .paragraph_plate_day .row .col-3:first-child .h2 {
-  font-weight: bold;
-  font-size: 2rem;
-}
-main .larger_container .right_container .best_plate_section .paragraph_plate_day .row .col-3:first-child .horizontal_rule {
-  width: 75%;
-  padding: 0.2rem;
-  border-radius: 10px;
-  background-color: #0a0903;
-}
-main .larger_container .right_container .best_plate_section .plate_of_day {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-main .larger_container .right_container .best_plate_section .plate_of_day img {
-  width: 40%;
-}
-main .larger_container .right_container .best_plate_section .plate_of_day .plate_of_day_body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 2rem;
-}
-main .larger_container .right_container .best_plate_section .plate_of_day .plate_of_day_body h4, main .larger_container .right_container .best_plate_section .plate_of_day .plate_of_day_body .h4,
-main .larger_container .right_container .best_plate_section .plate_of_day .plate_of_day_body h6,
-main .larger_container .right_container .best_plate_section .plate_of_day .plate_of_day_body .h6 {
-  font-weight: bold !important;
+.best_restaurants_section .carousel .carousel-inner #da_giuseppe {
+  background-image: url("../img/main/ristorante_cucina_messicana.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-/**********
-/MAIN
-**********/
+/* /.best_restaurants_section */
