@@ -42881,7 +42881,7 @@ var render = function () {
             _vm.cart == ""
               ? _c("div", { staticClass: "isEmpty text-center" }, [
                   _c("em", { staticClass: "text-danger" }, [
-                    _vm._v("Il carrello e vuoto"),
+                    _vm._v("Il carrello è vuoto"),
                   ]),
                 ])
               : _vm._e(),

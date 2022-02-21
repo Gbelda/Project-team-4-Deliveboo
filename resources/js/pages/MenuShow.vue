@@ -90,7 +90,7 @@
           <div class="sidebar-sticky carrello">
             <h3>Carrello</h3>
             <div class="isEmpty text-center" v-if="cart == ''">
-              <em class="text-danger">Il carrello e vuoto</em>
+              <em class="text-danger">Il carrello è vuoto</em>
             </div>
             <ul class="list-unstyled contenitore_piatti_carrello">
               <li
