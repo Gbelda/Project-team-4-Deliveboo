@@ -20,8 +20,8 @@
             ></button>
           </div>
           <div class="modal-body">
-            L'ordine include articoli di un altro ristorante . Crea un nuovo
-            ordine per aggiungere articoli da {{ restaurant.restaurant_name }}.
+            L'ordine include articoli di un altro ristorante . Svuota il carrello e crea un nuovo
+            ordine per aggiungere articoli da <span class="text-primary">{{ restaurant.restaurant_name }}</span>.
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" @click="newOrder">
@@ -186,12 +186,13 @@ export default {
       this.CountQuantity();
     },
 
-    newOrder(plate) {
+    newOrder() {
       this.cart = [];
+      this.counts=[];
       // this.cart.push(plate);
       // this.cart.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
       // this.CountQuantity();
-      // $("#change_cart").modal("hide");
+      $("#change_cart").modal("hide");
     },
 
     addQuantity(input) {

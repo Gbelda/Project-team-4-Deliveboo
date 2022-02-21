@@ -5307,11 +5307,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
       this.CountQuantity();
     },
-    newOrder: function newOrder(plate) {
-      this.cart = []; // this.cart.push(plate);
+    newOrder: function newOrder() {
+      this.cart = [];
+      this.counts = []; // this.cart.push(plate);
       // this.cart.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
       // this.CountQuantity();
-      // $("#change_cart").modal("hide");
+
+      $("#change_cart").modal("hide");
     },
     addQuantity: function addQuantity(input) {
       var result = this.cart.find(function (_ref) {
@@ -42767,10 +42769,12 @@ var render = function () {
             _vm._v(" "),
             _c("div", { staticClass: "modal-body" }, [
               _vm._v(
-                "\n          L'ordine include articoli di un altro ristorante . Crea un nuovo\n          ordine per aggiungere articoli da " +
-                  _vm._s(_vm.restaurant.restaurant_name) +
-                  ".\n        "
+                "\n          L'ordine include articoli di un altro ristorante . Svuota il carrello e crea un nuovo\n          ordine per aggiungere articoli da "
               ),
+              _c("span", { staticClass: "text-primary" }, [
+                _vm._v(_vm._s(_vm.restaurant.restaurant_name)),
+              ]),
+              _vm._v(".\n        "),
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "modal-footer" }, [
