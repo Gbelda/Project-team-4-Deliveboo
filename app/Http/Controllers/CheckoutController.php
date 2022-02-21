@@ -74,7 +74,7 @@ class CheckoutController extends Controller
 
         $order->plates()->sync($plates);
 
-        ddd($order);
+        // ddd($order);
 
         $gateway = new \Braintree\Gateway([
             'environment' => config('services.braintree.environment'),
@@ -113,7 +113,7 @@ class CheckoutController extends Controller
             $transaction = $result->transaction;
             // header("Location: transaction.php?id=" . $transaction->id);
 
-            return redirect()->intended('/')->with('success_message', 'Il pagamento è avvenuto con successo');
+            return redirect()->route('guest.paysuccess')->with('message', 'Pagamento avvenuta con successo, Riceverai un email di conferma!');
         } else {
             $errorString = "";
 
