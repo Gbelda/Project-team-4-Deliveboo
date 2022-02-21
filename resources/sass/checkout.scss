@@ -63,6 +63,7 @@ h1 {
   padding: 5rem;
   border-radius: 20px;
   max-height: 750px;
+
   @media (max-width: $small-screen) {
     border: none;
     padding: 1rem;

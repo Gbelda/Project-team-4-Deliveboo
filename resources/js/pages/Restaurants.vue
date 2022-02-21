@@ -2,14 +2,14 @@
     <div class="container-fluid jumbo p-0">
         <header class="d-flex justify-content-center">
             <div class="row container content justify-content-center flex-wrap">
-                <div class="content-left col-12 col-md-6">
+                <div class="content-left col-12 col-lg-6">
                     <h1>
                         Il cibo che ami
                         <span class="text-brand">quando</span> e
                         <span class="text-brand">dove</span> vuoi tu!
                     </h1>
                 </div>
-                <div class="content-right col-12 col-sm-6">
+                <div class="content-right col-12 col-lg-6">
                     <img
                         class="img-fluid"
                         src="../../img/jumbo/ciclista-arancione.png"

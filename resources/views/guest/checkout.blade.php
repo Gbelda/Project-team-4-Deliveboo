@@ -86,9 +86,9 @@
 
                 </div>
                 <div class="cc_container row">
-                    <header>
+                    <div>
                         <h1>Carta di Credito</h1>
-                    </header>
+                    </div>
 
                     <div id="my-sample-form" class="scale-down">
                         <div class="cardinfo-card-number">
