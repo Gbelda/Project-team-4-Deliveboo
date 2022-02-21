@@ -118,7 +118,7 @@ window.onload = function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\pj4\Project-team-4-Deliveboo\resources\js\register.js */"./resources/js/register.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\js\register.js */"./resources/js/register.js");
 
 
 /***/ })
