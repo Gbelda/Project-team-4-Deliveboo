@@ -81,7 +81,7 @@
                                 preserveAspectRatio="xMidYMid slice"
                                 focusable="false"
                             >
-                                <rect width="100%" height="100%" />
+                                <rect width="100%" height="100%" fill="#777" />
                             </svg>
 
                             <div class="container">
