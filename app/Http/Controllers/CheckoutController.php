@@ -64,12 +64,12 @@ class CheckoutController extends Controller
         
         $order = Order::create($validated);
         
-        ddd($order);
+        // ddd($order);
 
 
         $plates = collect($request->input('plates', []))
         ->map(function($plate){
-            return ['count' => $plate];
+            return ['quantity' => $plate];
         });
 
         $order->plates()->sync($plates);

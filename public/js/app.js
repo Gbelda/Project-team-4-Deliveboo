@@ -43171,7 +43171,11 @@ var render = function () {
                         focusable: "false",
                       },
                     },
-                    [_c("rect", { attrs: { width: "100%", height: "100%" } })]
+                    [
+                      _c("rect", {
+                        attrs: { width: "100%", height: "100%", fill: "#777" },
+                      }),
+                    ]
                   ),
                   _vm._v(" "),
                   _vm._m(3),
