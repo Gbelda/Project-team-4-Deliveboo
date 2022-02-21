@@ -11372,15 +11372,6 @@ main .larger_container .right_container .best_restaurants_section .background_br
   border: 1px solid #0a0903;
   border-radius: 5px;
 }
-main .larger_container .right_container .best_restaurants_section #best_restaurants_carousel .carousel-item {
-  /* #rect_background_color {
-          background-image: linear-gradient(
-              to right,
-              $secondary_color,
-              $brand-color
-          ) !important;
-      } */
-}
 main .larger_container .right_container .best_restaurants_section #best_restaurants_carousel .carousel-item .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;

@@ -21,19 +21,19 @@
         background-color: $black;
         border-radius: 20px;
         color: $brand-color;
-        .button_navbar{
+        .button_navbar {
             color: $brand-color;
             text-decoration: none;
-            &:focus{
+            &:focus {
                 box-shadow: none;
             }
         }
-        .tendina{
+        .tendina {
             background-color: $black;
             border-radius: 0px 10px 20px 20px;
-            .nav_link{
+            .nav_link {
                 text-align: center;
-                a{
+                a {
                     color: $brand-color;
                 }
             }
@@ -131,14 +131,6 @@ main {
                             -moz-user-select: none;
                             user-select: none;
                         }
-                        /* #rect_background_color {
-                                background-image: linear-gradient(
-                                    to right,
-                                    $secondary_color,
-                                    $brand-color
-                                ) !important;
-                            } */
-
                         @media (min-width: 768px) {
                             .bd-placeholder-img-lg {
                                 font-size: 3.5rem;
@@ -157,7 +149,7 @@ main {
                     $secondary_color,
                     $brand-color
                 ) !important;
-                border-radius: 0px 370px 0px 370px / 0px 345px 0px 345px; 
+                border-radius: 0px 370px 0px 370px / 0px 345px 0px 345px;
                 padding: 1rem;
                 margin: 1rem 0;
                 .paragraph_plate_day {
