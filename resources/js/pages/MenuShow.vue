@@ -277,6 +277,7 @@ $black: #0a0903;
 .hero_img {
   background-image: url("../../img/jumbo/menu_jumbo5.png");
   height: 400px;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
 }
