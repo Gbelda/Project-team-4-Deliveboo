@@ -66,6 +66,7 @@ h1 {
   @media (max-width: $small-screen) {
     border: none;
     padding: 1rem;
+    max-height: none;
   }
 }
 
@@ -241,6 +242,9 @@ h1 {
   &:focus,
   &:focus-visible {
     outline: none;
+  }
+    @media (max-width: $small-screen) {
+    width: 50%;
   }
 }
 

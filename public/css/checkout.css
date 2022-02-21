@@ -36,6 +36,7 @@ h1 {
   .form-container {
     border: none;
     padding: 1rem;
+    max-height: none;
   }
 }
 
@@ -202,6 +203,11 @@ h1 {
 }
 .form-control-plaintext:focus, .form-control-plaintext:focus-visible {
   outline: none;
+}
+@media (max-width: 476px) {
+  .form-control-plaintext {
+    width: 50%;
+  }
 }
 
 /*--------------------
