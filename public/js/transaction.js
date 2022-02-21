@@ -81,44 +81,33 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/register.js":
-/*!**********************************!*\
-  !*** ./resources/js/register.js ***!
-  \**********************************/
+/***/ "./resources/js/transaction.js":
+/*!*************************************!*\
+  !*** ./resources/js/transaction.js ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-window.onload = function () {
-  var txtPassword = document.getElementById("password");
-  var txtConfirmPassword = document.getElementById("password-confirm");
-  var btnSubmit = document.getElementById('submit_form');
-  btnSubmit.onsubmit = ConfirmPassword;
-  txtConfirmPassword.onkeyup = ConfirmPassword;
-
-  function ConfirmPassword() {
-    txtConfirmPassword.setCustomValidity("");
-
-    if (txtPassword.value != txtConfirmPassword.value) {
-      txtConfirmPassword.setCustomValidity("Le password devono essere uguali.");
-    }
-  }
-};
+var back_home = document.getElementById('back_home');
+back_home.addEventListener('click', function clearStorage() {
+  window.localStorage.clear();
+});
 
 /***/ }),
 
-/***/ 2:
-/*!****************************************!*\
-  !*** multi ./resources/js/register.js ***!
-  \****************************************/
+/***/ 4:
+/*!*******************************************!*\
+  !*** multi ./resources/js/transaction.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\js\register.js */"./resources/js/register.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\js\transaction.js */"./resources/js/transaction.js");
 
 
 /***/ })

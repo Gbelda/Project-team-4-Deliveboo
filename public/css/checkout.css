@@ -199,14 +199,24 @@ h1 {
 
 .form-control-plaintext {
   line-height: unset;
-  width: 30%;
+  width: 35%;
 }
 .form-control-plaintext:focus, .form-control-plaintext:focus-visible {
   outline: none;
 }
+@media (max-width: 1199.98px) {
+  .form-control-plaintext {
+    width: 40%;
+  }
+}
 @media (max-width: 576px) {
   .form-control-plaintext {
-    width: 50%;
+    width: 35%;
+  }
+}
+@media (max-width: 320px) {
+  .form-control-plaintext {
+    width: 80%;
   }
 }
 

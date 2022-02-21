@@ -20,7 +20,7 @@
         @endif
 
         @if (count($errors) > 0)
-            <div class="alert alert-danger">
+            <div class="alert alert-danger text-center">
                 <ul>
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
@@ -51,25 +51,25 @@
                             <div class="col-12 col-md-6 mb-3 form-group">
                                 <label for="client_name">Nome</label>
                                 <input type="text" class="form-control" id="client_name" placeholder="" required
-                                    name="client_name">
+                                    name="client_name" value="{{ old('client_name') }}">
                             </div>
                             <div class="col-md-6 mb-3 form-group">
                                 <label for="client_lastname">Cognome</label>
-                                <input type="text" class="form-control" id="client_lastname" placeholder="" value="" required
-                                    name="client_lastname">
+                                <input type="text" class="form-control" id="client_lastname" placeholder="" required
+                                    name="client_lastname" value="{{ old('client_lastname') }}">
                             </div>
                         </div>
 
                         <div class="mb-3 form-group">
                             <label for="client_email">Email</label>
                             <input type="email" class="form-control" id="client_email" placeholder="Esempio@dominio.it" required
-                                name="client_email">
+                                name="client_email" value="{{ old('client_email') }}">
                         </div>
 
                         <div class="mb-3 form-group">
                             <label for="client_address">Indirizzo</label>
                             <input type="text" class="form-control" id="client_address" placeholder="Via/Piazza" required
-                                name="client_address">
+                                name="client_address" value="{{ old('client_address') }}">
                         </div>
 
                         <div class="mb-3 form-group">
@@ -77,7 +77,7 @@
                             <input type="number" class="form-control" id="client_phone" placeholder="Cellulare/Telefono fisso." required
                                 name="client_phone" pattern="[0-9]{10}"
                                         oninvalid="this.setCustomValidity('Inserire un numero di telefono')"
-                                        oninput="this.setCustomValidity('')">
+                                        oninput="this.setCustomValidity('')" value="{{ old('client_phone') }}">
                         </div>
 
                         <hr class="mb-4">
