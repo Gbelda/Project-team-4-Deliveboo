@@ -36,7 +36,6 @@
                     <div class="col-md-4 order-md-2 mb-4">
                         <h4 class="d-flex justify-content-between align-items-center mb-3">
                             <span class="text-muted">Carrello</span>
-                            <span class="badge badge-secondary badge-pill">3</span>
                         </h4>
                         <ul class="list-group mb-3" id="cart_list">
                         </ul>
@@ -49,7 +48,7 @@
 
 
                         <div class="row">
-                            <div class="col-md-6 mb-3 form-group">
+                            <div class="col-12 col-md-6 mb-3 form-group">
                                 <label for="client_name">Nome</label>
                                 <input type="text" class="form-control" id="client_name" placeholder="" required
                                     name="client_name">

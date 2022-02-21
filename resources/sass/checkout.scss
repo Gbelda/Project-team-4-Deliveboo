@@ -50,7 +50,7 @@ h1 {
 
 .form-container {
   display: flex;
-  // background-color: #EEE;
+  background-color: #eee;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -58,9 +58,14 @@ h1 {
   // border: 1em solid #fff;
   box-sizing: border-box;
   position: relative;
-
+  width: 75%;
+  margin: auto;
+  padding: 5rem;
+  border-radius: 20px;
+  max-height: 750px;
   @media (max-width: $small-screen) {
     border: none;
+    padding: 1rem;
   }
 }
 
@@ -105,7 +110,7 @@ h1 {
 
   @media (max-width: $small-screen) {
     box-sizing: border-box;
-    padding: 7em 2em 2em;
+    padding: 2em 2em 1em;
     width: 100%;
   }
   // Change background color based on the card type
