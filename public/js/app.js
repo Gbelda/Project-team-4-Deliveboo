@@ -43151,6 +43151,7 @@ var render = function () {
               ]
             ),
             _vm._v(" "),
+<<<<<<< HEAD
             _c(
               "div",
               { staticClass: "carousel-item", attrs: { id: "da_giovanni" } },
@@ -43164,6 +43165,53 @@ var render = function () {
                     "aria-hidden": "true",
                     preserveAspectRatio: "xMidYMid slice",
                     focusable: "false",
+=======
+            _c("div", { staticClass: "carousel-inner rounded" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "carousel-item active",
+                  attrs: { id: "first_item" },
+                },
+                [
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "bd-placeholder-img",
+                      attrs: {
+                        width: "100%",
+                        height: "100%",
+                        xmlns: "http://www.w3.org/2000/svg",
+                        "aria-hidden": "true",
+                        preserveAspectRatio: "xMidYMid slice",
+                        focusable: "false",
+                      },
+                    },
+                    [
+                      _c("rect", {
+                        attrs: { width: "100%", height: "100%", fill: "#777" },
+                      }),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _vm._m(3),
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "carousel-item" }, [
+                _c(
+                  "svg",
+                  {
+                    staticClass: "bd-placeholder-img",
+                    attrs: {
+                      width: "100%",
+                      height: "100%",
+                      xmlns: "http://www.w3.org/2000/svg",
+                      "aria-hidden": "true",
+                      preserveAspectRatio: "xMidYMid slice",
+                      focusable: "false",
+                    },
+>>>>>>> e78e54cb984262b1c9affc44676d947c8137deda
                   },
                 }),
                 _vm._v(" "),
@@ -59685,10 +59733,10 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\esercitazioni\esercitazione-finale\Project-team-4-Deliveboo\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\esercitazioni\esercitazione-finale\Project-team-4-Deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\esercitazioni\esercitazione-finale\Project-team-4-Deliveboo\resources\sass\admin.scss */"./resources/sass/admin.scss");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\esercitazioni\esercitazione-finale\Project-team-4-Deliveboo\resources\sass\checkout.scss */"./resources/sass/checkout.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\admin.scss */"./resources/sass/admin.scss");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\checkout.scss */"./resources/sass/checkout.scss");
 
 
 /***/ })

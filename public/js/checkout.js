@@ -103,7 +103,9 @@ var form = document.querySelector('#my-sample-form');
 var submit = document.querySelector('input[type="button"]'); // GET CART ARRAY
 
 var cart = JSON.parse(localStorage.getItem("cart"));
-console.log(cart, 'log 1'); // TARGET DOM CART LIST
+console.log(cart, 'log 1');
+var restaurant = JSON.parse(localStorage.getItem('restaurant'));
+console.log(restaurant); // TARGET DOM CART LIST
 
 var cart_list = document.getElementById('cart_list');
 console.log(cart_list, 'log 2'); // COUNT PLATE DUPLICATES TO SET COUNTER
@@ -120,6 +122,8 @@ var counts = Object.values(countsObject);
 console.log(counts, 'log counts'); //Assign to DOM element
 
 if (products != '') {
+  cart_list.insertAdjacentHTML('afterbegin', "<li class=\"list-group-item d-flex justify-content-between align-items-center lh-condensed\"><h5 class='m-0'>".concat(restaurant.restaurant_name, "</h5>\n            <h5 class='d-flex align-items-center justify-content-end m-0'>\n                <input type=\"hidden\" name=\"restaurant_id\" readonly class=\" form-control-plaintext p-0\" id=\"restaurant_id\" value=\"").concat(restaurant.id, "\">\n            </h5>\n        </li>"));
+
   var _loop = function _loop(i) {
     //GET PLATE INFO THROUGH NAME FIND
     product = cart.find(function (product) {
@@ -141,7 +145,7 @@ if (products != '') {
     total = total + parseFloat(cart[_i].price);
   }
 
-  cart_list.insertAdjacentHTML('beforeend', "<li class=\"list-group-item d-flex justify-content-between align-items-center lh-condensed\"><h5 class='m-0'>Totale:</h5>\n            <h5 class='d-flex align-items-center justify-content-end m-0'>\n                &euro;\n                <input type=\"text\" name=\"amount\" readonly class=\" form-control-plaintext p-0\" id=\"amount\" value=\"".concat(Math.round((total + Number.EPSILON) * 100) / 100, "\">\n            </h5>\n        </li>"));
+  cart_list.insertAdjacentHTML('beforeend', "<li class=\"list-group-item d-flex justify-content-between align-items-center lh-condensed\"><h5 class='m-0'>Totale:</h5>\n            <h5 class='d-flex align-items-center justify-content-end m-0'>\n                &euro;\n                <input type=\"text\" name=\"total\" readonly class=\" form-control-plaintext p-0\" id=\"total\" value=\"".concat(Math.round((total + Number.EPSILON) * 100) / 100, "\">\n            </h5>\n        </li>"));
 } else {
   cart_list.insertAdjacentHTML('beforeend', "<em class=\"text-danger\">Il carrello e vuoto</em>");
 }
@@ -286,7 +290,7 @@ braintree.client.create({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\esercitazioni\esercitazione-finale\Project-team-4-Deliveboo\resources\js\checkout.js */"./resources/js/checkout.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\js\checkout.js */"./resources/js/checkout.js");
 
 
 /***/ })

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
@@ -46,6 +47,35 @@ class CheckoutController extends Controller
     {
         // ddd($request);
 
+        $validated = $request->validate([
+            'client_name' => ['required', 'max:50'],
+            'client_lastname' => ['required', 'max:50'],
+            'client_email' => ['required', 'string', 'email', 'max:255'],
+            'client_address' => ['required', 'string', ],
+            'client_phone' => ['required', 'numeric', 'digits_between:10,15'],
+            'total' => ['required', 'numeric'],
+            'plates' => ['required'],   
+
+
+        ]);
+        
+        $validated['user_id'] = $request->restaurant_id;
+
+        
+        $order = Order::create($validated);
+        
+        // ddd($order);
+
+
+        $plates = collect($request->input('plates', []))
+        ->map(function($plate){
+            return ['quantity' => $plate];
+        });
+
+        $order->plates()->sync($plates);
+
+        ddd($order);
+
         $gateway = new \Braintree\Gateway([
             'environment' => config('services.braintree.environment'),
             'merchantId' => config('services.braintree.merchantId'),
@@ -54,7 +84,7 @@ class CheckoutController extends Controller
             
         ]);
 
-         $amount = $request->amount;
+        $amount = $request->total;
         $nonce = $request->payment_method_nonce;
 
         $result = $gateway->transaction()->sale([
