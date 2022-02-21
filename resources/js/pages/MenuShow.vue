@@ -1,5 +1,36 @@
 <template>
   <div class="">
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="change_cart"
+      tabindex="-1"
+      aria-labelledby="change_cart"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="change_cart">Creare un nuovo ordine</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            L'ordine include articoli di un altro ristorante . Crea un nuovo
+            ordine per aggiungere articoli da {{ restaurant.restaurant_name }}.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-warning" @click="newOrder">
+              Crea nuovo ordine
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="hero_img"></div>
     <div class="container" id="menu">
       <section class="plates row">
