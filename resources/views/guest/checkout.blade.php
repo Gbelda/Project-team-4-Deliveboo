@@ -33,7 +33,7 @@
                 @csrf
 
                 <div class="row justtify-content-evenly">
-                    <div class="col-md-4 order-md-2 mb-4">
+                    <div class="col-lg-6 order-lg-2 mb-4">
                         <h4 class="d-flex justify-content-between align-items-center mb-3">
                             <span class="text-muted">Carrello</span>
                         </h4>
@@ -43,7 +43,7 @@
 
                     </div>
 
-                    <div class="col-md-8 order-md-1">
+                    <div class="col-lg-6 order-lg-1">
                         <h4 class="mb-3">Indirizzo di Consegna</h4>
 
 
