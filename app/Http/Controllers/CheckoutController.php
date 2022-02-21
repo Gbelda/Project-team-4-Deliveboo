@@ -54,7 +54,6 @@ class CheckoutController extends Controller
             
         ]);
 
-        
          $amount = $request->amount;
         $nonce = $request->payment_method_nonce;
 
