@@ -53,7 +53,6 @@ class CheckoutController extends Controller
             'privateKey' => config('services.braintree.privateKey')
         ]);
 
-        ddd($request);
          $amount = $request->amount;
         $nonce = $request->payment_method_nonce;
 
