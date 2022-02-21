@@ -15,7 +15,6 @@
             <!-- <div class="line"></div> -->
           </div>
 
-          
           <!-- contenuto piatti -->
           <div class="container_food row py-5 gy-5">
             <div
@@ -39,7 +38,7 @@
                 </div>
                 <div class="food_name">
                   <h2>
-                    <strong>{{ plate.name}}</strong>
+                    <strong>{{ plate.name }}</strong>
                   </h2>
                 </div>
                 <div class="food_description">
@@ -62,10 +61,16 @@
             </div>
           </div>
         </div>
+
         <!-- carrello -->
         <div class="col-lg-2 col-md-2 col-sm-12">
           <div class="sidebar-sticky carrello">
             <h3>Carrello</h3>
+            <div class="isempty text-center " v-if="this.cart == ''">
+              <em class="text-danger"
+                >Il carrello &eacute; vuoto</em
+              >
+            </div>
             <ul class="list-unstyled contenitore_piatti_carrello">
               <li
                 class="name_food"
@@ -88,11 +93,22 @@
                     </button>
                   </div>
                   <div class="quantity">
-                      {{ item }}
+                    {{ item }}
                   </div>
                 </div>
               </li>
             </ul>
+            <div
+              class="qty_plate d-flex justify-content-evenly text-center"
+              v-if="this.cart != ''"
+            >
+              <button class="btn remove_btn" @click="removeToCart(value)">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+              <button class="btn add_btn" @click="getUrl()">
+                <i class="fa-solid fa-money-check-dollar"></i>
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -158,7 +174,7 @@ export default {
     AddToCart(plate) {
       if (this.cart != "") {
         if (this.cart[0]["user_id"] != plate["user_id"] && this.cart != 0) {
-           return $("#change_cart").modal("show");
+          return $("#change_cart").modal("show");
         }
       }
       this.cart.push(plate);
@@ -168,7 +184,7 @@ export default {
 
     newOrder() {
       this.cart = [];
-      this.counts=[];
+      this.counts = [];
       // this.cart.push(plate);
       // this.cart.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
       // this.CountQuantity();
@@ -236,24 +252,24 @@ $black: #0a0903;
 
 #menu {
   padding-top: 4rem;
-  .titolo_menu{
+  .titolo_menu {
     background: $secondary-color;
     transform: skewX(3deg);
     width: 60%;
     box-shadow: -7px 5px 0px 0px $black;
     padding: 0.2rem;
     border-radius: 10px;
-    span{
+    span {
       color: $black;
       padding-left: 1rem;
     }
     .line {
-    height: 3px;
-    background-color: $black;
-    width: 40%;
+      height: 3px;
+      background-color: $black;
+      width: 40%;
+    }
   }
-  }
-  .quantity{
+  .quantity {
     color: $brand-color;
     font-size: 1.5rem;
     font-weight: bolder;
@@ -306,7 +322,7 @@ $black: #0a0903;
   width: 100%;
   padding-bottom: 1.5rem;
 }
-.food_name{
+.food_name {
   max-height: 3.5rem;
   overflow: hidden;
 }

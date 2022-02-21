@@ -5229,6 +5229,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -42931,6 +42947,14 @@ var render = function () {
           _c("div", { staticClass: "sidebar-sticky carrello" }, [
             _c("h3", [_vm._v("Carrello")]),
             _vm._v(" "),
+            this.cart == ""
+              ? _c("div", { staticClass: "isempty text-center " }, [
+                  _c("em", { staticClass: "text-danger" }, [
+                    _vm._v("Il carrello é vuoto"),
+                  ]),
+                ])
+              : _vm._e(),
+            _vm._v(" "),
             _c(
               "ul",
               { staticClass: "list-unstyled contenitore_piatti_carrello" },
@@ -42980,7 +43004,7 @@ var render = function () {
                       _vm._v(" "),
                       _c("div", { staticClass: "quantity" }, [
                         _vm._v(
-                          "\n                    " +
+                          "\n                  " +
                             _vm._s(item) +
                             "\n                "
                         ),
@@ -42991,6 +43015,47 @@ var render = function () {
               }),
               0
             ),
+            _vm._v(" "),
+            this.cart != ""
+              ? _c(
+                  "div",
+                  {
+                    staticClass:
+                      "qty_plate d-flex justify-content-evenly text-center",
+                  },
+                  [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn remove_btn",
+                        on: {
+                          click: function ($event) {
+                            return _vm.removeToCart(_vm.value)
+                          },
+                        },
+                      },
+                      [_c("i", { staticClass: "fa-solid fa-trash-can" })]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn add_btn",
+                        on: {
+                          click: function ($event) {
+                            return _vm.getUrl()
+                          },
+                        },
+                      },
+                      [
+                        _c("i", {
+                          staticClass: "fa-solid fa-money-check-dollar",
+                        }),
+                      ]
+                    ),
+                  ]
+                )
+              : _vm._e(),
           ]),
         ]),
       ]),
