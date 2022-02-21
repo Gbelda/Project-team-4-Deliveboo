@@ -51,6 +51,7 @@ class CheckoutController extends Controller
             'merchantId' => config('services.braintree.merchantId'),
             'publicKey' => config('services.braintree.publicKey'),
             'privateKey' => config('services.braintree.privateKey')
+            
         ]);
 
          $amount = $request->amount;
@@ -59,11 +60,24 @@ class CheckoutController extends Controller
         $result = $gateway->transaction()->sale([
              'amount' => $amount,
             'paymentMethodNonce' => $nonce,
+            'customer' => [
+                'firstName' => $request->client_name,
+                'lastName' => $request->client_lastname,
+                'email' => $request->client_email,
+                'phone' => $request->client_phone,
+            ],
+            'billing' => [
+                'firstName' => $request->client_name,
+                'lastName' => $request->client_lastname,
+                'streetAddress' => $request->client_address,
+
+            ],
             'options' => [
                 'submitForSettlement' => true
             ]
         ]);
 
+        // ddd($result);
 
         if ($result->success) {
             $transaction = $result->transaction;
