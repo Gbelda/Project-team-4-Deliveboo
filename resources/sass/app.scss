@@ -48,9 +48,9 @@
     color: $brand-color;
 }
 
-.fw-bold{
-        text-align: center;
-    }
+.fw-bold {
+    text-align: center;
+}
 /* /utility */
 
 /* header */
@@ -180,6 +180,11 @@ header {
 
 /* restuarants */
 #home {
+    .title {
+        h2 {
+            font-size: 2rem;
+        }
+    }
     .line {
         width: 100%;
         padding: 0.2rem;
@@ -293,7 +298,6 @@ header {
                     i {
                         font-size: 20px;
                         text-decoration: none;
-                        
                     }
                     h6 {
                         font-size: 15px;
@@ -353,19 +357,19 @@ header {
     }
 
     .orange_band {
-        margin: 0.7rem!important;
+        margin: 0.7rem !important;
         height: 50px;
     }
 
-    .fw-bold{
+    .fw-bold {
         font-size: 10px;
     }
 
-    .h2_carousel{
+    .h2_carousel {
         font-size: 19px;
     }
 
-    .h3_carousel{
+    .h3_carousel {
         font-size: 16px;
     }
 
@@ -392,22 +396,20 @@ header {
     }
 
     .orange_band {
-        margin: 0.6rem!important;
+        margin: 0.6rem !important;
     }
 
-    .h2_carousel{
+    .h2_carousel {
         font-size: 25px;
     }
 
-    .h3_carousel{
+    .h3_carousel {
         font-size: 17px;
     }
 
     #site_footer .row img {
         width: 80%;
     }
-
-    
 }
 
 @media screen and (min-width: 768px) {
@@ -423,19 +425,19 @@ header {
         width: 50%;
     }
 
-    .h2_carousel{
+    .h2_carousel {
         font-size: 30px;
     }
 
-    .h3_carousel{
+    .h3_carousel {
         font-size: 22px;
     }
 
     .orange_band {
-        margin: 0.5rem!important;
+        margin: 0.5rem !important;
     }
 
-    .fw-bold{
+    .fw-bold {
         font-size: 13px;
     }
 
@@ -461,15 +463,15 @@ header {
         width: 50%;
     }
 
-    .h2_carousel{
+    .h2_carousel {
         font-size: 33px;
     }
 
-    .h3_carousel{
+    .h3_carousel {
         font-size: 27px;
     }
 
-    .fw-bold{
+    .fw-bold {
         font-size: 15px;
     }
 
@@ -491,11 +493,11 @@ header {
         width: 50%;
     }
 
-    .h2_carousel{
+    .h2_carousel {
         font-size: 33px;
     }
 
-    .h3_carousel{
+    .h3_carousel {
         font-size: 27px;
     }
 }
@@ -513,11 +515,11 @@ header {
         width: 50%;
     }
 
-    .h2_carousel{
+    .h2_carousel {
         font-size: 33px;
     }
 
-    .h3_carousel{
+    .h3_carousel {
         font-size: 27px;
     }
 }

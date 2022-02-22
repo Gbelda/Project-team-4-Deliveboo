@@ -11409,6 +11409,9 @@ header .content-left h1, header .content-left .h1 {
 
 /* /.best_restaurants_section */
 /* restuarants */
+#home .title h2, #home .title .h2 {
+  font-size: 2rem;
+}
 #home .line {
   width: 100%;
   padding: 0.2rem;
