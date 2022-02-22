@@ -47,8 +47,6 @@ class CheckoutController extends Controller
     {
         // ddd($request);
 
-
-
         // ddd($order);
 
         $gateway = new \Braintree\Gateway([
@@ -86,7 +84,6 @@ class CheckoutController extends Controller
 
         if ($result->success) {
             $transaction = $result->transaction;
-            // header("Location: transaction.php?id=" . $transaction->id);
 
             $validated = $request->validate([
                 'client_name' => ['required', 'max:50'],

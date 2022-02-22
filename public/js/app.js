@@ -42979,24 +42979,6 @@ var render = function () {
                       _c("h6", [_c("strong", [_vm._v(_vm._s(value))])]),
                       _vm._v(" "),
                       _c("h6", [_vm._v("qty.\n                ")]),
-                      _vm._v(" "),
-                      item > 1
-                        ? _c(
-                            "em",
-                            {
-                              on: {
-                                click: function ($event) {
-                                  return _vm.clearCart()
-                                },
-                              },
-                            },
-                            [
-                              _vm._v(
-                                "\n                    (togli dal carrello)\n                  "
-                              ),
-                            ]
-                          )
-                        : _vm._e(),
                     ]
                   ),
                   _vm._v(" "),
@@ -43041,6 +43023,14 @@ var render = function () {
                       ]),
                     ]
                   ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "text-end" }, [
+                    item != 1
+                      ? _c("em", { staticClass: "text-danger" }, [
+                          _vm._v("(togli dal carrello)"),
+                        ])
+                      : _vm._e(),
+                  ]),
                 ])
               }),
               0

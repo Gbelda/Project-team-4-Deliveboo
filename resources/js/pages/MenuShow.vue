@@ -112,9 +112,6 @@
                   </h6>
                   <h6>qty.
                   </h6>
-                    <em class="" @click="clearCart()" v-if="item > 1">
-                      (togli dal carrello)
-                    </em>
                 </div>
                 <div class="qty_plate d-flex justify-content-between">
                   <div class="button">
@@ -128,6 +125,9 @@
                   <div class="quantity">
                     {{ item }}
                   </div>
+                </div>
+                <div class="text-end">
+                <em class="text-danger" v-if="item != 1">(togli dal carrello)</em>
                 </div>
               </li>
             </ul>
