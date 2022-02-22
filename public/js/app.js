@@ -43355,7 +43355,7 @@ var render = function () {
                       expression: "selected.categories",
                     },
                   ],
-                  staticClass: "form-check-input",
+                  staticClass: "form-check-input check_square",
                   attrs: { type: "checkbox", id: "category" + index },
                   domProps: {
                     value: category.id,

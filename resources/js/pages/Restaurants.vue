@@ -213,7 +213,7 @@
             :key="category.id"
           >
             <input
-              class="form-check-input"
+              class="form-check-input check_square"
               type="checkbox"
               :value="category.id"
               :id="'category' + index"
