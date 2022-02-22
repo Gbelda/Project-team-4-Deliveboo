@@ -1,8 +1,7 @@
 <nav id="nav_guest" class="container-fluid">
-    <div class="nav_guest container d-flex justify-content-between align-items-center">
+<div class="nav_guest container d-flex justify-content-between align-items-center">
         <div class="col-2">
-            <router-link to="/" class="nav-link"><img src="{{ asset('./img/jumbo/logo.png') }}" alt="">
-            </router-link>
+            <a href="/" class="nav-link"><img src="{{ asset('./img/jumbo/logo.png') }}" alt=""></a>
         </div>
         <div class="hamburgen">
             <div class="dropdown">
@@ -22,8 +21,8 @@
                         @endif
                     @else
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link" href="{{route('admin.index')}}" 
+                                 aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
 
@@ -45,5 +44,4 @@
             </div>
             {{-- <i class="fa-solid fa-bars"></i> --}}
         </div>
-    </div>
 </nav>
