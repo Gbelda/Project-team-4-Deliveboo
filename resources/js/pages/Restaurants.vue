@@ -1,15 +1,15 @@
 <template>
   <div class="container-fluid jumbo p-0">
-    <header class="d-flex justify-content-center">
+    <header id="liftoff" class="d-flex justify-content-center">
       <div class="row container content justify-content-center flex-wrap">
-        <div class="content-left col-12 col-lg-6">
-          <h1>
+        <div class="content-left col-12 col-md-6">
+          <h1 class="title">
             Il cibo che ami
             <span class="text-brand">quando</span> e
             <span class="text-brand">dove</span> vuoi tu!
           </h1>
         </div>
-        <div class="content-right col-12 col-lg-6">
+        <div class="content-right col-12 col-sm-6">
           <img
             class="img-fluid"
             src="../../img/jumbo/ciclista-arancione.png"
@@ -24,7 +24,7 @@
       <div class="paragraph_title">
         <div class="row">
           <div class="col-12 text-center">
-            <h2>I migliori ristoranti del mese di Milano selezionati da voi</h2>
+            <h2>I migliori ristoranti del mese a Milano</h2>
             <div class="horizontal_rule"></div>
           </div>
         </div>
@@ -84,9 +84,9 @@
 
             <div class="container">
               <div class="carousel-caption text-center">
-                <h3>da Marco</h3>
-                <h6>La migliore pizza d'Italia... altro che Napoli</h6>
-                <a class="btn btn-lg btn-primary" href="#"> Provala subito </a>
+                <h2 class="h2_carousel">Da Marco</h2>
+                <h3 class="h3_carousel">La migliore pizza d'Italia</h3>
+                <a class="btn btn-sm" href="#"> Provala subito </a>
               </div>
             </div>
           </div>
@@ -103,11 +103,9 @@
 
             <div class="container">
               <div class="carousel-caption">
-                <h3>Da Giovanni</h3>
-                <h6>Il miglior sushi di Milano l'ho facciamo solo noi!</h6>
-                <button class="btn btn-lg btn-primary" href="#">
-                  Provalo subito
-                </button>
+                <h2 class="h2_carousel">Da Giovanni</h2>
+                <h3 class="h3_carousel">Il miglior sushi di Milano</h3>
+                <button class="btn btn-sm" href="#">Provalo subito</button>
               </div>
             </div>
           </div>
@@ -124,11 +122,11 @@
 
             <div class="container">
               <div class="carousel-caption text-center">
-                <h3>Da Paolo</h3>
-                <h6>I migliori panini di Milano, buoni e poco costosi</h6>
-                <button class="btn btn-lg btn-primary" href="#">
-                  Provali subito
-                </button>
+                <h2 class="h2_carousel">Da Paolo</h2>
+                <h3 class="h3_carousel">
+                  Un vero fast-food americano al centro di Milano!
+                </h3>
+                <button class="btn btn-sm" href="#">Provalo subito</button>
               </div>
             </div>
           </div>
@@ -145,11 +143,9 @@
 
             <div class="container">
               <div class="carousel-caption text-center">
-                <h3>Da Laurentiu</h3>
-                <h6>Tutta la cucina orientale che vuoi, e non solo</h6>
-                <button class="btn btn-lg btn-primary" href="#">
-                  Provala subito
-                </button>
+                <h2 class="h2_carousel">Da Laurentiu</h2>
+                <h3 class="h3_carousel">Tutta la cucina orientale che vuoi</h3>
+                <button class="btn btn-sm" href="#">Provala subito</button>
               </div>
             </div>
           </div>
@@ -166,11 +162,11 @@
 
             <div class="container">
               <div class="carousel-caption text-center">
-                <h3>Da Giuseppe</h3>
-                <h6>La migliore cucina messicana in assoluto</h6>
-                <button class="btn btn-lg btn-primary" href="#">
-                  Provala subito
-                </button>
+                <h2 class="h2_carousel">Da Giuseppe</h2>
+                <h3 class="h3_carousel">
+                  La migliore cucina messicana di Milano
+                </h3>
+                <button class="btn btn-sm" href="#">Provala subito</button>
               </div>
             </div>
           </div>
@@ -198,7 +194,7 @@
     </section>
     <!-- /.best_restaurants_section -->
 
-    <!-- ristoranti -->
+    <!-- restuarants -->
     <section id="home">
       <div class="container">
         <!-- titolo paragrafo categorie -->
@@ -217,7 +213,7 @@
             :key="category.id"
           >
             <input
-              class="form-check-input check_square"
+              class="form-check-input"
               type="checkbox"
               :value="category.id"
               :id="'category' + index"
@@ -237,6 +233,7 @@
             </div>
           </div>
         </div>
+
         <!-- ristoranti -->
         <section class="ristoranti_container">
           <div class="content">
@@ -254,7 +251,7 @@
             >
               <h3 v-if="restaurants == ''">Nessun ristorante disponibile</h3>
             </div>
-            <div class="row justify-content-center contenitore_bordi">
+            <div class="row justify-content-center contenitore_bordi rounded">
               <div
                 class="col-md-6 col-lg-4 col-sm-12 card-container d-flex"
                 v-for="restaurant in restaurants"
@@ -294,11 +291,12 @@
                 </div>
               </div>
             </div>
-            <!-- gestione pagine -->
-            <div class="links text-center mt-5" v-if="meta.last_page > 1">
+
+            <!-- pagination -->
+            <div class="pagination links" v-if="meta.last_page > 1">
               <span
                 class="btn prev"
-                :class="meta.current_page === 1 ? 'disabled' : ''"
+                v-if="meta.current_page > 1 ? 'disabled' : ''"
                 @click="PrevPage()"
                 >Prev</span
               >
@@ -312,21 +310,22 @@
               >
               <span
                 class="btn next"
-                :class="meta.current_page === meta.last_page ? 'disabled' : ''"
+                v-if="meta.current_page < meta.last_page ? 'disabled' : ''"
                 @click="NextPage()"
                 >Next</span
               >
             </div>
+            <!-- /pagination -->
           </div>
         </section>
       </div>
     </section>
-    <!-- ristoranti -->
+    <!-- restuarants -->
 
     <div class="container-fluid d-flex mt-5 pt-5 justify-content-center">
       <div class="col-8">
         <!-- .best_plate_section -->
-        <section class="best_plate_section">
+        <section class="best_plate_section rounded-pill">
           <div class="paragraph_plate_day">
             <div class="row">
               <div class="col">
@@ -338,9 +337,12 @@
           <div class="plate_of_day">
             <img src="../../img/main/plate_of_day.png" alt="" class="w-25" />
             <div class="plate_of_day_body">
-              <h4>Squisito hamburger menu, provalo subito!</h4>
+              <h5>Squisito hamburger menu, provalo subito!</h5>
               <h6>A soli 5,99 €</h6>
-              <button class="btn btn-primary" @click="AddToCart(plate)">
+              <button
+                class="btn btn-warning border-0"
+                @click="AddToCart(plate)"
+              >
                 Aggiungi al carrello
               </button>
             </div>
@@ -348,8 +350,75 @@
         </section>
         <!-- .best_plate_section -->
       </div>
-      <!-- /.right_container -->
     </div>
+
+    <footer id="site_footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+            <a href="/" class="nav-link"
+              ><img
+                src="../../img/jumbo/logo.png"
+                alt="immagine logo Deliveboo"
+            /></a>
+            <div class="app_store">
+              <a href="#">
+                <i class="fab fa-google-play"> </i>
+                <h6>Android app on Google Play</h6>
+              </a>
+              <a href="#">
+                <i class="fab fa-app-store-ios"> </i>
+                <h6>Available on the App store</h6>
+              </a>
+            </div>
+            <div class="">
+              <p>&copy; Deliveboo Italy s.r.l. 2022</p>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="">
+              <h6>Scopri Deliveboo</h6>
+              <ul>
+                <li>
+                  <a href="#">Chi siamo</a>
+                </li>
+                <li>
+                  <a href="#">Investitori</a>
+                </li>
+                <li>
+                  <a href="#">Lavora con noi</a>
+                </li>
+                <li>
+                  <a href="#">Ristoranti</a>
+                </li>
+                <li>
+                  <a href="#">Diventa nostro partner</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-4">
+            <div>
+              <h6>Note legali</h6>
+              <ul>
+                <li>
+                  <a href="#">Termini e condizioni</a>
+                </li>
+                <li>
+                  <a href="#">Informazioni sulla privacy</a>
+                </li>
+                <li>
+                  <a href="#">Cookies</a>
+                </li>
+              </ul>
+            </div>
+            <div id="arrow_up">
+              <a href="#liftoff"><i class="fas fa-arrow-circle-up"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -373,7 +442,6 @@ export default {
           params: this.selected,
         })
         .then((response) => {
-          // console.log(response);
           this.restaurants = response.data.data;
           this.meta = response.data.meta;
           this.links = response.data.links;
@@ -452,7 +520,7 @@ $black: #0a0903;
     .orange_band {
       background-color: $secondary-color;
       margin: 0.5rem;
-      height: 1rem;
+      //height: 1rem;
       border-radius: 20px;
       width: calc(100% / 11);
       .colonna {
@@ -596,7 +664,8 @@ $black: #0a0903;
     color: $black;
     text-align: center;
     background: $brand-color;
-    width: fit-content;
+    //width: fit-content;
+    width: inherit;
     box-shadow: 2px 4px 12px 0px #00000045;
   }
   .food-card-food-properties > div {
