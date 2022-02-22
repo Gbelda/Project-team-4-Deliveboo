@@ -11247,3 +11247,49 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+#nav {
+  background-color: #0a0903;
+  height: 7vh;
+  padding: 0 1rem;
+}
+#nav .navbar-brand {
+  color: #ff8200 !important;
+}
+#nav .nav-link {
+  color: #ff8200;
+}
+
+#contenuto_admin {
+  height: 93vh;
+}
+#contenuto_admin .row {
+  height: 100%;
+}
+#contenuto_admin .row .side_bar {
+  padding: 1rem;
+  width: 10%;
+  font-size: 0.8rem;
+}
+#contenuto_admin .row .side_bar .side_bar_contenitor {
+  background-color: #0a0903;
+  height: 100%;
+  border-radius: 20px;
+}
+#contenuto_admin .row .side_bar .side_bar_contenitor ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 2rem 0 0 0;
+}
+#contenuto_admin .row .side_bar .side_bar_contenitor ul li {
+  padding: 1rem 0;
+}
+#contenuto_admin .row .side_bar .side_bar_contenitor ul li a {
+  text-decoration: none;
+  color: #ff8200;
+}
+#contenuto_admin .row .contenuto_griglie {
+  width: 90%;
+}

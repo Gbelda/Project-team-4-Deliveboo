@@ -6,3 +6,52 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+// nav
+#nav{
+    background-color: $black;
+    height: 7vh;
+    padding: 0 1rem;
+    .navbar-brand{
+        color: $brand-color !important;
+    }
+    .nav-link{
+        color: $brand-color;
+    }
+}
+#contenuto_admin{
+    height: 93vh;
+    .row{
+        height: 100%;
+        .side_bar{
+            padding: 1rem;
+            width: 10%;
+            font-size: .8rem;
+            .side_bar_contenitor{
+                background-color: $black;
+                height: 100%;
+                border-radius: 20px;
+                ul{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    list-style: none;
+                    margin: 0;
+                    padding: 2rem 0 0 0;
+                    li{
+                        
+                        padding: 1rem 0;
+                        a{
+                            text-decoration: none;
+                            color: $brand-color;
+                        }
+                    }
+                }
+            }
+        }
+        .contenuto_griglie{
+            width: 90%;
+        }
+    }
+}
