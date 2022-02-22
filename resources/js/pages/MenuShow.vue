@@ -110,7 +110,11 @@
                   <h6>
                     <strong>{{ value }}</strong>
                   </h6>
-                  <h6>qty.</h6>
+                  <h6>qty.
+                  </h6>
+                    <em class="" @click="clearCart()" v-if="item > 1">
+                      (togli dal carrello)
+                    </em>
                 </div>
                 <div class="qty_plate d-flex justify-content-between">
                   <div class="button">
@@ -211,28 +215,32 @@ export default {
       this.CountQuantity();
     },
 
-    clearCart(){
+    clearCart() {
       this.cart = [];
       this.counts = [];
     },
 
+    clearItem(value){
+      this.cart.splice(value)
+    },
+
+    findPlate(input){
+      return this.cart.find(({ name }) => name === input);
+    },
+
     newOrder() {
       this.clearCart();
-      // this.cart.push(plate);
-      // this.cart.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
-      // this.CountQuantity();
       $("#change_cart").modal("hide");
     },
 
     addQuantity(input) {
-      var result = this.cart.find(({ name }) => name === input);
-      this.cart.push(result);
+      
+      this.cart.push(this.findPlate(input));
       this.CountQuantity();
     },
 
     removeToCart(input) {
-      var result = this.cart.find(({ name }) => name === input);
-      const index = this.cart.indexOf(result);
+      const index = this.cart.indexOf(this.findPlate(input));
       if (index > -1) {
         this.cart.splice(index, 1);
       }
@@ -246,7 +254,6 @@ export default {
 
   mounted() {
     this.GetRestaurant();
-
     this.GetPlates();
     if (this.cart != []) {
       setTimeout(this.CountQuantity, 500);

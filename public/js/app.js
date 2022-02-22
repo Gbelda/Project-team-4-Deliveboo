@@ -5274,6 +5274,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5336,27 +5340,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.cart = [];
       this.counts = [];
     },
-    newOrder: function newOrder() {
-      this.clearCart(); // this.cart.push(plate);
-      // this.cart.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
-      // this.CountQuantity();
-
-      $("#change_cart").modal("hide");
+    clearItem: function clearItem(value) {
+      this.cart.splice(value);
     },
-    addQuantity: function addQuantity(input) {
-      var result = this.cart.find(function (_ref) {
+    findPlate: function findPlate(input) {
+      return this.cart.find(function (_ref) {
         var name = _ref.name;
         return name === input;
       });
-      this.cart.push(result);
+    },
+    newOrder: function newOrder() {
+      this.clearCart();
+      $("#change_cart").modal("hide");
+    },
+    addQuantity: function addQuantity(input) {
+      this.cart.push(this.findPlate(input));
       this.CountQuantity();
     },
     removeToCart: function removeToCart(input) {
-      var result = this.cart.find(function (_ref2) {
-        var name = _ref2.name;
-        return name === input;
-      });
-      var index = this.cart.indexOf(result);
+      var index = this.cart.indexOf(this.findPlate(input));
 
       if (index > -1) {
         this.cart.splice(index, 1);
@@ -42976,7 +42978,25 @@ var render = function () {
                     [
                       _c("h6", [_c("strong", [_vm._v(_vm._s(value))])]),
                       _vm._v(" "),
-                      _c("h6", [_vm._v("qty.")]),
+                      _c("h6", [_vm._v("qty.\n                ")]),
+                      _vm._v(" "),
+                      item > 1
+                        ? _c(
+                            "em",
+                            {
+                              on: {
+                                click: function ($event) {
+                                  return _vm.clearCart()
+                                },
+                              },
+                            },
+                            [
+                              _vm._v(
+                                "\n                    (togli dal carrello)\n                  "
+                              ),
+                            ]
+                          )
+                        : _vm._e(),
                     ]
                   ),
                   _vm._v(" "),

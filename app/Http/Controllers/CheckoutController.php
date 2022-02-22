@@ -25,7 +25,6 @@ class CheckoutController extends Controller
         $token = $gateway->ClientToken()->generate();
 
         return view('guest.checkout', compact('token'));
-
     }
 
     /**
@@ -48,32 +47,7 @@ class CheckoutController extends Controller
     {
         // ddd($request);
 
-        $validated = $request->validate([
-            'client_name' => ['required', 'max:50'],
-            'client_lastname' => ['required', 'max:50'],
-            'client_email' => ['required', 'string', 'email', 'max:255'],
-            'client_address' => ['required', 'string', ],
-            'client_phone' => ['required', 'numeric', 'digits_between:10,15'],
-            'total' => ['required', 'numeric'],
-            'plates' => ['required'],   
 
-
-        ]);
-        
-        $validated['user_id'] = $request->restaurant_id;
-
-        
-        $order = Order::create($validated);
-        
-
-
-
-        $plates = collect($request->input('plates', []))
-        ->map(function($plate){
-            return ['quantity' => $plate];
-        });
-
-        $order->plates()->sync($plates);
 
         // ddd($order);
 
@@ -82,14 +56,14 @@ class CheckoutController extends Controller
             'merchantId' => config('services.braintree.merchantId'),
             'publicKey' => config('services.braintree.publicKey'),
             'privateKey' => config('services.braintree.privateKey')
-            
+
         ]);
 
         $amount = $request->total;
         $nonce = $request->payment_method_nonce;
 
         $result = $gateway->transaction()->sale([
-             'amount' => $amount,
+            'amount' => $amount,
             'paymentMethodNonce' => $nonce,
             'customer' => [
                 'firstName' => $request->client_name,
@@ -114,6 +88,33 @@ class CheckoutController extends Controller
             $transaction = $result->transaction;
             // header("Location: transaction.php?id=" . $transaction->id);
 
+            $validated = $request->validate([
+                'client_name' => ['required', 'max:50'],
+                'client_lastname' => ['required', 'max:50'],
+                'client_email' => ['required', 'string', 'email', 'max:255'],
+                'client_address' => ['required', 'string',],
+                'client_phone' => ['required', 'numeric', 'digits_between:10,15'],
+                'total' => ['required', 'numeric'],
+                'plates' => ['required'],
+
+
+            ]);
+
+            $validated['user_id'] = $request->restaurant_id;
+
+
+            $order = Order::create($validated);
+
+
+
+
+            $plates = collect($request->input('plates', []))
+                ->map(function ($plate) {
+                    return ['quantity' => $plate];
+                });
+
+            $order->plates()->sync($plates);
+
             return redirect()->route('guest.paysuccess')->with('message', 'Pagamento avvenuta con successo, Riceverai un email di conferma!');
         } else {
             $errorString = "";
@@ -126,9 +127,8 @@ class CheckoutController extends Controller
             // header("Location: index.php");
             return redirect()->back()->withErrors($result->message)->withInput();
         }
-    
     }
-        
+
 
     /**
      * Display the specified resource.
