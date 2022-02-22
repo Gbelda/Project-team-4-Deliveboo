@@ -4,18 +4,23 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
     public function index(){
-        
-        $orders = Order::orderByDesc('created_at')->get();
-        return view('admin.orders.index', compact('orders'));
+
+
+            $orders = Auth::user()->orders()->orderByDesc('created_at')->get();
+            return view('admin.orders.index', compact('orders'));
+            
+
     }
     public function show(Order $order){
-        if (Auth::id() === $order->user_id) {
+        ddd(Auth::id());
+        if (User::id() === $order->user_id) {
             $orders = Order::all();
             return view('admin.orders.show', compact('order'));
 

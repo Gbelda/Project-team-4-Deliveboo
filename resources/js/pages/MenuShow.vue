@@ -40,7 +40,7 @@
           <div class="titolo_menu">
             <h1>
               <strong>
-                <span>{{ restaurant.restaurant_name.toUpperCase() }}</span>
+                <span>{{ restaurant.restaurant_name }}</span>
               </strong>
             </h1>
             <!-- <div class="line"></div> -->

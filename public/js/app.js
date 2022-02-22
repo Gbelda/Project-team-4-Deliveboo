@@ -5832,7 +5832,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -42943,9 +42942,7 @@ var render = function () {
           _c("div", { staticClass: "titolo_menu" }, [
             _c("h1", [
               _c("strong", [
-                _c("span", [
-                  _vm._v(_vm._s(_vm.restaurant.restaurant_name.toUpperCase())),
-                ]),
+                _c("span", [_vm._v(_vm._s(_vm.restaurant.restaurant_name))]),
               ]),
             ]),
           ]),
@@ -43392,10 +43389,6 @@ var render = function () {
                       }
                     },
                   },
-                }),
-                _vm._v(" "),
-                _c("font-awesome-icon", {
-                  attrs: { icon: "fas fa-check-circle" },
                 }),
                 _vm._v(" "),
                 _c("div", { staticClass: "d-flex flex-column colonna" }, [

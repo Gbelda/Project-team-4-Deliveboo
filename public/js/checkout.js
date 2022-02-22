@@ -151,7 +151,7 @@ if (products != '') {
 }
 
 braintree.client.create({
-  authorization: 'sandbox_38b6pcrv_9xyqb7hxsmjp4hsm'
+  authorization: "sandbox_8h8q64ng_9xyqb7hxsmjp4hsm"
 }, function (err, clientInstance) {
   if (err) {
     console.error(err);
