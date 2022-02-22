@@ -5274,8 +5274,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5334,9 +5332,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
       this.CountQuantity();
     },
-    newOrder: function newOrder() {
+    clearCart: function clearCart() {
       this.cart = [];
-      this.counts = []; // this.cart.push(plate);
+      this.counts = [];
+    },
+    newOrder: function newOrder() {
+      this.clearCart(); // this.cart.push(plate);
       // this.cart.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
       // this.CountQuantity();
 
@@ -5405,68 +5406,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -10932,7 +10871,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".hero_img {\n  background-image: url(" + escape(__webpack_require__(/*! ../../img/jumbo/menu_jumbo5.png */ "./resources/img/jumbo/menu_jumbo5.png")) + ");\n  height: 400px;\n  background-position: bottom;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n#menu {\n  padding-top: 4rem;\n}\n#menu .titolo_menu {\n  background: #ffc100;\n  transform: skewX(3deg);\n  width: 60%;\n  box-shadow: -7px 5px 0px 0px #0a0903;\n  padding: 0.2rem;\n  border-radius: 10px;\n}\n#menu .titolo_menu span {\n  color: #0a0903;\n  padding-left: 1rem;\n}\n#menu .titolo_menu .line {\n  height: 3px;\n  background-color: #0a0903;\n  width: 40%;\n}\n#menu .quantity {\n  color: #ff8200;\n  font-size: 1.5rem;\n  font-weight: bolder;\n}\n#menu .carrello {\n  padding: 2rem 0;\n}\n#menu .carrello h3 {\n  text-align: center;\n  font-weight: bolder;\n}\n#menu .carrello .contenitore_piatti_carrello {\n  display: flex;\n  flex-direction: column;\n}\n#menu .carrello .contenitore_piatti_carrello .name_qty {\n  padding: 0.5rem 0;\n}\n#menu .carrello .contenitore_piatti_carrello .name_food {\n  font-size: bold;\n  padding-bottom: 1rem;\n  border-bottom: 1px solid black;\n}\n#menu .carrello .contenitore_piatti_carrello .add_btn {\n  background-color: #ff8200;\n  color: #0a0903;\n}\n#menu .carrello .contenitore_piatti_carrello .remove_btn {\n  background-color: #0a0903;\n  color: #ff8200;\n}\n.card_plates {\n  background-color: #ffc100;\n  transform: skewX(3deg);\n  border-radius: 10px;\n  min-height: 23rem;\n  padding: 2rem 1rem;\n  box-shadow: -11px 10px 0px 0px #0a0903;\n  width: 90%;\n  max-height: 23rem;\n  max-width: 18rem;\n}\n.card_plates:hover {\n  box-shadow: -11px 10px 0px 0px #ff8200;\n  transition: all 0.3s ease-in-out;\n}\n.food_image {\n  width: 100%;\n  padding-bottom: 1.5rem;\n}\n.food_name {\n  max-height: 3.5rem;\n  overflow: hidden;\n}\n.relative_container {\n  position: relative;\n  background-color: #ff8200;\n  border-radius: 10px;\n  width: 80%;\n  margin: auto;\n  height: 10rem;\n  box-shadow: 4px 4px 7px 0px black;\n}\n.relative_container img {\n  width: 85%;\n  position: absolute;\n  top: -1rem;\n  left: 7%;\n  max-width: 13rem;\n}\n.cart_button {\n  position: absolute;\n  bottom: -1.3rem;\n  background: #ff8200;\n  height: 2.5rem;\n  width: 2.5rem;\n  border-radius: 50%;\n  line-height: 2.5rem;\n  font-size: 1.2rem;\n}\n.cart_button:hover {\n  cursor: pointer;\n  transform: scale(110%);\n  transition: all 0.1s ease-in-out;\n}\n.food_description {\n  max-height: 3rem;\n  min-height: 3rem;\n  overflow: hidden;\n  margin-bottom: 0.7rem;\n}\n.food_price {\n  font-weight: bolder;\n}\n.title_parag {\n  text-align: center;\n  padding: 2rem 0;\n}\n.title_parag .line {\n  height: 3px;\n  background-color: #0a0903;\n  width: 20%;\n  margin: auto;\n}", ""]);
+exports.push([module.i, ".hero_img {\n  background-image: url(" + escape(__webpack_require__(/*! ../../img/jumbo/menu_jumbo5.png */ "./resources/img/jumbo/menu_jumbo5.png")) + ");\n  height: 400px;\n  background-position: bottom;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n#menu {\n  padding-top: 4rem;\n}\n#menu .titolo_menu {\n  background: #ffc100;\n  transform: skewX(3deg);\n  width: 60%;\n  box-shadow: -7px 5px 0px 0px #0a0903;\n  padding: 0.2rem;\n  border-radius: 10px;\n}\n#menu .titolo_menu span {\n  color: #0a0903;\n  padding-left: 1rem;\n}\n#menu .titolo_menu .line {\n  height: 3px;\n  background-color: #0a0903;\n  width: 40%;\n}\n#menu .quantity {\n  color: #ff8200;\n  font-size: 1.5rem;\n  font-weight: bolder;\n}\n#menu .carrello {\n  padding: 2rem 0;\n}\n#menu .carrello h3 {\n  text-align: center;\n  font-weight: bolder;\n}\n#menu .carrello .contenitore_piatti_carrello {\n  display: flex;\n  flex-direction: column;\n}\n#menu .carrello .contenitore_piatti_carrello .name_qty {\n  padding: 0.5rem 0;\n}\n#menu .carrello .contenitore_piatti_carrello .name_food {\n  font-size: bold;\n  padding-bottom: 1rem;\n  border-bottom: 1px solid black;\n}\n#menu .carrello .add_btn {\n  background-color: #ff8200;\n  color: #0a0903;\n}\n#menu .carrello .remove_btn {\n  background-color: #0a0903;\n  color: #ff8200;\n}\n.card_plates {\n  background-color: #ffc100;\n  transform: skewX(3deg);\n  border-radius: 10px;\n  min-height: 23rem;\n  padding: 2rem 1rem;\n  box-shadow: -11px 10px 0px 0px #0a0903;\n  width: 90%;\n  max-height: 23rem;\n  max-width: 18rem;\n}\n.card_plates:hover {\n  box-shadow: -11px 10px 0px 0px #ff8200;\n  transition: all 0.3s ease-in-out;\n}\n.food_image {\n  width: 100%;\n  padding-bottom: 1.5rem;\n}\n.food_name {\n  max-height: 3.5rem;\n  overflow: hidden;\n}\n.relative_container {\n  position: relative;\n  background-color: #ff8200;\n  border-radius: 10px;\n  width: 80%;\n  margin: auto;\n  height: 10rem;\n  box-shadow: 4px 4px 7px 0px black;\n}\n.relative_container img {\n  width: 85%;\n  position: absolute;\n  top: -1rem;\n  left: 7%;\n  max-width: 13rem;\n}\n.cart_button {\n  position: absolute;\n  bottom: -1.3rem;\n  background: #ff8200;\n  height: 2.5rem;\n  width: 2.5rem;\n  border-radius: 50%;\n  line-height: 2.5rem;\n  font-size: 1.2rem;\n}\n.cart_button:hover {\n  cursor: pointer;\n  transform: scale(110%);\n  transition: all 0.1s ease-in-out;\n}\n.food_description {\n  max-height: 3rem;\n  min-height: 3rem;\n  overflow: hidden;\n  margin-bottom: 0.7rem;\n}\n.food_price {\n  font-weight: bolder;\n}\n.title_parag {\n  text-align: center;\n  padding: 2rem 0;\n}\n.title_parag .line {\n  height: 3px;\n  background-color: #0a0903;\n  width: 20%;\n  margin: auto;\n}", ""]);
 
 // exports
 
@@ -43019,7 +42958,7 @@ var render = function () {
             _c("h3", [_vm._v("Carrello")]),
             _vm._v(" "),
             this.cart == ""
-              ? _c("div", { staticClass: "isempty text-center " }, [
+              ? _c("div", { staticClass: "isempty text-center" }, [
                   _c("em", { staticClass: "text-danger" }, [
                     _vm._v("Il carrello é vuoto"),
                   ]),
@@ -43101,7 +43040,7 @@ var render = function () {
                         staticClass: "btn remove_btn",
                         on: {
                           click: function ($event) {
-                            return _vm.removeToCart(_vm.value)
+                            return _vm.clearCart()
                           },
                         },
                       },
@@ -43402,9 +43341,9 @@ var render = function () {
                     },
                     [
                       _vm._v(
-                        "\n                            " +
+                        "\n              " +
                           _vm._s(category.name) +
-                          "\n                        "
+                          "\n            "
                       ),
                     ]
                   ),
@@ -43425,15 +43364,11 @@ var render = function () {
               "div",
               {
                 staticClass:
-                  "empty d-flex align-items-center justify-content-center text-danger",
+                  "\n              empty\n              d-flex\n              align-items-center\n              justify-content-center\n              text-danger\n            ",
               },
               [
                 _vm.restaurants == ""
-                  ? _c("h3", [
-                      _vm._v(
-                        "\n                            Nessun ristorante disponibile\n                        "
-                      ),
-                    ])
+                  ? _c("h3", [_vm._v("Nessun ristorante disponibile")])
                   : _vm._e(),
               ]
             ),
@@ -43480,16 +43415,16 @@ var render = function () {
                                 },
                                 [
                                   _vm._v(
-                                    "\n                                        " +
+                                    "\n                    " +
                                       _vm._s(category.name) +
-                                      "\n                                        " +
+                                      "\n                    " +
                                       _vm._s(
                                         index !=
                                           restaurant.categories.length - 1
                                           ? "|"
                                           : ""
                                       ) +
-                                      "\n                                    "
+                                      "\n                  "
                                   ),
                                 ]
                               )
@@ -43498,9 +43433,9 @@ var render = function () {
                           _vm._v(" "),
                           _c("div", { staticClass: "food-card-about" }, [
                             _vm._v(
-                              "\n                                        " +
+                              "\n                    " +
                                 _vm._s(restaurant.address) +
-                                "\n                                        "
+                                "\n                    "
                             ),
                             _c("div", { staticClass: "about-shadow" }),
                           ]),
@@ -43630,11 +43565,7 @@ var render = function () {
                       },
                     },
                   },
-                  [
-                    _vm._v(
-                      "\n                            Aggiungi al carrello\n                        "
-                    ),
-                  ]
+                  [_vm._v("\n              Aggiungi al carrello\n            ")]
                 ),
               ]),
             ]),
@@ -43658,13 +43589,11 @@ var staticRenderFns = [
         [
           _c("div", { staticClass: "content-left col-12 col-lg-6" }, [
             _c("h1", [
-              _vm._v(
-                "\n                    Il cibo che ami\n                    "
-              ),
+              _vm._v("\n          Il cibo che ami\n          "),
               _c("span", { staticClass: "text-brand" }, [_vm._v("quando")]),
-              _vm._v(" e\n                    "),
+              _vm._v(" e\n          "),
               _c("span", { staticClass: "text-brand" }, [_vm._v("dove")]),
-              _vm._v(" vuoi tu!\n                "),
+              _vm._v(" vuoi tu!\n        "),
             ]),
           ]),
           _vm._v(" "),
@@ -43690,7 +43619,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "col-12 text-center" }, [
           _c("h2", [
             _vm._v(
-              "\n                        I migliori ristoranti del mese di Milano selezionati\n                        da voi\n                    "
+              "I migliori ristoranti del mese di Milano selezionati da voi"
             ),
           ]),
           _vm._v(" "),
@@ -43760,20 +43689,12 @@ var staticRenderFns = [
       _c("div", { staticClass: "carousel-caption text-center" }, [
         _c("h3", [_vm._v("da Marco")]),
         _vm._v(" "),
-        _c("h6", [
-          _vm._v(
-            "\n                                La migliore pizza d'Italia... altro che\n                                Napoli\n                            "
-          ),
-        ]),
+        _c("h6", [_vm._v("La migliore pizza d'Italia... altro che Napoli")]),
         _vm._v(" "),
         _c(
           "a",
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
-          [
-            _vm._v(
-              "\n                                Provala subito\n                            "
-            ),
-          ]
+          [_vm._v(" Provala subito ")]
         ),
       ]),
     ])
@@ -43787,19 +43708,13 @@ var staticRenderFns = [
         _c("h3", [_vm._v("Da Giovanni")]),
         _vm._v(" "),
         _c("h6", [
-          _vm._v(
-            "\n                                Il miglior sushi di Milano l'ho facciamo\n                                solo noi!\n                            "
-          ),
+          _vm._v("Il miglior sushi di Milano l'ho facciamo solo noi!"),
         ]),
         _vm._v(" "),
         _c(
           "button",
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
-          [
-            _vm._v(
-              "\n                                Provalo subito\n                            "
-            ),
-          ]
+          [_vm._v("\n                Provalo subito\n              ")]
         ),
       ]),
     ])
@@ -43812,20 +43727,12 @@ var staticRenderFns = [
       _c("div", { staticClass: "carousel-caption text-center" }, [
         _c("h3", [_vm._v("Da Paolo")]),
         _vm._v(" "),
-        _c("h6", [
-          _vm._v(
-            "\n                                I migliori panini di Milano, buoni e poco\n                                costosi\n                            "
-          ),
-        ]),
+        _c("h6", [_vm._v("I migliori panini di Milano, buoni e poco costosi")]),
         _vm._v(" "),
         _c(
           "button",
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
-          [
-            _vm._v(
-              "\n                                Provali subito\n                            "
-            ),
-          ]
+          [_vm._v("\n                Provali subito\n              ")]
         ),
       ]),
     ])
@@ -43838,20 +43745,12 @@ var staticRenderFns = [
       _c("div", { staticClass: "carousel-caption text-center" }, [
         _c("h3", [_vm._v("Da Laurentiu")]),
         _vm._v(" "),
-        _c("h6", [
-          _vm._v(
-            "\n                                Tutta la cucina orientale che vuoi, e non\n                                solo\n                            "
-          ),
-        ]),
+        _c("h6", [_vm._v("Tutta la cucina orientale che vuoi, e non solo")]),
         _vm._v(" "),
         _c(
           "button",
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
-          [
-            _vm._v(
-              "\n                                Provala subito\n                            "
-            ),
-          ]
+          [_vm._v("\n                Provala subito\n              ")]
         ),
       ]),
     ])
@@ -43864,20 +43763,12 @@ var staticRenderFns = [
       _c("div", { staticClass: "carousel-caption text-center" }, [
         _c("h3", [_vm._v("Da Giuseppe")]),
         _vm._v(" "),
-        _c("h6", [
-          _vm._v(
-            "\n                                La migliore cucina messicana in assoluto\n                            "
-          ),
-        ]),
+        _c("h6", [_vm._v("La migliore cucina messicana in assoluto")]),
         _vm._v(" "),
         _c(
           "button",
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
-          [
-            _vm._v(
-              "\n                                Provala subito\n                            "
-            ),
-          ]
+          [_vm._v("\n                Provala subito\n              ")]
         ),
       ]),
     ])

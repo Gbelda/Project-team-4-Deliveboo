@@ -97,10 +97,8 @@
         <div class="col-lg-2 col-md-2 col-sm-12">
           <div class="sidebar-sticky carrello">
             <h3>Carrello</h3>
-            <div class="isempty text-center " v-if="this.cart == ''">
-              <em class="text-danger"
-                >Il carrello &eacute; vuoto</em
-              >
+            <div class="isempty text-center" v-if="this.cart == ''">
+              <em class="text-danger">Il carrello &eacute; vuoto</em>
             </div>
             <ul class="list-unstyled contenitore_piatti_carrello">
               <li
@@ -133,7 +131,7 @@
               class="qty_plate d-flex justify-content-evenly text-center"
               v-if="this.cart != ''"
             >
-              <button class="btn remove_btn" @click="removeToCart(value)">
+              <button class="btn remove_btn" @click="clearCart()">
                 <i class="fa-solid fa-trash-can"></i>
               </button>
               <button class="btn add_btn" @click="getUrl()">
@@ -213,9 +211,13 @@ export default {
       this.CountQuantity();
     },
 
-    newOrder() {
+    clearCart(){
       this.cart = [];
       this.counts = [];
+    },
+
+    newOrder() {
+      this.clearCart();
       // this.cart.push(plate);
       // this.cart.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
       // this.CountQuantity();
@@ -323,14 +325,14 @@ $black: #0a0903;
         padding-bottom: 1rem;
         border-bottom: 1px solid black;
       }
-      .add_btn {
-        background-color: $brand-color;
-        color: $black;
-      }
-      .remove_btn {
-        background-color: $black;
-        color: $brand-color;
-      }
+    }
+    .add_btn {
+      background-color: $brand-color;
+      color: $black;
+    }
+    .remove_btn {
+      background-color: $black;
+      color: $brand-color;
     }
   }
 }
