@@ -34,18 +34,33 @@
                     <div class="side_bar_contenitor">
                         <ul>
                             <li class="dash">
-                                <a  href="{{ route('admin.index') }}">
-                                    DASHBOARD
+                                <div class="hide">
+                                    <h6>
+                                        dashboard
+                                    </h6>
+                                </div>
+                                <a id="dash" href="{{ route('admin.index') }}">
+                                    <i class="fa-solid fa-chart-line"></i>
                                 </a>
                             </li>
                             <li class="ordini">
-                                <a  href="#">
-                                    ORDINI
+                                <div class="hide">
+                                    <h6>
+                                        ordini
+                                    </h6>
+                                </div>
+                                <a id="ordini" href="#">
+                                    <i class="fa-solid fa-clipboard"></i>
                                 </a>
                             </li>
                             <li class="piatti">
-                                <a  href="{{ route('admin.plates.index') }}">
-                                    PIATTI
+                                <div class="hide">
+                                    <h6>
+                                        piatti
+                                    </h6>
+                                </div>
+                                <a id="piatti" href="{{ route('admin.plates.index') }}">
+                                    <i class="fa-solid fa-utensils"></i>
                                 </a>
                             </li>
                         </ul>

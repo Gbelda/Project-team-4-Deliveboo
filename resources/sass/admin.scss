@@ -12,7 +12,6 @@
 #nav{
     background-color: $black;
     height: 7vh;
-    padding: 0 1rem;
     .navbar-brand{
         color: $brand-color !important;
     }
@@ -20,14 +19,15 @@
         color: $brand-color;
     }
 }
+// sidebar e impostazione layouts
 #contenuto_admin{
     height: 93vh;
     .row{
         height: 100%;
         .side_bar{
             padding: 1rem;
-            width: 10%;
-            font-size: .8rem;
+            width: 7%;
+            height: 100%;
             .side_bar_contenitor{
                 background-color: $black;
                 height: 100%;
@@ -39,8 +39,30 @@
                     list-style: none;
                     margin: 0;
                     padding: 2rem 0 0 0;
+                    .piatti,.ordini,.dash{
+                        position: relative;
+                        .hide{
+                            display: none;
+                            position: absolute;
+                            left: 1.5rem;
+                            color: orange;
+                            padding: 0.3rem;
+                            border-radius: 0px 10px 10px 0px;
+                            h6{
+                                font-size: .7rem;
+                                background: black;
+                                padding: 0.3rem;
+                                border-radius: 0px 10px 10px 0px;
+                            }
+                        }
+                        &:hover .hide{
+                            display: block;
+                        }
+                    }
                     li{
-                        
+                        &:hover{
+                            transform: scale(110%);
+                        }
                         padding: 1rem 0;
                         a{
                             text-decoration: none;
@@ -51,7 +73,155 @@
             }
         }
         .contenuto_griglie{
-            width: 90%;
+            width: 93%;
+            padding: 1rem;
         }
     }
+}
+// log index
+#log{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .card{
+        min-width: 30%;
+        text-align: center;
+        border: none;
+        .card-header{
+            background-color: $black;
+            color: $brand-color;
+            border-radius: 10px 10px 0px 0px;
+        }
+        .card-body{
+            background-color: $brand-color;
+            color: $black;
+            border-radius: 0px 0px 10px 10px;
+        }
+    }
+}
+// piatti
+.btn_add_plate{
+    background-color: $black;
+    color: $brand-color;
+    width: 100%;
+    border-radius: 0px 0px 20px 20px;
+    height: 7%;
+    &:hover{
+        background-color: $brand-color;
+        color: $black;
+        transition: all .3s ease-in-out;
+    }
+}
+.container{
+    overflow: auto;
+}
+.contenuto_griglie,.container{
+    height: 100%;
+    .dash_container{
+        height: 86%;
+        margin: 0;
+    }
+}
+// bottoni
+.show_btn{
+    border-bottom: 1px solid $brand-color;
+    color: $brand-color;
+}
+.edit_btn{
+    background-color: $brand-color;
+    margin: .5rem 0;
+    color: $black;
+}
+.delete_btn{
+    background-color: $black;
+    color: $brand-color;
+    &:hover{
+        color: $brand-color;
+    }
+}
+.btn:focus{
+    box-shadow: none;
+}
+// show_plate
+#show_plate{
+    width: 100%;
+    .actions{
+        border-radius: 0px 0px 20px 20px;
+        width:100%;
+        background-color: $black;
+        a{
+            width: 50%;
+            color: $brand-color;
+            border-radius: 0px 0px 20px 20px;
+            &:hover{
+                background-color: $brand-color;
+                color: $black;
+            }
+        }
+    }
+    .d-flex{
+        width: 100%;
+        .right_col{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .card_info{
+                background: $brand-color;
+                padding: 2rem;
+                color: $black;
+                border-radius: 20px;
+                width: 60%;
+                text-align: center;
+                height: 80%;
+                box-shadow: 11px 9px 20px 0px $black;
+                h4{
+                    font-size: 2.5rem;
+                    padding-bottom: 0.5rem;
+                    border-bottom: 2px solid $black;
+                }
+                .text_desc,.text_ingredients,.text-ava{
+                    border: 1px solid $black;
+                }
+                .card_price{
+                    background: black;
+                    color: $brand-color;
+                    margin-top: .4rem;
+                    border-radius: 20px;
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+}
+// utility
+.section_title{
+    background: $black;
+    color: #ff8200;
+    border-radius: 20px 20px 0 0;
+    margin: 0%;
+    margin-bottom: .5rem;
+}
+.form-check-input:checked {
+    border-color: $black;
+    background-color: $brand-color;
+}
+.btn_save{
+    background-color: $black;
+    color: $brand-color;
+    width: 100%;
+    border-radius: 0px 0px 20px 20px;
+    &:hover{
+        background-color: $brand-color;
+        color: $black;
+        transition: all .3s ease-in-out;
+    }
+}
+.title_label{
+    font-weight: bold;
+    color: $black;
+    font-size: 1.3rem;
+}
+.text-small{
+    color: $brand-color;
 }
