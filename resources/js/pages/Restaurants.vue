@@ -219,7 +219,6 @@
               :id="'category' + index"
               v-model="selected.categories"
             />
-            <font-awesome-icon icon="fas fa-check-circle" />
             <div class="d-flex flex-column colonna">
               <label class="cat_image" :for="'category' + index">
                 <img

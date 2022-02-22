@@ -99,6 +99,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+var token = document.getElementById('token').value;
 var form = document.querySelector('#my-sample-form');
 var submit = document.querySelector('input[type="button"]'); // GET CART ARRAY
 
@@ -151,7 +152,7 @@ if (products != '') {
 }
 
 braintree.client.create({
-  authorization: "sandbox_8h8q64ng_9xyqb7hxsmjp4hsm"
+  authorization: token
 }, function (err, clientInstance) {
   if (err) {
     console.error(err);

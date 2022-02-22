@@ -1,3 +1,7 @@
+
+var token = document.getElementById('token').value;
+
+
 var form = document.querySelector('#my-sample-form');
 var submit = document.querySelector('input[type="button"]');
 
@@ -83,9 +87,8 @@ if (products != '') {
 
 
 
-
 braintree.client.create({
-    authorization: "sandbox_8h8q64ng_9xyqb7hxsmjp4hsm"
+    authorization:token
 }, function (err, clientInstance) {
     if (err) {
         console.error(err);

@@ -114,6 +114,7 @@
                 <input name="payment_method_nonce" id="nonce" type="hidden">
                 <input id="button-pay" type="button" value="Paga" />
             </form>
+            <input name="token" id="token" type="text" value="{{ $token }}">
 
 
         </div>

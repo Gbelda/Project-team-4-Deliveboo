@@ -5778,7 +5778,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -43508,10 +43507,6 @@ var render = function () {
                     },
                   }),
                   _vm._v(" "),
-                  _c("font-awesome-icon", {
-                    attrs: { icon: "fas fa-check-circle" },
-                  }),
-                  _vm._v(" "),
                   _c("div", { staticClass: "d-flex flex-column colonna" }, [
                     _c(
                       "label",
@@ -43545,8 +43540,7 @@ var render = function () {
                       ]
                     ),
                   ]),
-                ],
-                1
+                ]
               )
             }),
             0
