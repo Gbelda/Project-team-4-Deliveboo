@@ -661,7 +661,7 @@ $black: #0a0903;
     transform: translate(-50%, -105%);
     z-index: 7;
     border-radius: 15px;
-    //padding: 10px 15px;
+    padding: 10px 15px;
     color: $black;
     text-align: center;
     background: $brand-color;
