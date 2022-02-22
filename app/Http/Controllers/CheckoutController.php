@@ -64,7 +64,7 @@ class CheckoutController extends Controller
         
         $order = Order::create($validated);
         
-        // ddd($order);
+
 
 
         $plates = collect($request->input('plates', []))
@@ -74,7 +74,7 @@ class CheckoutController extends Controller
 
         $order->plates()->sync($plates);
 
-        ddd($order);
+     
 
         $gateway = new \Braintree\Gateway([
             'environment' => config('services.braintree.environment'),

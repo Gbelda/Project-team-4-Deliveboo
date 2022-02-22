@@ -27,6 +27,7 @@ Auth::routes();
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/', 'HomeController@index')->name('index');
     Route::resource('plates', PlateController::class);
+    Route::resource('orders', OrderController::class);
 });
 
 
