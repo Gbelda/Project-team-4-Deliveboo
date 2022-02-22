@@ -31,7 +31,10 @@
         </div>
       </div>
     </div>
-    <div class="hero_img"></div>
+    <!-- <div class="hero_img"> -->
+    <div>
+      <img class="img_hero" src="/img/jumbo/menu_jumbo5.png" alt="" />
+    </div>
     <div class="container" id="menu">
       <section class="plates row">
         <!-- colonna piatti -->
@@ -110,8 +113,7 @@
                   <h6>
                     <strong>{{ value }}</strong>
                   </h6>
-                  <h6>qty.
-                  </h6>
+                  <h6>qty.</h6>
                 </div>
                 <div class="qty_plate d-flex justify-content-between">
                   <div class="button">
@@ -127,7 +129,9 @@
                   </div>
                 </div>
                 <div class="text-end">
-                <em class="text-danger" v-if="item != 1">(togli dal carrello)</em>
+                  <em class="text-danger" v-if="item != 1"
+                    >(togli dal carrello)</em
+                  >
                 </div>
               </li>
             </ul>
@@ -150,10 +154,14 @@
         <nav class="col-2 d-none d-md-block bg-light sidebar"></nav>
       </div>
     </div>
+
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
+import Footer from "../components/Footer.vue";
+
 export default {
   data() {
     return {
@@ -164,6 +172,10 @@ export default {
       cart: [],
       counts: [],
     };
+  },
+
+  components: {
+    Footer,
   },
 
   watch: {
@@ -220,11 +232,11 @@ export default {
       this.counts = [];
     },
 
-    clearItem(value){
-      this.cart.splice(value)
+    clearItem(value) {
+      this.cart.splice(value);
     },
 
-    findPlate(input){
+    findPlate(input) {
       return this.cart.find(({ name }) => name === input);
     },
 
@@ -234,7 +246,6 @@ export default {
     },
 
     addQuantity(input) {
-      
       this.cart.push(this.findPlate(input));
       this.CountQuantity();
     },
@@ -419,5 +430,9 @@ $black: #0a0903;
     width: 20%;
     margin: auto;
   }
+}
+
+.img_hero {
+  width: 100%;
 }
 </style>
