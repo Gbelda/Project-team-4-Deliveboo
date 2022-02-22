@@ -5249,6 +5249,31 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5307,9 +5332,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
       this.CountQuantity();
     },
-    newOrder: function newOrder() {
+    clearCart: function clearCart() {
       this.cart = [];
-      this.counts = []; // this.cart.push(plate);
+      this.counts = [];
+    },
+    newOrder: function newOrder() {
+      this.clearCart(); // this.cart.push(plate);
       // this.cart.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
       // this.CountQuantity();
 
@@ -5378,68 +5406,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -10905,7 +10871,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".hero_img {\n  background-image: url(" + escape(__webpack_require__(/*! ../../img/jumbo/hero_img.jpg */ "./resources/img/jumbo/hero_img.jpg")) + ");\n  height: 400px;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n#menu {\n  padding-top: 4rem;\n}\n#menu .qty_plate {\n  height: 1.5rem;\n  width: 1.5rem;\n  border-radius: 50%;\n  background: #ff8200;\n  vertical-align: middle;\n  text-align: center;\n  line-height: 1.5rem;\n  color: #0a0903;\n}\n#menu .carrello {\n  padding: 2rem 0;\n}\n#menu .carrello h3 {\n  text-align: center;\n  font-weight: bolder;\n}\n#menu .carrello .contenitore_piatti_carrello {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n#menu .carrello .contenitore_piatti_carrello .name_qty {\n  padding: 0.5rem 0;\n}\n#menu .carrello .contenitore_piatti_carrello .name_food {\n  font-size: bold;\n}\n#menu .carrello .contenitore_piatti_carrello .add_btn {\n  background-color: #ff8200;\n  color: #0a0903;\n}\n#menu .carrello .contenitore_piatti_carrello .remove_btn {\n  background-color: #0a0903;\n  color: #ff8200;\n}\n#router_ristoranti {\n  text-decoration: none;\n  color: #0a0903;\n}\n.food-card:hover {\n  transform: scale(105%);\n  transition: all 0.3s ease-in-out;\n}\n.food-card-food-properties:hover {\n  box-shadow: 1px 3px 3px 0px #0a0903;\n  cursor: pointer;\n  transition: all 0.3s ease-in-out;\n}\n.prev {\n  color: #0a0903 !important;\n}\n.current {\n  background-color: #ff8200;\n}\n.next {\n  color: #ff8200;\n  font-weight: bold;\n}\n.current-off {\n  background-color: transparent;\n}\n.food-card {\n  position: relative;\n  width: 400px;\n  height: 350px;\n  background: transparent;\n  font-family: \"Montserrat\", sans-serif;\n}\n.food-card-image {\n  position: relative;\n  top: 20%;\n  left: 5%;\n  width: 40%;\n  height: 40%;\n  border-radius: 5px;\n  z-index: 5;\n}\n.food-card-image > img {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  height: 100%;\n  width: auto;\n}\n.food-card-content {\n  position: absolute;\n  bottom: 20%;\n  right: 0;\n  width: 80%;\n  height: 70%;\n  background: white;\n  padding: 20px;\n  border-radius: 15px;\n  box-shadow: 5px 5px 10px 2px #00000045;\n  background: #ffc100;\n}\n.food-card-food-name,\n.food-card-artist-name {\n  position: relative;\n  left: 30%;\n  color: #0a0903;\n  padding-left: 5px;\n  font-size: 100%;\n}\n.food-card-artist-name {\n  letter-spacing: 2px;\n}\n.food-card-food-name > * {\n  margin-top: 32px;\n  text-overflow: ellipsis;\n  font-size: 1.5rem;\n  width: 176px;\n}\n.food-card-about {\n  width: 87%;\n  height: 2.5rem;\n  position: absolute;\n  font-size: 12px;\n  font-family: \"Montserrat\", sans-serif;\n  opacity: 0.56;\n  overflow: auto;\n  top: 73%;\n}\n.about-shadow {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  width: 100%;\n  height: 35px;\n  z-index: 2;\n}\n.food-card-food-properties {\n  position: absolute;\n  left: 65%;\n  bottom: -25%;\n  transform: translate(-50%, -105%);\n  z-index: 7;\n  border-radius: 15px;\n  padding: 10px 15px;\n  color: #0a0903;\n  text-align: center;\n  background: #ff8200;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  box-shadow: 2px 4px 12px 0px #00000045;\n}\n.food-card-food-properties > div {\n  border-right: 1px solid var(--card-properties-text-color);\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  padding: 0 10px;\n  display: inline-block;\n}\n.food-card-food-properties > div:last-child {\n  border-right: none;\n}\n.food-card-food-properties > div > i {\n  font-size: 16px;\n  margin-bottom: 5px;\n}\n.food-card-food-properties > div > p {\n  font-size: 10px;\n  margin: 0;\n}\n.title_parag {\n  text-align: center;\n  padding: 2rem 0;\n}\n.title_parag .line {\n  height: 3px;\n  background-color: #0a0903;\n  width: 20%;\n  margin: auto;\n}", ""]);
+exports.push([module.i, ".hero_img {\n  background-image: url(" + escape(__webpack_require__(/*! ../../img/jumbo/menu_jumbo5.png */ "./resources/img/jumbo/menu_jumbo5.png")) + ");\n  height: 400px;\n  background-position: bottom;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n#menu {\n  padding-top: 4rem;\n}\n#menu .titolo_menu {\n  background: #ffc100;\n  transform: skewX(3deg);\n  width: 60%;\n  box-shadow: -7px 5px 0px 0px #0a0903;\n  padding: 0.2rem;\n  border-radius: 10px;\n}\n#menu .titolo_menu span {\n  color: #0a0903;\n  padding-left: 1rem;\n}\n#menu .titolo_menu .line {\n  height: 3px;\n  background-color: #0a0903;\n  width: 40%;\n}\n#menu .quantity {\n  color: #ff8200;\n  font-size: 1.5rem;\n  font-weight: bolder;\n}\n#menu .carrello {\n  padding: 2rem 0;\n}\n#menu .carrello h3 {\n  text-align: center;\n  font-weight: bolder;\n}\n#menu .carrello .contenitore_piatti_carrello {\n  display: flex;\n  flex-direction: column;\n}\n#menu .carrello .contenitore_piatti_carrello .name_qty {\n  padding: 0.5rem 0;\n}\n#menu .carrello .contenitore_piatti_carrello .name_food {\n  font-size: bold;\n  padding-bottom: 1rem;\n  border-bottom: 1px solid black;\n}\n#menu .carrello .add_btn {\n  background-color: #ff8200;\n  color: #0a0903;\n}\n#menu .carrello .remove_btn {\n  background-color: #0a0903;\n  color: #ff8200;\n}\n.card_plates {\n  background-color: #ffc100;\n  transform: skewX(3deg);\n  border-radius: 10px;\n  min-height: 23rem;\n  padding: 2rem 1rem;\n  box-shadow: -11px 10px 0px 0px #0a0903;\n  width: 90%;\n  max-height: 23rem;\n  max-width: 18rem;\n}\n.card_plates:hover {\n  box-shadow: -11px 10px 0px 0px #ff8200;\n  transition: all 0.3s ease-in-out;\n}\n.food_image {\n  width: 100%;\n  padding-bottom: 1.5rem;\n}\n.food_name {\n  max-height: 3.5rem;\n  overflow: hidden;\n}\n.relative_container {\n  position: relative;\n  background-color: #ff8200;\n  border-radius: 10px;\n  width: 80%;\n  margin: auto;\n  height: 10rem;\n  box-shadow: 4px 4px 7px 0px black;\n}\n.relative_container img {\n  width: 85%;\n  position: absolute;\n  top: -1rem;\n  left: 7%;\n  max-width: 13rem;\n}\n.cart_button {\n  position: absolute;\n  bottom: -1.3rem;\n  background: #ff8200;\n  height: 2.5rem;\n  width: 2.5rem;\n  border-radius: 50%;\n  line-height: 2.5rem;\n  font-size: 1.2rem;\n}\n.cart_button:hover {\n  cursor: pointer;\n  transform: scale(110%);\n  transition: all 0.1s ease-in-out;\n}\n.food_description {\n  max-height: 3rem;\n  min-height: 3rem;\n  overflow: hidden;\n  margin-bottom: 0.7rem;\n}\n.food_price {\n  font-weight: bolder;\n}\n.title_parag {\n  text-align: center;\n  padding: 2rem 0;\n}\n.title_parag .line {\n  height: 3px;\n  background-color: #0a0903;\n  width: 20%;\n  margin: auto;\n}", ""]);
 
 // exports
 
@@ -42876,19 +42842,17 @@ var render = function () {
             _vm._v(" "),
             _c("div", { staticClass: "modal-body" }, [
               _vm._v(
-                "\n          L'ordine include articoli di un altro ristorante . Svuota il carrello e crea un nuovo\n          ordine per aggiungere articoli da "
+                "\n          L'ordine include articoli di un altro ristorante . Crea un nuovo\n          ordine per aggiungere articoli da " +
+                  _vm._s(_vm.restaurant.restaurant_name) +
+                  ".\n        "
               ),
-              _c("span", { staticClass: "text-primary" }, [
-                _vm._v(_vm._s(_vm.restaurant.restaurant_name)),
-              ]),
-              _vm._v(".\n        "),
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "modal-footer" }, [
               _c(
                 "button",
                 {
-                  staticClass: "btn btn-primary",
+                  staticClass: "btn btn-warning",
                   attrs: { type: "button" },
                   on: { click: _vm.newOrder },
                 },
@@ -42904,76 +42868,84 @@ var render = function () {
     _vm._v(" "),
     _c("div", { staticClass: "container", attrs: { id: "menu" } }, [
       _c("section", { staticClass: "plates row" }, [
-        _c("div", { staticClass: "col-10" }, [
-          _c("div", { staticClass: "title_parag" }, [
-            _c("h2", { staticClass: "title" }, [
-              _c("strong", [_vm._v(_vm._s(_vm.restaurant.restaurant_name))]),
+        _c("div", { staticClass: "col-lg-10 col-md-10 col-sm-12" }, [
+          _c("div", { staticClass: "titolo_menu" }, [
+            _c("h1", [
+              _c("strong", [
+                _c("span", [
+                  _vm._v(_vm._s(_vm.restaurant.restaurant_name.toUpperCase())),
+                ]),
+              ]),
             ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "line" }),
           ]),
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "row justify-content-center contenitore_bordi" },
+            { staticClass: "container_food row py-5 gy-5" },
             _vm._l(_vm.plates, function (plate) {
               return _c(
                 "div",
                 {
                   key: plate.id,
                   staticClass:
-                    "col-md-6 col-lg-4 col-sm-12 card-container d-flex",
+                    "col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center",
                 },
                 [
-                  _c("div", { staticClass: "food-card" }, [
-                    _c("div", { staticClass: "food-card-image" }, [
-                      _c("img", { attrs: { src: "/storage/" + plate.image } }),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "food-card-content" }, [
-                      _c("div", { staticClass: "food-card-food-name" }, [
-                        _c("h1", [_c("strong", [_vm._v(_vm._s(plate.name))])]),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "\n                card_plates\n                d-flex\n                flex-column\n                align-items-center\n                text-center\n              ",
+                    },
+                    [
+                      _c("div", { staticClass: "food_image" }, [
+                        _c("div", { staticClass: "relative_container" }, [
+                          _c("img", {
+                            attrs: { src: "/storage/" + plate.image, alt: "" },
+                          }),
+                        ]),
                       ]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "food-card-artist-name" }, [
+                      _c("div", { staticClass: "food_name" }, [
+                        _c("h2", [_c("strong", [_vm._v(_vm._s(plate.name))])]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "food_description" }, [
+                        _c("p", [
+                          _vm._v(
+                            "\n                  " +
+                              _vm._s(plate.description) +
+                              "\n                "
+                          ),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "food_price" }, [
                         _vm._v(
-                          "\n                  €\n                  " +
+                          "\n                €\n                " +
                             _vm._s(
                               Math.round(
                                 (parseFloat(plate.price) + Number.EPSILON) * 100
                               ) / 100
                             ) +
-                            "\n                "
+                            "\n              "
                         ),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "food-card-about" }, [
-                        _vm._v(
-                          "\n                  " +
-                            _vm._s(plate.description) +
-                            "\n                  "
-                        ),
-                        _c("div", { staticClass: "about-shadow" }),
                       ]),
                       _vm._v(" "),
                       _c(
                         "div",
                         {
-                          staticClass: "food-card-food-properties",
+                          staticClass: "cart_button",
                           on: {
                             click: function ($event) {
                               return _vm.AddToCart(plate)
                             },
                           },
                         },
-                        [
-                          _vm._v(
-                            "\n                  Aggiungi al carrello\n                "
-                          ),
-                        ]
+                        [_c("i", { staticClass: "fas fa-cart-plus" })]
                       ),
-                    ]),
-                  ]),
+                    ]
+                  ),
                 ]
               )
             }),
@@ -42981,14 +42953,14 @@ var render = function () {
           ),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-2 side-cart" }, [
+        _c("div", { staticClass: "col-lg-2 col-md-2 col-sm-12" }, [
           _c("div", { staticClass: "sidebar-sticky carrello" }, [
             _c("h3", [_vm._v("Carrello")]),
             _vm._v(" "),
-            _vm.cart == ""
-              ? _c("div", { staticClass: "isEmpty text-center" }, [
+            this.cart == ""
+              ? _c("div", { staticClass: "isempty text-center" }, [
                   _c("em", { staticClass: "text-danger" }, [
-                    _vm._v("Il carrello è vuoto"),
+                    _vm._v("Il carrello é vuoto"),
                   ]),
                 ])
               : _vm._e(),
@@ -43002,9 +42974,45 @@ var render = function () {
                     "div",
                     { staticClass: "name_qty d-flex justify-content-between" },
                     [
-                      _c("div", [_vm._v(_vm._s(value) + ":")]),
+                      _c("h6", [_c("strong", [_vm._v(_vm._s(value))])]),
                       _vm._v(" "),
-                      _c("div", { staticClass: "qty_plate" }, [
+                      _c("h6", [_vm._v("qty.")]),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "qty_plate d-flex justify-content-between" },
+                    [
+                      _c("div", { staticClass: "button" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn remove_btn",
+                            on: {
+                              click: function ($event) {
+                                return _vm.removeToCart(value)
+                              },
+                            },
+                          },
+                          [_c("i", { staticClass: "fa-solid fa-minus" })]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn add_btn",
+                            on: {
+                              click: function ($event) {
+                                return _vm.addQuantity(value)
+                              },
+                            },
+                          },
+                          [_c("i", { staticClass: "fa-solid fa-plus" })]
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "quantity" }, [
                         _vm._v(
                           "\n                  " +
                             _vm._s(item) +
@@ -43013,57 +43021,56 @@ var render = function () {
                       ]),
                     ]
                   ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn add_btn",
-                      on: {
-                        click: function ($event) {
-                          return _vm.addQuantity(value)
-                        },
-                      },
-                    },
-                    [_vm._v("\n                aggiungi\n              ")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn remove_btn",
-                      on: {
-                        click: function ($event) {
-                          return _vm.removeToCart(value)
-                        },
-                      },
-                    },
-                    [_vm._v("\n                elimina\n              ")]
-                  ),
                 ])
               }),
               0
             ),
             _vm._v(" "),
-            _vm.cart != ""
-              ? _c("div", { staticClass: "text-center" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-success",
-                      attrs: { type: "submit" },
-                      on: {
-                        click: function ($event) {
-                          return _vm.getUrl()
+            this.cart != ""
+              ? _c(
+                  "div",
+                  {
+                    staticClass:
+                      "qty_plate d-flex justify-content-evenly text-center",
+                  },
+                  [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn remove_btn",
+                        on: {
+                          click: function ($event) {
+                            return _vm.clearCart()
+                          },
                         },
                       },
-                    },
-                    [_vm._v("\n              Procedi all'ordine\n            ")]
-                  ),
-                ])
+                      [_c("i", { staticClass: "fa-solid fa-trash-can" })]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn add_btn",
+                        on: {
+                          click: function ($event) {
+                            return _vm.getUrl()
+                          },
+                        },
+                      },
+                      [
+                        _c("i", {
+                          staticClass: "fa-solid fa-money-check-dollar",
+                        }),
+                      ]
+                    ),
+                  ]
+                )
               : _vm._e(),
           ]),
         ]),
       ]),
+      _vm._v(" "),
+      _vm._m(1),
     ]),
   ])
 }
@@ -43086,6 +43093,16 @@ var staticRenderFns = [
         },
       }),
     ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "main_content d-flex justify-content-center" },
+      [_c("nav", { staticClass: "col-2 d-none d-md-block bg-light sidebar" })]
+    )
   },
 ]
 render._withStripped = true
@@ -43324,9 +43341,9 @@ var render = function () {
                     },
                     [
                       _vm._v(
-                        "\n                            " +
+                        "\n              " +
                           _vm._s(category.name) +
-                          "\n                        "
+                          "\n            "
                       ),
                     ]
                   ),
@@ -43347,15 +43364,11 @@ var render = function () {
               "div",
               {
                 staticClass:
-                  "empty d-flex align-items-center justify-content-center text-danger",
+                  "\n              empty\n              d-flex\n              align-items-center\n              justify-content-center\n              text-danger\n            ",
               },
               [
                 _vm.restaurants == ""
-                  ? _c("h3", [
-                      _vm._v(
-                        "\n                            Nessun ristorante disponibile\n                        "
-                      ),
-                    ])
+                  ? _c("h3", [_vm._v("Nessun ristorante disponibile")])
                   : _vm._e(),
               ]
             ),
@@ -43402,16 +43415,16 @@ var render = function () {
                                 },
                                 [
                                   _vm._v(
-                                    "\n                                        " +
+                                    "\n                    " +
                                       _vm._s(category.name) +
-                                      "\n                                        " +
+                                      "\n                    " +
                                       _vm._s(
                                         index !=
                                           restaurant.categories.length - 1
                                           ? "|"
                                           : ""
                                       ) +
-                                      "\n                                    "
+                                      "\n                  "
                                   ),
                                 ]
                               )
@@ -43420,9 +43433,9 @@ var render = function () {
                           _vm._v(" "),
                           _c("div", { staticClass: "food-card-about" }, [
                             _vm._v(
-                              "\n                                        " +
+                              "\n                    " +
                                 _vm._s(restaurant.address) +
-                                "\n                                        "
+                                "\n                    "
                             ),
                             _c("div", { staticClass: "about-shadow" }),
                           ]),
@@ -43552,11 +43565,7 @@ var render = function () {
                       },
                     },
                   },
-                  [
-                    _vm._v(
-                      "\n                            Aggiungi al carrello\n                        "
-                    ),
-                  ]
+                  [_vm._v("\n              Aggiungi al carrello\n            ")]
                 ),
               ]),
             ]),
@@ -43578,19 +43587,17 @@ var staticRenderFns = [
           staticClass: "row container content justify-content-center flex-wrap",
         },
         [
-          _c("div", { staticClass: "content-left col-12 col-md-6" }, [
+          _c("div", { staticClass: "content-left col-12 col-lg-6" }, [
             _c("h1", [
-              _vm._v(
-                "\n                    Il cibo che ami\n                    "
-              ),
+              _vm._v("\n          Il cibo che ami\n          "),
               _c("span", { staticClass: "text-brand" }, [_vm._v("quando")]),
-              _vm._v(" e\n                    "),
+              _vm._v(" e\n          "),
               _c("span", { staticClass: "text-brand" }, [_vm._v("dove")]),
-              _vm._v(" vuoi tu!\n                "),
+              _vm._v(" vuoi tu!\n        "),
             ]),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "content-right col-12 col-sm-6" }, [
+          _c("div", { staticClass: "content-right col-12 col-lg-6" }, [
             _c("img", {
               staticClass: "img-fluid",
               attrs: {
@@ -43612,7 +43619,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "col-12 text-center" }, [
           _c("h2", [
             _vm._v(
-              "\n                        I migliori ristoranti del mese di Milano selezionati\n                        da voi\n                    "
+              "I migliori ristoranti del mese di Milano selezionati da voi"
             ),
           ]),
           _vm._v(" "),
@@ -43682,20 +43689,12 @@ var staticRenderFns = [
       _c("div", { staticClass: "carousel-caption text-center" }, [
         _c("h3", [_vm._v("da Marco")]),
         _vm._v(" "),
-        _c("h6", [
-          _vm._v(
-            "\n                                La migliore pizza d'Italia... altro che\n                                Napoli\n                            "
-          ),
-        ]),
+        _c("h6", [_vm._v("La migliore pizza d'Italia... altro che Napoli")]),
         _vm._v(" "),
         _c(
           "a",
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
-          [
-            _vm._v(
-              "\n                                Provala subito\n                            "
-            ),
-          ]
+          [_vm._v(" Provala subito ")]
         ),
       ]),
     ])
@@ -43709,19 +43708,13 @@ var staticRenderFns = [
         _c("h3", [_vm._v("Da Giovanni")]),
         _vm._v(" "),
         _c("h6", [
-          _vm._v(
-            "\n                                Il miglior sushi di Milano l'ho facciamo\n                                solo noi!\n                            "
-          ),
+          _vm._v("Il miglior sushi di Milano l'ho facciamo solo noi!"),
         ]),
         _vm._v(" "),
         _c(
           "button",
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
-          [
-            _vm._v(
-              "\n                                Provalo subito\n                            "
-            ),
-          ]
+          [_vm._v("\n                Provalo subito\n              ")]
         ),
       ]),
     ])
@@ -43734,20 +43727,12 @@ var staticRenderFns = [
       _c("div", { staticClass: "carousel-caption text-center" }, [
         _c("h3", [_vm._v("Da Paolo")]),
         _vm._v(" "),
-        _c("h6", [
-          _vm._v(
-            "\n                                I migliori panini di Milano, buoni e poco\n                                costosi\n                            "
-          ),
-        ]),
+        _c("h6", [_vm._v("I migliori panini di Milano, buoni e poco costosi")]),
         _vm._v(" "),
         _c(
           "button",
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
-          [
-            _vm._v(
-              "\n                                Provali subito\n                            "
-            ),
-          ]
+          [_vm._v("\n                Provali subito\n              ")]
         ),
       ]),
     ])
@@ -43760,20 +43745,12 @@ var staticRenderFns = [
       _c("div", { staticClass: "carousel-caption text-center" }, [
         _c("h3", [_vm._v("Da Laurentiu")]),
         _vm._v(" "),
-        _c("h6", [
-          _vm._v(
-            "\n                                Tutta la cucina orientale che vuoi, e non\n                                solo\n                            "
-          ),
-        ]),
+        _c("h6", [_vm._v("Tutta la cucina orientale che vuoi, e non solo")]),
         _vm._v(" "),
         _c(
           "button",
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
-          [
-            _vm._v(
-              "\n                                Provala subito\n                            "
-            ),
-          ]
+          [_vm._v("\n                Provala subito\n              ")]
         ),
       ]),
     ])
@@ -43786,20 +43763,12 @@ var staticRenderFns = [
       _c("div", { staticClass: "carousel-caption text-center" }, [
         _c("h3", [_vm._v("Da Giuseppe")]),
         _vm._v(" "),
-        _c("h6", [
-          _vm._v(
-            "\n                                La migliore cucina messicana in assoluto\n                            "
-          ),
-        ]),
+        _c("h6", [_vm._v("La migliore cucina messicana in assoluto")]),
         _vm._v(" "),
         _c(
           "button",
           { staticClass: "btn btn-lg btn-primary", attrs: { href: "#" } },
-          [
-            _vm._v(
-              "\n                                Provala subito\n                            "
-            ),
-          ]
+          [_vm._v("\n                Provala subito\n              ")]
         ),
       ]),
     ])
@@ -59272,14 +59241,14 @@ module.exports = "/images/ciclista-arancione.png?226b9d55ceb03354ec7894acc7a9d33
 
 /***/ }),
 
-/***/ "./resources/img/jumbo/hero_img.jpg":
-/*!******************************************!*\
-  !*** ./resources/img/jumbo/hero_img.jpg ***!
-  \******************************************/
+/***/ "./resources/img/jumbo/menu_jumbo5.png":
+/*!*********************************************!*\
+  !*** ./resources/img/jumbo/menu_jumbo5.png ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/hero_img.jpg?580349ea39d0f18720152feb1ca1bd5d";
+module.exports = "/images/menu_jumbo5.png?80dc15f77ce41d90c29b4326a236059a";
 
 /***/ }),
 
@@ -59685,10 +59654,10 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\Laravel\Laravel-deliveboo\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\MAMP\htdocs\Laravel\Laravel-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\MAMP\htdocs\Laravel\Laravel-deliveboo\resources\sass\admin.scss */"./resources/sass/admin.scss");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\Laravel\Laravel-deliveboo\resources\sass\checkout.scss */"./resources/sass/checkout.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\admin.scss */"./resources/sass/admin.scss");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\checkout.scss */"./resources/sass/checkout.scss");
 
 
 /***/ })

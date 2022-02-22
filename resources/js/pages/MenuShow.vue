@@ -20,77 +20,85 @@
             ></button>
           </div>
           <div class="modal-body">
-            L'ordine include articoli di un altro ristorante . Svuota il carrello e crea un nuovo
-            ordine per aggiungere articoli da <span class="text-primary">{{ restaurant.restaurant_name }}</span>.
+            L'ordine include articoli di un altro ristorante . Crea un nuovo
+            ordine per aggiungere articoli da {{ restaurant.restaurant_name }}.
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" @click="newOrder">
+            <button type="button" class="btn btn-warning" @click="newOrder">
               Crea nuovo ordine
             </button>
           </div>
         </div>
       </div>
     </div>
-
     <div class="hero_img"></div>
     <div class="container" id="menu">
       <section class="plates row">
         <!-- colonna piatti -->
-        <div class="col-10">
+        <div class="col-lg-10 col-md-10 col-sm-12">
           <!-- nome ristorante -->
-          <div class="title_parag">
-            <h2 class="title">
-              <strong>{{ restaurant.restaurant_name }}</strong>
-            </h2>
-            <div class="line"></div>
+          <div class="titolo_menu">
+            <h1>
+              <strong>
+                <span>{{ restaurant.restaurant_name.toUpperCase() }}</span>
+              </strong>
+            </h1>
+            <!-- <div class="line"></div> -->
           </div>
+
           <!-- contenuto piatti -->
-          <div class="row justify-content-center contenitore_bordi">
+          <div class="container_food row py-5 gy-5">
             <div
-              class="col-md-6 col-lg-4 col-sm-12 card-container d-flex"
+              class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center"
               v-for="plate in plates"
               :key="plate.id"
             >
-              <div class="food-card">
-                <div class="food-card-image">
-                  <img :src="'/storage/' + plate.image" />
+              <div
+                class="
+                  card_plates
+                  d-flex
+                  flex-column
+                  align-items-center
+                  text-center
+                "
+              >
+                <div class="food_image">
+                  <div class="relative_container">
+                    <img :src="'/storage/' + plate.image" alt="" />
+                  </div>
                 </div>
-                <div class="food-card-content">
-                  <div class="food-card-food-name">
-                    <h1>
-                      <strong>{{ plate.name }}</strong>
-                    </h1>
-                  </div>
-                  <div class="food-card-artist-name">
-                    &euro;
-                    {{
-                      Math.round(
-                        (parseFloat(plate.price) + Number.EPSILON) * 100
-                      ) / 100
-                    }}
-                  </div>
-                  <div class="food-card-about">
+                <div class="food_name">
+                  <h2>
+                    <strong>{{ plate.name }}</strong>
+                  </h2>
+                </div>
+                <div class="food_description">
+                  <p>
                     {{ plate.description }}
-                    <div class="about-shadow"></div>
-                  </div>
-                  <div
-                    class="food-card-food-properties"
-                    @click="AddToCart(plate)"
-                  >
-                    <!-- routerlink -->
-                    Aggiungi al carrello
-                  </div>
+                  </p>
+                </div>
+                <div class="food_price">
+                  &euro;
+                  {{
+                    Math.round(
+                      (parseFloat(plate.price) + Number.EPSILON) * 100
+                    ) / 100
+                  }}
+                </div>
+                <div class="cart_button" @click="AddToCart(plate)">
+                  <i class="fas fa-cart-plus"></i>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
         <!-- carrello -->
-        <div class="col-2 side-cart">
+        <div class="col-lg-2 col-md-2 col-sm-12">
           <div class="sidebar-sticky carrello">
             <h3>Carrello</h3>
-            <div class="isEmpty text-center" v-if="cart == ''">
-              <em class="text-danger">Il carrello è vuoto</em>
+            <div class="isempty text-center" v-if="this.cart == ''">
+              <em class="text-danger">Il carrello &eacute; vuoto</em>
             </div>
             <ul class="list-unstyled contenitore_piatti_carrello">
               <li
@@ -99,27 +107,44 @@
                 :key="value"
               >
                 <div class="name_qty d-flex justify-content-between">
-                  <div>{{ value }}:</div>
-                  <div class="qty_plate">
+                  <h6>
+                    <strong>{{ value }}</strong>
+                  </h6>
+                  <h6>qty.</h6>
+                </div>
+                <div class="qty_plate d-flex justify-content-between">
+                  <div class="button">
+                    <button class="btn remove_btn" @click="removeToCart(value)">
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <button class="btn add_btn" @click="addQuantity(value)">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                  <div class="quantity">
                     {{ item }}
                   </div>
                 </div>
-                <button class="btn add_btn" @click="addQuantity(value)">
-                  aggiungi
-                </button>
-                <button class="btn remove_btn" @click="removeToCart(value)">
-                  elimina
-                </button>
               </li>
             </ul>
-            <div class="text-center" v-if="cart != ''">
-              <button class="btn btn-success" type="submit" @click="getUrl()">
-                Procedi all'ordine
+            <div
+              class="qty_plate d-flex justify-content-evenly text-center"
+              v-if="this.cart != ''"
+            >
+              <button class="btn remove_btn" @click="clearCart()">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+              <button class="btn add_btn" @click="getUrl()">
+                <i class="fa-solid fa-money-check-dollar"></i>
               </button>
             </div>
           </div>
         </div>
       </section>
+
+      <div class="main_content d-flex justify-content-center">
+        <nav class="col-2 d-none d-md-block bg-light sidebar"></nav>
+      </div>
     </div>
   </div>
 </template>
@@ -178,7 +203,7 @@ export default {
     AddToCart(plate) {
       if (this.cart != "") {
         if (this.cart[0]["user_id"] != plate["user_id"] && this.cart != 0) {
-           return $("#change_cart").modal("show");
+          return $("#change_cart").modal("show");
         }
       }
       this.cart.push(plate);
@@ -186,9 +211,13 @@ export default {
       this.CountQuantity();
     },
 
-    newOrder() {
+    clearCart(){
       this.cart = [];
-      this.counts=[];
+      this.counts = [];
+    },
+
+    newOrder() {
+      this.clearCart();
       // this.cart.push(plate);
       // this.cart.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
       // this.CountQuantity();
@@ -209,7 +238,6 @@ export default {
       }
       this.CountQuantity();
     },
-
     getUrl() {
       console.log(window.location.href);
       window.location.href = "/checkout";
@@ -249,25 +277,37 @@ $brand-color: #ff8200;
 $secondary_color: #ffc100;
 $black: #0a0903;
 .hero_img {
-  background-image: url("../../img/jumbo/hero_img.jpg");
+  background-image: url("../../img/jumbo/menu_jumbo5.png");
   height: 400px;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 #menu {
   padding-top: 4rem;
-  .qty_plate {
-    height: 1.5rem;
-    width: 1.5rem;
-    border-radius: 50%;
-    background: $brand-color;
-    vertical-align: middle;
-    text-align: center;
-    line-height: 1.5rem;
-    color: $black;
+  .titolo_menu {
+    background: $secondary-color;
+    transform: skewX(3deg);
+    width: 60%;
+    box-shadow: -7px 5px 0px 0px $black;
+    padding: 0.2rem;
+    border-radius: 10px;
+    span {
+      color: $black;
+      padding-left: 1rem;
+    }
+    .line {
+      height: 3px;
+      background-color: $black;
+      width: 40%;
+    }
   }
-
+  .quantity {
+    color: $brand-color;
+    font-size: 1.5rem;
+    font-weight: bolder;
+  }
   .carrello {
     padding: 2rem 0;
     h3 {
@@ -277,154 +317,91 @@ $black: #0a0903;
     .contenitore_piatti_carrello {
       display: flex;
       flex-direction: column;
-      align-items: center;
       .name_qty {
         padding: 0.5rem 0;
       }
       .name_food {
         font-size: bold;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid black;
       }
-      .add_btn {
-        background-color: $brand-color;
-        color: $black;
-      }
-      .remove_btn {
-        background-color: $black;
-        color: $brand-color;
-      }
+    }
+    .add_btn {
+      background-color: $brand-color;
+      color: $black;
+    }
+    .remove_btn {
+      background-color: $black;
+      color: $brand-color;
     }
   }
 }
-// card
-#router_ristoranti {
-  text-decoration: none;
-  color: $black;
+// card food
+.card_plates {
+  background-color: $secondary_color;
+  transform: skewX(3deg);
+  border-radius: 10px;
+  min-height: 23rem;
+  padding: 2rem 1rem;
+  box-shadow: -11px 10px 0px 0px $black;
+  width: 90%;
+  max-height: 23rem;
+  max-width: 18rem;
+  &:hover {
+    box-shadow: -11px 10px 0px 0px $brand-color;
+    transition: all 0.3s ease-in-out;
+  }
 }
-.food-card:hover {
-  transform: scale(105%);
-  transition: all 0.3s ease-in-out;
-}
-.food-card-food-properties:hover {
-  box-shadow: 1px 3px 3px 0px $black;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-.prev {
-  color: $black !important;
-}
-.current {
-  background-color: $brand-color;
-}
-.next {
-  color: $brand-color;
-  font-weight: bold;
-}
-.current-off {
-  background-color: transparent;
-}
-// mpostazioni card
-.food-card {
-  position: relative;
-  width: 400px;
-  height: 350px;
-  background: transparent;
-  font-family: "Montserrat", sans-serif;
-}
-.food-card-image {
-  position: relative;
-  top: 20%;
-  left: 5%;
-  width: 40%;
-  height: 40%;
-  border-radius: 5px;
-  z-index: 5;
-}
-.food-card-image > img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 100%;
-  width: auto;
-}
-.food-card-content {
-  position: absolute;
-  bottom: 20%;
-  right: 0;
-  width: 80%;
-  height: 70%;
-  background: white;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 5px 5px 10px 2px #00000045;
-  background: $secondary_color;
-}
-.food-card-food-name,
-.food-card-artist-name {
-  position: relative;
-  left: 30%;
-  color: $black;
-  padding-left: 5px;
-  font-size: 100%;
-}
-.food-card-artist-name {
-  letter-spacing: 2px;
-}
-.food-card-food-name > * {
-  margin-top: 32px;
-  text-overflow: ellipsis;
-  font-size: 1.5rem;
-  width: 176px;
-}
-.food-card-about {
-  width: 87%;
-  height: 2.5rem;
-  position: absolute;
-  font-size: 12px;
-  font-family: "Montserrat", sans-serif;
-  opacity: 0.56;
-  overflow: auto;
-  top: 73%;
-}
-.about-shadow {
-  position: absolute;
-  left: 0;
-  bottom: 0;
+.food_image {
   width: 100%;
-  height: 35px;
-  z-index: 2;
+  padding-bottom: 1.5rem;
 }
-.food-card-food-properties {
+.food_name {
+  max-height: 3.5rem;
+  overflow: hidden;
+}
+.relative_container {
+  position: relative;
+  background-color: $brand-color;
+  border-radius: 10px;
+  width: 80%;
+  margin: auto;
+  height: 10rem;
+  box-shadow: 4px 4px 7px 0px black;
+}
+.relative_container img {
+  width: 85%;
   position: absolute;
-  left: 65%;
-  bottom: -25%;
-  transform: translate(-50%, -105%);
-  z-index: 7;
-  border-radius: 15px;
-  padding: 10px 15px;
-  color: $black;
-  text-align: center;
-  background: $brand-color;
-  width: fit-content;
-  box-shadow: 2px 4px 12px 0px #00000045;
+  top: -1rem;
+  left: 7%;
+  max-width: 13rem;
 }
-.food-card-food-properties > div {
-  border-right: 1px solid var(--card-properties-text-color);
-  width: fit-content;
-  padding: 0 10px;
-  display: inline-block;
+.cart_button {
+  position: absolute;
+  bottom: -1.3rem;
+  background: #ff8200;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  line-height: 2.5rem;
+  font-size: 1.2rem;
+  &:hover {
+    cursor: pointer;
+    transform: scale(110%);
+    transition: all 0.1s ease-in-out;
+  }
 }
-.food-card-food-properties > div:last-child {
-  border-right: none;
+.food_description {
+  max-height: 3rem;
+  min-height: 3rem;
+  overflow: hidden;
+  margin-bottom: 0.7rem;
 }
-.food-card-food-properties > div > i {
-  font-size: 16px;
-  margin-bottom: 5px;
+
+.food_price {
+  font-weight: bolder;
 }
-.food-card-food-properties > div > p {
-  font-size: 10px;
-  margin: 0;
-}
+
 // utility
 .title_parag {
   text-align: center;

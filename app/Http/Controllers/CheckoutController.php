@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class CheckoutController extends Controller
 {
@@ -74,7 +75,7 @@ class CheckoutController extends Controller
 
         $order->plates()->sync($plates);
 
-     
+        // ddd($order);
 
         $gateway = new \Braintree\Gateway([
             'environment' => config('services.braintree.environment'),
@@ -113,7 +114,7 @@ class CheckoutController extends Controller
             $transaction = $result->transaction;
             // header("Location: transaction.php?id=" . $transaction->id);
 
-            return redirect()->intended('/')->with('success_message', 'Il pagamento è avvenuto con successo');
+            return redirect()->route('guest.paysuccess')->with('message', 'Pagamento avvenuta con successo, Riceverai un email di conferma!');
         } else {
             $errorString = "";
 
@@ -123,7 +124,7 @@ class CheckoutController extends Controller
 
             // $_SESSION["errors"] = $errorString;
             // header("Location: index.php");
-            return redirect()->intended('/')->withErrors('ERRORRE: ' . $result->message);
+            return redirect()->back()->withErrors($result->message)->withInput();
         }
     
     }

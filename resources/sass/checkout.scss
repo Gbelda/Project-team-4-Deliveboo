@@ -2,7 +2,11 @@
   padding-top: 8rem;
 }
 
-$small-screen: 476px;
+$small-screen: 576px;
+$large-screen: 992px;
+$extra-large-screen: 1199.98px;
+$small-mobile: 320px;
+
 $grey: #111;
 $blue: #5db6e8;
 $darkBlue: #282c37;
@@ -63,7 +67,8 @@ h1 {
   padding: 5rem;
   border-radius: 20px;
   max-height: 750px;
-  @media (max-width: $small-screen) {
+
+  @media (max-width: $large-screen) {
     border: none;
     padding: 1rem;
     max-height: none;
@@ -238,13 +243,20 @@ h1 {
 
 .form-control-plaintext {
   line-height: unset;
-  width: 30%;
+  width: 35%;
   &:focus,
   &:focus-visible {
     outline: none;
   }
-    @media (max-width: $small-screen) {
-    width: 50%;
+  
+  @media (max-width: $extra-large-screen) {
+    width: 40%;
+  }
+  @media (max-width: $small-screen) {
+    width: 35%;
+  }
+  @media (max-width: $small-mobile) {
+    width: 80%;
   }
 }
 
