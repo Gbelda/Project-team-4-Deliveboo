@@ -93,7 +93,10 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'C:\\MAMP\\htdocs\\laravel\\Project-team-4-Deliveboo\\resources\\js\\transaction.js'");
+var back_home = document.getElementById('back_home');
+back_home.addEventListener('click', function clearStorage() {
+  window.localStorage.clear();
+});
 
 /***/ }),
 
