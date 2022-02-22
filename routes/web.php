@@ -20,15 +20,27 @@ use App\User;
 //     return view('welcome');
 // });
 
+
+
 Auth::routes();
 
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->group(function () {
-
     Route::get('/', 'HomeController@index')->name('index');
     Route::resource('plates', PlateController::class);
+    Route::resource('orders', OrderController::class);
 });
 
 
+
+Route::get('/checkout', 'CheckoutController@index');
+Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
+Route::get('/paysuccess', function(){
+    return view('guest.paysuccess');
+})->name('guest.paysuccess');
+
+
 Route::get('/{any}', function () {
+
     return view('welcome');
 })->where('any', '.*');
+

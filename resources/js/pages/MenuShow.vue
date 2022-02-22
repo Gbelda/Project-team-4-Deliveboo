@@ -1,6 +1,40 @@
 <template>
   <div class="">
-    <div class="hero_img"></div>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="change_cart"
+      tabindex="-1"
+      aria-labelledby="change_cart"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="change_cart">Creare un nuovo ordine</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            L'ordine include articoli di un altro ristorante . Crea un nuovo
+            ordine per aggiungere articoli da {{ restaurant.restaurant_name }}.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-warning" @click="newOrder">
+              Crea nuovo ordine
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="hero_img"> -->
+    <div>
+      <img class="img_hero" src="/img/jumbo/menu_jumbo5.png" alt="" />
+    </div>
     <div class="container" id="menu">
       <section class="plates row">
         <!-- colonna piatti -->
@@ -9,13 +43,12 @@
           <div class="titolo_menu">
             <h1>
               <strong>
-                <span>{{ restaurant.restaurant_name.toUpperCase() }}</span>
+                <span>{{ restaurant.restaurant_name }}</span>
               </strong>
             </h1>
             <!-- <div class="line"></div> -->
           </div>
 
-          
           <!-- contenuto piatti -->
           <div class="container_food row py-5 gy-5">
             <div
@@ -39,7 +72,7 @@
                 </div>
                 <div class="food_name">
                   <h2>
-                    <strong>{{ plate.name}}</strong>
+                    <strong>{{ plate.name }}</strong>
                   </h2>
                 </div>
                 <div class="food_description">
@@ -62,10 +95,14 @@
             </div>
           </div>
         </div>
+
         <!-- carrello -->
         <div class="col-lg-2 col-md-2 col-sm-12">
           <div class="sidebar-sticky carrello">
             <h3>Carrello</h3>
+            <div class="isempty text-center" v-if="this.cart == ''">
+              <em class="text-danger">Il carrello &eacute; vuoto</em>
+            </div>
             <ul class="list-unstyled contenitore_piatti_carrello">
               <li
                 class="name_food"
@@ -88,11 +125,27 @@
                     </button>
                   </div>
                   <div class="quantity">
-                      {{ item }}
+                    {{ item }}
                   </div>
+                </div>
+                <div class="text-end">
+                  <em class="text-danger" v-if="item != 1"
+                    >(togli dal carrello)</em
+                  >
                 </div>
               </li>
             </ul>
+            <div
+              class="qty_plate d-flex justify-content-evenly text-center"
+              v-if="this.cart != ''"
+            >
+              <button class="btn remove_btn" @click="clearCart()">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+              <button class="btn add_btn" @click="getUrl()">
+                <i class="fa-solid fa-money-check-dollar"></i>
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -101,11 +154,14 @@
         <nav class="col-2 d-none d-md-block bg-light sidebar"></nav>
       </div>
     </div>
+
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
-import Vue from "vue";
+import Footer from "../components/Footer.vue";
+
 export default {
   data() {
     return {
@@ -115,14 +171,23 @@ export default {
       plates: [],
       cart: [],
       counts: [],
-      sampleArray: ["a", "a", "b", "c"],
     };
+  },
+
+  components: {
+    Footer,
   },
 
   watch: {
     cart: {
       handler(product) {
         localStorage.cart = JSON.stringify(product);
+      },
+      deep: true,
+    },
+    restaurant: {
+      handler(restaurant) {
+        localStorage.restaurant = JSON.stringify(restaurant);
       },
       deep: true,
     },
@@ -152,21 +217,41 @@ export default {
     },
 
     AddToCart(plate) {
+      if (this.cart != "") {
+        if (this.cart[0]["user_id"] != plate["user_id"] && this.cart != 0) {
+          return $("#change_cart").modal("show");
+        }
+      }
       this.cart.push(plate);
-      // this.saveProduct();
-      // console.log(this.cart);
+      this.cart.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
       this.CountQuantity();
     },
 
+    clearCart() {
+      this.cart = [];
+      this.counts = [];
+    },
+
+    clearItem(value) {
+      this.cart.splice(value);
+    },
+
+    findPlate(input) {
+      return this.cart.find(({ name }) => name === input);
+    },
+
+    newOrder() {
+      this.clearCart();
+      $("#change_cart").modal("hide");
+    },
+
     addQuantity(input) {
-      var result = this.cart.find(({ name }) => name === input);
-      this.cart.push(result);
+      this.cart.push(this.findPlate(input));
       this.CountQuantity();
     },
 
     removeToCart(input) {
-      var result = this.cart.find(({ name }) => name === input);
-      const index = this.cart.indexOf(result);
+      const index = this.cart.indexOf(this.findPlate(input));
       if (index > -1) {
         this.cart.splice(index, 1);
       }
@@ -180,21 +265,24 @@ export default {
 
   mounted() {
     this.GetRestaurant();
-
     this.GetPlates();
     if (this.cart != []) {
       setTimeout(this.CountQuantity, 500);
     }
-
-    // if(localStorage.cart != undefined){
-    //   this.cart = JSON.parse(localStorage.cart)
-    // }
 
     if (localStorage.getItem("cart")) {
       try {
         this.cart = JSON.parse(localStorage.cart);
       } catch (e) {
         localStorage.removeItem("cart");
+      }
+    }
+
+    if (localStorage.getItem("restaurant")) {
+      try {
+        this.restaurant = JSON.parse(localStorage.restaurant);
+      } catch (e) {
+        localStorage.removeItem("restaurant");
       }
     }
   },
@@ -209,30 +297,31 @@ $black: #0a0903;
 .hero_img {
   background-image: url("../../img/jumbo/menu_jumbo5.png");
   height: 400px;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 #menu {
   padding-top: 4rem;
-  .titolo_menu{
+  .titolo_menu {
     background: $secondary-color;
     transform: skewX(3deg);
     width: 60%;
     box-shadow: -7px 5px 0px 0px $black;
     padding: 0.2rem;
     border-radius: 10px;
-    span{
+    span {
       color: $black;
       padding-left: 1rem;
     }
     .line {
-    height: 3px;
-    background-color: $black;
-    width: 40%;
+      height: 3px;
+      background-color: $black;
+      width: 40%;
+    }
   }
-  }
-  .quantity{
+  .quantity {
     color: $brand-color;
     font-size: 1.5rem;
     font-weight: bolder;
@@ -254,14 +343,14 @@ $black: #0a0903;
         padding-bottom: 1rem;
         border-bottom: 1px solid black;
       }
-      .add_btn {
-        background-color: $brand-color;
-        color: $black;
-      }
-      .remove_btn {
-        background-color: $black;
-        color: $brand-color;
-      }
+    }
+    .add_btn {
+      background-color: $brand-color;
+      color: $black;
+    }
+    .remove_btn {
+      background-color: $black;
+      color: $brand-color;
     }
   }
 }
@@ -285,7 +374,7 @@ $black: #0a0903;
   width: 100%;
   padding-bottom: 1.5rem;
 }
-.food_name{
+.food_name {
   max-height: 3.5rem;
   overflow: hidden;
 }
@@ -341,5 +430,9 @@ $black: #0a0903;
     width: 20%;
     margin: auto;
   }
+}
+
+.img_hero {
+  width: 100%;
 }
 </style>

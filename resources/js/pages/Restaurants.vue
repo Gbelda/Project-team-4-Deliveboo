@@ -1,9 +1,9 @@
 <template>
   <div class="container-fluid jumbo p-0">
-    <header class="d-flex justify-content-center">
+    <header id="liftoff" class="d-flex justify-content-center">
       <div class="row container content justify-content-center flex-wrap">
         <div class="content-left col-12 col-md-6">
-          <h1>
+          <h1 class="title">
             Il cibo che ami
             <span class="text-brand">quando</span> e
             <span class="text-brand">dove</span> vuoi tu!
@@ -19,142 +19,182 @@
       </div>
     </header>
 
-    <div class="carousel container my-5">
-      <!-- .best_restaurants_section -->
-      <section class="best_restaurants_section">
-        <div class="paragraph_title">
-          <div class="row">
-            <div class="col-6">
-              <h2>I migliori ristoranti del mese di Milano</h2>
-              <div class="horizontal_rule"></div>
+    <!-- .best_restaurants_section -->
+    <section class="best_restaurants_section container my-5">
+      <div class="paragraph_title">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h2>I migliori ristoranti del mese a Milano</h2>
+            <div class="horizontal_rule"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- #best_restaurants_carousel -->
+      <div
+        id="best_restaurants_carousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#best_restaurants_carousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#best_restaurants_carousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#best_restaurants_carousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#best_restaurants_carousel"
+            data-bs-slide-to="3"
+            aria-label="Slide 4"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#best_restaurants_carousel"
+            data-bs-slide-to="4"
+            aria-label="Slide 5"
+          ></button>
+        </div>
+        <div class="carousel-inner rounded-pill">
+          <div id="da_marco" class="carousel-item active">
+            <svg
+              class="bd-placeholder-img"
+              width="100%"
+              height="100%"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            ></svg>
+
+            <div class="container">
+              <div class="carousel-caption text-center">
+                <h2 class="h2_carousel">Da Marco</h2>
+                <h3 class="h3_carousel">La migliore pizza d'Italia</h3>
+                <a class="btn btn-sm" href="#"> Provala subito </a>
+              </div>
+            </div>
+          </div>
+          <div id="da_giovanni" class="carousel-item">
+            <svg
+              class="bd-placeholder-img"
+              width="100%"
+              height="100%"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            ></svg>
+
+            <div class="container">
+              <div class="carousel-caption">
+                <h2 class="h2_carousel">Da Giovanni</h2>
+                <h3 class="h3_carousel">Il miglior sushi di Milano</h3>
+                <button class="btn btn-sm" href="#">Provalo subito</button>
+              </div>
+            </div>
+          </div>
+          <div id="da_paolo" class="carousel-item">
+            <svg
+              class="bd-placeholder-img"
+              width="100%"
+              height="100%"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            ></svg>
+
+            <div class="container">
+              <div class="carousel-caption text-center">
+                <h2 class="h2_carousel">Da Paolo</h2>
+                <h3 class="h3_carousel">
+                  Un vero fast-food americano al centro di Milano!
+                </h3>
+                <button class="btn btn-sm" href="#">Provalo subito</button>
+              </div>
+            </div>
+          </div>
+          <div id="da_laurentiu" class="carousel-item">
+            <svg
+              class="bd-placeholder-img"
+              width="100%"
+              height="100%"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            ></svg>
+
+            <div class="container">
+              <div class="carousel-caption text-center">
+                <h2 class="h2_carousel">Da Laurentiu</h2>
+                <h3 class="h3_carousel">Tutta la cucina orientale che vuoi</h3>
+                <button class="btn btn-sm" href="#">Provala subito</button>
+              </div>
+            </div>
+          </div>
+          <div id="da_giuseppe" class="carousel-item">
+            <svg
+              class="bd-placeholder-img"
+              width="100%"
+              height="100%"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            ></svg>
+
+            <div class="container">
+              <div class="carousel-caption text-center">
+                <h2 class="h2_carousel">Da Giuseppe</h2>
+                <h3 class="h3_carousel">
+                  La migliore cucina messicana di Milano
+                </h3>
+                <button class="btn btn-sm" href="#">Provala subito</button>
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- #best_restaurants_carousel -->
-        <div
-          id="best_restaurants_carousel"
-          class="carousel slide"
-          data-bs-ride="carousel"
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#best_restaurants_carousel"
+          data-bs-slide="prev"
         >
-          <div class="carousel-indicators">
-            <button
-              type="button"
-              data-bs-target="#best_restaurants_carousel"
-              data-bs-slide-to="0"
-              class="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#best_restaurants_carousel"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#best_restaurants_carousel"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
-            ></button>
-          </div>
-          <div class="carousel-inner rounded">
-            <div class="carousel-item active">
-              <svg
-                class="bd-placeholder-img"
-                width="100%"
-                height="100%"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <rect width="100%" height="100%" fill="#777" />
-              </svg>
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#best_restaurants_carousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- /#best_restaurants_carousel -->
+    </section>
+    <!-- /.best_restaurants_section -->
 
-              <div class="container">
-                <div class="carousel-caption text-center">
-                  <h3>da Marco</h3>
-                  <h6>La migliore pizza d'Italia... altro che Napoli</h6>
-                  <a class="btn btn-lg btn-primary" href="#">
-                    Provala subito
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <svg
-                class="bd-placeholder-img"
-                width="100%"
-                height="100%"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <rect width="100%" height="100%" fill="#777" />
-              </svg>
-
-              <div class="container">
-                <div class="carousel-caption">
-                  <h3>Da Giovanni</h3>
-                  <h6>Il miglior sushi di Milano l'ho facciamo solo noi!</h6>
-                  <button class="btn btn-lg btn-primary" href="#">
-                    Provalo subito
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <svg
-                class="bd-placeholder-img"
-                width="100%"
-                height="100%"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-              >
-                <rect width="100%" height="100%" fill="#777" />
-              </svg>
-
-              <div class="container">
-                <div class="carousel-caption text-center">
-                  <h3>Da Paolo</h3>
-                  <h6>I migliori panini di Milano, buoni e poco costosi</h6>
-                  <button class="btn btn-lg btn-primary" href="#">
-                    Provali subito
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#best_restaurants_carousel"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#best_restaurants_carousel"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-        <!-- /#best_restaurants_carousel -->
-      </section>
-      <!-- /.best_restaurants_section -->
-    </div>
-
-        <!-- ristoranti -->
+    <!-- restuarants -->
     <section id="home">
       <div class="container">
         <!-- titolo paragrafo categorie -->
@@ -179,6 +219,7 @@
               :id="'category' + index"
               v-model="selected.categories"
             />
+            <font-awesome-icon icon="fas fa-check-circle" />
             <div class="d-flex flex-column colonna">
               <label class="cat_image" :for="'category' + index">
                 <img
@@ -193,6 +234,7 @@
             </div>
           </div>
         </div>
+
         <!-- ristoranti -->
         <section class="ristoranti_container">
           <div class="content">
@@ -210,7 +252,7 @@
             >
               <h3 v-if="restaurants == ''">Nessun ristorante disponibile</h3>
             </div>
-            <div class="row justify-content-center contenitore_bordi">
+            <div class="row justify-content-center contenitore_bordi rounded">
               <div
                 class="col-md-6 col-lg-4 col-sm-12 card-container d-flex"
                 v-for="restaurant in restaurants"
@@ -250,11 +292,12 @@
                 </div>
               </div>
             </div>
-            <!-- gestione pagine -->
-            <div class="links text-center mt-5" v-if="meta.last_page > 1">
+
+            <!-- pagination -->
+            <div class="pagination links" v-if="meta.last_page > 1">
               <span
                 class="btn prev"
-                :class="meta.current_page === 1 ? 'disabled' : ''"
+                v-if="meta.current_page > 1 ? 'disabled' : ''"
                 @click="PrevPage()"
                 >Prev</span
               >
@@ -268,21 +311,22 @@
               >
               <span
                 class="btn next"
-                :class="meta.current_page === meta.last_page ? 'disabled' : ''"
+                v-if="meta.current_page < meta.last_page ? 'disabled' : ''"
                 @click="NextPage()"
                 >Next</span
               >
             </div>
+            <!-- /pagination -->
           </div>
         </section>
       </div>
     </section>
-    <!-- ristoranti -->
+    <!-- restuarants -->
 
-    <div class="larger_container container-fluid d-flex mt-5 pt-5">
-      <div class="right_container col-8">
+    <div class="container-fluid d-flex mt-5 pt-5 justify-content-center">
+      <div class="col-8">
         <!-- .best_plate_section -->
-        <section class="best_plate_section rounded">
+        <section class="best_plate_section rounded-pill">
           <div class="paragraph_plate_day">
             <div class="row">
               <div class="col">
@@ -294,9 +338,12 @@
           <div class="plate_of_day">
             <img src="../../img/main/plate_of_day.png" alt="" class="w-25" />
             <div class="plate_of_day_body">
-              <h4>Squisito hamburger menu, provalo subito!</h4>
+              <h5>Squisito hamburger menu, provalo subito!</h5>
               <h6>A soli 5,99 €</h6>
-              <button class="btn btn-primary" @click="AddToCart(plate)">
+              <button
+                class="btn btn-warning border-0"
+                @click="AddToCart(plate)"
+              >
                 Aggiungi al carrello
               </button>
             </div>
@@ -304,12 +351,14 @@
         </section>
         <!-- .best_plate_section -->
       </div>
-      <!-- /.right_container -->
     </div>
+
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
+import Footer from "../components/Footer.vue";
 export default {
   data() {
     return {
@@ -322,6 +371,10 @@ export default {
       },
     };
   },
+
+  components: {
+    Footer,
+  },
   methods: {
     GetRestaurants(url) {
       axios
@@ -329,7 +382,6 @@ export default {
           params: this.selected,
         })
         .then((response) => {
-          // console.log(response);
           this.restaurants = response.data.data;
           this.meta = response.data.meta;
           this.links = response.data.links;
@@ -408,7 +460,7 @@ $black: #0a0903;
     .orange_band {
       background-color: $secondary-color;
       margin: 0.5rem;
-      height: 1rem;
+      //height: 1rem;
       border-radius: 20px;
       width: calc(100% / 11);
       .colonna {
@@ -438,7 +490,7 @@ $black: #0a0903;
     }
   }
   // main ristoranti
-  .contenitore_bordi{
+  .contenitore_bordi {
     border-top: 2px solid $secondary-color;
     border-bottom: 2px solid $secondary-color;
   }
@@ -552,7 +604,8 @@ $black: #0a0903;
     color: $black;
     text-align: center;
     background: $brand-color;
-    width: fit-content;
+    //width: fit-content;
+    width: inherit;
     box-shadow: 2px 4px 12px 0px #00000045;
   }
   .food-card-food-properties > div {
