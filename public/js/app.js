@@ -42942,9 +42942,7 @@ var render = function () {
           _c("div", { staticClass: "titolo_menu" }, [
             _c("h1", [
               _c("strong", [
-                _c("span", [
-                  _vm._v(_vm._s(_vm.restaurant.restaurant_name.toUpperCase())),
-                ]),
+                _c("span", [_vm._v(_vm._s(_vm.restaurant.restaurant_name))]),
               ]),
             ]),
           ]),
