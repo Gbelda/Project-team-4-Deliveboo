@@ -33,7 +33,7 @@
                 <td>{{ $order->client_address}}</td>
                 <td>{{$order->client_phone}}</td>
                 <td>{{$order->client_email}}</td>
-                <td>{{ $order->total}}</td>
+                <td>{{ $order->total}} €</td>
                 <td >
                     <div class="d-flex justify-content-around">
                         <a class="btn show_btn" href="{{ route('admin.orders.show', $order->id) }}"><i class="fas fa-eye"></i></a>
@@ -59,7 +59,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-bs-dismiss="modal">Close</button>
-                                    <form action="{{ route('admin.plates.destroy', $order->id) }}" method="post">
+                                    <form action="{{ route('admin.orders.destroy', $order->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>

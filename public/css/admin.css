@@ -11411,6 +11411,7 @@ textarea.form-control-lg {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 #show_plate .d-flex .right_col .card_info {
   background: #ff8200;
@@ -11471,4 +11472,16 @@ textarea.form-control-lg {
 
 .text-small {
   color: #ff8200;
+}
+
+.bgc-brand {
+  background-color: #ff8200;
+}
+
+.H_f {
+  height: 100% !important;
+}
+
+.FW {
+  font-weight: bold;
 }

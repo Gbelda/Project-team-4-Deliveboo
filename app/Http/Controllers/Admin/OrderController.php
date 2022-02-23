@@ -19,8 +19,8 @@ class OrderController extends Controller
 
     }
     public function show(Order $order){
-        ddd(Auth::id());
-        if (User::id() === $order->user_id) {
+        //ddd(Auth::id());
+        if (Auth::id() === $order->user_id) {
             $orders = Order::all();
             return view('admin.orders.show', compact('order'));
 
@@ -33,7 +33,7 @@ class OrderController extends Controller
         //
         $order->delete();
 
-        return redirect()->route('admin.orders.index')->with('message', `L'ordine di  ` . $order->client_name . ' è stato eliminato correttamente');
+        return redirect()->route('admin.orders.index')->with('message', "L'ordine di " .  $order->client_name . " è stato eliminato correttamente");
 
     }
 }
