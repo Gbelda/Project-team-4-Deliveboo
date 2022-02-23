@@ -5410,14 +5410,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     GetRestaurant: function GetRestaurant() {
       var _this = this;
 
-      axios.get("/api/restaurants/" + this.$route.params.id).then(function (resp) {
+      axios.get("/api/restaurants/" + this.$route.params.slug).then(function (resp) {
         _this.restaurant = resp.data.data;
       });
     },
     GetPlates: function GetPlates() {
       var _this2 = this;
 
-      axios.get("/api/plates/" + this.$route.params.id).then(function (resp) {
+      axios.get("/api/plates/" + this.$route.params.slug).then(function (resp) {
         _this2.plates = resp.data.data;
       });
     },
@@ -60324,10 +60324,10 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\Laravel\Laravel-deliveboo\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\MAMP\htdocs\Laravel\Laravel-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\MAMP\htdocs\Laravel\Laravel-deliveboo\resources\sass\admin.scss */"./resources/sass/admin.scss");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\Laravel\Laravel-deliveboo\resources\sass\checkout.scss */"./resources/sass/checkout.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\admin.scss */"./resources/sass/admin.scss");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\checkout.scss */"./resources/sass/checkout.scss");
 
 
 /***/ })
