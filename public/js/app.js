@@ -5414,20 +5414,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     GetRestaurant: function GetRestaurant() {
       var _this = this;
 
-      /* console.log(this.$route.params.slug);
-            console.log(this.$route.params.id);
-            console.log(this.$route.params);*/
-      axios.get("/api/restaurants/" + this.$route.params.slug).then(function (resp) {
+      axios.get("/api/restaurants/" + this.$route.params.id).then(function (resp) {
         _this.restaurant = resp.data.data;
       });
     },
     GetPlates: function GetPlates() {
       var _this2 = this;
 
-      /* axios.get("/api/plates/" + this.restaurant.id).then((resp) => {
-                this.plates = resp.data.data;
-            }); */
-      axios.get("/api/plates/" + this.$route.params.slug).then(function (resp) {
+      axios.get("/api/plates/" + this.$route.params.id).then(function (resp) {
         _this2.plates = resp.data.data;
       });
     },
