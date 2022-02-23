@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 @section('content')
 
-    <div class="container">
-        <div class="card my-2">
-            <div class="card-header">{{ __('Dashboard') }}</div>
+    <div class="container" id="log">
+        <div class="card">
+            <div class="card-header">{{ __('DASHBOARD') }}</div>
 
             <div class="card-body">
                 @if (session('status'))
