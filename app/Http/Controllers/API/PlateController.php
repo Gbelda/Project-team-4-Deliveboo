@@ -13,10 +13,8 @@ class PlateController extends Controller
 {
     public function index(User $restaurant)
     {
-        $plates = Plate::where('user_id', $restaurant->id)->get();
 
+        $plates = Plate::where('user_id', $restaurant->id)->get();
         return new PlateResource($plates);
     }
-        
-
 }

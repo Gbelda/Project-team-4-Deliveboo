@@ -1,3 +1,7 @@
+
+var token = document.getElementById('token').value;
+
+
 var form = document.querySelector('#my-sample-form');
 var submit = document.querySelector('input[type="button"]');
 
@@ -50,7 +54,7 @@ if (products != '') {
         cart_list.insertAdjacentHTML('beforeend',
             ` <li class= "list-group-item d-flex justify-content-between lh-condensed" >
                 <div>
-                    <h6 class="my-0 fw-bold">${ product.name }</h6>
+                    <h6 class="my-0 fw-bold text-start">${ product.name }</h6>
                     <small class=" d-flex align-items-center">
                         Quantit&aacute;: 
                         <input type="text" name="plates[${product.id}]" readonly class="form-control-plaintext ps-1" id="count" value="${counts[i]}" data-id='${product.id}'>
@@ -83,9 +87,8 @@ if (products != '') {
 
 
 
-
 braintree.client.create({
-    authorization: "sandbox_8h8q64ng_9xyqb7hxsmjp4hsm"
+    authorization:token
 }, function (err, clientInstance) {
     if (err) {
         console.error(err);
