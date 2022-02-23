@@ -145,6 +145,7 @@
     box-shadow: none;
 }
 // show_plate
+
 #show_plate{
     width: 100%;
     .actions{
@@ -167,7 +168,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
             .card_info{
                 background: $brand-color;
                 padding: 2rem;
@@ -196,6 +196,7 @@
         }
     }
 }
+
 // utility
 .section_title{
     background: $black;

@@ -10,6 +10,10 @@
 // Common
 @import "common";
 
+body{
+    color: $black !important;
+}
+
 /* utility */
 #nav_guest {
     padding: 1rem 0;
@@ -31,6 +35,10 @@
         .tendina {
             background-color: $black;
             border-radius: 0px 10px 20px 20px;
+            position: absolute;
+            inset: 0px auto auto 0px;
+            margin: 0px;
+            transform: translate(0px, 35px) !important;
             .nav_link {
                 text-align: center;
                 a {
@@ -52,7 +60,9 @@
     text-align: center;
 }
 /* /utility */
-
+.brand-color{
+    color: $brand-color !important;
+}
 /* header */
 header {
     background-image: url("../img/jumbo/jumbo-onda.png");
@@ -242,7 +252,6 @@ header {
 #home {
     .line {
         width: 100%;
-        padding: 0.2rem;
         border-radius: 10px;
         background-image: linear-gradient(
             to right,
