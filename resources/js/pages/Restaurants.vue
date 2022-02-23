@@ -322,37 +322,43 @@
       </div>
     </section>
     <!-- restuarants -->
-
-    <div class="container-fluid d-flex mt-5 pt-5 justify-content-center">
-      <div class="col-8">
-        <!-- .best_plate_section -->
-        <section class="best_plate_section rounded-pill">
-          <div class="paragraph_plate_day">
-            <div class="row">
-              <div class="col">
-                <h2>Piatto del giorno</h2>
-                <div class="horizontal_rule"></div>
-              </div>
-            </div>
-          </div>
-          <div class="plate_of_day">
-            <img src="../../img/main/plate_of_day.png" alt="" class="w-25" />
-            <div class="plate_of_day_body">
-              <h5>Squisito hamburger menu, provalo subito!</h5>
-              <h6>A soli 5,99 €</h6>
-              <button
-                class="btn btn-warning border-0"
-                @click="AddToCart(plate)"
-              >
-                Aggiungi al carrello
-              </button>
-            </div>
-          </div>
-        </section>
-        <!-- .best_plate_section -->
+    <section class="py-3" id="infografica">
+      <div class="title_info text-center">
+        <h1>
+          Perchè <span class="brand-color">DeliveBoo</span>?
+        </h1>
+        <div class="line"></div>
       </div>
-    </div>
-
+      <div class="d-flex g-3">
+        <div class="col-lg-4 d-flex flex-column align-items-center">
+          <h2>
+            SENZA INQUINARE
+          </h2>
+          <p>
+            Teniamo all'ambiente, per questo le nostre consegne sono Free-pollution in quanto utilizziamo solo veicoli elettrici.
+          </p>
+          <img src="../../img/infografica/world.png" alt="">
+        </div>
+        <div class="col-lg-4 d-flex flex-column align-items-center king">
+          <h2>
+            SOLO I MIGLIORI
+          </h2>
+          <p>
+            Selezioniamo personalmente solo i migliori ristoranti di Milano attraverso i nostri test.
+          </p>
+          <img src="../../img/infografica/re.png" alt="">
+        </div>
+        <div class="col-lg-4 d-flex flex-column align-items-center">
+          <h2>
+            PRECISIONE
+          </h2>
+          <p>
+            Siamo sicuri delle nostre tempistiche, se entro 30 min dall'orario indicato non avrai il tuo ordine sarai rimborsato.
+          </p>
+          <img src="../../img/infografica/clessidra.png" alt="">
+        </div>
+      </div>
+    </section>
     <Footer></Footer>
   </div>
 </template>
@@ -626,7 +632,45 @@ $black: #0a0903;
     margin: 0;
   }
 }
-
+#infografica{
+  .title_info{
+    margin: 5rem 0;
+    h1{
+      font-size: 3rem;
+    }
+    .line{
+        width: 20%;
+        background: #ff8200;
+        height: 0.1rem;
+        border-radius: 20px;
+        margin: auto;
+    }
+    .brand-color{
+      color: $brand-color;
+    }
+  }
+  .row{
+    justify-content: center;
+  }
+  .king{
+    border-left: 2px solid #ff8200;
+    border-right: 2px solid #ff8200;
+  }
+  h2{
+    color: $brand-color;
+    font-weight: bolder;
+  }
+  p{
+    width: 60%;
+    text-align: center;
+    padding-bottom: 1rem;
+    color: $black;
+    font-weight: 800;
+  }
+  img{
+    width: 50%;
+  }
+}
 // utility
 .title_parag {
   text-align: center;

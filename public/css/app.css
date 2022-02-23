@@ -11283,10 +11283,8 @@ body {
   background-color: #0a0903;
   border-radius: 0px 10px 20px 20px;
 }
-#nav_guest .nav_guest .tendina .nav_link {
+#nav_guest .nav_guest .tendina .nav-link {
   text-align: center;
-}
-#nav_guest .nav_guest .tendina .nav_link a {
   color: #ff8200;
 }
 #nav_guest .nav_guest .col-2 img {

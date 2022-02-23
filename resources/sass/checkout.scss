@@ -1,5 +1,5 @@
 .checkout_container {
-  padding-top: 8rem;
+  padding: 6rem 0;
 }
 
 $small-screen: 576px;
@@ -15,6 +15,9 @@ $green: #8cd790;
 $white: #fff;
 $radius: 4px;
 $bouncy: cubic-bezier(0.2, 1.3, 0.7, 1);
+$brand-color: #ff8200;
+$secondary_color: #ffc100;
+$black: #0a0903;
 
 /*--------------------
 General
@@ -54,7 +57,7 @@ h1 {
 
 .form-container {
   display: flex;
-  background-color: #eee;
+  background-color: $brand-color;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -67,6 +70,11 @@ h1 {
   padding: 5rem;
   border-radius: 20px;
   max-height: 750px;
+  #user_info{
+    h4{
+      font-weight: bold;
+    }
+  }
 
   @media (max-width: $large-screen) {
     border: none;

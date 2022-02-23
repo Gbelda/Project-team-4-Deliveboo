@@ -31,11 +31,9 @@
         .tendina {
             background-color: $black;
             border-radius: 0px 10px 20px 20px;
-            .nav_link {
+            .nav-link {
                 text-align: center;
-                a {
-                    color: $brand-color;
-                }
+                color: $brand-color;
             }
         }
         .col-2 img {

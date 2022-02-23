@@ -19,8 +19,8 @@ class OrderController extends Controller
 
     }
     public function show(Order $order){
-        ddd(Auth::id());
-        if (User::id() === $order->user_id) {
+        // ddd(Auth::id());
+        if (Auth::id() === $order->user_id) {
             $orders = Order::all();
             return view('admin.orders.show', compact('order'));
 

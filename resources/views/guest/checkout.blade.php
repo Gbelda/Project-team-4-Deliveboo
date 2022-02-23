@@ -34,8 +34,8 @@
 
                 <div class="row justtify-content-evenly">
                     <div class="col-lg-6 order-lg-2 mb-4">
-                        <h4 class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="text-muted">Carrello</span>
+                        <h4 class="d-flex justify-content-center align-items-center mb-3">
+                            <span>Carrello</span>
                         </h4>
                         <ul class="list-group mb-3" id="cart_list">
                         </ul>
