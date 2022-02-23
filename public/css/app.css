@@ -11576,7 +11576,6 @@ header .content-left h1, header .content-left .h1 {
   margin-bottom: 2rem;
 }
 #site_footer .row .col-4 .app_store img {
-  width: 25%;
   margin: 0.25rem;
   text-align: center;
 }
@@ -11648,6 +11647,10 @@ header .content-left h1, header .content-left .h1 {
   #site_footer .row img {
     width: 100%;
   }
+
+  .app_store_logo {
+    width: 80% !important;
+  }
 }
 @media screen and (min-width: 576px) {
   .container {
@@ -11680,6 +11683,10 @@ header .content-left h1, header .content-left .h1 {
 
   #site_footer .row img {
     width: 80%;
+  }
+
+  .app_store_logo {
+    width: 65% !important;
   }
 }
 @media screen and (min-width: 768px) {
@@ -11718,6 +11725,10 @@ header .content-left h1, header .content-left .h1 {
   #site_footer .row img {
     width: 60%;
   }
+
+  .app_store_logo {
+    width: 40% !important;
+  }
 }
 @media screen and (min-width: 992px) {
   .container {
@@ -11747,6 +11758,10 @@ header .content-left h1, header .content-left .h1 {
   #site_footer .row img {
     width: 50%;
   }
+
+  .app_store_logo {
+    width: 35% !important;
+  }
 }
 @media screen and (min-width: 1200px) {
   .container {
@@ -11767,6 +11782,10 @@ header .content-left h1, header .content-left .h1 {
 
   .h3_carousel {
     font-size: 27px;
+  }
+
+  .app_store_logo {
+    width: 25% !important;
   }
 }
 @media screen and (min-width: 1400px) {
