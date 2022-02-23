@@ -5192,10 +5192,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -43104,6 +43100,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "app_store" }, [
         _c("a", { attrs: { href: "#" } }, [
           _c("img", {
+            staticClass: "app_store_logo",
             attrs: {
               src: __webpack_require__(/*! ../../img/footer/app_store.jpg */ "./resources/img/footer/app_store.jpg"),
               alt: "immagine apple store",
@@ -43113,6 +43110,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("a", { attrs: { href: "#" } }, [
           _c("img", {
+            staticClass: "app_store_logo",
             attrs: {
               src: __webpack_require__(/*! ../../img/footer/google_play.svg.png */ "./resources/img/footer/google_play.svg.png"),
               alt: "immagine google play",
