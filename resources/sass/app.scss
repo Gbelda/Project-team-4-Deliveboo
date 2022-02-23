@@ -176,7 +176,65 @@ header {
         }
     }
 }
-/* /.best_restaurants_section */
+.nav_reg{
+    background-color: $black;
+    a{
+        color: $brand-color;
+        &:hover{
+            color: $secondary_color;
+        }
+    }
+}
+
+#register{
+    .card{
+        box-shadow: -1px 17px 20px 1px #0a0903;
+        .card-header{
+            text-align: center;
+            background-color: $black;
+            color: $brand-color;
+        }
+        label{
+            font-weight: bolder;
+        }
+        .btn-register{
+            background-color: $brand-color;
+            color: $black;
+            font-weight: 900;
+            &:hover{
+                transform: scale(105%);
+            }
+        }
+    }
+}
+#accedi{
+    .card{
+        box-shadow:4px 9px 20px 0px $black;
+        .card-header{
+            background-color: $black;
+            color: $brand-color;
+        }
+        label{
+            font-weight: bolder;
+        }
+        .bottoni_accesso{
+            margin-top: .5rem;
+            .btn_access{
+                background-color: $brand-color;
+                color: $black;
+                &:hover{
+                    transform: scale(105%);
+                }
+            }
+            a{
+                color: $brand-color;
+                &:hover{
+                    color: $black;
+                }
+            }
+        }
+    }
+}
 
 /* restuarants */
 #home {
