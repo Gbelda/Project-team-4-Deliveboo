@@ -1,7 +1,7 @@
 <nav id="nav_guest" class="container-fluid">
     <div class="nav_guest container d-flex justify-content-between align-items-center">
         <div class="col-2">
-            <router-link to="/"><img src="{{ asset('./img/jumbo/logo.png') }}" alt=""></router-link>
+            <a href="{{ url('/') }}"><img src="{{ asset('./img/jumbo/logo.png') }}" alt=""></a>
         </div>
         <div class="hamburgen">
             <div class="dropdown">

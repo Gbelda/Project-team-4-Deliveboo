@@ -326,7 +326,7 @@
                                             <router-link
                                                 :to="
                                                     '/restaurants/' +
-                                                    restaurant.id
+                                                    restaurant.slug
                                                 "
                                                 id="router_ristoranti"
                                                 ><strong

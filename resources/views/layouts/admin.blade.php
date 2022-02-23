@@ -28,36 +28,50 @@
 
         @include('partials.admin.nav')
 
-        <div class="container-fluid pt-5">
-            <div class="row d-flex">
-                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-                    <div class="position-sticky pt-3">
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="{{ route('admin.index') }}">
-                                    Dashboard
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{route('admin.orders.index')}}">
-                                    Ordini
-                                </a>
-                            </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.plates.index') }}">
-                                    Piatti
+        <section class="container-fluid" id="contenuto_admin">
+            <div class="row">
+                <div class="side_bar ">
+                    <div class="side_bar_contenitor">
+                        <ul>
+                            <li class="dash">
+                                <div class="hide">
+                                    <h6>
+                                        dashboard
+                                    </h6>
+                                </div>
+                                <a id="dash" href="{{ route('admin.index') }}">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </a>
+                            </li>
+                            <li class="ordini">
+                                <div class="hide">
+                                    <h6>
+                                        ordini
+                                    </h6>
+                                </div>
+                                <a id="ordini" href="{{route('admin.orders.index')}}">
+                                    <i class="fa-solid fa-clipboard"></i>
+                                </a>
+                            </li>
+                            <li class="piatti">
+                                <div class="hide">
+                                    <h6>
+                                        piatti
+                                    </h6>
+                                </div>
+                                <a id="piatti" href="{{ route('admin.plates.index') }}">
+                                    <i class="fa-solid fa-utensils"></i>
                                 </a>
                             </li>
                         </ul>
                     </div>
-                </nav>
-
-                <main class="col-md- ms-sm-auto col-lg-10 px-md-4">
+                </div>
+                <div class="contenuto_griglie">
                     @yield('content')
-                </main>
+                </div>
             </div>
-        </div>
+        </section>
     </div>
 </body>
 
