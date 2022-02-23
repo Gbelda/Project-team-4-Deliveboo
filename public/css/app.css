@@ -11357,6 +11357,10 @@ header .content-left h1, header .content-left .h1 {
   border: 1px solid #0a0903;
   border-radius: 5px;
 }
+.best_restaurants_section .carousel {
+  width: 90%;
+  margin: 0 auto;
+}
 .best_restaurants_section .carousel .carousel-inner .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -11484,8 +11488,9 @@ header .content-left h1, header .content-left .h1 {
 /* /.best_plate_section */
 /* #site_footer */
 #site_footer {
-  background-color: #777;
+  background-image: linear-gradient(to right, #ffc100, #ff8200);
   padding: 1rem;
+  margin-top: 2rem;
 }
 #site_footer .row {
   display: flex;
@@ -11511,21 +11516,13 @@ header .content-left h1, header .content-left .h1 {
   font-size: 20px;
 }
 #site_footer .row .col-4 .app_store {
+  text-align: center;
   margin-bottom: 2rem;
 }
-#site_footer .row .col-4 .app_store a {
-  display: flex;
-  flex-direction: row;
-  text-decoration: none;
-  align-items: center;
-}
-#site_footer .row .col-4 .app_store a i {
-  font-size: 20px;
-  text-decoration: none;
-}
-#site_footer .row .col-4 .app_store a h6, #site_footer .row .col-4 .app_store a .h6 {
-  font-size: 15px;
-  margin: 0 !important;
+#site_footer .row .col-4 .app_store img {
+  width: 25%;
+  margin: 0.25rem;
+  text-align: center;
 }
 #site_footer .row .col-4 #arrow_up {
   display: inline-block;

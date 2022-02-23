@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -56,8 +57,7 @@ class User extends Authenticatable
     public function scopeWithFilters($query, $categories)
     {
         if ($query == '') {
-            
-        }else {
+        } else {
             # code...
             return User::whereHas('categories', function ($query) use ($categories) {
                 $query->whereIn('category_id', $categories);
@@ -67,4 +67,8 @@ class User extends Authenticatable
         //     $query->where('category_id', $categories);
         // });
     }
+    /* public function getRouteKeyName()
+    {
+        return "slug";
+    } */
 }
