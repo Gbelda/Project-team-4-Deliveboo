@@ -197,25 +197,20 @@ export default {
     },
   },
 
-  methods: {
-    GetRestaurant() {
-      /* console.log(this.$route.params.slug);
-            console.log(this.$route.params.id);
-            console.log(this.$route.params);*/
+    methods: {
+        GetRestaurant() {
+            axios
+                .get("/api/restaurants/" + this.$route.params.id)
+                .then((resp) => {
+                    this.restaurant = resp.data.data;
+                });
+        },
 
-      axios.get("/api/restaurants/" + this.$route.params.slug).then((resp) => {
-        this.restaurant = resp.data.data;
-      });
-    },
-
-    GetPlates() {
-      /* axios.get("/api/plates/" + this.restaurant.id).then((resp) => {
+        GetPlates() {
+            axios.get("/api/plates/" + this.$route.params.id).then((resp) => {
                 this.plates = resp.data.data;
-            }); */
-      axios.get("/api/plates/" + this.$route.params.slug).then((resp) => {
-        this.plates = resp.data.data;
-      });
-    },
+            });
+        },
 
     CountQuantity() {
       this.counts = this.cart.reduce(
