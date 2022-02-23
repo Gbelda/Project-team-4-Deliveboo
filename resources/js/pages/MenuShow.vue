@@ -200,14 +200,14 @@ export default {
     methods: {
         GetRestaurant() {
             axios
-                .get("/api/restaurants/" + this.$route.params.id)
+                .get("/api/restaurants/" + this.$route.params.slug)
                 .then((resp) => {
                     this.restaurant = resp.data.data;
                 });
         },
 
         GetPlates() {
-            axios.get("/api/plates/" + this.$route.params.id).then((resp) => {
+            axios.get("/api/plates/" + this.$route.params.slug).then((resp) => {
                 this.plates = resp.data.data;
             });
         },

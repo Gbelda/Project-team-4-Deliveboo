@@ -10,6 +10,10 @@
 // Common
 @import "common";
 
+body{
+    color: $black !important;
+}
+
 /* utility */
 #nav_guest {
     padding: 1rem 0;
@@ -242,7 +246,6 @@ header {
 #home {
     .line {
         width: 100%;
-        padding: 0.2rem;
         border-radius: 10px;
         background-image: linear-gradient(
             to right,
