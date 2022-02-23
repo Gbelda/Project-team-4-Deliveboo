@@ -186,7 +186,7 @@ import Footer from "../components/Footer.vue";
 export default {
     data() {
         return {
-            restaurant: {},
+            restaurant: [],
             meta: {},
             links: {},
             plates: [],
@@ -221,7 +221,7 @@ export default {
             console.log(this.$route.params);*/
 
             axios
-                .get("/api/restaurants/" + this.$route.params.id)
+                .get("/api/restaurants/" + this.$route.params.slug)
                 .then((resp) => {
                     this.restaurant = resp.data.data;
                 });
@@ -231,7 +231,7 @@ export default {
             /* axios.get("/api/plates/" + this.restaurant.id).then((resp) => {
                 this.plates = resp.data.data;
             }); */
-            axios.get("/api/plates/" + this.$route.params.id).then((resp) => {
+            axios.get("/api/plates/" + this.$route.params.slug).then((resp) => {
                 this.plates = resp.data.data;
             });
         },

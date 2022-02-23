@@ -67,8 +67,8 @@ class User extends Authenticatable
         //     $query->where('category_id', $categories);
         // });
     }
-    /* public function getRouteKeyName()
+ public function getRouteKeyName()
     {
         return "slug";
-    } */
+    } 
 }

@@ -5402,7 +5402,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      restaurant: {},
+      restaurant: [],
       meta: {},
       links: {},
       plates: [],
@@ -5434,7 +5434,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       /* console.log(this.$route.params.slug);
       console.log(this.$route.params.id);
       console.log(this.$route.params);*/
-      axios.get("/api/restaurants/" + this.$route.params.id).then(function (resp) {
+      axios.get("/api/restaurants/" + this.$route.params.slug).then(function (resp) {
         _this.restaurant = resp.data.data;
       });
     },
@@ -5444,7 +5444,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       /* axios.get("/api/plates/" + this.restaurant.id).then((resp) => {
           this.plates = resp.data.data;
       }); */
-      axios.get("/api/plates/" + this.$route.params.id).then(function (resp) {
+      axios.get("/api/plates/" + this.$route.params.slug).then(function (resp) {
         _this2.plates = resp.data.data;
       });
     },
@@ -43943,7 +43943,7 @@ var render = function () {
                                   "router-link",
                                   {
                                     attrs: {
-                                      to: "/restaurants/" + restaurant.id,
+                                      to: "/restaurants/" + restaurant.slug,
                                       id: "router_ristoranti",
                                     },
                                   },
@@ -59887,7 +59887,7 @@ var routes = [{
   name: "restaurants",
   component: Restaurants
 }, {
-  path: "/restaurants/:id",
+  path: "/restaurants/:slug",
   name: "restaurant",
   component: Restaurant
 }, {
