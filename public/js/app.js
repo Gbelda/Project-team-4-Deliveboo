@@ -5381,23 +5381,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -5432,8 +5415,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       /* console.log(this.$route.params.slug);
-      console.log(this.$route.params.id);
-      console.log(this.$route.params);*/
+            console.log(this.$route.params.id);
+            console.log(this.$route.params);*/
       axios.get("/api/restaurants/" + this.$route.params.slug).then(function (resp) {
         _this.restaurant = resp.data.data;
       });
@@ -5442,8 +5425,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this2 = this;
 
       /* axios.get("/api/plates/" + this.restaurant.id).then((resp) => {
-          this.plates = resp.data.data;
-      }); */
+                this.plates = resp.data.data;
+            }); */
       axios.get("/api/plates/" + this.$route.params.slug).then(function (resp) {
         _this2.plates = resp.data.data;
       });
@@ -5470,8 +5453,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.cart = [];
       this.counts = [];
     },
-    clearItem: function clearItem(value) {
-      this.cart.splice(value);
+    clearItem: function clearItem(input, quantity) {
+      var index = this.cart.indexOf(this.findPlate(input));
+
+      if (index > -1) {
+        this.cart.splice(index, quantity);
+      }
+
+      this.CountQuantity();
     },
     findPlate: function findPlate(input) {
       return this.cart.find(function (_ref) {
@@ -43245,9 +43234,9 @@ var render = function () {
               _vm._v(" "),
               _c("div", { staticClass: "modal-body" }, [
                 _vm._v(
-                  "\n                    L'ordine include articoli di un altro ristorante. Crea\n                    un nuovo ordine per aggiungere articoli da\n                    " +
+                  "\n          L'ordine include articoli di un altro ristorante. Crea un nuovo\n          ordine per aggiungere articoli da\n          " +
                     _vm._s(_vm.restaurant.restaurant_name) +
-                    ".\n                "
+                    ".\n        "
                 ),
               ]),
               _vm._v(" "),
@@ -43259,11 +43248,7 @@ var render = function () {
                     attrs: { type: "button" },
                     on: { click: _vm.newOrder },
                   },
-                  [
-                    _vm._v(
-                      "\n                        Crea nuovo ordine\n                    "
-                    ),
-                  ]
+                  [_vm._v("\n            Crea nuovo ordine\n          ")]
                 ),
               ]),
             ]),
@@ -43300,7 +43285,7 @@ var render = function () {
                       "div",
                       {
                         staticClass:
-                          "card_plates d-flex flex-column align-items-center text-center",
+                          "\n                card_plates\n                d-flex\n                flex-column\n                align-items-center\n                text-center\n              ",
                       },
                       [
                         _c("div", { staticClass: "food_image" }, [
@@ -43323,23 +43308,23 @@ var render = function () {
                         _c("div", { staticClass: "food_description" }, [
                           _c("p", [
                             _vm._v(
-                              "\n                                    " +
+                              "\n                  " +
                                 _vm._s(plate.description) +
-                                "\n                                "
+                                "\n                "
                             ),
                           ]),
                         ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "food_price" }, [
                           _vm._v(
-                            "\n                                €\n                                " +
+                            "\n                €\n                " +
                               _vm._s(
                                 Math.round(
                                   (parseFloat(plate.price) + Number.EPSILON) *
                                     100
                                 ) / 100
                               ) +
-                              "\n                            "
+                              "\n              "
                           ),
                         ]),
                         _vm._v(" "),
@@ -43429,9 +43414,9 @@ var render = function () {
                         _vm._v(" "),
                         _c("div", { staticClass: "quantity" }, [
                           _vm._v(
-                            "\n                                    " +
+                            "\n                  " +
                               _vm._s(item) +
-                              "\n                                "
+                              "\n                "
                           ),
                         ]),
                       ]
@@ -43439,9 +43424,18 @@ var render = function () {
                     _vm._v(" "),
                     _c("div", { staticClass: "text-end" }, [
                       item != 1
-                        ? _c("em", { staticClass: "text-danger" }, [
-                            _vm._v("(togli dal carrello)"),
-                          ])
+                        ? _c(
+                            "em",
+                            {
+                              staticClass: "text-danger",
+                              on: {
+                                click: function ($event) {
+                                  return _vm.clearItem(value, item)
+                                },
+                              },
+                            },
+                            [_vm._v("(togli dal carrello)")]
+                          )
                         : _vm._e(),
                     ]),
                   ])
@@ -43508,9 +43502,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "modal-header" }, [
       _c("h5", { staticClass: "modal-title", attrs: { id: "change_cart" } }, [
-        _vm._v(
-          "\n                        Creare un nuovo ordine\n                    "
-        ),
+        _vm._v("Creare un nuovo ordine"),
       ]),
       _vm._v(" "),
       _c("button", {
