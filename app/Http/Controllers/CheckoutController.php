@@ -23,6 +23,7 @@ class CheckoutController extends Controller
         ]);
 
         $token = $gateway->ClientToken()->generate();
+        setcookie('token', $token);
 
         return view('guest.checkout', compact('token'));
     }

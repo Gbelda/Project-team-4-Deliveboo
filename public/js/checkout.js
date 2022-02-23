@@ -99,31 +99,36 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var token = document.getElementById('token').value;
+//GET TOKEN FROM COOKIES
+function getCookie(name) {
+  function escape(s) {
+    return s.replace(/([.*+?\^$(){}|\[\]\/\\])/g, '\\$1');
+  }
+
+  var match = document.cookie.match(RegExp('(?:^|;\\s*)' + escape(name) + '=([^;]*)'));
+  return match ? match[1] : null;
+}
+
+var token = getCookie('token');
 var form = document.querySelector('#my-sample-form');
 var submit = document.querySelector('#button-pay');
+var restaurant = JSON.parse(localStorage.getItem('restaurant'));
 printCart();
 
 function printCart() {
   // GET CART ARRAY
-  var cart = JSON.parse(localStorage.getItem('cart'));
-  console.log(cart, 'log 1');
-  var restaurant = JSON.parse(localStorage.getItem('restaurant'));
-  console.log(restaurant); // TARGET DOM CART LIST
+  var cart = JSON.parse(localStorage.getItem('cart')); // TARGET DOM CART LIST
 
-  var cart_list = document.getElementById('cart_list');
-  console.log(cart_list, 'log 2'); // COUNT PLATE DUPLICATES TO SET COUNTER
+  var cart_list = document.getElementById('cart_list'); // COUNT PLATE DUPLICATES TO SET COUNTER
 
   var countsObject = cart.reduce(function (acc, value) {
     return _objectSpread(_objectSpread({}, acc), {}, _defineProperty({}, value.name, (acc[value.name] || 0) + 1));
-  }, {});
-  console.log(countsObject, 'log 3'); // GET PLATE NAMES
+  }, {}); // GET PLATE NAMES
 
-  var products = Object.keys(countsObject);
-  console.log(products, 'log 4'); //GET PLATE COUNTS
+  var products = Object.keys(countsObject); //GET PLATE COUNTS
 
-  var counts = Object.values(countsObject);
-  console.log(counts, 'log counts');
+  var counts = Object.values(countsObject); // PRINT ON HTML DOM
+
   cart_list.innerHTML = '';
 
   if (products != '') {
@@ -134,7 +139,6 @@ function printCart() {
       product = cart.find(function (product) {
         return product.name == products[i];
       });
-      console.log(product, 'log 5');
       cart_list.insertAdjacentHTML('beforeend', " <li class= \"list-group-item d-flex justify-content-between lh-condensed\" >\n                    <div>\n                        <h6 class=\"my-0 fw-bold text-start\">".concat(product.name, "</h6>\n                        <small class=\" d-flex align-items-center\">\n                            Quantit&aacute;: \n                            <input type=\"text\" name=\"plates[").concat(product.id, "]\" readonly class=\"form-control-plaintext ps-1\" value=\"").concat(counts[i], "\" data-id='").concat(product.id, "'>\n                    <div>\n                    <button class=\"btn reduce reduce_").concat(i, "\">\n                      <i class=\"fa-solid fa-minus\"></i>\n                    </button>\n                    <button class=\"btn add add_").concat(i, "\">\n                      <i class=\"fa-solid fa-plus\"></i>\n                    </button>\n                    </div>\n                        </small>\n                    </div>\n                    <div class=\"d-flex flex-wrap\">\n                        <span class=\"text-muted\">&euro;").concat(Math.round((product.price * counts[i] + Number.EPSILON) * 100) / 100, "</span>\n                        <small>\n                            <em class=\"clear clear_").concat(i, "\">\n                            (Togli dal carrello)\n                            </em>\n                        </small>\n                    </div>\n                    </li >"));
     };
 
@@ -164,7 +168,6 @@ function printCart() {
         return product.name == products[_i2];
       });
       cart.push(product);
-      console.log(cart);
       cart.sort(function (a, b) {
         return parseFloat(a.price) - parseFloat(b.price);
       });
@@ -335,23 +338,15 @@ braintree.client.create({
           if (err) {
             console.error(err);
             return;
-          } // This is where you would submit payload.nonce to your server
-          // alert('Submit your nonce to your server here!');
-
+          }
 
           document.querySelector('#nonce').value = payload.nonce;
           document.getElementById("user_info").submit();
         });
       } else if (!forms.checkValidity()) {
-        // document.getElementById('client_phone').reportValidity();
-        // document.getElementById('client_address').reportValidity();
-        // document.getElementById('client_email').reportValidity();
-        // document.getElementById('client_lastname').reportValidity();
-        // document.getElementById('client_name').reportValidity();
         forms.reportValidity();
       }
-    }, false); // })
-    // }, false);
+    }, false);
   });
 });
 
@@ -364,7 +359,7 @@ braintree.client.create({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\pj4\Project-team-4-Deliveboo\resources\js\checkout.js */"./resources/js/checkout.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\js\checkout.js */"./resources/js/checkout.js");
 
 
 /***/ })

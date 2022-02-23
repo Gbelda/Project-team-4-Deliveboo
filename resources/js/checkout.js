@@ -1,8 +1,16 @@
+//GET TOKEN FROM COOKIES
+function getCookie(name) {
+    function escape(s) { return s.replace(/([.*+?\^$(){}|\[\]\/\\])/g, '\\$1'); }
+    var match = document.cookie.match(RegExp('(?:^|;\\s*)' + escape(name) + '=([^;]*)'));
+    return match ? match[1] : null;
+}
+var token = getCookie('token');
 
-var token = document.getElementById('token').value;
+
 var form = document.querySelector('#my-sample-form');
 var submit = document.querySelector('#button-pay');
 
+var restaurant = JSON.parse(localStorage.getItem('restaurant'))
 
 
 printCart();
@@ -13,14 +21,10 @@ function printCart() {
 
     // GET CART ARRAY
     var cart = JSON.parse(localStorage.getItem('cart'));
-    console.log(cart, 'log 1');
 
-    var restaurant = JSON.parse(localStorage.getItem('restaurant'))
-    console.log(restaurant);
 
     // TARGET DOM CART LIST
     var cart_list = document.getElementById('cart_list');
-    console.log(cart_list, 'log 2');
 
     // COUNT PLATE DUPLICATES TO SET COUNTER
     var countsObject = cart.reduce(
@@ -30,17 +34,14 @@ function printCart() {
         }),
         {}
     );
-    console.log(countsObject, 'log 3');
 
     // GET PLATE NAMES
     var products = Object.keys(countsObject)
-    console.log(products, 'log 4');
 
     //GET PLATE COUNTS
     var counts = Object.values(countsObject)
-    console.log(counts, 'log counts');
 
-
+    // PRINT ON HTML DOM
     cart_list.innerHTML = '';
     if (products != '') {
 
@@ -57,7 +58,7 @@ function printCart() {
 
             //GET PLATE INFO THROUGH NAME FIND
             var product = cart.find(product => product.name == products[i]);
-            console.log(product, 'log 5');
+
             cart_list.insertAdjacentHTML('beforeend',
                 ` <li class= "list-group-item d-flex justify-content-between lh-condensed" >
                     <div>
@@ -113,7 +114,6 @@ function printCart() {
         add_button[i].addEventListener('click', function () {
             var product = cart.find(product => product.name == products[i]);
             cart.push(product);
-            console.log(cart);
             cart.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
             localStorage.setItem('cart', JSON.stringify(cart))
             printCart();
@@ -270,9 +270,6 @@ braintree.client.create({
                                     return;
                                 }
     
-                                // This is where you would submit payload.nonce to your server
-                                // alert('Submit your nonce to your server here!');
-    
                                 document.querySelector('#nonce').value = payload.nonce;
                                 document.getElementById("user_info").submit();
     
@@ -281,11 +278,6 @@ braintree.client.create({
                         }
 
                         else if (!forms.checkValidity()) {
-                            // document.getElementById('client_phone').reportValidity();
-                            // document.getElementById('client_address').reportValidity();
-                            // document.getElementById('client_email').reportValidity();
-                            // document.getElementById('client_lastname').reportValidity();
-                            // document.getElementById('client_name').reportValidity();
                             forms.reportValidity();
                         } 
 
@@ -295,9 +287,5 @@ braintree.client.create({
 
                     }, false)
                     
-                // })
-
-
-        // }, false);
     });
 });
