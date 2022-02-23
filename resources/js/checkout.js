@@ -1,7 +1,5 @@
 
 var token = document.getElementById('token').value;
-
-
 var form = document.querySelector('#my-sample-form');
 var submit = document.querySelector('#button-pay');
 
@@ -67,7 +65,7 @@ function printCart() {
                         <small class=" d-flex align-items-center">
                             Quantit&aacute;: 
                             <input type="text" name="plates[${product.id}]" readonly class="form-control-plaintext ps-1" value="${counts[i]}" data-id='${product.id}'>
-                                                <div>
+                    <div>
                     <button class="btn reduce reduce_${i}">
                       <i class="fa-solid fa-minus"></i>
                     </button>
@@ -76,13 +74,18 @@ function printCart() {
                     </button>
                     </div>
                         </small>
-                        
                     </div>
-                    <span class="text-muted">&euro;${Math.round(((product.price * counts[i]) + Number.EPSILON) * 100)/100}</span>
+                    <div class="d-flex flex-wrap">
+                        <span class="text-muted">&euro;${Math.round(((product.price * counts[i]) + Number.EPSILON) * 100)/100}</span>
+                        <small>
+                            <em class="clear clear_${i}">
+                            (Togli dal carrello)
+                            </em>
+                        </small>
+                    </div>
                     </li >`
                     
             )
-
 
         }
     
@@ -131,9 +134,22 @@ function printCart() {
         })
         
     }
-}
 
-//Assign to DOM elemen
+    //REMOVE PRODUCT
+    var clear_button = document.getElementsByClassName('clear');
+    for (let i = 0; i < products.length; i++) {
+        clear_button[i].addEventListener('click', function () {
+            var product = cart.find(product => product.name == products[i]);
+            var index = cart.indexOf(product)
+            if (index > -1) {
+                cart.splice(index, counts[i]);
+            }
+            localStorage.setItem('cart', JSON.stringify(cart))
+            printCart();
+        })
+    }
+    
+}
 
 
 braintree.client.create({

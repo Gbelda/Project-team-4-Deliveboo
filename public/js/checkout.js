@@ -135,7 +135,7 @@ function printCart() {
         return product.name == products[i];
       });
       console.log(product, 'log 5');
-      cart_list.insertAdjacentHTML('beforeend', " <li class= \"list-group-item d-flex justify-content-between lh-condensed\" >\n                    <div>\n                        <h6 class=\"my-0 fw-bold text-start\">".concat(product.name, "</h6>\n                        <small class=\" d-flex align-items-center\">\n                            Quantit&aacute;: \n                            <input type=\"text\" name=\"plates[").concat(product.id, "]\" readonly class=\"form-control-plaintext ps-1\" value=\"").concat(counts[i], "\" data-id='").concat(product.id, "'>\n                                                <div>\n                    <button class=\"btn reduce reduce_").concat(i, "\">\n                      <i class=\"fa-solid fa-minus\"></i>\n                    </button>\n                    <button class=\"btn add add_").concat(i, "\">\n                      <i class=\"fa-solid fa-plus\"></i>\n                    </button>\n                    </div>\n                        </small>\n                        \n                    </div>\n                    <span class=\"text-muted\">&euro;").concat(Math.round((product.price * counts[i] + Number.EPSILON) * 100) / 100, "</span>\n                    </li >"));
+      cart_list.insertAdjacentHTML('beforeend', " <li class= \"list-group-item d-flex justify-content-between lh-condensed\" >\n                    <div>\n                        <h6 class=\"my-0 fw-bold text-start\">".concat(product.name, "</h6>\n                        <small class=\" d-flex align-items-center\">\n                            Quantit&aacute;: \n                            <input type=\"text\" name=\"plates[").concat(product.id, "]\" readonly class=\"form-control-plaintext ps-1\" value=\"").concat(counts[i], "\" data-id='").concat(product.id, "'>\n                    <div>\n                    <button class=\"btn reduce reduce_").concat(i, "\">\n                      <i class=\"fa-solid fa-minus\"></i>\n                    </button>\n                    <button class=\"btn add add_").concat(i, "\">\n                      <i class=\"fa-solid fa-plus\"></i>\n                    </button>\n                    </div>\n                        </small>\n                    </div>\n                    <div class=\"d-flex flex-wrap\">\n                        <span class=\"text-muted\">&euro;").concat(Math.round((product.price * counts[i] + Number.EPSILON) * 100) / 100, "</span>\n                        <small>\n                            <em class=\"clear clear_").concat(i, "\">\n                            (Togli dal carrello)\n                            </em>\n                        </small>\n                    </div>\n                    </li >"));
     };
 
     for (var i = 0; i < products.length; i++) {
@@ -198,9 +198,31 @@ function printCart() {
 
   for (var _i3 = 0; _i3 < products.length; _i3++) {
     _loop3(_i3);
-  }
-} //Assign to DOM elemen
+  } //REMOVE PRODUCT
 
+
+  var clear_button = document.getElementsByClassName('clear');
+
+  var _loop4 = function _loop4(_i4) {
+    clear_button[_i4].addEventListener('click', function () {
+      var product = cart.find(function (product) {
+        return product.name == products[_i4];
+      });
+      var index = cart.indexOf(product);
+
+      if (index > -1) {
+        cart.splice(index, counts[_i4]);
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      printCart();
+    });
+  };
+
+  for (var _i4 = 0; _i4 < products.length; _i4++) {
+    _loop4(_i4);
+  }
+}
 
 braintree.client.create({
   authorization: token
