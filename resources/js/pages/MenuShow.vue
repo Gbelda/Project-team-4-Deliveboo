@@ -216,10 +216,6 @@ export default {
 
     methods: {
         GetRestaurant() {
-            /* console.log(this.$route.params.slug);
-            console.log(this.$route.params.id);
-            console.log(this.$route.params);*/
-
             axios
                 .get("/api/restaurants/" + this.$route.params.id)
                 .then((resp) => {
@@ -228,9 +224,6 @@ export default {
         },
 
         GetPlates() {
-            /* axios.get("/api/plates/" + this.restaurant.id).then((resp) => {
-                this.plates = resp.data.data;
-            }); */
             axios.get("/api/plates/" + this.$route.params.id).then((resp) => {
                 this.plates = resp.data.data;
             });

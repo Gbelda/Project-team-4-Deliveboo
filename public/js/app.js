@@ -5431,9 +5431,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     GetRestaurant: function GetRestaurant() {
       var _this = this;
 
-      /* console.log(this.$route.params.slug);
-      console.log(this.$route.params.id);*/
-      console.log(this.$route.params);
       axios.get("/api/restaurants/" + this.$route.params.id).then(function (resp) {
         _this.restaurant = resp.data.data;
       });
@@ -5441,9 +5438,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     GetPlates: function GetPlates() {
       var _this2 = this;
 
-      /* axios.get("/api/plates/" + this.restaurant.id).then((resp) => {
-          this.plates = resp.data.data;
-      }); */
       axios.get("/api/plates/" + this.$route.params.id).then(function (resp) {
         _this2.plates = resp.data.data;
       });
@@ -5539,12 +5533,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Footer_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Footer.vue */ "./resources/js/components/Footer.vue");
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -59893,7 +59881,7 @@ var routes = [{
   name: "restaurants",
   component: Restaurants
 }, {
-  path: "/restaurants/:slug",
+  path: "/restaurants/:id",
   name: "restaurant",
   component: Restaurant
 }, {
