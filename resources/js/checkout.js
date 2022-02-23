@@ -34,57 +34,74 @@ console.log(products, 'log 4');
 var counts = Object.values(countsObject)
 console.log(counts , 'log counts');
 
+printCart();
 
-//Assign to DOM element
-if (products != '') {
 
-    cart_list.insertAdjacentHTML('afterbegin',
-        `<li class="list-group-item d-flex justify-content-between align-items-center lh-condensed"><h5 class='m-0'>${restaurant.restaurant_name}</h5>
-            <h5 class='d-flex align-items-center justify-content-end m-0'>
-                <input type="hidden" name="restaurant_id" readonly class=" form-control-plaintext p-0" id="restaurant_id" value="${restaurant.id}">
-            </h5>
-        </li>`
-    )
-    
-    
-    for (let i = 0; i < products.length; i++) {
-        //GET PLATE INFO THROUGH NAME FIND
-        var product = cart.find(product => product.name == products[i]);
-        console.log(product, 'log 5');
-        cart_list.insertAdjacentHTML('beforeend',
-            ` <li class= "list-group-item d-flex justify-content-between lh-condensed" >
-                <div>
-                    <h6 class="my-0 fw-bold text-start">${ product.name }</h6>
-                    <small class=" d-flex align-items-center">
-                        Quantit&aacute;: 
-                        <input type="text" name="plates[${product.id}]" readonly class="form-control-plaintext ps-1" id="count" value="${counts[i]}" data-id='${product.id}'>
-                    </small>
-                </div>
-                <span class="text-muted">&euro;${Math.round(((product.price * counts[i]) + Number.EPSILON) * 100)/100}</span>
-                </li >`
-        )
-    }
-    var total = 0
-    for (let i = 0; i < cart.length; i++) {
-        total = total + parseFloat(cart[i].price)
+var add_el = document.getElementsByClassName('add');
+for (let i = 0; i < add_el.length; i++) {
+    var product = cart.find(product => product.name == products[i]);
+    add_el[i].addEventListener('click', function addQuantity(){
+        console.log(product);
+    })
 
-        
-
-    }
-    cart_list.insertAdjacentHTML('beforeend', 
-        `<li class="list-group-item d-flex justify-content-between align-items-center lh-condensed"><h5 class='m-0'>Totale:</h5>
-            <h5 class='d-flex align-items-center justify-content-end m-0'>
-                &euro;
-                <input type="text" name="total" readonly class=" form-control-plaintext p-0" id="total" value="${Math.round((total + Number.EPSILON) * 100) / 100}">
-            </h5>
-        </li>`
-    )
-} else {
-    cart_list.insertAdjacentHTML('beforeend', `<em class="text-danger">Il carrello e vuoto</em>`)
 }
 
 
 
+function printCart() {
+
+    if (products != '') {
+
+        cart_list.insertAdjacentHTML('afterbegin',
+            `<li class="list-group-item d-flex justify-content-between align-items-center lh-condensed"><h5 class='m-0'>${restaurant.restaurant_name}</h5>
+                <h5 class='d-flex align-items-center justify-content-end m-0'>
+                    <input type="hidden" name="restaurant_id" readonly class=" form-control-plaintext p-0" id="restaurant_id" value="${restaurant.id}">
+                </h5>
+            </li>`
+        )
+        
+        
+        for (let i = 0; i < products.length; i++) {
+
+            //GET PLATE INFO THROUGH NAME FIND
+            var product = cart.find(product => product.name == products[i]);
+            console.log(product, 'log 5');
+            cart_list.insertAdjacentHTML('beforeend',
+                ` <li class= "list-group-item d-flex justify-content-between lh-condensed" >
+                    <div>
+                        <h6 class="my-0 fw-bold text-start">${ product.name }</h6>
+                        <small class=" d-flex align-items-center">
+                            Quantit&aacute;: 
+                            <input type="text" name="plates[${product.id}]" readonly class="form-control-plaintext ps-1" value="${counts[i]}" data-id='${product.id}'>
+                        </small>
+                    </div>
+                    <i class="fa-solid fa-plus add add_${i}"></i>
+                    <span class="text-muted">&euro;${Math.round(((product.price * counts[i]) + Number.EPSILON) * 100)/100}</span>
+                    </li >`
+            )
+
+
+        }
+    
+        var total = 0
+        for (let i = 0; i < cart.length; i++) {
+            total = total + parseFloat(cart[i].price)
+        }
+    
+        cart_list.insertAdjacentHTML('beforeend', 
+            `<li class="list-group-item d-flex justify-content-between align-items-center lh-condensed"><h5 class='m-0'>Totale:</h5>
+                <h5 class='d-flex align-items-center justify-content-end m-0'>
+                    &euro;
+                    <input type="text" name="total" readonly class=" form-control-plaintext p-0" id="total" value="${Math.round((total + Number.EPSILON) * 100) / 100}">
+                </h5>
+            </li>`
+        )
+    } else {
+        cart_list.insertAdjacentHTML('beforeend', `<em class="text-danger">Il carrello e vuoto</em>`)
+    }
+}
+
+//Assign to DOM elemen
 
 
 braintree.client.create({

@@ -120,36 +120,56 @@ var products = Object.keys(countsObject);
 console.log(products, 'log 4'); //GET PLATE COUNTS
 
 var counts = Object.values(countsObject);
-console.log(counts, 'log counts'); //Assign to DOM element
+console.log(counts, 'log counts');
+printCart();
+var add_el = document.getElementsByClassName('add');
 
-if (products != '') {
-  cart_list.insertAdjacentHTML('afterbegin', "<li class=\"list-group-item d-flex justify-content-between align-items-center lh-condensed\"><h5 class='m-0'>".concat(restaurant.restaurant_name, "</h5>\n            <h5 class='d-flex align-items-center justify-content-end m-0'>\n                <input type=\"hidden\" name=\"restaurant_id\" readonly class=\" form-control-plaintext p-0\" id=\"restaurant_id\" value=\"").concat(restaurant.id, "\">\n            </h5>\n        </li>"));
+var _loop = function _loop(i) {
+  product = cart.find(function (product) {
+    return product.name == products[i];
+  });
+  add_el[i].addEventListener('click', function addQuantity() {
+    console.log(product);
+  });
+};
 
-  var _loop = function _loop(i) {
-    //GET PLATE INFO THROUGH NAME FIND
-    product = cart.find(function (product) {
-      return product.name == products[i];
-    });
-    console.log(product, 'log 5');
-    cart_list.insertAdjacentHTML('beforeend', " <li class= \"list-group-item d-flex justify-content-between lh-condensed\" >\n                <div>\n                    <h6 class=\"my-0 fw-bold text-start\">".concat(product.name, "</h6>\n                    <small class=\" d-flex align-items-center\">\n                        Quantit&aacute;: \n                        <input type=\"text\" name=\"plates[").concat(product.id, "]\" readonly class=\"form-control-plaintext ps-1\" id=\"count\" value=\"").concat(counts[i], "\" data-id='").concat(product.id, "'>\n                    </small>\n                </div>\n                <span class=\"text-muted\">&euro;").concat(Math.round((product.price * counts[i] + Number.EPSILON) * 100) / 100, "</span>\n                </li >"));
-  };
+for (var i = 0; i < add_el.length; i++) {
+  var product;
 
-  for (var i = 0; i < products.length; i++) {
-    var product;
-
-    _loop(i);
-  }
-
-  var total = 0;
-
-  for (var _i = 0; _i < cart.length; _i++) {
-    total = total + parseFloat(cart[_i].price);
-  }
-
-  cart_list.insertAdjacentHTML('beforeend', "<li class=\"list-group-item d-flex justify-content-between align-items-center lh-condensed\"><h5 class='m-0'>Totale:</h5>\n            <h5 class='d-flex align-items-center justify-content-end m-0'>\n                &euro;\n                <input type=\"text\" name=\"total\" readonly class=\" form-control-plaintext p-0\" id=\"total\" value=\"".concat(Math.round((total + Number.EPSILON) * 100) / 100, "\">\n            </h5>\n        </li>"));
-} else {
-  cart_list.insertAdjacentHTML('beforeend', "<em class=\"text-danger\">Il carrello e vuoto</em>");
+  _loop(i);
 }
+
+function printCart() {
+  if (products != '') {
+    cart_list.insertAdjacentHTML('afterbegin', "<li class=\"list-group-item d-flex justify-content-between align-items-center lh-condensed\"><h5 class='m-0'>".concat(restaurant.restaurant_name, "</h5>\n                <h5 class='d-flex align-items-center justify-content-end m-0'>\n                    <input type=\"hidden\" name=\"restaurant_id\" readonly class=\" form-control-plaintext p-0\" id=\"restaurant_id\" value=\"").concat(restaurant.id, "\">\n                </h5>\n            </li>"));
+
+    var _loop2 = function _loop2(_i) {
+      //GET PLATE INFO THROUGH NAME FIND
+      product = cart.find(function (product) {
+        return product.name == products[_i];
+      });
+      console.log(product, 'log 5');
+      cart_list.insertAdjacentHTML('beforeend', " <li class= \"list-group-item d-flex justify-content-between lh-condensed\" >\n                    <div>\n                        <h6 class=\"my-0 fw-bold text-start\">".concat(product.name, "</h6>\n                        <small class=\" d-flex align-items-center\">\n                            Quantit&aacute;: \n                            <input type=\"text\" name=\"plates[").concat(product.id, "]\" readonly class=\"form-control-plaintext ps-1\" value=\"").concat(counts[_i], "\" data-id='").concat(product.id, "'>\n                        </small>\n                    </div>\n                    <i class=\"fa-solid fa-plus add add_").concat(_i, "\"></i>\n                    <span class=\"text-muted\">&euro;").concat(Math.round((product.price * counts[_i] + Number.EPSILON) * 100) / 100, "</span>\n                    </li >"));
+    };
+
+    for (var _i = 0; _i < products.length; _i++) {
+      var product;
+
+      _loop2(_i);
+    }
+
+    var total = 0;
+
+    for (var _i2 = 0; _i2 < cart.length; _i2++) {
+      total = total + parseFloat(cart[_i2].price);
+    }
+
+    cart_list.insertAdjacentHTML('beforeend', "<li class=\"list-group-item d-flex justify-content-between align-items-center lh-condensed\"><h5 class='m-0'>Totale:</h5>\n                <h5 class='d-flex align-items-center justify-content-end m-0'>\n                    &euro;\n                    <input type=\"text\" name=\"total\" readonly class=\" form-control-plaintext p-0\" id=\"total\" value=\"".concat(Math.round((total + Number.EPSILON) * 100) / 100, "\">\n                </h5>\n            </li>"));
+  } else {
+    cart_list.insertAdjacentHTML('beforeend', "<em class=\"text-danger\">Il carrello e vuoto</em>");
+  }
+} //Assign to DOM elemen
+
 
 braintree.client.create({
   authorization: token
