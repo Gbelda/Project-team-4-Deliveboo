@@ -21,7 +21,7 @@
                         @endif
                     @else
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link" href="{{ route('admin.index') }}"
+                            <a id="navbarDropdown" class="nav-link text-center brand-color" href="{{ route('admin.index') }}"
                                 aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>

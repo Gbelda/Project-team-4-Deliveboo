@@ -5,21 +5,23 @@
     <h1 class="text-center section_title">PIATTO: {{$plate->name}}</h1>
     <div class="card-group" id="show_plate">
         <div class="d-flex">
-            <div class="right_col m-3">
-                <div class="card_info H_f">
+            <div class="col-6">
+                <img  class="card-img-top" src="{{asset( "/storage/" . $plate->image)}}" alt="">
+            </div>
+            <div class="col-6 right_col">
+                <div class="card_info">
                     <h4 class="card-title">{{$plate->name}}</h4>
-                    <span class="FW">DESCRIZIONE</span>
+                    <span class="">DESCRIZIONE</span>
                     <p class="card-text text_desc">{{$plate->description}}</p>
-                    <span class="FW">INGREDIENTI</span>
+                    <span class="">INGREDIENTI</span>
                     <p class="card-text text_ingredients">{{$plate->ingredients}}</p>
-                    <span class="FW">DISPONIBILITÀ</span>
+                    <span class="">DISPONIBILITÀ</span>
                     <p class="card-text text-ava">{{$plate->available}}</p>
-                    <span class="FW">PREZZO</span>
+                    <span class="">PREZZO</span>
                     <p class="card-text card_price">{{$plate->price}} &euro;</p>
                 </div>
             </div>
         </div>
-        <br>
         @auth
         <div class="actions d-flex justify-content-between">
             <a class="btn" href="{{route('admin.plates.index')}}">Torna all'admin</a>

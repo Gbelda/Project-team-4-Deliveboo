@@ -11286,6 +11286,10 @@ body {
 #nav_guest .nav_guest .tendina {
   background-color: #0a0903;
   border-radius: 0px 10px 20px 20px;
+  position: absolute;
+  inset: 0px auto auto 0px;
+  margin: 0px;
+  transform: translate(0px, 35px) !important;
 }
 #nav_guest .nav_guest .tendina .nav_link {
   text-align: center;
@@ -11306,6 +11310,10 @@ body {
 }
 
 /* /utility */
+.brand-color {
+  color: #ff8200 !important;
+}
+
 /* header */
 header {
   background-image: url("../img/jumbo/jumbo-onda.png");
