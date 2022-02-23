@@ -9,7 +9,10 @@ require("./bootstrap");
 window.Vue = require("vue");
 
 Vue.component("App", require("./App.vue").default);
-//const Home = Vue.component('Home', require('./pages/Home.vue').default);
+const Who_we_are = Vue.component(
+    "Who_we_are",
+    require("./pages/Who_we_are.vue").default
+);
 const Restaurants = Vue.component(
     "Restaurants",
     require("./pages/Restaurants.vue").default
@@ -19,7 +22,6 @@ const Restaurant = Vue.component(
     require("./pages/MenuShow.vue").default
 );
 
-
 const routes = [
     {
         path: "/",
@@ -27,10 +29,15 @@ const routes = [
         component: Restaurants,
     },
     {
-        path: "/restaurants/:id",
+        path: "/restaurants/:slug",
         name: "restaurant",
         component: Restaurant,
-    },,
+    },
+    {
+        path: "/who_we_are",
+        name: "who_we_are",
+        component: Who_we_are,
+    },
 ];
 
 const router = new VueRouter({

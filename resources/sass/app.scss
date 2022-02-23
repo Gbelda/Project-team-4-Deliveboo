@@ -46,9 +46,9 @@
     color: $brand-color;
 }
 
-.fw-bold{
-        text-align: center;
-    }
+.fw-bold {
+    text-align: center;
+}
 /* /utility */
 
 /* header */
@@ -117,6 +117,8 @@ header {
     }
 
     .carousel {
+        width: 90%;
+        margin: 0 auto;
         .carousel-inner {
             .bd-placeholder-img {
                 font-size: 1.125rem;
@@ -316,8 +318,10 @@ header {
 
 /* #site_footer */
 #site_footer {
-    background-color: #777;
+    //background-color: #777;
+    background-image: linear-gradient(to right, $secondary_color, $brand-color);
     padding: 1rem;
+    margin-top: 2rem;
     .row {
         display: flex;
         flex-direction: row;
@@ -340,21 +344,11 @@ header {
                 font-size: 20px;
             }
             .app_store {
-                a {
-                    display: flex;
-                    flex-direction: row;
-                    text-decoration: none;
-                    align-items: center;
-
-                    i {
-                        font-size: 20px;
-                        text-decoration: none;
-                        
-                    }
-                    h6 {
-                        font-size: 15px;
-                        margin: 0 !important;
-                    }
+                text-align: center;
+                img {
+                    width: 25%;
+                    margin: 0.25rem;
+                    text-align: center;
                 }
                 margin-bottom: 2rem;
             }
@@ -409,19 +403,19 @@ header {
     }
 
     .orange_band {
-        margin: 0.7rem!important;
+        margin: 0.7rem !important;
         height: 50px;
     }
 
-    .fw-bold{
+    .fw-bold {
         font-size: 10px;
     }
 
-    .h2_carousel{
+    .h2_carousel {
         font-size: 19px;
     }
 
-    .h3_carousel{
+    .h3_carousel {
         font-size: 16px;
     }
 
@@ -448,22 +442,20 @@ header {
     }
 
     .orange_band {
-        margin: 0.6rem!important;
+        margin: 0.6rem !important;
     }
 
-    .h2_carousel{
+    .h2_carousel {
         font-size: 25px;
     }
 
-    .h3_carousel{
+    .h3_carousel {
         font-size: 17px;
     }
 
     #site_footer .row img {
         width: 80%;
     }
-
-    
 }
 
 @media screen and (min-width: 768px) {
@@ -479,19 +471,19 @@ header {
         width: 50%;
     }
 
-    .h2_carousel{
+    .h2_carousel {
         font-size: 30px;
     }
 
-    .h3_carousel{
+    .h3_carousel {
         font-size: 22px;
     }
 
     .orange_band {
-        margin: 0.5rem!important;
+        margin: 0.5rem !important;
     }
 
-    .fw-bold{
+    .fw-bold {
         font-size: 13px;
     }
 
@@ -517,15 +509,15 @@ header {
         width: 50%;
     }
 
-    .h2_carousel{
+    .h2_carousel {
         font-size: 33px;
     }
 
-    .h3_carousel{
+    .h3_carousel {
         font-size: 27px;
     }
 
-    .fw-bold{
+    .fw-bold {
         font-size: 15px;
     }
 
@@ -547,11 +539,11 @@ header {
         width: 50%;
     }
 
-    .h2_carousel{
+    .h2_carousel {
         font-size: 33px;
     }
 
-    .h3_carousel{
+    .h3_carousel {
         font-size: 27px;
     }
 }
@@ -569,11 +561,11 @@ header {
         width: 50%;
     }
 
-    .h2_carousel{
+    .h2_carousel {
         font-size: 33px;
     }
 
-    .h3_carousel{
+    .h3_carousel {
         font-size: 27px;
     }
 }

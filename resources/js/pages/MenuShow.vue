@@ -20,8 +20,9 @@
             ></button>
           </div>
           <div class="modal-body">
-            L'ordine include articoli di un altro ristorante . Crea un nuovo
-            ordine per aggiungere articoli da {{ restaurant.restaurant_name }}.
+            L'ordine include articoli di un altro ristorante. Crea un nuovo
+            ordine per aggiungere articoli da
+            {{ restaurant.restaurant_name }}.
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-warning" @click="newOrder">
@@ -129,7 +130,10 @@
                   </div>
                 </div>
                 <div class="text-end">
-                  <em class="text-danger" v-if="item != 1"
+                  <em
+                    class="text-danger"
+                    v-if="item != 1"
+                    @click="clearItem(value, item)"
                     >(togli dal carrello)</em
                   >
                 </div>
@@ -165,7 +169,7 @@ import Footer from "../components/Footer.vue";
 export default {
   data() {
     return {
-      restaurant: {},
+      restaurant: [],
       meta: {},
       links: {},
       plates: [],
@@ -195,13 +199,20 @@ export default {
 
   methods: {
     GetRestaurant() {
-      axios.get("/api/restaurants/" + this.$route.params.id).then((resp) => {
+      /* console.log(this.$route.params.slug);
+            console.log(this.$route.params.id);
+            console.log(this.$route.params);*/
+
+      axios.get("/api/restaurants/" + this.$route.params.slug).then((resp) => {
         this.restaurant = resp.data.data;
       });
     },
 
     GetPlates() {
-      axios.get("/api/plates/" + this.$route.params.id).then((resp) => {
+      /* axios.get("/api/plates/" + this.restaurant.id).then((resp) => {
+                this.plates = resp.data.data;
+            }); */
+      axios.get("/api/plates/" + this.$route.params.slug).then((resp) => {
         this.plates = resp.data.data;
       });
     },
@@ -232,8 +243,12 @@ export default {
       this.counts = [];
     },
 
-    clearItem(value) {
-      this.cart.splice(value);
+    clearItem(input, quantity) {
+      const index = this.cart.indexOf(this.findPlate(input));
+      if (index > -1) {
+        this.cart.splice(index, quantity);
+      }
+      this.CountQuantity();
     },
 
     findPlate(input) {

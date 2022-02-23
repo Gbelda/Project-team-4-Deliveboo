@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             $_user->name = $faker->name();
             $_user->email = $faker->email();
             $_user->restaurant_name = $faker->company();
-            $_user->slug = Str::slug($_user->name);
+            $_user->slug = Str::slug($_user->restaurant_name);
             $_user->address = $faker->address();
             $_user->image = 'placeholders/no_cover_image.png';
             $_user->vat = 12345678901;
