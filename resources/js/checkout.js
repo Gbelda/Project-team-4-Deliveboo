@@ -3,53 +3,47 @@ var token = document.getElementById('token').value;
 
 
 var form = document.querySelector('#my-sample-form');
-var submit = document.querySelector('input[type="button"]');
+var submit = document.querySelector('#button-pay');
 
-// GET CART ARRAY
-var cart = JSON.parse(localStorage.getItem("cart"));
-console.log(cart, 'log 1');
 
-var restaurant = JSON.parse(localStorage.getItem('restaurant'))
-console.log(restaurant);
-
-// TARGET DOM CART LIST
-var cart_list = document.getElementById('cart_list');
-console.log(cart_list, 'log 2');
-
-// COUNT PLATE DUPLICATES TO SET COUNTER
-var countsObject = cart.reduce(
-    (acc, value) => ({
-        ...acc,
-        [value.name]: (acc[value.name] || 0) + 1,
-    }),
-    {}
-);
-console.log(countsObject, 'log 3');
- 
-// GET PLATE NAMES
-var products = Object.keys(countsObject)
-console.log(products, 'log 4');
-
-//GET PLATE COUNTS
-var counts = Object.values(countsObject)
-console.log(counts , 'log counts');
 
 printCart();
-
-
-var add_el = document.getElementsByClassName('add');
-for (let i = 0; i < add_el.length; i++) {
-    var product = cart.find(product => product.name == products[i]);
-    add_el[i].addEventListener('click', function addQuantity(){
-        console.log(product);
-    })
-
-}
 
 
 
 function printCart() {
 
+    // GET CART ARRAY
+    var cart = JSON.parse(localStorage.getItem('cart'));
+    console.log(cart, 'log 1');
+
+    var restaurant = JSON.parse(localStorage.getItem('restaurant'))
+    console.log(restaurant);
+
+    // TARGET DOM CART LIST
+    var cart_list = document.getElementById('cart_list');
+    console.log(cart_list, 'log 2');
+
+    // COUNT PLATE DUPLICATES TO SET COUNTER
+    var countsObject = cart.reduce(
+        (acc, value) => ({
+            ...acc,
+            [value.name]: (acc[value.name] || 0) + 1,
+        }),
+        {}
+    );
+    console.log(countsObject, 'log 3');
+
+    // GET PLATE NAMES
+    var products = Object.keys(countsObject)
+    console.log(products, 'log 4');
+
+    //GET PLATE COUNTS
+    var counts = Object.values(countsObject)
+    console.log(counts, 'log counts');
+
+
+    cart_list.innerHTML = '';
     if (products != '') {
 
         cart_list.insertAdjacentHTML('afterbegin',
@@ -73,11 +67,20 @@ function printCart() {
                         <small class=" d-flex align-items-center">
                             Quantit&aacute;: 
                             <input type="text" name="plates[${product.id}]" readonly class="form-control-plaintext ps-1" value="${counts[i]}" data-id='${product.id}'>
-                        </small>
+                                                <div>
+                    <button class="btn reduce reduce_${i}">
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <button class="btn add add_${i}">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
                     </div>
-                    <i class="fa-solid fa-plus add add_${i}"></i>
+                        </small>
+                        
+                    </div>
                     <span class="text-muted">&euro;${Math.round(((product.price * counts[i]) + Number.EPSILON) * 100)/100}</span>
                     </li >`
+                    
             )
 
 
@@ -96,8 +99,37 @@ function printCart() {
                 </h5>
             </li>`
         )
+
     } else {
         cart_list.insertAdjacentHTML('beforeend', `<em class="text-danger">Il carrello e vuoto</em>`)
+    }
+
+    // ADD QUANTITY FUNCTION
+    var add_button = document.getElementsByClassName('add');
+    for (let i = 0; i < products.length; i++) {
+        add_button[i].addEventListener('click', function () {
+            var product = cart.find(product => product.name == products[i]);
+            cart.push(product);
+            console.log(cart);
+            cart.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+            localStorage.setItem('cart', JSON.stringify(cart))
+            printCart();
+        })
+    }
+
+    //REDUCE QUANTITY FUNCTION
+    var reduce_button = document.getElementsByClassName('reduce');
+    for (let i = 0; i < products.length; i++) {
+        reduce_button[i].addEventListener('click', function () {
+        var product = cart.find(product => product.name == products[i]);
+        var index = cart.indexOf(product)
+            if (index > -1) {
+                cart.splice(index, 1);
+            }
+            localStorage.setItem('cart', JSON.stringify(cart))
+            printCart();
+        })
+        
     }
 }
 
