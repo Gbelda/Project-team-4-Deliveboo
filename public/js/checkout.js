@@ -131,7 +131,7 @@ if (products != '') {
       return product.name == products[i];
     });
     console.log(product, 'log 5');
-    cart_list.insertAdjacentHTML('beforeend', " <li class= \"list-group-item d-flex justify-content-between lh-condensed\" >\n                <div>\n                    <h6 class=\"my-0 fw-bold\">".concat(product.name, "</h6>\n                    <small class=\" d-flex align-items-center\">\n                        Quantit&aacute;: \n                        <input type=\"text\" name=\"plates[").concat(product.id, "]\" readonly class=\"form-control-plaintext ps-1\" id=\"count\" value=\"").concat(counts[i], "\" data-id='").concat(product.id, "'>\n                    </small>\n                </div>\n                <span class=\"text-muted\">&euro;").concat(Math.round((product.price * counts[i] + Number.EPSILON) * 100) / 100, "</span>\n                </li >"));
+    cart_list.insertAdjacentHTML('beforeend', " <li class= \"list-group-item d-flex justify-content-between lh-condensed\" >\n                <div>\n                    <h6 class=\"my-0 fw-bold text-start\">".concat(product.name, "</h6>\n                    <small class=\" d-flex align-items-center\">\n                        Quantit&aacute;: \n                        <input type=\"text\" name=\"plates[").concat(product.id, "]\" readonly class=\"form-control-plaintext ps-1\" id=\"count\" value=\"").concat(counts[i], "\" data-id='").concat(product.id, "'>\n                    </small>\n                </div>\n                <span class=\"text-muted\">&euro;").concat(Math.round((product.price * counts[i] + Number.EPSILON) * 100) / 100, "</span>\n                </li >"));
   };
 
   for (var i = 0; i < products.length; i++) {
@@ -291,7 +291,7 @@ braintree.client.create({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\esercitazioni\esercitazione-finale\Project-team-4-Deliveboo\resources\js\checkout.js */"./resources/js/checkout.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\js\checkout.js */"./resources/js/checkout.js");
 
 
 /***/ })
