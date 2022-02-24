@@ -150,7 +150,7 @@ var massPopChart = new Chart(myChart, {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\esercitazioni\esercitazione-finale\Project-team-4-Deliveboo\resources\js\chart.js */"./resources/js/chart.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\js\chart.js */"./resources/js/chart.js");
 
 
 /***/ })
