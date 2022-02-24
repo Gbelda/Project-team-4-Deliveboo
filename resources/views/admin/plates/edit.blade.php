@@ -1,8 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-
-
     @include('partials.errors')
 
     <div class="container" id="edit">
@@ -14,8 +12,8 @@
             @method('PUT')
             <div class="mb-3">
                 <label for="name " class="title_label form-label @error('name') is_invalid @enderror">Nome</label>
-                <input type="text" name="name" id="name" class="form-control"
-                    aria-describedby="nameHelper" value="{{ $plate->name }}" required>
+                <input type="text" name="name" id="name" class="form-control" aria-describedby="nameHelper"
+                    value="{{ $plate->name }}" required>
                 <small id="nameHelper" class="text-small">Inserire il nome del piatto</small>
                 @error('name')
                     <div class="alert alert-danger">{{ $message }}</div>
@@ -23,11 +21,12 @@
             </div>
 
             <div class="mb-3">
-                <label for="image " class="title_label pt-2 form-label @error('image') is_invalid @enderror">Immagine Piatto</label>
+                <label for="image " class="title_label pt-2 form-label @error('image') is_invalid @enderror">Immagine
+                    Piatto</label>
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <img  width="100" src="{{ asset('storage/' . $plate->image) }}" alt="">
+                            <img width="100" src="{{ asset('storage/' . $plate->image) }}" alt="">
                         </div>
                     </div>
                 </div>
@@ -40,7 +39,8 @@
             </div>
 
             <div class="mb-3">
-                <label for="ingredients " class="title_label form-label @error('ingredients') is_invalid @enderror">Ingredienti</label>
+                <label for="ingredients "
+                    class="title_label form-label @error('ingredients') is_invalid @enderror">Ingredienti</label>
                 <input type="text" name="ingredients" id="ingredients" class="form-control" placeholder=""
                     aria-describedby="ingredientsHelper" value="{{ $plate->ingredients }}">
                 <small id="ingredientsHelper" class="text-small">Scrivi gli ingredienti</small>
@@ -61,7 +61,8 @@
 
 
             <div class="mb-3">
-                <label for="description " class="title_label form-label @error('description') is_invalid @enderror">Descrizione</label>
+                <label for="description "
+                    class="title_label form-label @error('description') is_invalid @enderror">Descrizione</label>
                 <textarea class="form-control" name="description" id="description"
                     rows="5">{{ $plate->description }}</textarea>
                 @error('description')
@@ -74,18 +75,18 @@
                     Disponibile
                 </h6>
                 <div class="form-check">
-                    
+
                     <input class="form-check-input" type="radio" name="available" id="available1" value="1"
                         {{ $plate->available === 1 ? 'checked' : '' }}>
                     <label class="form-check-label" for="available1">
-                        si
+                        Disponibile
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="available" id="available2" value="0"
                         {{ $plate->available === 0 ? 'checked' : '' }}>
                     <label class="form-check-label" for="available2" required>
-                        No
+                        Non Disponibile
                     </label>
                 </div>
 
@@ -97,6 +98,4 @@
             <button type="submit" class="btn btn_save">Save</button>
         </form>
     </div>
-
-
 @endsection

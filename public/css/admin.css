@@ -11258,6 +11258,35 @@ textarea.form-control-lg {
   color: #ff8200;
 }
 
+.dropdown-menu {
+  min-width: 69px !important;
+  width: 10% !important;
+  background-color: #0a0903 !important;
+  border: none !important;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  color: #ff8200 !important;
+  background-color: #0a0903 !important;
+}
+
+.dropdown-item {
+  color: #ff8200 !important;
+}
+
+.bg-dark {
+  --bs-bg-opacity: 1!important;
+  background-color: #0a0903 !important;
+}
+
+.navbar-dark .navbar-brand {
+  color: #ff8200 !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #ff8200 !important;
+}
+
 #contenuto_admin {
   height: 93vh;
 }
@@ -11339,12 +11368,17 @@ textarea.form-control-lg {
   border-radius: 0px 0px 10px 10px;
 }
 
+.cont_btn_add_plate {
+  width: 70%;
+  margin: auto;
+}
+
 .btn_add_plate {
   background-color: #0a0903;
   color: #ff8200;
   width: 100%;
   border-radius: 0px 0px 20px 20px;
-  height: 7%;
+  padding: 10px 0;
 }
 .btn_add_plate:hover {
   background-color: #ff8200;
@@ -11357,7 +11391,8 @@ textarea.form-control-lg {
 }
 
 .contenuto_griglie, .container {
-  height: 100%;
+  height: 98%;
+  margin-bottom: 1%;
 }
 .contenuto_griglie .dash_container, .container .dash_container {
   height: 86%;
@@ -11365,7 +11400,7 @@ textarea.form-control-lg {
 }
 
 .show_btn {
-  border-bottom: 1px solid #ff8200;
+  border: 1px solid #ff8200;
   color: #ff8200;
 }
 
@@ -11484,3 +11519,66 @@ textarea.form-control-lg {
 .FW {
   font-weight: bold;
 }
+
+/* media_screen */
+@media screen and (min-width: 390px) {
+  #contenuto_admin .row .contenuto_griglie {
+    width: 86%;
+    padding: 1rem;
+  }
+
+  #contenuto_admin .row .side_bar {
+    padding: 1rem;
+    width: 14%;
+    height: 100%;
+  }
+}
+@media screen and (min-width: 576px) {
+  #contenuto_admin .row .contenuto_griglie {
+    width: 89%;
+    padding: 1rem;
+  }
+
+  #contenuto_admin .row .side_bar {
+    padding: 1rem;
+    width: 11%;
+    height: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  #contenuto_admin .row .contenuto_griglie {
+    width: 91%;
+    padding: 1rem;
+  }
+
+  #contenuto_admin .row .side_bar {
+    padding: 1rem;
+    width: 9%;
+    height: 100%;
+  }
+}
+@media screen and (min-width: 992px) {
+  #contenuto_admin .row .contenuto_griglie {
+    width: 92%;
+    padding: 1rem;
+  }
+
+  #contenuto_admin .row .side_bar {
+    padding: 1rem;
+    width: 8%;
+    height: 100%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #contenuto_admin .row .contenuto_griglie {
+    width: 93%;
+    padding: 1rem;
+  }
+
+  #contenuto_admin .row .side_bar {
+    padding: 1rem;
+    width: 7%;
+    height: 100%;
+  }
+}
+/* /media_screen */
