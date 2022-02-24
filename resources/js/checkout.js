@@ -1,3 +1,5 @@
+const { remove } = require("lodash");
+
 //GET TOKEN FROM COOKIES
 function getCookie(name) {
     function escape(s) { return s.replace(/([.*+?\^$(){}|\[\]\/\\])/g, '\\$1'); }
@@ -46,10 +48,12 @@ function printCart() {
     if (products != '') {
 
         cart_list.insertAdjacentHTML('afterbegin',
-            `<li class="list-group-item d-flex justify-content-between align-items-center lh-condensed"><h5 class='m-0'>${restaurant.restaurant_name}</h5>
-                <h5 class='d-flex align-items-center justify-content-end m-0'>
-                    <input type="hidden" name="restaurant_id" readonly class=" form-control-plaintext p-0" id="restaurant_id" value="${restaurant.id}">
-                </h5>
+            `<li class="list-group-item d-flex justify-content-between align-items-center lh-condensed">
+                <h5 class='m-0'>${restaurant.restaurant_name}</h5>
+                <input type="hidden" name="restaurant_id" readonly class=" form-control-plaintext p-0" id="restaurant_id" value="${restaurant.id}">
+                <div class="btn" id='remove_all'>
+                    <i class="fa-solid fa-trash-can"></i>
+                </div>
             </li>`
         )
         
@@ -59,6 +63,7 @@ function printCart() {
             //GET PLATE INFO THROUGH NAME FIND
             var product = cart.find(product => product.name == products[i]);
 
+            
             cart_list.insertAdjacentHTML('beforeend',
                 ` <li class= "list-group-item d-flex justify-content-between lh-condensed" >
                     <div>
@@ -121,34 +126,47 @@ function printCart() {
     }
 
     //REDUCE QUANTITY FUNCTION
-    var reduce_button = document.getElementsByClassName('reduce');
-    for (let i = 0; i < products.length; i++) {
-        reduce_button[i].addEventListener('click', function () {
-        var product = cart.find(product => product.name == products[i]);
-        var index = cart.indexOf(product)
-            if (index > -1) {
-                cart.splice(index, 1);
-            }
-            localStorage.setItem('cart', JSON.stringify(cart))
-            printCart();
-        })
-        
+    if (cart!='') {
+        var reduce_button = document.getElementsByClassName('reduce');
+        for (let i = 0; i < products.length; i++) {
+            reduce_button[i].addEventListener('click', function () {
+            var product = cart.find(product => product.name == products[i]);
+            var index = cart.indexOf(product)
+                if (index > -1) {
+                    cart.splice(index, 1);
+                }
+                localStorage.setItem('cart', JSON.stringify(cart))
+                printCart();
+            })
+            
+        }
     }
 
     //REMOVE PRODUCT
-    var clear_button = document.getElementsByClassName('clear');
-    for (let i = 0; i < products.length; i++) {
-        clear_button[i].addEventListener('click', function () {
-            var product = cart.find(product => product.name == products[i]);
-            var index = cart.indexOf(product)
-            if (index > -1) {
-                cart.splice(index, counts[i]);
-            }
+    if (cart != '') {
+        var clear_button = document.getElementsByClassName('clear');
+        for (let i = 0; i < products.length; i++) {
+            clear_button[i].addEventListener('click', function () {
+                var product = cart.find(product => product.name == products[i]);
+                var index = cart.indexOf(product)
+                if (index > -1) {
+                    cart.splice(index, counts[i]);
+                }
+                localStorage.setItem('cart', JSON.stringify(cart))
+                printCart();
+            })
+        }
+    }
+
+    //REMOVE ALL
+    if (cart!='') {
+        var remove_button = document.getElementById('remove_all')
+        remove_button.addEventListener('click', function () {
+            cart = [];
             localStorage.setItem('cart', JSON.stringify(cart))
             printCart();
         })
     }
-    
 }
 
 
