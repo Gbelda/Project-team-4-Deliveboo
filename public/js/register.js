@@ -119,6 +119,7 @@ window.onload = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\js\register.js */"./resources/js/register.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\Laravel\Laravel-deliveboo\resources\js\register.js */"./resources/js/register.js");
 
 
 /***/ })
