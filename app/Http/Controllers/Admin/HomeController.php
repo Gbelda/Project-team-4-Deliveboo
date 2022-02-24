@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 
 class HomeController extends Controller
 {
@@ -28,10 +30,13 @@ class HomeController extends Controller
         $user = Auth::user();
         return view('admin.index', compact('user'));
     }
-    public function stats()
+    public function statistics()
     {
-        $user = Auth::user();
-        $orders = Auth::user()->orders()->orderByDesc('created_at')->get();
-        return view('admin.stats', compact('user', 'orders'));
+        /* 
+            $user = Auth::user();
+            $orders = Auth::user()->orders()->orderByDesc('created_at')->get();
+            return view('admin.statistics', compact('user', 'orders')); 
+        */
+        return view('admin.statistics');
     }
 }

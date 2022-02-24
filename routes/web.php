@@ -28,14 +28,14 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->
     Route::get('/', 'HomeController@index')->name('index');
     Route::resource('plates', PlateController::class);
     Route::resource('orders', OrderController::class);
-    Route::get('stats', 'HomeController@stats')->name('stats');
+    Route::get('statistics', 'HomeController@statistics')->name('statistics');
 });
 
 
 
 Route::get('/checkout', 'CheckoutController@index');
 Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
-Route::get('/paysuccess', function(){
+Route::get('/paysuccess', function () {
     return view('guest.paysuccess');
 })->name('guest.paysuccess');
 
@@ -44,4 +44,3 @@ Route::get('/{any}', function () {
 
     return view('welcome');
 })->where('any', '.*');
-
