@@ -18,7 +18,7 @@ let massPopChart = new Chart(myChart, {
         ],
         datasets: [
             {
-                label: "Population",
+                label: "Ordini",
                 data: [617594, 181045, 153060, 106519, 105162, 95072],
                 //backgroundColor:'green',
                 backgroundColor: [
@@ -40,7 +40,7 @@ let massPopChart = new Chart(myChart, {
     options: {
         title: {
             display: true,
-            text: "Largest Cities In Massachusetts",
+            text: "Le Statistiche dei tuoi Ordini",
             fontSize: 25,
         },
         legend: {
