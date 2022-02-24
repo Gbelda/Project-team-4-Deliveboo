@@ -73,13 +73,6 @@
                     </tr>
                 @endforeach
             </tbody>
-            <tfoot>
-                @foreach ($orders as $order)
-                    <tr>
-                        <th>{{ $order->total }} €</th>
-                    </tr>
-                @endforeach
-            </tfoot>
         </table>
     </div>
 @endsection
