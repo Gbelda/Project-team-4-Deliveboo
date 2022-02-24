@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class OrderPlaced extends Mailable
+class GuestOrderMailable extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -31,8 +31,6 @@ class OrderPlaced extends Mailable
      */
     public function build()
     {
-        return $this->from('admin@boolean.com')
-        ->view('emails.orderPlaced');
-        
+        return $this->from('noreply@deliveboo.com')->markdown('emails.guestOrderEmail')->subject('Ordine #' . $this->order->id);
     }
 }

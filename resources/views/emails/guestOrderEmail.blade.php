@@ -1,14 +1,9 @@
-
-
 @component('mail::message')
-# Hai ricevuto un nuovo ordine!
+# Abbiamo ricevuto il tuo ordine!
 
-Nome: {{ $order->client_name }} {{ $order->client_lastname }},<br>
-Indirizzo: {{ $order->client_address }} <br>
-Indirizzo e-mail: {{ $order->client_email }} <br>
 <br>
 <hr>
-# Ordine:<br>
+Riepilogo del Ordine:<br>
 @foreach ($order->plates as $plate)
 Piatto: {{ $plate->name }} <br>
 Prezzo: &euro;{{ $plate->price }} <br>
@@ -19,6 +14,6 @@ Prezzo Totale: &euro;{{ $order->total }}
 
 <br>
 <br>
-Grazie,<br>
+Grazie per aver ordinato da noi!<br>
 {{ config('app.name') }}
 @endcomponent
