@@ -275,11 +275,13 @@
                     </div>
                     <div
                       class="food-card-artist-name"
-                      v-for="(category, index) in restaurant.categories"
-                      :key="restaurant.slug + category.id"
                     >
+                    <span
+                    v-for="(category, index) in restaurant.categories"
+                      :key="restaurant.slug + category.id">
                       {{ category.name }}
                       {{ index != restaurant.categories.length - 1 ? "|" : "" }}
+                    </span>
                     </div>
                     <div class="food-card-about">
                       {{ restaurant.address }}
@@ -591,6 +593,7 @@ $black: #0a0903;
   }
   .food-card-artist-name {
     letter-spacing: 2px;
+    width: 80%;
   }
   .food-card-food-name > * {
     margin-top: 32px;

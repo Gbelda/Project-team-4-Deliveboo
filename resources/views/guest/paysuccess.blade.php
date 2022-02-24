@@ -3,27 +3,109 @@
     <script src="{{ asset('js/transaction.js') }}" defer></script>
 @endsection
 @section('page_css')
-    <link href="{{ asset('css/checkout.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/successp.css') }}" rel="stylesheet">
 @endsection
 
 @section('app')
-    <div class="px-4 pt-5 my-5 text-center border-bottom">
-        <h1 class="display-6 fw-bold text-success">Pagamento avvenuta con successo!</h1>
-        <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4">Il tuo ordine &eacute; stato confermato. Riceverai a breve una conferma dell'ordine
-                tramite email.</p>
-            <p></p>
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-                <a href="{{ url('/') }}">
-                    <button type="button" id="back_home" class="btn btn-outline-secondary btn-lg px-4">Torna alla pagina principale</button>
-                </a>
+    
+<div id="bike">
+    <div class="bike">
+        <div class="bike__cloud-1"></div>
+        <div class="bike__cloud-2"></div>
+        <div class="bike__cloud-3"></div>
+        <div class="bike__bike">
+          <div class="bike__wheel">
+            <div class="bike__needle"></div>
+            <div class="bike__needle"></div>
+            <div class="bike__needle"></div>
+          </div>
+          <div class="bike__wheel">
+            <div class="bike__needle"></div>
+            <div class="bike__needle"></div>
+            <div class="bike__needle"></div>    
+          </div>
+          <div class="bike__down-tube"></div>
+          <div class="bike__tubes">
+            <div class="bike__chain"></div>
+            <div class="bike__seat-stays"></div>
+            <div class="bike__chain-stays"></div>
+            <div class="bike__seat-tube"></div>
+            <div class="bike__star">
+              <div class="bike__pedal"></div>    
             </div>
+            <div class="bike__seat"></div>    
+          </div>
+          <div class="bike__top-tube"></div>
+          <div class="bike__fo"></div>
+          <div class="bike__head-tube"></div>
+          <div class="bike__helm"></div>
+          <div class="bike__lock"></div>    
         </div>
-        <div>
-            <div class="container px-5">
-                <img src="{{ asset('/img/jumbo/inarrivo.png') }}" class="img-fluid border rounded-3 shadow-lg mb-4"
-                    alt="Example image" width="700" height="500" loading="lazy">
+        <div class="bike__man">
+          <div class="bike__arm">
+            <div class="bike__forearm">
+              <div class="bike__hand"></div>    
+            </div>
+            <div class="bike__sleeve"></div>    
+          </div>
+          <div class="bike__back-leg">
+            <div class="bike__shin">
+              <div class="bike__skin"></div>
+              <div class="bike__ked"></div>    
+            </div>    
+          </div>
+          <div class="bike__butt"></div>
+          <div class="bike__front-leg">
+            <div class="bike__shin">
+              <div class="bike__skin"></div>
+              <div class="bike__ked"></div>    
+            </div>    
+          </div>
+          <div class="bike__shirt">
+            <div class="bike__collar"></div>    
+          </div>
+          <div class="bike__arm">
+            <div class="bike__forearm">
+              <div class="bike__hand"></div>    
+            </div>
+            <div class="bike__sleeve"></div>    
+          </div>
+          <div class="bike__head">
+            <div class="bike__eye"></div>
+            <div class="bike__eye"></div>
+            <div class="bike__whisker"></div>
+            <div class="bike__nose"></div>
+            <div class="bike__month"></div>
+            <div class="bike__whisker"></div>
+            <div class="bike__cap">
+              <div class="bike__peak">
+                <div class="bike__peak-parts"></div>   
+              </div>    
+            </div>
+          </div>
+        </div>    
+    </div>
+    <div id="contenuto">
+        <div class="container">
+            <div class="d-flex flex-wrap">
+                <div class="col-lg-6"></div>
+                <div class="col-lg-6">
+                    <h1 class="title_success text-center brand-color">
+                        PAGAMENTO AVVENUTO CON SUCCESSO
+                    </h1>
+                    <p class="text-center parag">
+                        Il tuo ordine stato confermato. <br>
+                        Riceverai a breve una conferma dell'ordine
+                        tramite email.
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <a href="{{ url('/') }}">
+                            <button type="button " id="back_home" class="btn btn_back btn-lg p-3">Torna alla pagina principale</button>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
 @endsection

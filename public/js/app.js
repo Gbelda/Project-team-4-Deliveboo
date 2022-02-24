@@ -5883,6 +5883,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -11046,7 +11048,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".card img {\n  min-height: 245px;\n}\n#home .background_cat {\n  padding: 1rem 0;\n  margin: 1rem 0;\n  margin-bottom: 4rem;\n  display: flex;\n  justify-content: center;\n}\n#home .background_cat .orange_band {\n  background-color: #ffc100;\n  margin: 0.5rem;\n  border-radius: 20px;\n  width: 9.0909090909%;\n}\n#home .background_cat .orange_band .form-check-input {\n  margin-left: -1em;\n}\n#home .background_cat .orange_band .form-check-input:hover {\n  cursor: pointer;\n}\n#home .background_cat .orange_band .colonna {\n  align-items: center;\n  margin-left: -1rem;\n}\n#home .background_cat .orange_band .colonna:focus .content_check {\n  display: block;\n}\n#home .background_cat .orange_band .check_square {\n  border: none;\n}\n#home .background_cat .orange_band .check_square:focus {\n  box-shadow: none;\n}\n#home .background_cat .orange_band .check_square:checked {\n  background-color: #ff8200;\n}\n#home .background_cat .orange_band .content_check {\n  display: none;\n}\n#home .background_cat .orange_band .icon_cat {\n  width: 3rem;\n}\n#home .background_cat .orange_band .icon_cat:hover {\n  cursor: pointer;\n}\n#home .background_cat .orange_band .icon_cat:hover {\n  cursor: pointer;\n  transform: scale(120%);\n  transition: 0.3s;\n}\n#home .contenitore_bordi {\n  border-top: 2px solid #ffc100;\n  border-bottom: 2px solid #ffc100;\n}\n#home #router_ristoranti {\n  text-decoration: none;\n  color: #0a0903;\n}\n#home .food-card:hover {\n  transform: scale(105%);\n  transition: all 0.3s ease-in-out;\n}\n#home .food-card-food-properties:hover {\n  box-shadow: 1px 3px 3px 0px #0a0903;\n  cursor: pointer;\n  transition: all 0.3s ease-in-out;\n}\n#home .prev {\n  color: #0a0903 !important;\n}\n#home .current {\n  background-color: #ff8200;\n}\n#home .next {\n  color: #ff8200;\n  font-weight: bold;\n}\n#home .current-off {\n  background-color: transparent;\n}\n#home .food-card {\n  position: relative;\n  width: 400px;\n  height: 350px;\n  background: transparent;\n  font-family: \"Montserrat\", sans-serif;\n}\n#home .food-card-image {\n  position: relative;\n  top: 20%;\n  left: 5%;\n  width: 40%;\n  height: 40%;\n  border-radius: 5px;\n  overflow: hidden;\n  background: #ffffff45;\n  box-shadow: -4px 9px 13px 1px #00000045;\n  z-index: 5;\n}\n#home .food-card-image > img {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  height: 100%;\n  width: auto;\n}\n#home .food-card-content {\n  position: absolute;\n  bottom: 20%;\n  right: 0;\n  width: 80%;\n  height: 70%;\n  background: white;\n  padding: 20px;\n  border-radius: 15px;\n  box-shadow: 5px 5px 10px 2px #00000045;\n  background: #ffc100;\n}\n#home .food-card-food-name,\n#home .food-card-artist-name {\n  position: relative;\n  left: 30%;\n  color: #0a0903;\n  padding-left: 5px;\n  font-size: 100%;\n}\n#home .food-card-artist-name {\n  letter-spacing: 2px;\n}\n#home .food-card-food-name > * {\n  margin-top: 32px;\n  text-overflow: ellipsis;\n  font-size: 1.5rem;\n  width: 176px;\n}\n#home .food-card-about {\n  width: 87%;\n  position: absolute;\n  font-size: 12px;\n  font-family: \"Montserrat\", sans-serif;\n  opacity: 0.56;\n  top: 77%;\n}\n#home .about-shadow {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  width: 100%;\n  height: 35px;\n  z-index: 2;\n}\n#home .food-card-food-properties {\n  position: absolute;\n  left: 65%;\n  bottom: -20%;\n  transform: translate(-50%, -105%);\n  z-index: 101;\n  border-radius: 15px;\n  padding: 5px 10px;\n  color: #0a0903;\n  text-align: center;\n  background: #ff8200;\n  width: inherit;\n  box-shadow: 2px 4px 12px 0px #00000045;\n}\n#home .food-card-food-properties > div {\n  border-right: 1px solid var(--card-properties-text-color);\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  padding: 0 10px;\n  display: inline-block;\n}\n#home .food-card-food-properties > div:last-child {\n  border-right: none;\n}\n#home .food-card-food-properties > div > i {\n  font-size: 16px;\n  margin-bottom: 5px;\n}\n#home .food-card-food-properties > div > p {\n  font-size: 10px;\n  margin: 0;\n}\n#infografica .title_info {\n  margin: 5rem 0;\n}\n#infografica .title_info h1 {\n  font-size: 3rem;\n}\n#infografica .title_info .line {\n  width: 20%;\n  background: #ff8200;\n  height: 0.15rem;\n  border-radius: 20px;\n  margin: auto;\n}\n#infografica .title_info .brand-color {\n  color: #ff8200;\n}\n#infografica .row {\n  justify-content: center;\n}\n#infografica .king {\n  border-left: 2px solid #ff8200;\n  border-right: 2px solid #ff8200;\n}\n#infografica h2 {\n  color: #ff8200;\n  font-weight: bold;\n}\n#infografica p {\n  width: 60%;\n  text-align: center;\n  padding-bottom: 1rem;\n  color: #0a0903;\n  font-weight: 800;\n}\n#infografica img {\n  width: 50%;\n}\n.title_paragraph {\n  text-align: center;\n  padding-top: 2rem;\n}\n.title_paragraph .line {\n  height: 3px;\n  background-color: #0a0903;\n  width: 20%;\n  margin: auto;\n}", ""]);
+exports.push([module.i, ".card img {\n  min-height: 245px;\n}\n#home .background_cat {\n  padding: 1rem 0;\n  margin: 1rem 0;\n  margin-bottom: 4rem;\n  display: flex;\n  justify-content: center;\n}\n#home .background_cat .orange_band {\n  background-color: #ffc100;\n  margin: 0.5rem;\n  border-radius: 20px;\n  width: 9.0909090909%;\n}\n#home .background_cat .orange_band .form-check-input {\n  margin-left: -1em;\n}\n#home .background_cat .orange_band .form-check-input:hover {\n  cursor: pointer;\n}\n#home .background_cat .orange_band .colonna {\n  align-items: center;\n  margin-left: -1rem;\n}\n#home .background_cat .orange_band .colonna:focus .content_check {\n  display: block;\n}\n#home .background_cat .orange_band .check_square {\n  border: none;\n}\n#home .background_cat .orange_band .check_square:focus {\n  box-shadow: none;\n}\n#home .background_cat .orange_band .check_square:checked {\n  background-color: #ff8200;\n}\n#home .background_cat .orange_band .content_check {\n  display: none;\n}\n#home .background_cat .orange_band .icon_cat {\n  width: 3rem;\n}\n#home .background_cat .orange_band .icon_cat:hover {\n  cursor: pointer;\n}\n#home .background_cat .orange_band .icon_cat:hover {\n  cursor: pointer;\n  transform: scale(120%);\n  transition: 0.3s;\n}\n#home .contenitore_bordi {\n  border-top: 2px solid #ffc100;\n  border-bottom: 2px solid #ffc100;\n}\n#home #router_ristoranti {\n  text-decoration: none;\n  color: #0a0903;\n}\n#home .food-card:hover {\n  transform: scale(105%);\n  transition: all 0.3s ease-in-out;\n}\n#home .food-card-food-properties:hover {\n  box-shadow: 1px 3px 3px 0px #0a0903;\n  cursor: pointer;\n  transition: all 0.3s ease-in-out;\n}\n#home .prev {\n  color: #0a0903 !important;\n}\n#home .current {\n  background-color: #ff8200;\n}\n#home .next {\n  color: #ff8200;\n  font-weight: bold;\n}\n#home .current-off {\n  background-color: transparent;\n}\n#home .food-card {\n  position: relative;\n  width: 400px;\n  height: 350px;\n  background: transparent;\n  font-family: \"Montserrat\", sans-serif;\n}\n#home .food-card-image {\n  position: relative;\n  top: 20%;\n  left: 5%;\n  width: 40%;\n  height: 40%;\n  border-radius: 5px;\n  overflow: hidden;\n  background: #ffffff45;\n  box-shadow: -4px 9px 13px 1px #00000045;\n  z-index: 5;\n}\n#home .food-card-image > img {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  height: 100%;\n  width: auto;\n}\n#home .food-card-content {\n  position: absolute;\n  bottom: 20%;\n  right: 0;\n  width: 80%;\n  height: 70%;\n  background: white;\n  padding: 20px;\n  border-radius: 15px;\n  box-shadow: 5px 5px 10px 2px #00000045;\n  background: #ffc100;\n}\n#home .food-card-food-name,\n#home .food-card-artist-name {\n  position: relative;\n  left: 30%;\n  color: #0a0903;\n  padding-left: 5px;\n  font-size: 100%;\n}\n#home .food-card-artist-name {\n  letter-spacing: 2px;\n  width: 80%;\n}\n#home .food-card-food-name > * {\n  margin-top: 32px;\n  text-overflow: ellipsis;\n  font-size: 1.5rem;\n  width: 176px;\n}\n#home .food-card-about {\n  width: 87%;\n  position: absolute;\n  font-size: 12px;\n  font-family: \"Montserrat\", sans-serif;\n  opacity: 0.56;\n  top: 77%;\n}\n#home .about-shadow {\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  width: 100%;\n  height: 35px;\n  z-index: 2;\n}\n#home .food-card-food-properties {\n  position: absolute;\n  left: 65%;\n  bottom: -20%;\n  transform: translate(-50%, -105%);\n  z-index: 101;\n  border-radius: 15px;\n  padding: 5px 10px;\n  color: #0a0903;\n  text-align: center;\n  background: #ff8200;\n  width: inherit;\n  box-shadow: 2px 4px 12px 0px #00000045;\n}\n#home .food-card-food-properties > div {\n  border-right: 1px solid var(--card-properties-text-color);\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  padding: 0 10px;\n  display: inline-block;\n}\n#home .food-card-food-properties > div:last-child {\n  border-right: none;\n}\n#home .food-card-food-properties > div > i {\n  font-size: 16px;\n  margin-bottom: 5px;\n}\n#home .food-card-food-properties > div > p {\n  font-size: 10px;\n  margin: 0;\n}\n#infografica .title_info {\n  margin: 5rem 0;\n}\n#infografica .title_info h1 {\n  font-size: 3rem;\n}\n#infografica .title_info .line {\n  width: 20%;\n  background: #ff8200;\n  height: 0.15rem;\n  border-radius: 20px;\n  margin: auto;\n}\n#infografica .title_info .brand-color {\n  color: #ff8200;\n}\n#infografica .row {\n  justify-content: center;\n}\n#infografica .king {\n  border-left: 2px solid #ff8200;\n  border-right: 2px solid #ff8200;\n}\n#infografica h2 {\n  color: #ff8200;\n  font-weight: bold;\n}\n#infografica p {\n  width: 60%;\n  text-align: center;\n  padding-bottom: 1rem;\n  color: #0a0903;\n  font-weight: 800;\n}\n#infografica img {\n  width: 50%;\n}\n.title_paragraph {\n  text-align: center;\n  padding-top: 2rem;\n}\n.title_paragraph .line {\n  height: 3px;\n  background-color: #0a0903;\n  width: 20%;\n  margin: auto;\n}", ""]);
 
 // exports
 
@@ -43843,27 +43845,24 @@ var render = function () {
                           }),
                         ]),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "food-card-content" },
-                          [
-                            _c("div", { staticClass: "food-card-food-name" }, [
-                              _c("h1", [
-                                _c("strong", [
-                                  _vm._v(_vm._s(restaurant.restaurant_name)),
-                                ]),
+                        _c("div", { staticClass: "food-card-content" }, [
+                          _c("div", { staticClass: "food-card-food-name" }, [
+                            _c("h1", [
+                              _c("strong", [
+                                _vm._v(_vm._s(restaurant.restaurant_name)),
                               ]),
                             ]),
-                            _vm._v(" "),
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "food-card-artist-name" },
                             _vm._l(
                               restaurant.categories,
                               function (category, index) {
                                 return _c(
-                                  "div",
-                                  {
-                                    key: restaurant.slug + category.id,
-                                    staticClass: "food-card-artist-name",
-                                  },
+                                  "span",
+                                  { key: restaurant.slug + category.id },
                                   [
                                     _vm._v(
                                       "\n                    " +
@@ -43881,36 +43880,36 @@ var render = function () {
                                 )
                               }
                             ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "food-card-about" }, [
-                              _vm._v(
-                                "\n                    " +
-                                  _vm._s(restaurant.address) +
-                                  "\n                    "
-                              ),
-                              _c("div", { staticClass: "about-shadow" }),
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "food-card-food-properties" },
-                              [
-                                _c(
-                                  "router-link",
-                                  {
-                                    attrs: {
-                                      to: "/restaurants/" + restaurant.slug,
-                                      id: "router_ristoranti",
-                                    },
-                                  },
-                                  [_c("strong", [_vm._v("VEDI RISTORANTE")])]
-                                ),
-                              ],
-                              1
+                            0
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "food-card-about" }, [
+                            _vm._v(
+                              "\n                    " +
+                                _vm._s(restaurant.address) +
+                                "\n                    "
                             ),
-                          ],
-                          2
-                        ),
+                            _c("div", { staticClass: "about-shadow" }),
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "food-card-food-properties" },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  attrs: {
+                                    to: "/restaurants/" + restaurant.slug,
+                                    id: "router_ristoranti",
+                                  },
+                                },
+                                [_c("strong", [_vm._v("VEDI RISTORANTE")])]
+                              ),
+                            ],
+                            1
+                          ),
+                        ]),
                       ]),
                     ]
                   )
@@ -60405,10 +60404,10 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\admin.scss */"./resources/sass/admin.scss");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\checkout.scss */"./resources/sass/checkout.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\pj4\Project-team-4-Deliveboo\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\MAMP\htdocs\pj4\Project-team-4-Deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\pj4\Project-team-4-Deliveboo\resources\sass\admin.scss */"./resources/sass/admin.scss");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\pj4\Project-team-4-Deliveboo\resources\sass\checkout.scss */"./resources/sass/checkout.scss");
 
 
 /***/ })

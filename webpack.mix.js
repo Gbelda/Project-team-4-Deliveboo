@@ -19,6 +19,7 @@ mix.js("resources/js/app.js", "public/js")
     .sass("resources/sass/app.scss", "public/css")
     .sass("resources/sass/admin.scss", "public/css")
     .sass("resources/sass/checkout.scss", "public/css")
+    .sass("resources/sass/successp.scss", "public/css")
     .options({
         processCssUrls: false,
     })
