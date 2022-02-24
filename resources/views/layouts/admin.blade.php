@@ -64,6 +64,16 @@
                                     <i class="fa-solid fa-utensils"></i>
                                 </a>
                             </li>
+                            <li class="piatti">
+                                <div class="hide">
+                                    <h6>
+                                        statistiche
+                                    </h6>
+                                </div>
+                                <a id="piatti" href="{{ route('admin.stats') }}">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

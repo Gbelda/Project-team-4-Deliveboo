@@ -239,3 +239,40 @@
     .FW{
         font-weight: bold;
 }
+.chart{
+    .AsseY{
+        //position: absolute;
+        margin-top: 3rem;
+        margin-bottom: -0.3rem;
+    }
+
+    .point{
+        height: 7px;
+        width: 7px;
+        border-radius: 50%;
+        background-color: black;
+        margin: 0.471rem 0.5rem;
+    }
+}
+.vl{
+    border-left: 6px solid orange;
+    height: 500px;
+}
+.AsseX{
+    padding-left: 2rem;
+    .orizontal{
+        margin: 0px 0 0 3.05rem;
+        border-top: 6px solid orange;
+        width: 1000px;
+    }
+    .ms-6{
+        margin-left: 3.5rem;
+        .point{
+            height: 7px;
+            width: 7px;
+            border-radius: 50%;
+            background-color: black;
+            margin: 0.4rem 0.65rem 0;
+        }
+    }
+}

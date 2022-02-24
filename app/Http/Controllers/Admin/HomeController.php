@@ -28,4 +28,10 @@ class HomeController extends Controller
         $user = Auth::user();
         return view('admin.index', compact('user'));
     }
+    public function stats()
+    {
+        $user = Auth::user();
+        $orders = Auth::user()->orders()->orderByDesc('created_at')->get();
+        return view('admin.stats', compact('user', 'orders'));
+    }
 }
