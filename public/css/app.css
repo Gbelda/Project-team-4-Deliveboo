@@ -11326,6 +11326,12 @@ header .content-left h1, header .content-left .h1 {
   font-weight: bold;
 }
 
+.d_flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 /* /header */
 /* .best_restaurants_section */
 .best_restaurants_section .paragraph_title {
@@ -11662,6 +11668,11 @@ header .content-left h1, header .content-left .h1 {
   .app_store_logo {
     width: 80% !important;
   }
+
+  .king {
+    border: none;
+    margin: 10%;
+  }
 }
 @media screen and (min-width: 576px) {
   .container {
@@ -11698,6 +11709,11 @@ header .content-left h1, header .content-left .h1 {
 
   .app_store_logo {
     width: 65% !important;
+  }
+
+  .king {
+    border: none;
+    margin: 10%;
   }
 }
 @media screen and (min-width: 768px) {
@@ -11740,6 +11756,11 @@ header .content-left h1, header .content-left .h1 {
   .app_store_logo {
     width: 40% !important;
   }
+
+  .king {
+    border: none;
+    margin: 10%;
+  }
 }
 @media screen and (min-width: 992px) {
   .container {
@@ -11772,6 +11793,12 @@ header .content-left h1, header .content-left .h1 {
 
   .app_store_logo {
     width: 35% !important;
+  }
+
+  .king {
+    border-left: 2px solid #ff8200;
+    border-right: 2px solid #ff8200;
+    margin: 0;
   }
 }
 @media screen and (min-width: 1200px) {

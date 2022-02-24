@@ -76,6 +76,12 @@ header {
         }
     }
 }
+
+.d_flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 /* /header */
 
 /* .best_restaurants_section */
@@ -437,6 +443,11 @@ header {
     .app_store_logo {
         width: 80%!important;
     }
+
+    .king{
+        border: none;
+        margin: 10%;
+    }
 }
 
 @media screen and (min-width: 576px) {
@@ -474,6 +485,11 @@ header {
 
     .app_store_logo {
         width: 65%!important;
+    }
+
+    .king{
+        border: none;
+        margin: 10%;
     }
 }
 
@@ -517,6 +533,11 @@ header {
     .app_store_logo {
         width: 40%!important;
     }
+
+    .king{
+        border: none;
+        margin: 10%;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -551,6 +572,12 @@ header {
     .app_store_logo {
         width: 35%!important;
     }
+
+    .king {
+    border-left: 2px solid #ff8200;
+    border-right: 2px solid #ff8200;
+    margin: 0;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -577,6 +604,8 @@ header {
     .app_store_logo {
         width: 25%!important;
     }
+
+    
 }
 
 @media screen and (min-width: 1400px) {
