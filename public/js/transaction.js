@@ -108,6 +108,7 @@ back_home.addEventListener('click', function clearStorage() {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\js\transaction.js */"./resources/js/transaction.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\Laravel\Laravel-deliveboo\resources\js\transaction.js */"./resources/js/transaction.js");
 
 
 /***/ })
