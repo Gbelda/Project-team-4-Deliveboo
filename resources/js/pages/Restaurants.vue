@@ -332,7 +332,7 @@
         <h1>Perchè <span class="brand-color">DeliveBoo</span>?</h1>
         <div class="line"></div>
       </div>
-      <div class="d-flex g-3">
+      <div class="d_flex g-3">
         <div class="col-lg-4 d-flex flex-column align-items-center">
           <h2>SENZA INQUINARE</h2>
           <p>
@@ -484,15 +484,15 @@ $black: #0a0903;
           display: block;
         }
       }
-       .check_square {
-                    border: none;
-                    &:focus {
-                        box-shadow: none;
-                    }
-                    &:checked {
-                        background-color: $brand-color;
-                    }
-       }
+      .check_square {
+        border: none;
+        &:focus {
+          box-shadow: none;
+        }
+        &:checked {
+          background-color: $brand-color;
+        }
+      }
       .content_check {
         display: none;
       }
@@ -670,10 +670,7 @@ $black: #0a0903;
   .row {
     justify-content: center;
   }
-  .king {
-    border-left: 2px solid #ff8200;
-    border-right: 2px solid #ff8200;
-  }
+
   h2 {
     color: $brand-color;
     font-weight: bold;
