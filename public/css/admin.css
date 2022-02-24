@@ -11265,7 +11265,8 @@ textarea.form-control-lg {
   border: none !important;
 }
 
-.dropdown-item:hover, .dropdown-item:focus {
+.dropdown-item:hover,
+.dropdown-item:focus {
   color: #ff8200 !important;
   background-color: #0a0903 !important;
 }
@@ -11275,7 +11276,7 @@ textarea.form-control-lg {
 }
 
 .bg-dark {
-  --bs-bg-opacity: 1!important;
+  --bs-bg-opacity: 1 !important;
   background-color: #0a0903 !important;
 }
 
@@ -11311,10 +11312,14 @@ textarea.form-control-lg {
   margin: 0;
   padding: 2rem 0 0 0;
 }
-#contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti, #contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini, #contenuto_admin .row .side_bar .side_bar_contenitor ul .dash {
+#contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti,
+#contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini,
+#contenuto_admin .row .side_bar .side_bar_contenitor ul .dash {
   position: relative;
 }
-#contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti .hide, #contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini .hide, #contenuto_admin .row .side_bar .side_bar_contenitor ul .dash .hide {
+#contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti .hide,
+#contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini .hide,
+#contenuto_admin .row .side_bar .side_bar_contenitor ul .dash .hide {
   display: none;
   position: absolute;
   left: 1.5rem;
@@ -11322,13 +11327,19 @@ textarea.form-control-lg {
   padding: 0.3rem;
   border-radius: 0px 10px 10px 0px;
 }
-#contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti .hide h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti .hide .h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini .hide h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini .hide .h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .dash .hide h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .dash .hide .h6 {
+#contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti .hide h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti .hide .h6,
+#contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini .hide h6,
+#contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini .hide .h6,
+#contenuto_admin .row .side_bar .side_bar_contenitor ul .dash .hide h6,
+#contenuto_admin .row .side_bar .side_bar_contenitor ul .dash .hide .h6 {
   font-size: 0.7rem;
   background: black;
   padding: 0.3rem;
   border-radius: 0px 10px 10px 0px;
 }
-#contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti:hover .hide, #contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini:hover .hide, #contenuto_admin .row .side_bar .side_bar_contenitor ul .dash:hover .hide {
+#contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti:hover .hide,
+#contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini:hover .hide,
+#contenuto_admin .row .side_bar .side_bar_contenitor ul .dash:hover .hide {
   display: block;
 }
 #contenuto_admin .row .side_bar .side_bar_contenitor ul li {
@@ -11390,11 +11401,13 @@ textarea.form-control-lg {
   overflow: auto;
 }
 
-.contenuto_griglie, .container {
+.contenuto_griglie,
+.container {
   height: 98%;
   margin-bottom: 1%;
 }
-.contenuto_griglie .dash_container, .container .dash_container {
+.contenuto_griglie .dash_container,
+.container .dash_container {
   height: 86%;
   margin: 0;
 }
@@ -11462,7 +11475,9 @@ textarea.form-control-lg {
   padding-bottom: 0.5rem;
   border-bottom: 2px solid #0a0903;
 }
-#show_plate .d-flex .right_col .card_info .text_desc, #show_plate .d-flex .right_col .card_info .text_ingredients, #show_plate .d-flex .right_col .card_info .text-ava {
+#show_plate .d-flex .right_col .card_info .text_desc,
+#show_plate .d-flex .right_col .card_info .text_ingredients,
+#show_plate .d-flex .right_col .card_info .text-ava {
   border: 1px solid #0a0903;
 }
 #show_plate .d-flex .right_col .card_info .card_price {
@@ -11518,6 +11533,43 @@ textarea.form-control-lg {
 
 .FW {
   font-weight: bold;
+}
+
+/*statistic css*/
+.chart .AsseY {
+  margin-top: 3rem;
+  margin-bottom: -0.3rem;
+}
+.chart .point {
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  background-color: black;
+  margin: 0.471rem 0.5rem;
+}
+
+.vl {
+  border-left: 6px solid orange;
+  height: 500px;
+}
+
+.AsseX {
+  padding-left: 2rem;
+}
+.AsseX .orizontal {
+  margin: 0px 0 0 3.05rem;
+  border-top: 6px solid orange;
+  width: 1000px;
+}
+.AsseX .ms-6 {
+  margin-left: 3.5rem;
+}
+.AsseX .ms-6 .point {
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  background-color: black;
+  margin: 0.4rem 0.65rem 0;
 }
 
 /* media_screen */
