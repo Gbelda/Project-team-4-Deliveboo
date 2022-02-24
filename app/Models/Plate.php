@@ -18,6 +18,6 @@ class Plate extends Model
 
     public function order(): BelongsToMany
     {
-        return $this->belongsToMany(Order::class)->withPivot(['count']);
+        return $this->belongsToMany(Order::class)->withPivot(['quantity']);
     }
 }
