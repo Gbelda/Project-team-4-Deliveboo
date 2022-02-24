@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\OrderMailable;
+use App\Mail\OrderPlaced;
 use App\Models\Order;
 use App\User;
 use Illuminate\Http\Request;
@@ -117,6 +118,9 @@ class CheckoutController extends Controller
                 });
 
             $order->plates()->sync($plates);
+
+            // Mail::to($restaurant->email)->send(new OrderPlaced);
+            // ddd($order);
 
             Mail::to($restaurant->email)->send(new OrderMailable($order));
 
