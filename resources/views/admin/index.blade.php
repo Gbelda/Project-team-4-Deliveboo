@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @section('content')
-
     <div class="container" id="log">
         <div class="card">
             <div class="card-header">{{ __('DASHBOARD') }}</div>
@@ -16,5 +15,4 @@
             </div>
         </div>
     </div>
-
 @endsection

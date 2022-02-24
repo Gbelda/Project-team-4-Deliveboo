@@ -22,7 +22,7 @@
               />
             </a>
           </div>
-          <div class="">
+          <div>
             <p>&copy; Deliveboo Italy s.r.l. 2022</p>
           </div>
         </div>

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('page_js')
-    
     <script src="{{ asset('js/register.js') }}" defer></script>
 @endsection
 

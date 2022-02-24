@@ -5883,6 +5883,59 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -43004,7 +43057,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("main", {}, [_c("router-view")], 1)
+  return _c("main", [_c("router-view")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -43101,7 +43154,7 @@ var staticRenderFns = [
         ]),
       ]),
       _vm._v(" "),
-      _c("div", {}, [_c("p", [_vm._v("© Deliveboo Italy s.r.l. 2022")])]),
+      _c("div", [_c("p", [_vm._v("© Deliveboo Italy s.r.l. 2022")])]),
     ])
   },
   function () {
@@ -43586,7 +43639,9 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("h3", { staticClass: "h3_carousel" }, [
-                            _vm._v("La migliore pizza d'Italia"),
+                            _vm._v(
+                              "\n                                La migliore pizza d'Italia\n                            "
+                            ),
                           ]),
                           _vm._v(" "),
                           _c(
@@ -43595,7 +43650,11 @@ var render = function () {
                               staticClass: "btn btn-sm",
                               attrs: { to: "/restaurants/da_marco" },
                             },
-                            [_vm._v("\n                Provala subito")]
+                            [
+                              _vm._v(
+                                "\n                                Provala subito"
+                              ),
+                            ]
                           ),
                         ],
                         1
@@ -43789,9 +43848,9 @@ var render = function () {
                       },
                       [
                         _vm._v(
-                          "\n              " +
+                          "\n                            " +
                             _vm._s(category.name) +
-                            "\n            "
+                            "\n                        "
                         ),
                       ]
                     ),
@@ -43812,11 +43871,15 @@ var render = function () {
                 "div",
                 {
                   staticClass:
-                    "\n              empty\n              d-flex\n              align-items-center\n              justify-content-center\n              text-danger\n            ",
+                    "empty d-flex align-items-center justify-content-center text-danger",
                 },
                 [
                   _vm.restaurants == ""
-                    ? _c("h3", [_vm._v("Nessun ristorante disponibile")])
+                    ? _c("h3", [
+                        _vm._v(
+                          "\n                            Nessun ristorante disponibile\n                        "
+                        ),
+                      ])
                     : _vm._e(),
                 ]
               ),
@@ -43866,16 +43929,16 @@ var render = function () {
                                   },
                                   [
                                     _vm._v(
-                                      "\n                    " +
+                                      "\n                                        " +
                                         _vm._s(category.name) +
-                                        "\n                    " +
+                                        "\n                                        " +
                                         _vm._s(
                                           index !=
                                             restaurant.categories.length - 1
                                             ? "|"
                                             : ""
                                         ) +
-                                        "\n                  "
+                                        "\n                                    "
                                     ),
                                   ]
                                 )
@@ -43884,9 +43947,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("div", { staticClass: "food-card-about" }, [
                               _vm._v(
-                                "\n                    " +
+                                "\n                                        " +
                                   _vm._s(restaurant.address) +
-                                  "\n                    "
+                                  "\n                                        "
                               ),
                               _c("div", { staticClass: "about-shadow" }),
                             ]),
@@ -44013,11 +44076,13 @@ var staticRenderFns = [
           [
             _c("div", { staticClass: "content-left col-12 col-md-6" }, [
               _c("h1", { staticClass: "title" }, [
-                _vm._v("\n          Il cibo che ami\n          "),
+                _vm._v(
+                  "\n                    Il cibo che ami\n                    "
+                ),
                 _c("span", { staticClass: "text-brand" }, [_vm._v("quando")]),
-                _vm._v(" e\n          "),
+                _vm._v(" e\n                    "),
                 _c("span", { staticClass: "text-brand" }, [_vm._v("dove")]),
-                _vm._v(" vuoi tu!\n        "),
+                _vm._v(" vuoi tu!\n                "),
               ]),
             ]),
             _vm._v(" "),
@@ -44111,11 +44176,15 @@ var staticRenderFns = [
         _c("h2", { staticClass: "h2_carousel" }, [_vm._v("Da Giovanni")]),
         _vm._v(" "),
         _c("h3", { staticClass: "h3_carousel" }, [
-          _vm._v("Il miglior sushi di Milano"),
+          _vm._v(
+            "\n                                Il miglior sushi di Milano\n                            "
+          ),
         ]),
         _vm._v(" "),
         _c("button", { staticClass: "btn btn-sm", attrs: { href: "#" } }, [
-          _vm._v("Provalo subito"),
+          _vm._v(
+            "\n                                Provalo subito\n                            "
+          ),
         ]),
       ]),
     ])
@@ -44130,12 +44199,14 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("h3", { staticClass: "h3_carousel" }, [
           _vm._v(
-            "\n                Un vero fast-food americano al centro di Milano!\n              "
+            "\n                                Un vero fast-food americano al centro di\n                                Milano!\n                            "
           ),
         ]),
         _vm._v(" "),
         _c("button", { staticClass: "btn btn-sm", attrs: { href: "#" } }, [
-          _vm._v("Provalo subito"),
+          _vm._v(
+            "\n                                Provalo subito\n                            "
+          ),
         ]),
       ]),
     ])
@@ -44149,11 +44220,15 @@ var staticRenderFns = [
         _c("h2", { staticClass: "h2_carousel" }, [_vm._v("Da Laurentiu")]),
         _vm._v(" "),
         _c("h3", { staticClass: "h3_carousel" }, [
-          _vm._v("Tutta la cucina orientale che vuoi"),
+          _vm._v(
+            "\n                                Tutta la cucina orientale che vuoi\n                            "
+          ),
         ]),
         _vm._v(" "),
         _c("button", { staticClass: "btn btn-sm", attrs: { href: "#" } }, [
-          _vm._v("Provala subito"),
+          _vm._v(
+            "\n                                Provala subito\n                            "
+          ),
         ]),
       ]),
     ])
@@ -44168,12 +44243,14 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("h3", { staticClass: "h3_carousel" }, [
           _vm._v(
-            "\n                La migliore cucina messicana di Milano\n              "
+            "\n                                La migliore cucina messicana di Milano\n                            "
           ),
         ]),
         _vm._v(" "),
         _c("button", { staticClass: "btn btn-sm", attrs: { href: "#" } }, [
-          _vm._v("Provala subito"),
+          _vm._v(
+            "\n                                Provala subito\n                            "
+          ),
         ]),
       ]),
     ])
@@ -44271,7 +44348,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("p", [
                 _vm._v(
-                  "\n          Teniamo all'ambiente, per questo le nostre consegne sono\n          Free-pollution in quanto utilizziamo solo veicoli elettrici.\n        "
+                  "\n                    Teniamo all'ambiente, per questo le nostre consegne sono\n                    Free-pollution in quanto utilizziamo solo veicoli\n                    elettrici.\n                "
                 ),
               ]),
               _vm._v(" "),
@@ -44295,7 +44372,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("p", [
                 _vm._v(
-                  "\n          Selezioniamo personalmente solo i migliori ristoranti di Milano\n          attraverso i nostri test.\n        "
+                  "\n                    Selezioniamo personalmente solo i migliori ristoranti di\n                    Milano attraverso i nostri test.\n                "
                 ),
               ]),
               _vm._v(" "),
@@ -44316,7 +44393,7 @@ var staticRenderFns = [
               _vm._v(" "),
               _c("p", [
                 _vm._v(
-                  "\n          Siamo sicuri delle nostre tempistiche, se entro 30 min dall'orario\n          indicato non avrai il tuo ordine sarai rimborsato.\n        "
+                  "\n                    Siamo sicuri delle nostre tempistiche, se entro 30 min\n                    dall'orario indicato non avrai il tuo ordine sarai\n                    rimborsato.\n                "
                 ),
               ]),
               _vm._v(" "),
@@ -44357,7 +44434,7 @@ var render = function () {
   return _c("div", { staticClass: "container mt-5" }, [
     _c(
       "div",
-      { staticClass: "content" },
+      { staticClass: "content text-center" },
       [
         _c("div", { staticClass: "title m-b-md" }, [_vm._v("Deliveboo")]),
         _vm._v(" "),
@@ -60405,14 +60482,10 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\admin.scss */"./resources/sass/admin.scss");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\sass\checkout.scss */"./resources/sass/checkout.scss");
-__webpack_require__(/*! C:\MAMP\htdocs\Laravel\Laravel-deliveboo\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\MAMP\htdocs\Laravel\Laravel-deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\MAMP\htdocs\Laravel\Laravel-deliveboo\resources\sass\admin.scss */"./resources/sass/admin.scss");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\Laravel\Laravel-deliveboo\resources\sass\checkout.scss */"./resources/sass/checkout.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\esercitazioni\esercitazione-finale\Project-team-4-Deliveboo\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\esercitazioni\esercitazione-finale\Project-team-4-Deliveboo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\MAMP\htdocs\laravel\esercitazioni\esercitazione-finale\Project-team-4-Deliveboo\resources\sass\admin.scss */"./resources/sass/admin.scss");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\esercitazioni\esercitazione-finale\Project-team-4-Deliveboo\resources\sass\checkout.scss */"./resources/sass/checkout.scss");
 
 
 /***/ })
