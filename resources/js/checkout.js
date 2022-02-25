@@ -14,7 +14,7 @@ var submit = document.querySelector('#button-pay');
 
 var restaurant = JSON.parse(localStorage.getItem('restaurant'))
 
-
+ 
 printCart();
 
 
@@ -48,19 +48,12 @@ function printCart() {
     if (products != '') {
 
         cart_list.insertAdjacentHTML('afterbegin',
-<<<<<<< HEAD
-            `<li  class="bg-brand py-2   d-flex justify-content-center align-items-center lh-condensed"><h5 class='m-0 text-center'>${restaurant.restaurant_name}</h5>
-                <h5 class='d-flex align-items-center justify-content-end m-0'>
-                    <input type="hidden" name="restaurant_id" readonly class=" form-control-plaintext p-0" id="restaurant_id" value="${restaurant.id}">
-                </h5>
-=======
             `<li class="list-group-item d-flex justify-content-between align-items-center lh-condensed">
                 <h5 class='m-0'>${restaurant.restaurant_name}</h5>
                 <input type="hidden" name="restaurant_id" readonly class=" form-control-plaintext p-0" id="restaurant_id" value="${restaurant.id}">
                 <div class="btn" id='remove_all'>
                     <i class="fa-solid fa-trash-can"></i>
                 </div>
->>>>>>> 5f8ef5044c2769703753a74a776606ebcfd6a221
             </li>`
         )
         

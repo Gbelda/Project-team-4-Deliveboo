@@ -36,7 +36,6 @@
             <form class="needs-validation" action="{{ route('checkout.store') }}" id="user_info" method="POST">
                 @csrf
 
-<<<<<<< HEAD
                 <div class="d-flex flex-wrap">
                     {{-- FORM DATI --}}
                     <div class="col-md-8 px-2" id="dati">
@@ -57,27 +56,6 @@
                                     <input type="text" class="form-control" id="client_lastname" placeholder="" required
                                         name="client_lastname" value="{{ old('client_lastname') }}">
                                 </div>
-=======
-                <div class="row justtify-content-evenly">
-
-                    <div class="col-lg-6 order-lg-2 mb-4">
-                        <h4 class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="text-muted">Carrello</span>
-                        </h4>
-                        <ul class="list-group mb-3" id="cart_list">
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-6 order-lg-1">
-                        <h4 class="mb-3">Indirizzo di Consegna</h4>
-
-
-                        <div class="row">
-                            <div class="col-12 col-md-6 mb-3 form-group">
-                                <label for="client_name">Nome</label>
-                                <input type="text" class="form-control" id="client_name" placeholder="" required
-                                    name="client_name" value="{{ old('client_name') }}">
->>>>>>> 5f8ef5044c2769703753a74a776606ebcfd6a221
                             </div>
     
                             <div class="mb-3 form-group">
