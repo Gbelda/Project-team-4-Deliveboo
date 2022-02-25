@@ -1,5 +1,4 @@
 @extends('layouts.admin')
-
 @section('content')
     <div class="container">
 
@@ -77,8 +76,7 @@
         </table>
 
     </div>
-    <div class="cont_btn_add_plate">
-
+    <div class="cont_btn_add_plate mb-5">
         <a href="{{ route('admin.plates.create') }}" role="button" class="btn btn_add_plate">Aggiungi un nuovo Piatto</a>
     </div>
 @endsection

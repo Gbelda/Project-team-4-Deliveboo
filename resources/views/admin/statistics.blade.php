@@ -6,6 +6,7 @@
 @section('content')
     <div class="container">
         <h1 class="text-center">Statistiche</h1>
-        <canvas id="myChart"></canvas>
+        <canvas id="myChartBar" class="mb-5"></canvas>
+        <canvas id="myChartLine"></canvas>
     </div>
 @endsection

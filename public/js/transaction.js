@@ -107,7 +107,11 @@ back_home.addEventListener('click', function clearStorage() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! H:\MAMP\Boolean\Project-team-4-Deliveboo\resources\js\transaction.js */"./resources/js/transaction.js");
+=======
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\esercitazioni\esercitazione-finale\Project-team-4-Deliveboo\resources\js\transaction.js */"./resources/js/transaction.js");
+>>>>>>> f4f7f7781f33dff0f65c87ba218eed8150edd1ec
 
 
 /***/ })
