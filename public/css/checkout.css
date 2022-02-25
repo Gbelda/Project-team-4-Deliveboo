@@ -1,10 +1,86 @@
-.checkout_container {
-  padding-top: 8rem;
+#checkout_container {
+  margin-top: 6rem;
+}
+
+.brand-color {
+  color: #ff8200 !important;
+}
+
+.bg-brand {
+  color: #0a0903;
+  background-color: #ff8200;
+}
+
+.bg_title {
+  background-color: #0a0903;
+  color: #ff8200;
+  margin: 0;
+  padding: 0.5rem 0;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.bg_title_price {
+  background-color: #0a0903;
+  color: #ff8200;
+  margin: 0;
+  padding: 0.5rem 0;
+  border-radius: 0px 0px 20px 20px;
+  padding: 1rem;
+}
+
+.clear {
+  font-weight: bold;
+  color: #ff8200;
+  text-decoration: underline;
+  font-style: normal;
+}
+.clear:hover {
+  color: #ffc100;
+  cursor: pointer;
+}
+
+.btn_meno:hover {
+  color: #ffc100 !important;
+}
+
+.btn_piu:hover {
+  color: #ff8200;
+  background-color: #0a0903;
 }
 
 /*--------------------
 General
 --------------------*/
+#dati .card_indirizzo_info {
+  box-shadow: 5px 6px 11px 5px rgba(0, 0, 0, 0.12);
+  position: relative;
+  background-color: #ff8200;
+  padding: 1rem 1rem 8rem 1rem;
+  border-radius: 0px 0px 20px 20px;
+  margin-bottom: 11rem;
+}
+#dati .card_indirizzo_info #cc {
+  position: absolute;
+  left: 25%;
+  width: 50%;
+}
+@media (max-width: 992px) {
+  #dati .card_indirizzo_info #cc {
+    left: 10%;
+    width: 80%;
+  }
+}
+@media (max-width: 576px) {
+  #dati .card_indirizzo_info #cc {
+    left: 0%;
+    width: 100%;
+  }
+}
+
+#carrello ul {
+  box-shadow: 5px 6px 11px 5px rgba(0, 0, 0, 0.12);
+}
+
 #token {
   visibility: hidden;
 }
@@ -19,29 +95,6 @@ h1 {
   font-weight: 100;
   font-size: 1.4em;
   display: block;
-}
-
-.form-container {
-  display: flex;
-  background-color: #eee;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 75%;
-  margin: auto;
-  padding: 5rem;
-  border-radius: 20px;
-  max-height: 750px;
-}
-@media (max-width: 992px) {
-  .form-container {
-    border: none;
-    padding: 1rem;
-    max-height: none;
-  }
 }
 
 .cardinfo-wrapper {
@@ -70,15 +123,16 @@ h1 {
 }
 
 #my-sample-form {
+  border-radius: 10px;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  box-shadow: 9px 8px 12px 4px rgba(0, 0, 0, 0.12);
   padding: 2em 2em 1em;
   width: 30em;
-  margin-bottom: 2em;
+  margin-bottom: -1rem;
   transition: all 600ms cubic-bezier(0.2, 1.3, 0.7, 1);
   -webkit-animation: cardIntro 500ms cubic-bezier(0.2, 1.3, 0.7, 1);
           animation: cardIntro 500ms cubic-bezier(0.2, 1.3, 0.7, 1);
-  z-index: 99;
+  z-index: 9;
 }
 #my-sample-form:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
@@ -91,8 +145,8 @@ h1 {
   }
 }
 #my-sample-form.visa {
-  color: #fff;
-  background-color: #0d4aa2;
+  color: #0a0903;
+  background-color: #ffc100;
 }
 #my-sample-form.master-card {
   color: #fff;
@@ -140,17 +194,18 @@ h1 {
   font-size: 15px;
   border: 0;
   padding: 1.2em 1em;
-  color: #fff;
-  background: #282c37;
+  color: #ff8200;
+  background: #0a0903;
   border-radius: 4px;
-  z-index: -1;
+  z-index: 10;
   transform: translateY(-100px);
   transition: all 500ms cubic-bezier(0.2, 1.3, 0.7, 1);
   opacity: 0;
   -webkit-appearance: none;
 }
 #button-pay:hover {
-  background: #535b72;
+  background: #ff8a0f;
+  color: #0a0903;
 }
 #button-pay:active {
   -webkit-animation: cardIntro 200ms cubic-bezier(0.2, 1.3, 0.7, 1);
@@ -158,8 +213,30 @@ h1 {
 }
 #button-pay.show-button {
   transform: translateY(0);
+  transform: translateX(50px);
   opacity: 1;
-  z-index: 0;
+  z-index: 10;
+  position: relative;
+}
+@media (max-width: 992px) {
+  #button-pay.show-button {
+    transform: translateX(78px);
+  }
+}
+@media (max-width: 768px) {
+  #button-pay.show-button {
+    transform: translateX(52px);
+  }
+}
+@media (max-width: 576px) {
+  #button-pay.show-button {
+    transform: translateX(66px);
+  }
+}
+@media (max-width: 575px) {
+  #button-pay.show-button {
+    transform: translateX(24px);
+  }
 }
 
 .cardinfo-card-number {

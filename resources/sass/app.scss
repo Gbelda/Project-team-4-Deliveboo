@@ -445,8 +445,8 @@ header {
     }
 
     .king{
-        border: none;
-        margin: 10%;
+        border: none!important;
+        margin: 10%!important;
     }
 }
 
@@ -488,8 +488,8 @@ header {
     }
 
     .king{
-        border: none;
-        margin: 10%;
+        border: none!important;
+        margin: 10%!important;
     }
 }
 
@@ -535,8 +535,8 @@ header {
     }
 
     .king{
-        border: none;
-        margin: 10%;
+        border: none!important;
+        margin: 10%!important;
     }
 }
 
@@ -574,9 +574,9 @@ header {
     }
 
     .king {
-    border-left: 2px solid #ff8200;
-    border-right: 2px solid #ff8200;
-    margin: 0;
+    border-left: 2px solid #ff8200!important;
+    border-right: 2px solid #ff8200!important;
+    margin: 0!important;
   }
 }
 

@@ -9,8 +9,7 @@
                 {{ session('message') }}
             </div>
         @endif
-
-
+        
         <table class="table dash_container">
             <thead>
                 <tr>

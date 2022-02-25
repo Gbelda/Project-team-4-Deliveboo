@@ -1,6 +1,6 @@
 @extends('layouts.admin')
-@section('content')
 
+@section('content')
     @include('partials.errors')
 
     <div class="container">

@@ -187,6 +187,7 @@
 
 #show_plate {
     width: 100%;
+    
     .actions {
         border-radius: 0px 0px 20px 20px;
         width: 100%;
@@ -203,6 +204,8 @@
     }
     .d-flex {
         width: 100%;
+        margin-top: 15px;
+        align-items: center;
         .right_col {
             display: flex;
             justify-content: center;
@@ -320,7 +323,7 @@
 }
 
 /* media_screen */
-@media screen and (min-width: 390px) {
+/* @media screen and (min-width: 390px) {
     #contenuto_admin .row .contenuto_griglie {
         width: 86%;
         padding: 1rem;
@@ -331,7 +334,7 @@
         width: 14%;
         height: 100%;
     }
-}
+} */
 
 @media screen and (min-width: 576px) {
     #contenuto_admin .row .contenuto_griglie {
@@ -369,6 +372,10 @@
         padding: 1rem;
         width: 8%;
         height: 100%;
+    }
+
+    #show_plate .d-flex .right_col .card_info h4, #show_plate .d-flex .right_col .card_info .h4 {
+    font-size: 1.5rem;
     }
 }
 

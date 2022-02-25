@@ -48,10 +48,10 @@ class PlateController extends Controller
         ];
 
         $validated = $request->validate([
-            'name' => ['required', 'unique:plates', 'max:200'],
+            'name' => ['required', 'max:200'],
             'ingredients' => ['nullable'],
             'price' => ['nullable'],
-            'image' => ['nullable', 'image', 'max:1000'],
+            'image' => ['nullable', 'image', 'max:50000'],
             'description' => ['nullable'],
             'available' => ['required'],
             '',
@@ -132,10 +132,10 @@ class PlateController extends Controller
     {
         if (Auth::id() === $plate->user_id) {
             $validated = $request->validate([
-                'name' => ['required', Rule::unique('plates')->ignore($plate->id), 'max:200'],
+                'name' => ['required', 'max:200'],
                 'ingredients' => ['nullable'],
                 'price' => ['nullable'],
-                'image' => ['nullable', 'image', 'max:1000'],
+                'image' => ['nullable', 'image', 'max:50000'],
                 'description' => ['nullable'],
                 'available' => ['required'],
                 // 'category_id' => ['nullable', 'exists:categories,id'],
