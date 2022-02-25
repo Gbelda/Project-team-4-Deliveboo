@@ -11573,18 +11573,18 @@ textarea.form-control-lg {
 }
 
 /* media_screen */
-@media screen and (min-width: 390px) {
-  #contenuto_admin .row .contenuto_griglie {
-    width: 86%;
-    padding: 1rem;
-  }
+/* @media screen and (min-width: 390px) {
+    #contenuto_admin .row .contenuto_griglie {
+        width: 86%;
+        padding: 1rem;
+    }
 
-  #contenuto_admin .row .side_bar {
-    padding: 1rem;
-    width: 14%;
-    height: 100%;
-  }
-}
+    #contenuto_admin .row .side_bar {
+        padding: 1rem;
+        width: 14%;
+        height: 100%;
+    }
+} */
 @media screen and (min-width: 576px) {
   #contenuto_admin .row .contenuto_griglie {
     width: 89%;
