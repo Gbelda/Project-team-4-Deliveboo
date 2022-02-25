@@ -48,7 +48,7 @@ function printCart() {
     if (products != '') {
 
         cart_list.insertAdjacentHTML('afterbegin',
-            `<li class="list-group-item d-flex justify-content-between align-items-center lh-condensed">
+            `<li class="list-group-item d-flex justify-content-between align-items-center lh-condensed bg-brand">
                 <h5 class='m-0'>${restaurant.restaurant_name}</h5>
                 <input type="hidden" name="restaurant_id" readonly class=" form-control-plaintext p-0" id="restaurant_id" value="${restaurant.id}">
                 <div class="btn" id='remove_all'>
@@ -110,7 +110,7 @@ function printCart() {
         )
 
     } else {
-        cart_list.insertAdjacentHTML('beforeend', `<em class="text-danger">Il carrello e vuoto</em>`)
+        cart_list.insertAdjacentHTML('beforeend', `<em class="text-danger text-center">Il carrello e vuoto</em>`)
     }
 
     // ADD QUANTITY FUNCTION

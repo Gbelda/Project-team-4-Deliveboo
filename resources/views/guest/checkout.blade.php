@@ -114,7 +114,7 @@
                     </div>
                     {{-- FORM DATI  --}}
                     {{-- CARRELLO --}}
-                    <div class="col-md-4 px-2" id="carrello">
+                    <div class="col-12 col-md-4 px-2" id="carrello">
                         <h2 class="text-center fw-bold bg_title">
                             CARRELLO
                         </h2>

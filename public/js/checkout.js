@@ -17412,7 +17412,7 @@ function printCart() {
   cart_list.innerHTML = '';
 
   if (products != '') {
-    cart_list.insertAdjacentHTML('afterbegin', "<li class=\"list-group-item d-flex justify-content-between align-items-center lh-condensed\">\n                <h5 class='m-0'>".concat(restaurant.restaurant_name, "</h5>\n                <input type=\"hidden\" name=\"restaurant_id\" readonly class=\" form-control-plaintext p-0\" id=\"restaurant_id\" value=\"").concat(restaurant.id, "\">\n                <div class=\"btn\" id='remove_all'>\n                    <i class=\"fa-solid fa-trash-can\"></i>\n                </div>\n            </li>"));
+    cart_list.insertAdjacentHTML('afterbegin', "<li class=\"list-group-item d-flex justify-content-between align-items-center lh-condensed bg-brand\">\n                <h5 class='m-0'>".concat(restaurant.restaurant_name, "</h5>\n                <input type=\"hidden\" name=\"restaurant_id\" readonly class=\" form-control-plaintext p-0\" id=\"restaurant_id\" value=\"").concat(restaurant.id, "\">\n                <div class=\"btn\" id='remove_all'>\n                    <i class=\"fa-solid fa-trash-can\"></i>\n                </div>\n            </li>"));
 
     var _loop = function _loop(i) {
       //GET PLATE INFO THROUGH NAME FIND
@@ -17436,7 +17436,7 @@ function printCart() {
 
     cart_list.insertAdjacentHTML('beforeend', "<li class=\"bg_title_price list-group-item d-flex justify-content-between align-items-center lh-condensed\"><h5 class='m-0'>Totale:</h5>\n                <h5 class='d-flex align-items-center justify-content-end m-0'>\n                    &euro;\n                    <input type=\"text\" name=\"total\" readonly class=\"brand-color form-control-plaintext p-0\" id=\"total\" value=\" ".concat(Math.round((total + Number.EPSILON) * 100) / 100, "\">\n                </h5>\n            </li>"));
   } else {
-    cart_list.insertAdjacentHTML('beforeend', "<em class=\"text-danger\">Il carrello e vuoto</em>");
+    cart_list.insertAdjacentHTML('beforeend', "<em class=\"text-danger text-center\">Il carrello e vuoto</em>");
   } // ADD QUANTITY FUNCTION
 
 
@@ -17653,7 +17653,7 @@ braintree.client.create({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! H:\MAMP\Boolean\Project-team-4-Deliveboo\resources\js\checkout.js */"./resources/js/checkout.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\js\checkout.js */"./resources/js/checkout.js");
 
 
 /***/ })
