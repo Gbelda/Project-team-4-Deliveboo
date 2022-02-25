@@ -11670,8 +11670,8 @@ header .content-left h1, header .content-left .h1 {
   }
 
   .king {
-    border: none;
-    margin: 10%;
+    border: none !important;
+    margin: 10% !important;
   }
 }
 @media screen and (min-width: 576px) {
@@ -11712,8 +11712,8 @@ header .content-left h1, header .content-left .h1 {
   }
 
   .king {
-    border: none;
-    margin: 10%;
+    border: none !important;
+    margin: 10% !important;
   }
 }
 @media screen and (min-width: 768px) {
@@ -11758,8 +11758,8 @@ header .content-left h1, header .content-left .h1 {
   }
 
   .king {
-    border: none;
-    margin: 10%;
+    border: none !important;
+    margin: 10% !important;
   }
 }
 @media screen and (min-width: 992px) {
@@ -11796,9 +11796,9 @@ header .content-left h1, header .content-left .h1 {
   }
 
   .king {
-    border-left: 2px solid #ff8200;
-    border-right: 2px solid #ff8200;
-    margin: 0;
+    border-left: 2px solid #ff8200 !important;
+    border-right: 2px solid #ff8200 !important;
+    margin: 0 !important;
   }
 }
 @media screen and (min-width: 1200px) {
