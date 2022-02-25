@@ -94,7 +94,7 @@
                         PAGAMENTO AVVENUTO CON SUCCESSO
                     </h1>
                     <p class="text-center parag">
-                        Il tuo ordine stato confermato. <br>
+                        Il tuo ordine è stato confermato. <br>
                         Riceverai a breve una conferma dell'ordine
                         tramite email.
                     </p>
