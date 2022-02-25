@@ -81,7 +81,7 @@ function printCart() {
                     </div>
                         </small>
                     </div>
-                    <div class="d-flex flex-wrap justify-content-center">
+                    <div class="d-flex flex-column flex-wrap justify-content-center">
                         <span class="fw-bold">&euro;${Math.round(((product.price * counts[i]) + Number.EPSILON) * 100)/100}</span>
                         <small>
                             <em class="clear clear_${i}">
