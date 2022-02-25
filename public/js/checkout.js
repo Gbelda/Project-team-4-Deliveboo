@@ -17412,14 +17412,14 @@ function printCart() {
   cart_list.innerHTML = '';
 
   if (products != '') {
-    cart_list.insertAdjacentHTML('afterbegin', "<li class=\"list-group-item d-flex justify-content-between align-items-center lh-condensed\">\n                <h5 class='m-0'>".concat(restaurant.restaurant_name, "</h5>\n                <input type=\"hidden\" name=\"restaurant_id\" readonly class=\" form-control-plaintext p-0\" id=\"restaurant_id\" value=\"").concat(restaurant.id, "\">\n                <div class=\"btn\" id='remove_all'>\n                    <i class=\"fa-solid fa-trash-can\"></i>\n                </div>\n            </li>"));
+    cart_list.insertAdjacentHTML('afterbegin', "<li class=\"list-group-item d-flex justify-content-between align-items-center lh-condensed bg-brand\">\n                <h5 class='m-0'>".concat(restaurant.restaurant_name, "</h5>\n                <input type=\"hidden\" name=\"restaurant_id\" readonly class=\" form-control-plaintext p-0\" id=\"restaurant_id\" value=\"").concat(restaurant.id, "\">\n                <div class=\"btn\" id='remove_all'>\n                    <i class=\"fa-solid fa-trash-can\"></i>\n                </div>\n            </li>"));
 
     var _loop = function _loop(i) {
       //GET PLATE INFO THROUGH NAME FIND
       product = cart.find(function (product) {
         return product.name == products[i];
       });
-      cart_list.insertAdjacentHTML('beforeend', " <li class= \"list-group-item d-flex justify-content-between lh-condensed\" >\n                    <div>\n                        <h6 class=\"my-0 fw-bold text-start\">".concat(product.name, "</h6>\n                        <small class=\" d-flex align-items-center\">\n                            Quantit&aacute;: \n                            <input type=\"text\" name=\"plates[").concat(product.id, "]\" readonly class=\"form-control-plaintext ps-1\" value=\"").concat(counts[i], "\" data-id='").concat(product.id, "'>\n                    <div>\n                    <button class=\"btn reduce reduce_").concat(i, "\">\n                      <i class=\"fa-solid fa-minus\"></i>\n                    </button>\n                    <button class=\"btn add add_").concat(i, "\">\n                      <i class=\"fa-solid fa-plus\"></i>\n                    </button>\n                    </div>\n                        </small>\n                    </div>\n                    <div class=\"d-flex flex-wrap\">\n                        <span class=\"text-muted\">&euro;").concat(Math.round((product.price * counts[i] + Number.EPSILON) * 100) / 100, "</span>\n                        <small>\n                            <em class=\"clear clear_").concat(i, "\">\n                            (Togli dal carrello)\n                            </em>\n                        </small>\n                    </div>\n                    </li >"));
+      cart_list.insertAdjacentHTML('beforeend', " <li class= \"list-group-item d-flex justify-content-between lh-condensed\" >\n                    <div>\n                        <h6 class=\"my-0 fw-bold text-start\">".concat(product.name, "</h6>\n                        <small class=\" d-flex align-items-center\">\n                            Quantit&aacute;: \n                            <input type=\"text\" name=\"plates[").concat(product.id, "]\" readonly class=\"form-control-plaintext ps-1\" value=\"").concat(counts[i], "\" data-id='").concat(product.id, "'>\n                    <div>\n                    <button class=\"btn btn_meno brand-color fw-bold reduce reduce_").concat(i, "\">\n                      <i class=\"fa-solid fa-minus\"></i>\n                    </button>\n                    <button class=\"btn bg-brand btn_piu add add_").concat(i, "\">\n                      <i class=\"fa-solid fa-plus\"></i>\n                    </button>\n                    </div>\n                        </small>\n                    </div>\n                    <div class=\"d-flex flex-wrap justify-content-center\">\n                        <span class=\"fw-bold\">&euro;").concat(Math.round((product.price * counts[i] + Number.EPSILON) * 100) / 100, "</span>\n                        <small>\n                            <em class=\"clear clear_").concat(i, "\">\n                            Rimuovi tutto\n                            </em>\n                        </small>\n                    </div>\n                    </li >"));
     };
 
     for (var i = 0; i < products.length; i++) {
@@ -17434,9 +17434,9 @@ function printCart() {
       total = total + parseFloat(cart[_i].price);
     }
 
-    cart_list.insertAdjacentHTML('beforeend', "<li class=\"list-group-item d-flex justify-content-between align-items-center lh-condensed\"><h5 class='m-0'>Totale:</h5>\n                <h5 class='d-flex align-items-center justify-content-end m-0'>\n                    &euro;\n                    <input type=\"text\" name=\"total\" readonly class=\" form-control-plaintext p-0\" id=\"total\" value=\"".concat(Math.round((total + Number.EPSILON) * 100) / 100, "\">\n                </h5>\n            </li>"));
+    cart_list.insertAdjacentHTML('beforeend', "<li class=\"bg_title_price list-group-item d-flex justify-content-between align-items-center lh-condensed\"><h5 class='m-0'>Totale:</h5>\n                <h5 class='d-flex align-items-center justify-content-end m-0'>\n                    &euro;\n                    <input type=\"text\" name=\"total\" readonly class=\"brand-color form-control-plaintext p-0\" id=\"total\" value=\" ".concat(Math.round((total + Number.EPSILON) * 100) / 100, "\">\n                </h5>\n            </li>"));
   } else {
-    cart_list.insertAdjacentHTML('beforeend', "<em class=\"text-danger\">Il carrello e vuoto</em>");
+    cart_list.insertAdjacentHTML('beforeend', "<em class=\"text-danger text-center\">Il carrello e vuoto</em>");
   } // ADD QUANTITY FUNCTION
 
 
@@ -17636,6 +17636,10 @@ braintree.client.create({
 
           document.querySelector('#nonce').value = payload.nonce;
           document.getElementById("user_info").submit();
+          $("#loader").modal('show', {
+            backdrop: 'static',
+            keyboard: false
+          });
         });
       } else if (!forms.checkValidity()) {
         forms.reportValidity();
@@ -17653,7 +17657,7 @@ braintree.client.create({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\esercitazioni\esercitazione-finale\Project-team-4-Deliveboo\resources\js\checkout.js */"./resources/js/checkout.js");
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\laravel\Project-team-4-Deliveboo\resources\js\checkout.js */"./resources/js/checkout.js");
 
 
 /***/ })

@@ -14,7 +14,7 @@ var submit = document.querySelector('#button-pay');
 
 var restaurant = JSON.parse(localStorage.getItem('restaurant'))
 
-
+ 
 printCart();
 
 
@@ -48,7 +48,7 @@ function printCart() {
     if (products != '') {
 
         cart_list.insertAdjacentHTML('afterbegin',
-            `<li class="list-group-item d-flex justify-content-between align-items-center lh-condensed">
+            `<li class="list-group-item d-flex justify-content-between align-items-center lh-condensed bg-brand">
                 <h5 class='m-0'>${restaurant.restaurant_name}</h5>
                 <input type="hidden" name="restaurant_id" readonly class=" form-control-plaintext p-0" id="restaurant_id" value="${restaurant.id}">
                 <div class="btn" id='remove_all'>
@@ -72,20 +72,20 @@ function printCart() {
                             Quantit&aacute;: 
                             <input type="text" name="plates[${product.id}]" readonly class="form-control-plaintext ps-1" value="${counts[i]}" data-id='${product.id}'>
                     <div>
-                    <button class="btn reduce reduce_${i}">
+                    <button class="btn btn_meno brand-color fw-bold reduce reduce_${i}">
                       <i class="fa-solid fa-minus"></i>
                     </button>
-                    <button class="btn add add_${i}">
+                    <button class="btn bg-brand btn_piu add add_${i}">
                       <i class="fa-solid fa-plus"></i>
                     </button>
                     </div>
                         </small>
                     </div>
-                    <div class="d-flex flex-wrap">
-                        <span class="text-muted">&euro;${Math.round(((product.price * counts[i]) + Number.EPSILON) * 100)/100}</span>
+                    <div class="d-flex flex-wrap justify-content-center">
+                        <span class="fw-bold">&euro;${Math.round(((product.price * counts[i]) + Number.EPSILON) * 100)/100}</span>
                         <small>
                             <em class="clear clear_${i}">
-                            (Togli dal carrello)
+                            Rimuovi tutto
                             </em>
                         </small>
                     </div>
@@ -101,16 +101,16 @@ function printCart() {
         }
     
         cart_list.insertAdjacentHTML('beforeend', 
-            `<li class="list-group-item d-flex justify-content-between align-items-center lh-condensed"><h5 class='m-0'>Totale:</h5>
+            `<li class="bg_title_price list-group-item d-flex justify-content-between align-items-center lh-condensed"><h5 class='m-0'>Totale:</h5>
                 <h5 class='d-flex align-items-center justify-content-end m-0'>
                     &euro;
-                    <input type="text" name="total" readonly class=" form-control-plaintext p-0" id="total" value="${Math.round((total + Number.EPSILON) * 100) / 100}">
+                    <input type="text" name="total" readonly class="brand-color form-control-plaintext p-0" id="total" value=" ${Math.round((total + Number.EPSILON) * 100) / 100}">
                 </h5>
             </li>`
         )
 
     } else {
-        cart_list.insertAdjacentHTML('beforeend', `<em class="text-danger">Il carrello e vuoto</em>`)
+        cart_list.insertAdjacentHTML('beforeend', `<em class="text-danger text-center">Il carrello e vuoto</em>`)
     }
 
     // ADD QUANTITY FUNCTION
@@ -290,6 +290,7 @@ braintree.client.create({
     
                                 document.querySelector('#nonce').value = payload.nonce;
                                 document.getElementById("user_info").submit();
+                                $("#loader").modal('show',{ backdrop: 'static', keyboard: false });
     
                             });
                         

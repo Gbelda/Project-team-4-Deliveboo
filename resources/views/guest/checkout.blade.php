@@ -11,8 +11,9 @@
 @endsection
 
 @section('app')
-    <div class="container checkout_container">
+    <div class="container" id="checkout_container">
 
+        {{-- messaggi nerror o succes --}}
         @if (session()->has('success_message'))
             <div class="alert alert-success">
                 {{ session()->get('success_message') }}
@@ -28,90 +29,117 @@
                 </ul>
             </div>
         @endif
+        {{-- messaggi nerror o succes --}}
+
+
+
+        <!-- Loader Modal -->
+        <div class="modal fade" id="loader" tabindex="-1" role="dialog" aria-labelledby="loaderLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button class="btn btn-primary" type="button" disabled>
+                            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                            Pagamento in corso...
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <div class="form-container">
             <form class="needs-validation" action="{{ route('checkout.store') }}" id="user_info" method="POST">
                 @csrf
 
-                <div class="row justtify-content-evenly">
+                <div class="d-flex flex-wrap">
+                    {{-- FORM DATI --}}
+                    <div class="col-md-8 px-2" id="dati">
+                        {{-- form dati personali --}}
+                        <h2 class="text-center fw-bold bg_title">
+                            INSERISCI I TUOI DATI
+                        </h2>
+                        <div class="card_indirizzo_info">
+                            {{-- INSERIMENTO DATI INDIRIZZO --}}
+                            <div class="row">
+                                <div class="col-12 col-md-6 mb-3 form-group">
+                                    <label class="fw-bold" for="client_name">Nome</label>
+                                    <input type="text" class="form-control" id="client_name" placeholder="" required
+                                        name="client_name" value="{{ old('client_name') }}">
+                                </div>
+                                <div class="col-md-6 mb-3 form-group">
+                                    <label class="fw-bold" for="client_lastname">Cognome</label>
+                                    <input type="text" class="form-control" id="client_lastname" placeholder="" required
+                                        name="client_lastname" value="{{ old('client_lastname') }}">
+                                </div>
+                            </div>
 
-                    <div class="col-lg-6 order-lg-2 mb-4">
-                        <h4 class="d-flex justify-content-between align-items-center mb-3">
-                            <span class="text-muted">Carrello</span>
-                        </h4>
+                            <div class="mb-3 form-group">
+                                <label class="fw-bold" for="client_email">Email</label>
+                                <input type="email" class="form-control" id="client_email"
+                                    placeholder="Esempio@dominio.it" required name="client_email"
+                                    value="{{ old('client_email') }}">
+                            </div>
+
+                            <div class="mb-3 form-group">
+                                <label class="fw-bold" for="client_address">Indirizzo</label>
+                                <input type="text" class="form-control" id="client_address" placeholder="Via/Piazza"
+                                    required name="client_address" value="{{ old('client_address') }}">
+                            </div>
+
+                            <div class="mb-3 form-group">
+                                <label class="fw-bold" for="client_phone">Numero di Tel.</label>
+                                <input type="number" class="form-control" id="client_phone"
+                                    placeholder="Cellulare/Telefono fisso." required name="client_phone" pattern="[0-9]{10}"
+                                    oninvalid="this.setCustomValidity('Inserire un numero di telefono')"
+                                    oninput="this.setCustomValidity('')" value="{{ old('client_phone') }}">
+                            </div>
+                            {{-- INSERIMENTO DATI INDIRIZZO --}}
+                            <div id="cc">
+                                <div class="cc_container row">
+                                    <div>
+                                        <h1 class="text-center">CARTA DI CREDITO</h1>
+                                    </div>
+
+                                    <div id="my-sample-form" class="scale-down">
+                                        <div class="cardinfo-card-number">
+                                            <label class="cardinfo-label fw-bold" for="card-number">Numero carta</label>
+                                            <div class='input-wrapper' id="card-number"></div>
+                                            <div id="card-image"></div>
+                                        </div>
+
+                                        <div class="cardinfo-wrapper">
+                                            <div class="cardinfo-exp-date">
+                                                <label class="cardinfo-label fw-bold" for="expiration-date">Scadenza</label>
+                                                <div class='input-wrapper' id="expiration-date"></div>
+                                            </div>
+
+                                            <div class="cardinfo-cvv">
+                                                <label class="cardinfo-label fw-bold" for="cvv">CVV</label>
+                                                <div class='input-wrapper fw-bold' id="cvv"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- <input type="button" value=""> --}}
+                                <input name="payment_method_nonce" id="nonce" type="hidden">
+                                <input id="button-pay" type="button" value="Paga" />
+                            </div>
+                        </div>
+                        {{-- form dati personali --}}
+
+                    </div>
+                    {{-- FORM DATI --}}
+                    {{-- CARRELLO --}}
+                    <div class="col-12 col-md-4 px-2" id="carrello">
+                        <h2 class="text-center fw-bold bg_title">
+                            CARRELLO
+                        </h2>
                         <ul class="list-group mb-3" id="cart_list">
                         </ul>
                     </div>
-
-                    <div class="col-lg-6 order-lg-1">
-                        <h4 class="mb-3">Indirizzo di Consegna</h4>
-
-
-                        <div class="row">
-                            <div class="col-12 col-md-6 mb-3 form-group">
-                                <label for="client_name">Nome</label>
-                                <input type="text" class="form-control" id="client_name" placeholder="" required
-                                    name="client_name" value="{{ old('client_name') }}">
-                            </div>
-                            <div class="col-md-6 mb-3 form-group">
-                                <label for="client_lastname">Cognome</label>
-                                <input type="text" class="form-control" id="client_lastname" placeholder="" required
-                                    name="client_lastname" value="{{ old('client_lastname') }}">
-                            </div>
-                        </div>
-
-                        <div class="mb-3 form-group">
-                            <label for="client_email">Email</label>
-                            <input type="email" class="form-control" id="client_email" placeholder="Esempio@dominio.it" required
-                                name="client_email" value="{{ old('client_email') }}">
-                        </div>
-
-                        <div class="mb-3 form-group">
-                            <label for="client_address">Indirizzo</label>
-                            <input type="text" class="form-control" id="client_address" placeholder="Via/Piazza" required
-                                name="client_address" value="{{ old('client_address') }}">
-                        </div>
-
-                        <div class="mb-3 form-group">
-                            <label for="client_phone">Numero di Tel.</label>
-                            <input type="number" class="form-control" id="client_phone" placeholder="Cellulare/Telefono fisso." required
-                                name="client_phone" pattern="[0-9]{10}"
-                                        oninvalid="this.setCustomValidity('Inserire un numero di telefono')"
-                                        oninput="this.setCustomValidity('')" value="{{ old('client_phone') }}">
-                        </div>
-
-                        <hr class="mb-4">
-
-                    </div>
-
+                    {{-- CARRELLO --}}
                 </div>
-                <div class="cc_container row">
-                    <div>
-                        <h1>Carta di Credito</h1>
-                    </div>
-
-                    <div id="my-sample-form" class="scale-down">
-                        <div class="cardinfo-card-number">
-                            <label class="cardinfo-label" for="card-number">Numero carta</label>
-                            <div class='input-wrapper' id="card-number"></div>
-                            <div id="card-image"></div>
-                        </div>
-
-                        <div class="cardinfo-wrapper">
-                            <div class="cardinfo-exp-date">
-                                <label class="cardinfo-label" for="expiration-date">Scadenza</label>
-                                <div class='input-wrapper' id="expiration-date"></div>
-                            </div>
-
-                            <div class="cardinfo-cvv">
-                                <label class="cardinfo-label" for="cvv">CVV</label>
-                                <div class='input-wrapper' id="cvv"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {{-- <input type="button" value=""> --}}
-                <input name="payment_method_nonce" id="nonce" type="hidden">
-                <input id="button-pay" type="button" value="Paga" />
             </form>
 
 

@@ -131,7 +131,7 @@
                 </div>
                 <div class="text-end">
                   <em
-                    class="text-danger"
+                    class="clear_cart"
                     v-if="item != 1"
                     @click="clearItem(value, item)"
                     >(togli dal carrello)</em
@@ -444,5 +444,14 @@ $black: #0a0903;
 
 .img_hero {
   width: 100%;
+}
+
+.clear_cart{
+  color: $brand-color;
+  &:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: red;
+  }
 }
 </style>
