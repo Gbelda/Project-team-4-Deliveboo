@@ -3,5 +3,9 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/admin.css": "/css/admin.css",
-    "/js/register.js": "/js/register.js"
+    "/css/checkout.css": "/css/checkout.css",
+    "/js/chart.js": "/js/chart.js",
+    "/js/checkout.js": "/js/checkout.js",
+    "/js/register.js": "/js/register.js",
+    "/js/transaction.js": "/js/transaction.js"
 }

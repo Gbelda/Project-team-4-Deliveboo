@@ -12,16 +12,20 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/admin.js') }}" defer></script>
+    @yield('page_js')
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Styles -->
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -29,36 +33,59 @@
 
         @include('partials.admin.nav')
 
-        <div class="container-fluid pt-5">
-            <div class="row d-flex">
-                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-                    <div class="position-sticky pt-3">
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="{{ route('admin.index') }}">
-                                    Dashboard
+        <section class="container-fluid" id="contenuto_admin">
+            <div class="row">
+                <div class="side_bar ">
+                    <div class="side_bar_contenitor">
+                        <ul>
+                            <li class="dash">
+                                <div class="hide">
+                                    <h6>
+                                        dashboard
+                                    </h6>
+                                </div>
+                                <a id="dash" href="{{ route('admin.index') }}">
+                                    <i class="fa-solid fa-chart-line"></i>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    Ordini
+                            <li class="ordini">
+                                <div class="hide">
+                                    <h6>
+                                        ordini
+                                    </h6>
+                                </div>
+                                <a id="ordini" href="{{ route('admin.orders.index') }}">
+                                    <i class="fa-solid fa-clipboard"></i>
                                 </a>
                             </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.plates.index') }}">
-                                    Piatti
+                            <li class="piatti">
+                                <div class="hide">
+                                    <h6>
+                                        piatti
+                                    </h6>
+                                </div>
+                                <a id="piatti" href="{{ route('admin.plates.index') }}">
+                                    <i class="fa-solid fa-utensils"></i>
+                                </a>
+                            </li>
+                            <li class="piatti">
+                                <div class="hide">
+                                    <h6>
+                                        statistiche
+                                    </h6>
+                                </div>
+                                <a href="{{ route('admin.statistics') }}">
+                                    <i class="fas fa-chart-pie"></i>
                                 </a>
                             </li>
                         </ul>
                     </div>
-                </nav>
-
-                <main class="col-md- ms-sm-auto col-lg-10 px-md-4">
+                </div>
+                <div class="contenuto_griglie">
                     @yield('content')
-                </main>
+                </div>
             </div>
-        </div>
+        </section>
     </div>
 </body>
 

@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('page_js')
-    
     <script src="{{ asset('js/register.js') }}" defer></script>
 @endsection
 
@@ -19,10 +18,10 @@
                 </ul>
             </div>
         @endif
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" id="register">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Register') }}</div>
+                    <div class="card-header">{{ __('REGISTRATI') }}</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
@@ -173,9 +172,9 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row mb-0">
+                            <div class="form-group row mb-0 justify-content-center">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary" id="submit_form">
+                                    <button type="submit" class="btn btn-register" id="submit_form">
                                         {{ __('Register') }}
                                     </button>
                                 </div>

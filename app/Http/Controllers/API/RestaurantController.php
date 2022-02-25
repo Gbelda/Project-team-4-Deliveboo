@@ -14,8 +14,14 @@ class RestaurantController extends Controller
 {
     public function index()
     {
-        $restaurants = User::withFilters(
-            request()->input('categories', []))->with(['categories'])->paginate(10);
+        if(!request()->input('categories', []) || request()->input('categories', [])[0] == null){
+            $restaurants = User::with(['categories'])->paginate(6);
+
+        }else{
+            $restaurants = User::withFilters(
+                request()->input('categories', []))->with(['categories'])->paginate(6);
+
+        }
             
         return RestaurantResource::collection($restaurants);
 
@@ -26,6 +32,7 @@ class RestaurantController extends Controller
     {
 
         $thisRestaurant = User::where('id', $restaurant->id)->first();
+    
 
         return new RestaurantResource($thisRestaurant);
     }
