@@ -36,9 +36,9 @@
         <!-- Loader Modal -->
         <div class="modal fade" id="loader" tabindex="-1" role="dialog" aria-labelledby="loaderLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <button class="btn btn-primary" type="button" disabled>
+                <div class="modal-content ">
+                    <div class="modal-body d-flex justify-content-center">
+                        <button class="btn bg-brand " type="button" disabled>
                             <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
                             Pagamento in corso...
                         </button>
