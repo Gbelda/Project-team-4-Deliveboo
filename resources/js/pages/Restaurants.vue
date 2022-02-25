@@ -234,26 +234,35 @@
                 <div class="background_cat categorie">
                     <!-- ciclo categorie -->
                     <div
-                      class="food-card-artist-name"
+                        class="form-check orange_band"
+                        v-for="(category, index) in categories"
+                        :key="category.id"
                     >
-                    <span
-                    v-for="(category, index) in restaurant.categories"
-                      :key="restaurant.slug + category.id">
-                      {{ category.name }}
-                      {{ index != restaurant.categories.length - 1 ? "|" : "" }}
-                    </span>
-                    </div>
-                    <div class="food-card-about">
-                      {{ restaurant.address }}
-                      <div class="about-shadow"></div>
-                    </div>
-                    <div class="food-card-food-properties">
-                      <!-- routerlink -->
-                      <router-link
-                        :to="'/restaurants/' + restaurant.slug"
-                        id="router_ristoranti"
-                        ><strong>VEDI RISTORANTE</strong></router-link
-                      >
+                        <input
+                            class="form-check-input check_square"
+                            type="checkbox"
+                            :value="category.id"
+                            :id="'category' + index"
+                            v-model="selected.categories"
+                        />
+                        <div class="content_check">
+                            <i class="far fa-check-circle"></i>
+                        </div>
+                        <div class="d-flex flex-column colonna">
+                            <label class="cat_image" :for="'category' + index">
+                                <img
+                                    class="icon_cat"
+                                    :src="'../../img/icon/' + category.image"
+                                    alt=""
+                                />
+                            </label>
+                            <label
+                                class="form-check-label fw-bold"
+                                :for="'category' + index"
+                            >
+                                {{ category.name }}
+                            </label>
+                        </div>
                     </div>
                     <!-- /ciclo categorie -->
                 </div>
@@ -555,144 +564,143 @@ $black: #0a0903;
     }
     // main ristoranti
 
-  .contenitore_bordi {
-    border-top: 2px solid $secondary-color;
-    border-bottom: 2px solid $secondary-color;
-  }
-  #router_ristoranti {
-    text-decoration: none;
-    color: $black;
-  }
-  .food-card:hover {
-    transform: scale(105%);
-    transition: all 0.3s ease-in-out;
-  }
-  .food-card-food-properties:hover {
-    box-shadow: 1px 3px 3px 0px $black;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-  }
-  .prev {
-    color: $black !important;
-  }
-  .current {
-    background-color: $brand-color;
-  }
-  .next {
-    color: $brand-color;
-    font-weight: bold;
-  }
-  .current-off {
-    background-color: transparent;
-  }
-  // mpostazioni card
-  .food-card {
-    position: relative;
-    width: 400px;
-    height: 350px;
-    background: transparent;
-    font-family: "Montserrat", sans-serif;
-  }
-  .food-card-image {
-    position: relative;
-    top: 20%;
-    left: 5%;
-    width: 40%;
-    height: 40%;
-    border-radius: 5px;
-    overflow: hidden;
-    background: #ffffff45;
-    box-shadow: -4px 9px 13px 1px #00000045;
-    z-index: 5;
-  }
-  .food-card-image > img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 100%;
-    width: auto;
-  }
-  .food-card-content {
-    position: absolute;
-    bottom: 20%;
-    right: 0;
-    width: 80%;
-    height: 70%;
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 5px 5px 10px 2px #00000045;
-    background: $secondary_color;
-  }
-  .food-card-food-name,
-  .food-card-artist-name {
-    position: relative;
-    left: 30%;
-    color: $black;
-    padding-left: 5px;
-    font-size: 100%;
-  }
-  .food-card-artist-name {
-    letter-spacing: 2px;
-    width: 80%;
-  }
-  .food-card-food-name > * {
-    margin-top: 32px;
-    text-overflow: ellipsis;
-    font-size: 1.5rem;
-    width: 176px;
-  }
-  .food-card-about {
-    width: 87%;
-    position: absolute;
-    font-size: 12px;
-    font-family: "Montserrat", sans-serif;
-    opacity: 0.56;
-    top: 77%;
-  }
-  .about-shadow {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 35px;
-    z-index: 2;
-  }
-  .food-card-food-properties {
-    position: absolute;
-    left: 65%;
-    //bottom: -25%;
-    bottom: -20%;
-    transform: translate(-50%, -105%);
-    z-index: 101;
-    border-radius: 15px;
-    //padding: 10px 15px;
-    padding: 5px 10px;
-    color: $black;
-    text-align: center;
-    background: $brand-color;
-    //width: fit-content;
-    width: inherit;
-    box-shadow: 2px 4px 12px 0px #00000045;
-  }
-  .food-card-food-properties > div {
-    border-right: 1px solid var(--card-properties-text-color);
-    width: fit-content;
-    padding: 0 10px;
-    display: inline-block;
-  }
-  .food-card-food-properties > div:last-child {
-    border-right: none;
-  }
-  .food-card-food-properties > div > i {
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-  .food-card-food-properties > div > p {
-    font-size: 10px;
-    margin: 0;
-  }
+    .contenitore_bordi {
+        border-top: 2px solid $secondary-color;
+        border-bottom: 2px solid $secondary-color;
+    }
+    #router_ristoranti {
+        text-decoration: none;
+        color: $black;
+    }
+    .food-card:hover {
+        transform: scale(105%);
+        transition: all 0.3s ease-in-out;
+    }
+    .food-card-food-properties:hover {
+        box-shadow: 1px 3px 3px 0px $black;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    .prev {
+        color: $black !important;
+    }
+    .current {
+        background-color: $brand-color;
+    }
+    .next {
+        color: $brand-color;
+        font-weight: bold;
+    }
+    .current-off {
+        background-color: transparent;
+    }
+    // mpostazioni card
+    .food-card {
+        position: relative;
+        width: 400px;
+        height: 350px;
+        background: transparent;
+        font-family: "Montserrat", sans-serif;
+    }
+    .food-card-image {
+        position: relative;
+        top: 20%;
+        left: 5%;
+        width: 40%;
+        height: 40%;
+        border-radius: 5px;
+        overflow: hidden;
+        background: #ffffff45;
+        box-shadow: -4px 9px 13px 1px #00000045;
+        z-index: 5;
+    }
+    .food-card-image > img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        width: auto;
+    }
+    .food-card-content {
+        position: absolute;
+        bottom: 20%;
+        right: 0;
+        width: 80%;
+        height: 70%;
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 5px 5px 10px 2px #00000045;
+        background: $secondary_color;
+    }
+    .food-card-food-name,
+    .food-card-artist-name {
+        position: relative;
+        left: 30%;
+        color: $black;
+        padding-left: 5px;
+        font-size: 100%;
+    }
+    .food-card-artist-name {
+        letter-spacing: 2px;
+    }
+    .food-card-food-name > * {
+        margin-top: 32px;
+        text-overflow: ellipsis;
+        font-size: 1.5rem;
+        width: 176px;
+    }
+    .food-card-about {
+        width: 87%;
+        position: absolute;
+        font-size: 12px;
+        font-family: "Montserrat", sans-serif;
+        opacity: 0.56;
+        top: 77%;
+    }
+    .about-shadow {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 35px;
+        z-index: 2;
+    }
+    .food-card-food-properties {
+        position: absolute;
+        left: 65%;
+        //bottom: -25%;
+        bottom: -20%;
+        transform: translate(-50%, -105%);
+        z-index: 101;
+        border-radius: 15px;
+        //padding: 10px 15px;
+        padding: 5px 10px;
+        color: $black;
+        text-align: center;
+        background: $brand-color;
+        //width: fit-content;
+        width: inherit;
+        box-shadow: 2px 4px 12px 0px #00000045;
+    }
+    .food-card-food-properties > div {
+        border-right: 1px solid var(--card-properties-text-color);
+        width: fit-content;
+        padding: 0 10px;
+        display: inline-block;
+    }
+    .food-card-food-properties > div:last-child {
+        border-right: none;
+    }
+    .food-card-food-properties > div > i {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+    .food-card-food-properties > div > p {
+        font-size: 10px;
+        margin: 0;
+    }
 }
 
 #infografica {
