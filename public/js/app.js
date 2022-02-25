@@ -44261,7 +44261,7 @@ var staticRenderFns = [
           _c("div", { staticClass: "line" }),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "d-flex g-3" }, [
+        _c("div", { staticClass: "d-flex g-3 flex-wrap" }, [
           _c(
             "div",
             { staticClass: "col-lg-4 d-flex flex-column align-items-center" },

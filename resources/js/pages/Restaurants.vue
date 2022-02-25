@@ -334,7 +334,7 @@
         <h1>Perchè <span class="brand-color">DeliveBoo</span>?</h1>
         <div class="line"></div>
       </div>
-      <div class="d-flex g-3">
+      <div class="d-flex g-3 flex-wrap">
         <div class="col-lg-4 d-flex flex-column align-items-center">
           <h2>SENZA INQUINARE</h2>
           <p>
