@@ -12,22 +12,26 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/admin.js') }}" defer></script>
+    @yield('page_js')
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Styles -->
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <div id="app">
 
         @include('partials.admin.nav')
-
 
         <section class="container-fluid" id="contenuto_admin">
             <div class="row">
@@ -50,7 +54,7 @@
                                         ordini
                                     </h6>
                                 </div>
-                                <a id="ordini" href="{{route('admin.orders.index')}}">
+                                <a id="ordini" href="{{ route('admin.orders.index') }}">
                                     <i class="fa-solid fa-clipboard"></i>
                                 </a>
                             </li>
@@ -62,6 +66,16 @@
                                 </div>
                                 <a id="piatti" href="{{ route('admin.plates.index') }}">
                                     <i class="fa-solid fa-utensils"></i>
+                                </a>
+                            </li>
+                            <li class="piatti">
+                                <div class="hide">
+                                    <h6>
+                                        statistiche
+                                    </h6>
+                                </div>
+                                <a href="{{ route('admin.statistics') }}">
+                                    <i class="fas fa-chart-pie"></i>
                                 </a>
                             </li>
                         </ul>

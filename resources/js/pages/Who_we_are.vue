@@ -1,6 +1,6 @@
 <template id="who_we_are">
     <div class="container mt-5">
-        <div class="content">
+        <div class="content text-center">
             <div class="title m-b-md">Deliveboo</div>
             <em>Team 4 di Boolean</em>
             <hr />

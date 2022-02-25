@@ -1,41 +1,40 @@
 @extends('layouts.admin')
-
 @section('content')
-
 
     @include('partials.errors')
 
     <div class="container">
-        <h1 class='pb-3'>Aggiungi Piatto</h1>
+        <h1 class='text-center section_title'>Aggiungi Piatto</h1>
 
         <form action="{{ route('admin.plates.store') }}" method="post" enctype="multipart/form-data">
             @csrf
 
             <div class="mb-3">
-                <label for="name " class="form-label">Nome del Piatto*</label>
+                <label for="name " class="form-label title_label">Nome del Piatto*</label>
                 <input type="text" name="name" id="name" class="form-control @error('name') is_invalid @enderror"
                     placeholder="Nome del Piatto" aria-describedby="nameHelper" required>
-                <small id="nameHelper" class="text-muted" value="{{ old('name') }}">Inserire il nome del piatto</small>
+                <small id="nameHelper" class="text-small" value="{{ old('name') }}">Inserire il nome del piatto</small>
                 @error('name')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
 
             <div class="mb-3">
-                <label for="image " class="form-label">Immagine</label>
+                <label for="image " class="form-label title_label pt-2">Immagine</label>
                 <input type="file" name="image" id="image" class="form-control @error('image') is_invalid @enderror"
                     aria-describedby="imageHelper" accept=".jpg, .jpeg, .png">
-                <small id="imageHelper" class="text-muted">Caricare un immagine .jpg/.jpeg o .png. Massimo 1mb*</small>
+                <small id="imageHelper" class="text-small">Caricare un immagine .jpg/.jpeg o .png. Massimo 1mb*</small>
                 @error('image')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
 
             <div class="mb-3">
-                <label for="ingredients " class="form-label @error('ingredients') is_invalid @enderror">Ingredienti</label>
+                <label for="ingredients "
+                    class="form-label title_label @error('ingredients') is_invalid @enderror">Ingredienti</label>
                 <input type="text" name="ingredients" id="ingredients" class="form-control" placeholder=""
                     aria-describedby="ingredientsHelper">
-                <small id="ingredientsHelper" class="text-muted" value="{{ old('ingredients') }}">Scrivi gli
+                <small id="ingredientsHelper" class="text-small" value="{{ old('ingredients') }}">Scrivi gli
                     ingredienti</small>
                 @error('ingredients')
                     <div class="alert alert-danger">{{ $message }}</div>
@@ -43,11 +42,11 @@
             </div>
 
             <div class="mb-3">
-                <label for="price " class="form-label">Prezzo*</label>
+                <label for="price " class="form-label title_label">Prezzo*</label>
                 <input type="number" name="price" id="price" class="form-control @error('price') is_invalid @enderror"
                     placeholder="0.0" step="0.01" min="0" aria-describedby="priceHelper"
                     onkeyup="if(this.value<0){this.value= this.value * -1}" required>
-                <small id="priceHelper" class="text-muted" value="{{ old('price') }}">Inserire il prezzo del
+                <small id="priceHelper" class="text-small" value="{{ old('price') }}">Inserire il prezzo del
                     piatto</small>
                 @error('price')
                     <div class="alert alert-danger">{{ $message }}</div>
@@ -77,8 +76,8 @@
     </div> --}}
 
             <div class="mb-3">
-                <label for="description " class="form-label">Descrizione</label>
-                <textarea class="form-control @error('description') is_invalid @enderror" name="description"
+                <label for="description " class="form-label title_label">Descrizione</label>
+                <textarea class="form-control title_label @error('description') is_invalid @enderror" name="description"
                     id="description" rows="5">{{ old('description') }}</textarea>
                 @error('description')
                     <div class="alert alert-danger">{{ $message }}</div>
@@ -86,7 +85,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="available">Disponibilit&agrave;*</label>
+                <label class="title_label" for="available">Disponibilit&agrave;*</label>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="available" id="available1" value="1">
                     <label class="form-check-label" for="available1">
@@ -106,9 +105,7 @@
             </div>
 
 
-            <button type="submit" class="btn btn-dark">Save</button>
+            <button type="submit" class="btn btn_save">Save</button>
         </form>
     </div>
-
-
 @endsection

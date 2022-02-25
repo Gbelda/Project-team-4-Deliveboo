@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\OrderMailable;
+use App\Mail\GuestOrderMailable;
 use App\Models\Order;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Support\Facades\Mail;
 
 class CheckoutController extends Controller
 {
@@ -103,6 +107,8 @@ class CheckoutController extends Controller
 
             $order = Order::create($validated);
 
+            $restaurant = User::where('id', $request->restaurant_id)->first();
+            // ddd($restaurant->email);
 
 
 
@@ -112,6 +118,12 @@ class CheckoutController extends Controller
                 });
 
             $order->plates()->sync($plates);
+
+            // Mail::to($restaurant->email)->send(new OrderPlaced);
+            // ddd($order);
+
+            Mail::to($restaurant->email)->queue(new OrderMailable($order));
+            Mail::to($order->client_email)->queue(new GuestOrderMailable($order));
 
             return redirect()->route('guest.paysuccess')->with('message', 'Pagamento avvenuta con successo, Riceverai un email di conferma!');
         } else {
