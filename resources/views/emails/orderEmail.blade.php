@@ -6,7 +6,7 @@ Indirizzo: {{ $order->client_address }} <br>
 Indirizzo e-mail: {{ $order->client_email }} <br>
 <br>
 <hr>
-# Ordine:<br>
+# Ordine<br>
 @foreach ($order->plates as $plate)
     Piatto: {{ $plate->name }} <br>
     Prezzo: &euro;{{ $plate->price }} <br>
