@@ -17636,6 +17636,10 @@ braintree.client.create({
 
           document.querySelector('#nonce').value = payload.nonce;
           document.getElementById("user_info").submit();
+          $("#loader").modal('show', {
+            backdrop: 'static',
+            keyboard: false
+          });
         });
       } else if (!forms.checkValidity()) {
         forms.reportValidity();

@@ -32,6 +32,22 @@
         {{-- messaggi nerror o succes --}}
 
 
+
+        <!-- Loader Modal -->
+        <div class="modal fade" id="loader" tabindex="-1" role="dialog" aria-labelledby="loaderLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button class="btn btn-primary" type="button" disabled>
+                            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                            Pagamento in corso...
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <div class="form-container">
             <form class="needs-validation" action="{{ route('checkout.store') }}" id="user_info" method="POST">
                 @csrf
@@ -57,25 +73,26 @@
                                         name="client_lastname" value="{{ old('client_lastname') }}">
                                 </div>
                             </div>
-    
+
                             <div class="mb-3 form-group">
                                 <label class="fw-bold" for="client_email">Email</label>
-                                <input type="email" class="form-control" id="client_email" placeholder="Esempio@dominio.it" required
-                                    name="client_email" value="{{ old('client_email') }}">
+                                <input type="email" class="form-control" id="client_email"
+                                    placeholder="Esempio@dominio.it" required name="client_email"
+                                    value="{{ old('client_email') }}">
                             </div>
-    
+
                             <div class="mb-3 form-group">
                                 <label class="fw-bold" for="client_address">Indirizzo</label>
-                                <input type="text" class="form-control" id="client_address" placeholder="Via/Piazza" required
-                                    name="client_address" value="{{ old('client_address') }}">
+                                <input type="text" class="form-control" id="client_address" placeholder="Via/Piazza"
+                                    required name="client_address" value="{{ old('client_address') }}">
                             </div>
-    
+
                             <div class="mb-3 form-group">
                                 <label class="fw-bold" for="client_phone">Numero di Tel.</label>
-                                <input type="number" class="form-control" id="client_phone" placeholder="Cellulare/Telefono fisso." required
-                                    name="client_phone" pattern="[0-9]{10}"
-                                            oninvalid="this.setCustomValidity('Inserire un numero di telefono')"
-                                            oninput="this.setCustomValidity('')" value="{{ old('client_phone') }}">
+                                <input type="number" class="form-control" id="client_phone"
+                                    placeholder="Cellulare/Telefono fisso." required name="client_phone" pattern="[0-9]{10}"
+                                    oninvalid="this.setCustomValidity('Inserire un numero di telefono')"
+                                    oninput="this.setCustomValidity('')" value="{{ old('client_phone') }}">
                             </div>
                             {{-- INSERIMENTO DATI INDIRIZZO --}}
                             <div id="cc">
@@ -83,20 +100,20 @@
                                     <div>
                                         <h1 class="text-center">CARTA DI CREDITO</h1>
                                     </div>
-                
+
                                     <div id="my-sample-form" class="scale-down">
                                         <div class="cardinfo-card-number">
                                             <label class="cardinfo-label fw-bold" for="card-number">Numero carta</label>
                                             <div class='input-wrapper' id="card-number"></div>
                                             <div id="card-image"></div>
                                         </div>
-                
+
                                         <div class="cardinfo-wrapper">
                                             <div class="cardinfo-exp-date">
                                                 <label class="cardinfo-label fw-bold" for="expiration-date">Scadenza</label>
                                                 <div class='input-wrapper' id="expiration-date"></div>
                                             </div>
-                
+
                                             <div class="cardinfo-cvv">
                                                 <label class="cardinfo-label fw-bold" for="cvv">CVV</label>
                                                 <div class='input-wrapper fw-bold' id="cvv"></div>
@@ -112,7 +129,7 @@
                         {{-- form dati personali --}}
 
                     </div>
-                    {{-- FORM DATI  --}}
+                    {{-- FORM DATI --}}
                     {{-- CARRELLO --}}
                     <div class="col-12 col-md-4 px-2" id="carrello">
                         <h2 class="text-center fw-bold bg_title">
