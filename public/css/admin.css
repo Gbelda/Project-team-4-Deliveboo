@@ -11604,6 +11604,10 @@ textarea.form-control-lg {
     width: 100%;
     margin-top: 15px;
   }
+
+  #contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti .hide, #contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini .hide, #contenuto_admin .row .side_bar .side_bar_contenitor ul .dash .hide {
+    display: none;
+  }
 }
 @media screen and (min-width: 768px) {
   #contenuto_admin .row .contenuto_griglie {
@@ -11650,6 +11654,14 @@ textarea.form-control-lg {
     width: 60%;
     margin-top: 0px;
   }
+
+  #contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti .hide h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti .hide .h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini .hide h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini .hide .h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .dash .hide h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .dash .hide .h6 {
+    font-size: 0.5rem;
+  }
+
+  #contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti .hide, #contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini .hide, #contenuto_admin .row .side_bar .side_bar_contenitor ul .dash .hide {
+    display: contents;
+  }
 }
 @media screen and (min-width: 1200px) {
   #contenuto_admin .row .contenuto_griglie {
@@ -11666,6 +11678,15 @@ textarea.form-control-lg {
   #show_plate .d-flex .right_col .card_info {
     width: 55%;
     margin-top: 0px;
+  }
+
+  #contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti .hide h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti .hide .h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini .hide h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini .hide .h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .dash .hide h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .dash .hide .h6 {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (min-width: 1400px) {
+  #contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti .hide h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti .hide .h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini .hide h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini .hide .h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .dash .hide h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .dash .hide .h6 {
+    font-size: 0.7rem;
   }
 }
 /* /media_screen */
