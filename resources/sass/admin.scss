@@ -72,23 +72,17 @@
                     .piatti,
                     .ordini,
                     .dash {
-                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
                         .hide {
-                            display: none;
-                            position: absolute;
-                            left: 1.5rem;
-                            color: orange;
+                            color: $brand-color;
                             padding: 0.3rem;
-                            border-radius: 0px 10px 10px 0px;
                             h6 {
                                 font-size: 0.7rem;
-                                background: black;
                                 padding: 0.3rem;
                                 border-radius: 0px 10px 10px 0px;
                             }
-                        }
-                        &:hover .hide {
-                            display: block;
                         }
                     }
                     li {

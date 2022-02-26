@@ -5192,6 +5192,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -43103,7 +43112,13 @@ var staticRenderFns = [
         ]),
       ]),
       _vm._v(" "),
-      _c("div", [_c("p", [_vm._v("© Deliveboo Italy s.r.l. 2022")])]),
+      _c("div", [
+        _c("p", [
+          _vm._v(
+            "\n                        © 2022 Deliveboo® Italy s.r.l. All rights\n                        reserved\n                    "
+          ),
+        ]),
+      ]),
     ])
   },
   function () {

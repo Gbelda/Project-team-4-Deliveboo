@@ -280,7 +280,11 @@ var lineChartSales = new Chart(chartLineSales, {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! H:\MAMP\Boolean\Project-team-4-Deliveboo\resources\js\chart.js */"./resources/js/chart.js");
+=======
+module.exports = __webpack_require__(/*! C:\MAMP\htdocs\pj4\Project-team-4-Deliveboo\resources\js\chart.js */"./resources/js/chart.js");
+>>>>>>> fae493ad697641f9d8ab397935695fcb0a43bd29
 
 
 /***/ })
