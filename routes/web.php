@@ -37,6 +37,9 @@ Route::get('/paysuccess', function () {
     return view('guest.paysuccess');
 })->name('guest.paysuccess');
 
+Route::get('/chart', 'ChartController@index');
+
+
 Route::get('/{any}', function () {
     return view('welcome');
 })->where('any', '.*');

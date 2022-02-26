@@ -72,23 +72,17 @@
                     .piatti,
                     .ordini,
                     .dash {
-                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
                         .hide {
-                            display: none;
-                            position: absolute;
-                            left: 1.5rem;
-                            color: orange;
+                            color: $brand-color;
                             padding: 0.3rem;
-                            border-radius: 0px 10px 10px 0px;
                             h6 {
                                 font-size: 0.7rem;
-                                background: black;
                                 padding: 0.3rem;
                                 border-radius: 0px 10px 10px 0px;
                             }
-                        }
-                        &:hover .hide {
-                            display: block;
                         }
                     }
                     li {
@@ -187,6 +181,7 @@
 
 #show_plate {
     width: 100%;
+    
     .actions {
         border-radius: 0px 0px 20px 20px;
         width: 100%;
@@ -203,6 +198,8 @@
     }
     .d-flex {
         width: 100%;
+        margin-top: 15px;
+        align-items: center;
         .right_col {
             display: flex;
             justify-content: center;
@@ -369,6 +366,10 @@
         padding: 1rem;
         width: 8%;
         height: 100%;
+    }
+
+    #show_plate .d-flex .right_col .card_info h4, #show_plate .d-flex .right_col .card_info .h4 {
+    font-size: 1.5rem;
     }
 }
 
