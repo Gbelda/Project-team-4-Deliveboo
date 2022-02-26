@@ -11537,6 +11537,11 @@ textarea.form-control-lg {
   font-weight: bold;
 }
 
+.d-flex {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 /*statistic css*/
 .chart .AsseY {
   margin-top: 3rem;
@@ -11598,6 +11603,15 @@ textarea.form-control-lg {
     width: 11%;
     height: 100%;
   }
+
+  .col-6 {
+    width: 70% !important;
+  }
+
+  #show_plate .d-flex .right_col .card_info {
+    width: 100%;
+    margin-top: 15px;
+  }
 }
 @media screen and (min-width: 768px) {
   #contenuto_admin .row .contenuto_griglie {
@@ -11609,6 +11623,15 @@ textarea.form-control-lg {
     padding: 1rem;
     width: 9%;
     height: 100%;
+  }
+
+  .col-6 {
+    width: 70% !important;
+  }
+
+  #show_plate .d-flex .right_col .card_info {
+    width: 80%;
+    margin-top: 15px;
   }
 }
 @media screen and (min-width: 992px) {
@@ -11626,6 +11649,15 @@ textarea.form-control-lg {
   #show_plate .d-flex .right_col .card_info h4, #show_plate .d-flex .right_col .card_info .h4 {
     font-size: 1.5rem;
   }
+
+  .col-6 {
+    width: 50% !important;
+  }
+
+  #show_plate .d-flex .right_col .card_info {
+    width: 60%;
+    margin-top: 0px;
+  }
 }
 @media screen and (min-width: 1200px) {
   #contenuto_admin .row .contenuto_griglie {
@@ -11637,6 +11669,11 @@ textarea.form-control-lg {
     padding: 1rem;
     width: 7%;
     height: 100%;
+  }
+
+  #show_plate .d-flex .right_col .card_info {
+    width: 55%;
+    margin-top: 0px;
   }
 }
 /* /media_screen */
