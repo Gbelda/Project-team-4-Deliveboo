@@ -11393,6 +11393,7 @@ header .content-left h1, header .content-left .h1 {
   }
 }
 .best_restaurants_section .carousel .carousel-inner .carousel-item {
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

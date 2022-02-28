@@ -10,7 +10,7 @@
 // Common
 @import "common";
 
-body{
+body {
     color: $black !important;
 }
 
@@ -60,7 +60,7 @@ body{
     text-align: center;
 }
 /* /utility */
-.brand-color{
+.brand-color {
     color: $brand-color !important;
 }
 /* header */
@@ -77,7 +77,7 @@ header {
     }
 }
 
-.d_flex{
+.d_flex {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -101,11 +101,7 @@ header {
                 width: 100%;
                 padding: 0.2rem;
                 border-radius: 10px;
-                background-image: linear-gradient(
-                    to right,
-                    $secondary_color,
-                    $brand-color
-                );
+                background-image: linear-gradient(to right, $secondary_color, $brand-color);
             }
         }
     }
@@ -151,6 +147,7 @@ header {
                 }
             }
             .carousel-item {
+                box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
@@ -167,96 +164,98 @@ header {
                         margin-bottom: 0.25rem;
                     }
                     .btn {
-                        background-image: linear-gradient(
-                            to right,
-                            $secondary_color,
-                            $brand-color
-                        );
+                        background-image: linear-gradient(to right, $secondary_color, $brand-color);
                         border: none;
                     }
                 }
             }
             #da_marco {
                 background-image: url("../img/main/ristorante_pizzeria.png");
+                // box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
             }
             #da_giovanni {
                 background-image: url("../img/main/ristorante_sushi.jpg");
+
+                // box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
             }
             #da_paolo {
                 background-image: url("../img/main/ristorante_americano.webp");
+                // box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
             }
             #da_laurentiu {
                 background-image: url("../img/main/ristorante_cucina_orientale.jpg");
+                // box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
             }
             #da_giuseppe {
                 background-image: url("../img/main/ristorante_messicano.jpg");
+                // box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
             }
         }
     }
 }
-.nav_reg{
+.nav_reg {
     background-color: $black;
-    a{
-        color: $brand-color!important;
-        &:hover{
-            color: $secondary_color!important;
+    a {
+        color: $brand-color !important;
+        &:hover {
+            color: $secondary_color !important;
         }
     }
 }
 
-.navbar_button{
-    color: rgb(247 130 1)!important;
-    border-color: rgb(247 130 1)!important;
+.navbar_button {
+    color: rgb(247 130 1) !important;
+    border-color: rgb(247 130 1) !important;
 }
 
-.icon_button_nav{
+.icon_button_nav {
     font-size: 25px;
     color: #f78201;
 }
 
-#register{
-    .card{
+#register {
+    .card {
         box-shadow: -1px 17px 20px 1px #0a0903;
-        .card-header{
+        .card-header {
             text-align: center;
             background-color: $black;
             color: $brand-color;
         }
-        label{
+        label {
             font-weight: bolder;
         }
-        .btn-register{
+        .btn-register {
             background-color: $brand-color;
             color: $black;
             font-weight: 900;
-            &:hover{
+            &:hover {
                 transform: scale(105%);
             }
         }
     }
 }
-#accedi{
-    .card{
-        box-shadow:4px 9px 20px 0px $black;
-        .card-header{
+#accedi {
+    .card {
+        box-shadow: 4px 9px 20px 0px $black;
+        .card-header {
             background-color: $black;
             color: $brand-color;
         }
-        label{
+        label {
             font-weight: bolder;
         }
-        .bottoni_accesso{
-            margin-top: .5rem;
-            .btn_access{
+        .bottoni_accesso {
+            margin-top: 0.5rem;
+            .btn_access {
                 background-color: $brand-color;
                 color: $black;
-                &:hover{
+                &:hover {
                     transform: scale(105%);
                 }
             }
-            a{
+            a {
                 color: $brand-color;
-                &:hover{
+                &:hover {
                     color: $black;
                 }
             }
@@ -269,11 +268,7 @@ header {
     .line {
         width: 100%;
         border-radius: 10px;
-        background-image: linear-gradient(
-            to right,
-            $secondary_color,
-            $brand-color
-        );
+        background-image: linear-gradient(to right, $secondary_color, $brand-color);
     }
     .ristoranti_container {
         /* .contenitore_bordi {
@@ -373,7 +368,6 @@ header {
             .app_store {
                 text-align: center;
                 img {
-                    
                     margin: 0.25rem;
                     text-align: center;
                 }
@@ -451,12 +445,12 @@ header {
     }
 
     .app_store_logo {
-        width: 80%!important;
+        width: 80% !important;
     }
 
-    .king{
-        border: none!important;
-        margin: 10%!important;
+    .king {
+        border: none !important;
+        margin: 10% !important;
     }
 }
 
@@ -494,12 +488,12 @@ header {
     }
 
     .app_store_logo {
-        width: 65%!important;
+        width: 65% !important;
     }
 
-    .king{
-        border: none!important;
-        margin: 10%!important;
+    .king {
+        border: none !important;
+        margin: 10% !important;
     }
 }
 
@@ -541,12 +535,12 @@ header {
     }
 
     .app_store_logo {
-        width: 40%!important;
+        width: 40% !important;
     }
 
-    .king{
-        border: none!important;
-        margin: 10%!important;
+    .king {
+        border: none !important;
+        margin: 10% !important;
     }
 }
 
@@ -580,14 +574,14 @@ header {
     }
 
     .app_store_logo {
-        width: 35%!important;
+        width: 35% !important;
     }
 
     .king {
-    border-left: 2px solid #ff8200!important;
-    border-right: 2px solid #ff8200!important;
-    margin: 0!important;
-  }
+        border-left: 2px solid #ff8200 !important;
+        border-right: 2px solid #ff8200 !important;
+        margin: 0 !important;
+    }
 }
 
 @media screen and (min-width: 1200px) {
@@ -612,10 +606,8 @@ header {
     }
 
     .app_store_logo {
-        width: 25%!important;
+        width: 25% !important;
     }
-
-    
 }
 
 @media screen and (min-width: 1400px) {
