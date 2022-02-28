@@ -68,7 +68,7 @@
                                     <i class="fa-solid fa-utensils"></i>
                                 </a>
                             </li>
-                            {{-- <li class="piatti">
+                            <li class="piatti">
                                 <div class="hide">
                                     <h6>
                                         statistiche
@@ -77,44 +77,105 @@
                                 <a href="{{ route('admin.statistics') }}">
                                     <i class="fas fa-chart-pie"></i>
                                 </a>
-                            </li> --}}
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <div class="contenuto_griglie">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="panel panel-default">
-                                <div class="panel-heading my-2">Statistiche degli ordini</div>
+                    <div class="row flex-wrap">
+                        <div class="col-12 pb-5">
+                            <div class="panel panel-default d-flex justify-content-center">
+                                <h1 class="panel-heading my-2 col-12">Statistiche mensile degli ordini</h1>
                                 <div class="col-lg-8">
-                                    <canvas id="userChart" class="rounded shadow"></canvas>
+                                    <canvas id="monthlyChart" class="rounded shadow"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="col-12 pt-5">
+                            <div class="panel panel-default d-flex justify-content-center">
+                                <h1 class="panel-heading my-2 col-12">Statistiche annuale degli ordini</h1>
+                                <div class="col-lg-8">
+                                    <canvas id="yearlyChart" class="rounded shadow"></canvas>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
     </div>
 
     <script src="{{ asset('js/admin.js') }}"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0" ></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <!-- CHARTS -->
-    <script >
-        var ctx = document.getElementById('userChart').getContext('2d');
-        var chart = new Chart(ctx, {
+    <script>
+        var monthly = document.getElementById('monthlyChart').getContext('2d');
+        var chart = new Chart(monthly, {
             // The type of chart we want to create
             type: 'bar',
             // The data for our dataset
             data: {
-                labels: {!! json_encode($chart->labels) !!},
+                labels: {!! json_encode($monthlyChart->labels) !!},
                 datasets: [{
                     label: 'Revenue per mese',
-                    backgroundColor: {!! json_encode($chart->colours) !!},
-                    data: {!! json_encode($chart->dataset) !!},
+                    backgroundColor: {!! json_encode($monthlyChart->colours) !!},
+                    data: {!! json_encode($monthlyChart->dataset) !!},
+                }, ]
+            },
+            // Configuration options go here
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            callback: function(value) {
+                                if (value % 1 === 0) {
+                                    return value;
+                                }
+                            }
+                        },
+                        scaleLabel: {
+                            display: false
+                        }
+                    }]
+                },
+                legend: {
+                    labels: {
+                        // This more specific font property overrides the global property
+                        fontColor: '#122C4B',
+                        fontFamily: "'Muli', sans-serif",
+                        padding: 25,
+                        boxWidth: 25,
+                        fontSize: 14,
+                    }
+                },
+                layout: {
+                    padding: {
+                        left: 10,
+                        right: 10,
+                        top: 0,
+                        bottom: 10
+                    }
+                }
+            }
+        });
+
+        var yearly = document.getElementById('yearlyChart').getContext('2d');
+        var chart = new Chart(yearly, {
+            // The type of chart we want to create
+            type: 'bar',
+            // The data for our dataset
+            data: {
+                labels: {!! json_encode($yearlyChart->labels) !!},
+                datasets: [{
+                    label: 'Revenue per anno',
+                    backgroundColor: {!! json_encode($yearlyChart->colours) !!},
+                    data: {!! json_encode($yearlyChart->dataset) !!},
                 }, ]
             },
             // Configuration options go here

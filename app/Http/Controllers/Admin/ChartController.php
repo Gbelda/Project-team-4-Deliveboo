@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Chart;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ChartController extends Controller
 {
@@ -16,7 +18,8 @@ class ChartController extends Controller
      */
     public function index()
     {
-        $monthlyOrders = Order::select([
+        
+        $monthlyOrders = Auth::user()->orders()->select([
             DB::raw("DATE_FORMAT(created_at, '%m') as month"),
             DB::raw('SUM(total) as total'),
         ])
@@ -29,25 +32,36 @@ class ChartController extends Controller
         foreach ($monthlyOrders as $key => $value) {
             $months[] = date("F", mktime(0, 0, 0, $key, 10));
         }
-        $monthCount[] = count($monthlyOrders);
 
-        $yearlyOrders = Order::select([
+        $yearlyOrders = Auth::user()->orders()->select([
             DB::raw("DATE_FORMAT(created_at, '%Y') as year"),
             DB::raw('SUM(total) as total'),
         ])
             ->groupBy('year')
             ->orderBy('year')
-            ->get();
+            ->pluck('total', 'year')->all();
 
         for ($i = 0; $i <= count($monthlyOrders); $i++) {
-            $colours[] = '#' . substr(str_shuffle('ABCDEF0123456789'), 0, 6);
+            $monthlyColours[] = '#' . substr(str_shuffle('ABCDEF0123456789'), 0, 6);
         }
-        $chart = new Chart;
+        $monthlyChart = new Chart;
+        $monthlyChart->labels = ($months);
+        $monthlyChart->dataset = (array_values($monthlyOrders));
+        $monthlyChart->colours = $monthlyColours;
 
-        $chart->labels = ($months);
-        $chart->dataset = (array_values($monthlyOrders));
-        $chart->colours = $colours;
-        return view('admin.statistics', compact('monthlyOrders', 'yearlyOrders', 'chart'));
+
+        for ($i = 0; $i <= count($yearlyOrders); $i++) {
+            $yearlyColours[] = '#' . substr(str_shuffle('ABCDEF0123456789'), 0, 6);
+        }
+        $yearlyChart = new Chart;
+        $yearlyChart->labels = (array_keys($yearlyOrders));
+        $yearlyChart->dataset = (array_values($yearlyOrders));
+        $yearlyChart->colours = $yearlyColours;
+
+
+
+
+        return view('admin.statistics', compact('monthlyOrders', 'yearlyOrders', 'monthlyChart', 'yearlyChart'));
 
     }
 

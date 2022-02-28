@@ -28,7 +28,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('auth')->
     Route::get('/', 'HomeController@index')->name('index');
     Route::resource('plates', PlateController::class);
     Route::resource('orders', OrderController::class);
-    Route::get('statistics', 'HomeController@statistics')->name('statistics');
+    Route::get('statistics', 'ChartController@index')->name('statistics');
 });
 
 Route::get('/checkout', 'CheckoutController@index');
@@ -37,7 +37,7 @@ Route::get('/paysuccess', function () {
     return view('guest.paysuccess');
 })->name('guest.paysuccess');
 
-Route::get('/chart', 'ChartController@index');
+// Route::get('/chart', 'ChartController@index');
 
 
 Route::get('/{any}', function () {

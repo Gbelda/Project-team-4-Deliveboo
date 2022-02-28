@@ -68,7 +68,7 @@
                                     <i class="fa-solid fa-utensils"></i>
                                 </a>
                             </li>
-                            {{-- <li class="piatti">
+                            <li class="piatti">
                                 <div class="hide">
                                     <h6>
                                         statistiche
@@ -77,7 +77,7 @@
                                 <a href="{{ route('admin.statistics') }}">
                                     <i class="fas fa-chart-pie"></i>
                                 </a>
-                            </li> --}}
+                            </li>
                         </ul>
                     </div>
                 </div>
