@@ -85,7 +85,7 @@
                     <div class="row flex-wrap">
                         <div class="col-12 pb-5">
                             <div class="panel panel-default d-flex justify-content-center">
-                                <h1 class="panel-heading my-2 col-12">Statistiche mensile degli ordini</h1>
+                                <h1 class="panel-heading my-2 col-12 text-center">Statistiche mensile degli ordini</h1>
                                 <div class="col-lg-8">
                                     <canvas id="monthlyChart" class="rounded shadow"></canvas>
                                 </div>
@@ -94,7 +94,7 @@
                         <hr>
                         <div class="col-12 pt-5">
                             <div class="panel panel-default d-flex justify-content-center">
-                                <h1 class="panel-heading my-2 col-12">Statistiche annuale degli ordini</h1>
+                                <h1 class="panel-heading my-2 col-12 text-center">Statistiche annuale degli ordini</h1>
                                 <div class="col-lg-8">
                                     <canvas id="yearlyChart" class="rounded shadow"></canvas>
                                 </div>

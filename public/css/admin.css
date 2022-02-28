@@ -11618,6 +11618,10 @@ textarea.form-control-lg {
   #contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti .hide, #contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini .hide, #contenuto_admin .row .side_bar .side_bar_contenitor ul .dash .hide {
     display: none;
   }
+
+  #monthlyChart, #yearlyChart {
+    width: 100% !important;
+  }
 }
 @media screen and (min-width: 768px) {
   #contenuto_admin .row .contenuto_griglie {

@@ -368,6 +368,11 @@
     #contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti .hide, #contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini .hide, #contenuto_admin .row .side_bar .side_bar_contenitor ul .dash .hide{
         display: none;
     }
+
+    #monthlyChart, #yearlyChart{
+        width: 100%!important;
+    }
+
 }
 
 @media screen and (min-width: 768px) {
@@ -426,6 +431,9 @@
     #contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti .hide, #contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini .hide, #contenuto_admin .row .side_bar .side_bar_contenitor ul .dash .hide{
         display: contents;
     }
+
+  
+
 }
 
 @media screen and (min-width: 1200px) {
@@ -448,6 +456,8 @@
     #contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti .hide h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .piatti .hide .h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini .hide h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .ordini .hide .h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .dash .hide h6, #contenuto_admin .row .side_bar .side_bar_contenitor ul .dash .hide .h6{
         font-size: 0.6rem;
     }
+
+  
 }
 
 @media screen and (min-width: 1400px) {
@@ -456,5 +466,6 @@
         font-size: 0.7rem;
     }
 
+   
 }
 /* /media_screen */

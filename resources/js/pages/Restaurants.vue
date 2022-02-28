@@ -241,7 +241,7 @@
         </div>
 
         <!-- ristoranti -->
-        <section class="ristoranti_container">
+        <section id="restaurants" class="ristoranti_container">
           <div class="content">
             <!-- titolo -->
             <h2 class="text-center pb-2">I Nostri Ristoranti</h2>
@@ -273,15 +273,16 @@
                         <strong>{{ restaurant.restaurant_name }}</strong>
                       </h1>
                     </div>
-                    <div
-                      class="food-card-artist-name"
-                    >
-                    <span
-                    v-for="(category, index) in restaurant.categories"
-                      :key="restaurant.slug + category.id">
-                      {{ category.name }}
-                      {{ index != restaurant.categories.length - 1 ? "|" : "" }}
-                    </span>
+                    <div class="food-card-artist-name">
+                      <span
+                        v-for="(category, index) in restaurant.categories"
+                        :key="restaurant.slug + category.id"
+                      >
+                        {{ category.name }}
+                        {{
+                          index != restaurant.categories.length - 1 ? "|" : ""
+                        }}
+                      </span>
                     </div>
                     <div class="food-card-about">
                       {{ restaurant.address }}
@@ -306,7 +307,7 @@
                 class="btn prev"
                 v-if="meta.current_page > 1 ? 'disabled' : ''"
                 @click="PrevPage()"
-                >Prev</span
+                ><a class="prev_page" href="#restaurants">Prev</a></span
               >
               <span
                 class="btn current"
@@ -314,13 +315,14 @@
                 v-for="page in meta.last_page"
                 :key="page"
                 @click="ToPage(page)"
-                >{{ page }}</span
               >
+                <a class="nubers_page" href="#restaurants">{{ page }}</a>
+              </span>
               <span
                 class="btn next"
                 v-if="meta.current_page < meta.last_page ? 'disabled' : ''"
                 @click="NextPage()"
-                >Next</span
+                ><a class="prev_page" href="#restaurants">Next</a></span
               >
             </div>
             <!-- /pagination -->
@@ -486,15 +488,15 @@ $black: #0a0903;
           display: block;
         }
       }
-       .check_square {
-                    border: none;
-                    &:focus {
-                        box-shadow: none;
-                    }
-                    &:checked {
-                        background-color: $brand-color;
-                    }
-       }
+      .check_square {
+        border: none;
+        &:focus {
+          box-shadow: none;
+        }
+        &:checked {
+          background-color: $brand-color;
+        }
+      }
       .content_check {
         display: none;
       }
@@ -703,5 +705,24 @@ $black: #0a0903;
     width: 20%;
     margin: auto;
   }
+}
+
+// buttons of pages of restaurants
+.nubers_page {
+  text-decoration: none;
+  color: #0a0903;
+}
+
+.nubers_page:hover {
+  color: #0a0903;
+}
+
+.prev_page {
+  color: #ff8200;
+  text-decoration: none;
+}
+
+.prev_page:hover {
+  color: #ff8200;
 }
 </style>

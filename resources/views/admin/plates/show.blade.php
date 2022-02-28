@@ -16,7 +16,7 @@
                         <span class="">INGREDIENTI</span>
                         <p class="card-text text_ingredients">{{ $plate->ingredients }}</p>
                         <span class="">DISPONIBILITÀ</span>
-                        <p class="card-text text-ava">{{ $plate->available }}</p>
+                        <p class="card-text text-ava">{{ $plate->available != 0 ? 'Disponibile' : 'Non disponibile' }}</p>
                         <span class="">PREZZO</span>
                         <p class="card-text card_price">{{ $plate->price }} &euro;</p>
                     </div>
