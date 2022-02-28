@@ -22,7 +22,7 @@ const Restaurant = Vue.component(
     require("./pages/MenuShow.vue").default
 );
 
-const _404 = Vue.component('four-0-four', require('./pages/404.vue').default);
+const _404 = Vue.component("four-0-four", require("./pages/404.vue").default);
 
 const routes = [
     {
@@ -40,11 +40,10 @@ const routes = [
         name: "who_we_are",
         component: Who_we_are,
     },
-
     {
-        path: '*',
-        component: _404
-    }
+        path: "*",
+        component: _404,
+    },
 ];
 
 const router = new VueRouter({

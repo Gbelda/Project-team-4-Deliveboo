@@ -92,7 +92,7 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="col-12 pt-5">
+                        <div class="col-12 p-5">
                             <div class="panel panel-default d-flex justify-content-center">
                                 <h1 class="panel-heading my-2 col-12 text-center">Statistiche annuale degli ordini</h1>
                                 <div class="col-lg-8">
@@ -135,7 +135,7 @@
                             beginAtZero: true,
                             callback: function(value) {
                                 if (value % 1 === 0) {
-                                    return value;
+                                    return value + '€';
                                 }
                             }
                         },
@@ -186,7 +186,7 @@
                             beginAtZero: true,
                             callback: function(value) {
                                 if (value % 1 === 0) {
-                                    return value;
+                                    return value + '€';
                                 }
                             }
                         },
