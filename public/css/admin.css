@@ -11258,6 +11258,16 @@ textarea.form-control-lg {
   color: #ff8200;
 }
 
+.navbar_button {
+  color: #f78201 !important;
+  border-color: #f78201 !important;
+}
+
+.icon_button_nav {
+  font-size: 25px;
+  color: #f78201;
+}
+
 .dropdown-menu {
   min-width: 69px !important;
   width: 10% !important;

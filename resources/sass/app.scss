@@ -197,11 +197,21 @@ header {
 .nav_reg{
     background-color: $black;
     a{
-        color: $brand-color;
+        color: $brand-color!important;
         &:hover{
-            color: $secondary_color;
+            color: $secondary_color!important;
         }
     }
+}
+
+.navbar_button{
+    color: rgb(247 130 1)!important;
+    border-color: rgb(247 130 1)!important;
+}
+
+.icon_button_nav{
+    font-size: 25px;
+    color: #f78201;
 }
 
 #register{

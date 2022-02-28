@@ -11433,10 +11433,20 @@ header .content-left h1, header .content-left .h1 {
   background-color: #0a0903;
 }
 .nav_reg a {
-  color: #ff8200;
+  color: #ff8200 !important;
 }
 .nav_reg a:hover {
-  color: #ffc100;
+  color: #ffc100 !important;
+}
+
+.navbar_button {
+  color: #f78201 !important;
+  border-color: #f78201 !important;
+}
+
+.icon_button_nav {
+  font-size: 25px;
+  color: #f78201;
 }
 
 #register .card {
