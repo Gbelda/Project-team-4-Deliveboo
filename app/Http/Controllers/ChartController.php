@@ -16,19 +16,39 @@ class ChartController extends Controller
      */
     public function index()
     {
-        $orders = DB::table('orders')->format('m/d/Y');
-        ddd($orders);
+        $monthlyOrders = Order::select([
+            DB::raw("DATE_FORMAT(created_at, '%m') as month"),
+            DB::raw('SUM(total) as total'),
+        ])
+            ->groupBy('month')
+            ->orderBy('month')
 
+            ->pluck('total', 'month')->all();
 
-        $groups = DB::table('orders')
-            ->select(date_format($orders->created_at,'Y-m'), DB::raw('count(*) as total'))
-            
-            ->groupBy('created_at')
-            ->pluck('total', 'created_at')->all();
+        $months = [];
+        foreach ($monthlyOrders as $key => $value) {
+            $months[] = date("F", mktime(0, 0, 0, $key, 10));
+        }
+        $monthCount[] = count($monthlyOrders);
 
-            ddd($groups);
+        $yearlyOrders = Order::select([
+            DB::raw("DATE_FORMAT(created_at, '%Y') as year"),
+            DB::raw('SUM(total) as total'),
+        ])
+            ->groupBy('year')
+            ->orderBy('year')
+            ->get();
 
-            // return view('')
+        for ($i = 0; $i <= count($monthlyOrders); $i++) {
+            $colours[] = '#' . substr(str_shuffle('ABCDEF0123456789'), 0, 6);
+        }
+        $chart = new Chart;
+
+        $chart->labels = ($months);
+        $chart->dataset = (array_values($monthlyOrders));
+        $chart->colours = $colours;
+        return view('admin.statistics', compact('monthlyOrders', 'yearlyOrders', 'chart'));
+
     }
 
     /**
