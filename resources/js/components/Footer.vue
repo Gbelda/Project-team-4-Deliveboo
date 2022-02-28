@@ -39,7 +39,6 @@
                                 <router-link to="/who_we_are"
                                     >Chi siamo</router-link
                                 >
-                                <!-- <a :href="'/who_we_are/'">Chi siamo</a> -->
                             </li>
                             <li>
                                 <a href="#">Investitori</a>
