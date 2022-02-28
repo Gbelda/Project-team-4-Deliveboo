@@ -17,7 +17,7 @@
                     <th>Cognome</th>
                     <th>Indirizzo</th>
                     <th>Telefono</th>
-                    <th>Email</th>
+                    <th>Data</th>
                     <th>Totale</th>
                     <th>Azioni</th>
                 </tr>
@@ -29,7 +29,7 @@
                         <td>{{ $order->client_lastname }}</td>
                         <td>{{ $order->client_address }}</td>
                         <td>{{ $order->client_phone }}</td>
-                        <td>{{ $order->client_email }}</td>
+                        <td>{{ date_format($order->created_at, "d M y - H:i") }}</td>
                         <td>{{ $order->total }} €</td>
                         <td>
                             <div class="d-flex justify-content-around">
